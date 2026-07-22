@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2B4C7E" />
+      <stop offset="100%" stop-color="#3B6FB5" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#blueGrad)" />
+  <polygon points="0,0 450,0 0,450" fill="#3B6FB5" opacity="0.3" />
+  <polygon points="1200,630 750,630 1200,180" fill="#F0D97A" opacity="0.12" />
+  <rect x="80" y="100" width="12" height="430" fill="#F0D97A" rx="6" />
+  <text x="120" y="145" font-family="system-ui, -apple-system, sans-serif" font-size="28" font-weight="bold" fill="#F0D97A">جلوباليز جروب للترجمة المعتمدة</text>
+  <text font-family="system-ui, -apple-system, sans-serif" font-size="44" font-weight="900" fill="#FFFFFF" line-height="1.4">
+    <tspan x="120" y="300">الترجمة الفورية | جلوباليز جروب</tspan>
+<tspan x="120" y="360">للترجمة المعتمدة</tspan>
+  </text>
+  <text x="120" y="515" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="bold" fill="#A8C8E8">مكتب ترجمة معتمد لدى جميع السفارات والهيئات الحكومية</text>
+</svg>

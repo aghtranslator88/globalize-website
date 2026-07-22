@@ -1,0 +1,318 @@
+import { notFound } from "next/navigation";
+import { setRequestLocale } from "next-intl/server";
+import { getBlogPostBySlug, getRawBlogPostBySlug, getFAQs } from "@/lib/data";
+import { getSEOHeaders, generateArticleJsonLd, generateFAQJsonLd, generateBreadcrumbJsonLd } from "@/lib/seo";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import QuoteForm from "@/components/QuoteForm";
+import { Link } from "@/i18n/routing";
+import { Calendar, User, Clock, ChevronDown, Award, HelpCircle, MessageCircle } from "lucide-react";
+import type { Metadata } from "next";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string; slug: string }>;
+}): Promise<Metadata> {
+  const { locale, slug } = await params;
+  const post = await getBlogPostBySlug(slug, locale);
+  if (!post) return {};
+  return getSEOHeaders(post.title, post.excerpt, `/blog/${slug}`, true, locale);
+}
+
+// Simple Markdown Parser & TOC Generator
+function parseMarkdown(markdown: string) {
+  const headings: { id: string; text: string; level: number }[] = [];
+  const lines = markdown.split("\n");
+  
+  const htmlLines = lines.map((line) => {
+    const trimmed = line.trim();
+    
+    // Headings matching: ## Title or ### Title
+    const headingMatch = trimmed.match(/^(#{1,6})\s+(.+)$/);
+    if (headingMatch) {
+      const level = headingMatch[1].length;
+      const rawText = headingMatch[2].trim();
+      const text = rawText.replace(/\*\*|__/g, "");
+      // Create slug: support Arabic unicode letters
+      const id = text
+        .toLowerCase()
+        .replace(/[^a-z0-9\u0600-\u06FF]+/g, "-")
+        .replace(/^-+|-+$/g, "");
+        
+      headings.push({ id, text, level });
+      
+      const headingClasses =
+        level === 2
+          ? "text-lg sm:text-xl font-bold text-dark-navy mt-8 mb-4 border-b border-gray-150 pb-2 font-arabic"
+          : "text-sm sm:text-base font-bold text-dark-navy mt-6 mb-3 font-arabic";
+          
+      return `<h${level} id="${id}" class="${headingClasses}">${rawText}</h${level}>`;
+    }
+
+    // Bold replacement
+    let processed = trimmed.replace(/\*\*(.*?)\*\*/g, "<strong class='font-bold text-dark-navy'>$1</strong>");
+
+    // Bullet points: - item
+    if (processed.startsWith("- ")) {
+      return `<li class="list-disc list-inside text-xs text-gray-600 mb-2 leading-relaxed font-arabic">${processed.substring(2)}</li>`;
+    }
+
+    // Paragraph
+    if (processed) {
+      return `<p class="text-xs sm:text-sm text-gray-600 leading-relaxed mb-4 font-arabic">${processed}</p>`;
+    }
+
+    return "";
+  });
+
+  return {
+    html: htmlLines.join(""),
+    headings,
+  };
+}
+
+export default async function BlogPostDetailPage({
+  params,
+}: {
+  params: Promise<{ locale: string; slug: string }>;
+}) {
+  const { locale, slug } = await params;
+  setRequestLocale(locale);
+
+  const post = await getBlogPostBySlug(slug, locale);
+  if (!post) {
+    notFound();
+  }
+
+  const rawPost = getRawBlogPostBySlug(slug);
+  const faqs = await getFAQs("blogPost", post.id, locale);
+  const faqsList = faqs.length > 0 ? faqs : (rawPost?.faqs?.map((f, i) => ({ id: `faq-${i}`, question: f.question, answer: f.answer, sortOrder: i })) || []);
+  const isAr = locale === "ar";
+
+  const breadcrumbs = [
+    { name: isAr ? "الرئيسية" : "Home", url: "/" },
+    { name: isAr ? "المدونة" : "Blog", url: "/blog" },
+    { name: post.title, url: `/blog/${post.slug}` },
+  ];
+
+  const breadcrumbJsonLd = rawPost?.schemas?.breadcrumb || generateBreadcrumbJsonLd(breadcrumbs);
+  const articleJsonLd = rawPost?.schemas?.article || generateArticleJsonLd({
+    title: post.title,
+    excerpt: post.excerpt,
+    featuredImageUrl: post.featuredImageUrl,
+    publishedAt: post.publishedAt,
+    updatedAt: post.publishedAt,
+    url: `https://globalize-group.com/${locale}/blog/${slug}`,
+    authorName: post.author.name,
+  });
+
+  const { html: bodyHtml, headings } = parseMarkdown(post.body);
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
+      {faqsList.length > 0 && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(rawPost?.schemas?.faq || generateFAQJsonLd(faqsList)) }}
+        />
+      )}
+      <Navbar />
+
+      <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
+        {/* Breadcrumbs */}
+        <nav className="text-xs text-gray-500 mb-6" aria-label="Breadcrumb">
+          <ol className="flex items-center gap-1.5">
+            {breadcrumbs.map((b, i) => (
+              <li key={i} className="flex items-center gap-1.5">
+                {i > 0 && <span className="text-gray-300">/</span>}
+                <Link href={b.url} className="hover:text-primary-blue transition-colors">
+                  {b.name}
+                </Link>
+              </li>
+            ))}
+          </ol>
+        </nav>
+
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-12">
+          {/* Left Sidebar: Table of Contents */}
+          <div className="lg:col-span-1 hidden lg:block">
+            <div className="sticky top-28 space-y-6">
+              <div className="rounded-2xl border border-gray-150 p-6 bg-white shadow-sm">
+                <h3 className="font-bold text-xs text-dark-navy border-b border-gray-100 pb-3 mb-4 uppercase tracking-wide">
+                  {isAr ? "فهرس المقال" : "Table of Contents"}
+                </h3>
+                <ul className="space-y-3.5 text-xs text-gray-500">
+                  {headings.map((h, i) => (
+                    <li
+                      key={i}
+                      className={`${h.level === 3 ? (isAr ? "pr-4" : "pl-4") : ""} hover:text-primary-blue transition-colors`}
+                    >
+                      <a href={`#${h.id}`} className="font-medium line-clamp-1 leading-snug">
+                        {h.text}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          {/* Main Article Content */}
+          <div className="lg:col-span-2 space-y-10">
+            {/* Article Header */}
+            <header className="space-y-4">
+              <span className="inline-block text-[9px] font-bold text-primary-blue bg-primary-blue/5 rounded px-2.5 py-1">
+                {post.category}
+              </span>
+              <h1 className="text-2xl sm:text-3xl font-black text-dark-navy leading-tight font-arabic">
+                {post.title}
+              </h1>
+              
+              {/* Meta */}
+              <div className="flex flex-wrap items-center gap-4 text-[10px] text-gray-400 font-semibold border-b border-gray-100 pb-6">
+                <div className="flex items-center gap-1.5">
+                  <User className="h-4 w-4" />
+                  <span className="font-arabic">{post.author.name}</span>
+                </div>
+                <div className="flex items-center gap-1.5">
+                  <Calendar className="h-4 w-4" />
+                  <span>
+                    {post.publishedAt.toLocaleDateString(locale, {
+                      year: "numeric",
+                      month: "long",
+                      day: "numeric",
+                    })}
+                  </span>
+                </div>
+                <div className="flex items-center gap-1.5">
+                  <Clock className="h-4 w-4" />
+                  <span>{post.readMinutes} {isAr ? "دقائق قراءة" : "min read"}</span>
+                </div>
+              </div>
+            </header>
+
+            {/* GEO Answer Box */}
+            {rawPost?.geoAnswer && (
+              <div className="bg-primary-blue/5 border border-primary-blue/10 rounded-2xl p-6 mb-8 font-arabic">
+                <h4 className="font-bold text-xs text-primary-blue mb-2">إجابة سريعة وموجزة (GEO Summary)</h4>
+                <p className="text-xs sm:text-sm font-semibold text-dark-navy leading-relaxed">
+                  {rawPost.geoAnswer}
+                </p>
+              </div>
+            )}
+
+            {/* Featured Image */}
+            {post.featuredImageUrl && (
+              <div className="relative w-full aspect-[16/9] rounded-2xl overflow-hidden mb-8 border border-gray-100 shadow-sm bg-gray-50">
+                <img
+                  src={post.featuredImageUrl}
+                  alt={rawPost?.imageMeta?.altText || post.title}
+                  title={rawPost?.imageMeta?.titleText || post.title}
+                  className="object-cover w-full h-full"
+                  loading="lazy"
+                />
+              </div>
+            )}
+
+            {/* Markdown Body Content */}
+            <article
+              className="prose max-w-none text-xs sm:text-sm text-gray-600 leading-relaxed font-arabic"
+              dangerouslySetInnerHTML={{ __html: bodyHtml }}
+            />
+
+            {/* CTA Banner */}
+            <div className="bg-gradient-to-r from-dark-navy to-primary-blue rounded-2xl p-6 sm:p-8 text-white text-center shadow-md relative overflow-hidden my-8">
+              <div className="relative z-10 space-y-4">
+                <h3 className="text-lg sm:text-xl font-bold font-arabic">
+                  {isAr ? "اطلب ترجمتك الآن من جلوباليز جروب للترجمة المعتمدة" : "Order Your Certified Translation from Globalize Group Now"}
+                </h3>
+                <p className="text-[11px] text-gray-200 max-w-md mx-auto leading-relaxed">
+                  {isAr 
+                    ? "ترجمة دقيقة، سريعة، ومعتمدة بالكامل لدى جميع السفارات والجهات الحكومية في مصر والشرق الأوسط."
+                    : "Accurate, fast, and fully certified translation accepted at all embassies and government entities."}
+                </p>
+                <div className="pt-2">
+                  <a
+                    href={`https://wa.me/201555592535?text=${encodeURIComponent(isAr ? 'أريد الاستفسار عن ترجمة معتمدة' : 'I want to inquire about certified translation')}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 rounded-xl bg-whatsapp-green hover:bg-emerald-600 text-white px-6 py-3 text-xs font-bold shadow-md hover:scale-[1.03] transition-transform animate-pulse-glow"
+                  >
+                    <MessageCircle className="h-4 w-4" />
+                    <span>{isAr ? "تواصل معنا واتساب" : "Contact on WhatsApp"}</span>
+                  </a>
+                </div>
+              </div>
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_-20%,rgba(240,217,122,0.15),transparent_70%)] pointer-events-none" />
+            </div>
+
+            {/* Author Box */}
+            <div className="rounded-2xl border border-gray-150 p-6 bg-white shadow-sm flex flex-col sm:flex-row gap-6">
+              <div className="h-14 w-14 rounded-2xl bg-gradient-to-tr from-gold to-yellow-500 text-dark-navy font-bold text-xl flex items-center justify-center flex-shrink-0">
+                {post.author.name.charAt(0)}
+              </div>
+              <div className="space-y-3 flex-grow">
+                <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-1">
+                  <h4 className="font-bold text-xs text-dark-navy font-arabic">{post.author.name}</h4>
+                  <span className="text-[9px] font-bold text-primary-blue bg-primary-blue/5 rounded px-2 py-0.5">
+                    {post.author.title}
+                  </span>
+                </div>
+                <p className="text-[11px] text-gray-500 leading-relaxed font-arabic">
+                  {post.author.bio}
+                </p>
+                <div className="text-[10px] text-gray-400 font-semibold flex flex-wrap gap-4 pt-2 border-t border-gray-50">
+                  <div><strong>{isAr ? "سنوات الخبرة:" : "Experience:"}</strong> {post.author.yearsExperience} {isAr ? "عاماً" : "years"}</div>
+                  <div><strong>{isAr ? "التخصص:" : "Specialty:"}</strong> {post.author.languagePair}</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Blog FAQs */}
+            {faqsList.length > 0 && (
+              <div className="space-y-6">
+                <h3 className="font-bold text-sm text-dark-navy border-b border-gray-100 pb-3 flex items-center gap-1.5 font-arabic">
+                  <HelpCircle className="h-5 w-5 text-primary-blue" />
+                  <span>{isAr ? "أسئلة شائعة متصلة بالموضوع" : "FAQs Related to This Article"}</span>
+                </h3>
+                <div className="space-y-4">
+                  {faqsList.map((faq) => (
+                    <div key={faq.id} className="border border-gray-100 rounded-xl overflow-hidden shadow-sm">
+                      <details className="group">
+                        <summary className="flex items-center justify-between px-6 py-4 font-bold text-xs text-dark-navy cursor-pointer select-none bg-gray-50/50 list-none">
+                          <span>{faq.question}</span>
+                          <ChevronDown className="h-4 w-4 text-gray-500 transition-transform group-open:rotate-180" />
+                        </summary>
+                        <div className="px-6 py-4 text-[11px] text-gray-600 leading-relaxed border-t border-gray-100 font-arabic">
+                          {faq.answer}
+                        </div>
+                      </details>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+
+          {/* Right Sidebar: Quote Form */}
+          <div className="lg:col-span-1">
+            <div className="sticky top-28">
+              <QuoteForm />
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <Footer />
+    </>
+  );
+}

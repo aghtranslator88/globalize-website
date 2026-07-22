@@ -1,0 +1,245 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum ServiceType {
+  CERTIFIED
+  LOCALIZATION
+  INTERPRETATION
+}
+
+enum Region {
+  EUROPE
+  GULF_ARAB
+  AMERICAS
+  ASIA_AUSTRALIA
+}
+
+enum QuoteStatus {
+  NEW
+  CONTACTED
+  QUOTED
+  WON
+  LOST
+}
+
+model Service {
+  id            String      @id @default(uuid())
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
+  nameAr        String
+  nameEn        String
+  slug          String      @unique
+  type          ServiceType
+  descriptionAr String
+  descriptionEn String
+  definitionAr  String
+  definitionEn  String
+  indexable     Boolean     @default(true)
+  faqs          FAQ[]
+}
+
+model Document {
+  id             String      @id @default(uuid())
+  createdAt      DateTime    @default(now())
+  updatedAt      DateTime    @updatedAt
+  nameAr         String
+  nameEn         String
+  slug           String      @unique
+  priceEGP       Int
+  deliveryHours  Int
+  descriptionAr  String
+  descriptionEn  String
+  answerBoxAr    String
+  answerBoxEn    String
+  sampleImageUrl String?
+  indexable      Boolean     @default(true)
+  faqs           FAQ[]
+
+  // Self-relation for related documents
+  relatedTo      Document[]  @relation("RelatedDocuments")
+  relatedFrom    Document[]  @relation("RelatedDocuments")
+
+  // Many-to-many relations
+  embassies      Embassy[]   @relation("EmbassyPopularDocuments")
+  govEntities    GovEntity[] @relation("GovEntityAcceptedDocuments")
+}
+
+model Embassy {
+  id               String     @id @default(uuid())
+  createdAt        DateTime   @default(now())
+  updatedAt        DateTime   @updatedAt
+  nameAr           String
+  nameEn           String
+  slug             String     @unique
+  countryCode      String     // e.g. "DE", "FR"
+  region           Region
+  requirementsAr   Json       // Array of requirements
+  requirementsEn   Json       // Array of requirements
+  useCasesAr       Json       // Array of use cases
+  useCasesEn       Json       // Array of use cases
+  indexable        Boolean    @default(false)
+  faqs             FAQ[]
+  
+  popularDocuments Document[] @relation("EmbassyPopularDocuments")
+}
+
+model GovEntity {
+  id                String     @id @default(uuid())
+  createdAt         DateTime   @default(now())
+  updatedAt         DateTime   @updatedAt
+  nameAr            String
+  nameEn            String
+  slug              String     @unique
+  requirementsAr    Json
+  requirementsEn    Json
+  useCasesAr        Json
+  useCasesEn        Json
+  indexable         Boolean    @default(false)
+  faqs              FAQ[]
+  
+  acceptedDocuments Document[] @relation("GovEntityAcceptedDocuments")
+}
+
+model Language {
+  id            String   @id @default(uuid())
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+  nameAr        String
+  nameEn        String
+  slug          String   @unique
+  code          String   @unique
+  popular       Boolean  @default(false)
+  descriptionAr String
+  descriptionEn String
+  faqs          FAQ[]
+}
+
+model Branch {
+  id             String   @id @default(uuid())
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+  nameAr         String
+  nameEn         String
+  slug           String   @unique
+  addressAr      String
+  addressEn      String
+  phone          String
+  whatsapp       String
+  workingHoursAr String
+  workingHoursEn String
+  lat            Float
+  lng            Float
+  photoUrl       String?
+  googleMapsUrl  String
+}
+
+model TeamMember {
+  id              String     @id @default(uuid())
+  createdAt       DateTime   @default(now())
+  updatedAt       DateTime   @updatedAt
+  nameAr          String
+  nameEn          String
+  titleAr         String
+  titleEn         String
+  languagePair    String
+  yearsExperience Int
+  certifications  Json       // Array of strings
+  photoUrl        String?
+  isLeadership    Boolean    @default(false)
+  bioAr           String
+  bioEn           String
+  blogPosts       BlogPost[]
+}
+
+model Review {
+  id          String      @id @default(uuid())
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+  authorName  String
+  rating      Int
+  textAr      String
+  textEn      String
+  serviceType ServiceType
+  date        DateTime
+  videoUrl    String?
+  published   Boolean     @default(true)
+}
+
+model BlogPost {
+  id               String     @id @default(uuid())
+  createdAt        DateTime   @default(now())
+  updatedAt        DateTime   @updatedAt
+  titleAr          String
+  titleEn          String
+  slug             String     @unique
+  excerptAr        String
+  excerptEn        String
+  bodyAr           String     // Markdown content
+  bodyEn           String     // Markdown content
+  categoryAr       String     // Category name in Arabic
+  categoryEn       String     // Category name in English
+  featuredImageUrl String?
+  videoUrl         String?
+  authorId         String
+  author           TeamMember @relation(fields: [authorId], references: [id])
+  publishedAt      DateTime   @default(now())
+  readMinutes      Int
+  published        Boolean    @default(true)
+  faqs             FAQ[]
+}
+
+model FAQ {
+  id          String     @id @default(uuid())
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+  questionAr  String
+  answerAr    String
+  questionEn  String
+  answerEn    String
+  sortOrder   Int        @default(0)
+
+  // Polymorphic associations
+  serviceId   String?
+  service     Service?   @relation(fields: [serviceId], references: [id], onDelete: Cascade)
+  documentId  String?
+  document    Document?  @relation(fields: [documentId], references: [id], onDelete: Cascade)
+  embassyId   String?
+  embassy     Embassy?   @relation(fields: [embassyId], references: [id], onDelete: Cascade)
+  govEntityId String?
+  govEntity   GovEntity? @relation(fields: [govEntityId], references: [id], onDelete: Cascade)
+  blogPostId  String?
+  blogPost    BlogPost?  @relation(fields: [blogPostId], references: [id], onDelete: Cascade)
+  languageId  String?
+  language    Language?  @relation(fields: [languageId], references: [id], onDelete: Cascade)
+  
+  homepage    Boolean    @default(false)
+}
+
+model QuoteRequest {
+  id          String      @id @default(uuid())
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+  name        String
+  phone       String
+  serviceType String
+  fileUrl     String?
+  notes       String?
+  status      QuoteStatus @default(NEW)
+}
+
+model SiteSetting {
+  id        String   @id @default(uuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  key       String   @unique
+  value     String
+}
