@@ -66,14 +66,17 @@ function cleanHtmlText(html) {
 function removeCompetitors(text) {
   if (!text) return '';
   return text
-    .replace(/via\s*translation/gi, BRAND_NAME)
-    .replace(/فياترانسيشن/gi, BRAND_NAME)
-    .replace(/فياترانزيشن/gi, BRAND_NAME)
-    .replace(/فيا ترانسيشن/gi, BRAND_NAME)
-    .replace(/فيا ترانزيشن/gi, BRAND_NAME)
-    .replace(/روزتة/gi, BRAND_NAME)
-    .replace(/فرست ترانسيشن/gi, BRAND_NAME)
-    .replace(/ايجي ترانسيشن/gi, BRAND_NAME)
+    .replace(/via\s*translation[s]?/gi, BRAND_NAME)
+    .replace(/المكتب\s*فيا\s*ترانسليشن/gi, BRAND_NAME)
+    .replace(/مكتب\s*فيا\s*ترانسليشن/gi, BRAND_NAME)
+    .replace(/فيا\s*ترانسليشن/gi, '')
+    .replace(/فياترانسيشن/gi, '')
+    .replace(/فياترانزيشن/gi, '')
+    .replace(/فيا\s*ترانسيشن/gi, '')
+    .replace(/فيا\s*ترانزيشن/gi, '')
+    .replace(/روزتة/gi, '')
+    .replace(/فرست\s*ترانسيشن/gi, '')
+    .replace(/ايجي\s*ترانسيشن/gi, '')
     .replace(/\+?\d{10,14}/g, '01555592535')
     .replace(/http[s]?:\/\/[^\s]+/gi, '');
 }
@@ -97,10 +100,7 @@ function parseHTMLFile(filePath, itemSlug) {
   }
 
   // Clean competitors from title
-  title = removeCompetitors(title);
-  if (!title.includes(BRAND_NAME)) {
-    title = `${title} | ${BRAND_NAME}`;
-  }
+  title = removeCompetitors(title).replace(/\|\s*via\s*translation/gi, '').trim();
 
   // Extract meta description
   let metaDesc = '';
@@ -149,6 +149,7 @@ function generateEmbassyArticle(itemSlug, parsedData, index) {
 
   // Clean title
   let cleanTitle = rawTitle.replace(/\|.*/, '').trim();
+  cleanTitle = removeCompetitors(cleanTitle).trim();
   if (!cleanTitle.includes('سفارة') && !cleanTitle.includes('قنصلية') && !cleanTitle.includes('ترجمة')) {
     cleanTitle = `مكتب ترجمة معتمد لسفارة ${countryName} - ${BRAND_NAME}`;
   } else if (!cleanTitle.includes(BRAND_NAME)) {
