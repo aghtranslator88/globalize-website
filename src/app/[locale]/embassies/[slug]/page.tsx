@@ -98,6 +98,58 @@ export default async function EmbassyDetailPage({
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
           {/* Main content body */}
           <div className="lg:col-span-2 space-y-12">
+            {/* Rich Embassy Article Body */}
+            {embassy.body && (
+              <div className="bg-white rounded-2xl p-6 sm:p-8 border border-gray-100 shadow-sm space-y-6 text-gray-700 leading-relaxed font-arabic text-sm">
+                {embassy.body.split('\n\n').map((paragraph, idx) => {
+                  if (paragraph.startsWith('# ')) {
+                    return null; // Skip H1 title as it is already rendered in hero
+                  }
+                  if (paragraph.startsWith('## ')) {
+                    return (
+                      <h2 key={idx} className="text-xl font-black text-dark-navy pt-4 border-b border-gray-100 pb-2">
+                        {paragraph.replace('## ', '')}
+                      </h2>
+                    );
+                  }
+                  if (paragraph.startsWith('### ')) {
+                    return (
+                      <h3 key={idx} className="text-base font-bold text-primary-blue pt-2">
+                        {paragraph.replace('### ', '')}
+                      </h3>
+                    );
+                  }
+                  if (paragraph.includes('GEO Summary')) {
+                    return (
+                      <div key={idx} className="rounded-2xl bg-amber-500/10 border border-amber-500/20 p-5 my-4">
+                        <span className="inline-block text-xs font-bold text-amber-700 bg-amber-200/50 px-2.5 py-1 rounded-md mb-2">
+                          إجابة سريعة وموجزة (GEO Summary)
+                        </span>
+                        <p className="text-xs sm:text-sm text-dark-navy font-semibold leading-relaxed">
+                          {paragraph.replace(/.*GEO Summary\)/s, '').trim()}
+                        </p>
+                      </div>
+                    );
+                  }
+                  if (paragraph.startsWith('* ') || paragraph.startsWith('- ')) {
+                    const items = paragraph.split('\n').map(item => item.replace(/^[*|-]\s*/, ''));
+                    return (
+                      <ul key={idx} className="space-y-2 list-disc list-inside bg-gray-50/50 p-4 rounded-xl text-xs sm:text-sm">
+                        {items.map((it, i) => (
+                          <li key={i} className="text-gray-600">{it}</li>
+                        ))}
+                      </ul>
+                    );
+                  }
+                  return (
+                    <p key={idx} className="text-xs sm:text-sm text-gray-600 leading-relaxed">
+                      {paragraph}
+                    </p>
+                  );
+                })}
+              </div>
+            )}
+
             {/* Requirements Checklist */}
             <div className="bg-white rounded-2xl p-6 sm:p-8 border border-gray-100 shadow-sm">
               <h2 className="text-lg font-bold text-dark-navy mb-6 flex items-center gap-2 border-b border-gray-100 pb-3 font-arabic">

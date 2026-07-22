@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { ALL_BLOG_POSTS } from "@/lib/blog-data";
+import { ALL_EMBASSY_POSTS } from "@/lib/embassies-data";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://globalizetl.com";
 
@@ -81,9 +82,15 @@ export async function GET() {
   });
 
   // Add dynamic paths (Embassies)
-  embassies.forEach((e) => {
-    addEntry(`/embassies/${e.slug}`, e.updatedAt);
-  });
+  if (embassies.length > 0) {
+    embassies.forEach((e) => {
+      addEntry(`/embassies/${e.slug}`, e.updatedAt);
+    });
+  } else {
+    ALL_EMBASSY_POSTS.forEach((e) => {
+      addEntry(`/embassies/${e.slug}`);
+    });
+  }
 
   // Add dynamic paths (Gov Entities)
   govEntities.forEach((g) => {

@@ -1,5 +1,6 @@
 import { prisma } from './prisma';
 import { ALL_BLOG_POSTS, BlogPostItem } from './blog-data';
+import { ALL_EMBASSY_POSTS, EmbassyPostItem } from './embassies-data';
 
 // Types for localized models
 export interface LocalizedService {
@@ -332,60 +333,100 @@ export async function getEmbassies(locale: string): Promise<LocalizedEmbassy[]> 
     const embassies = await prisma.embassy.findMany({
       orderBy: { nameAr: 'asc' },
     });
-    if (embassies.length === 0) return MOCK_EMBASSIES(isAr);
-    return embassies.map((e) => ({
-      id: e.id,
-      name: isAr ? e.nameAr : e.nameEn,
-      slug: e.slug,
-      countryCode: e.countryCode,
-      region: e.region,
-      requirements: (isAr ? e.requirementsAr : e.requirementsEn) as string[],
-      useCases: (isAr ? e.useCasesAr : e.useCasesEn) as string[],
-      indexable: e.indexable,
-    }));
+    if (embassies.length > 0) {
+      return embassies.map((e) => ({
+        id: e.id,
+        name: isAr ? e.nameAr : e.nameEn,
+        slug: e.slug,
+        countryCode: e.countryCode,
+        region: e.region,
+        requirements: (isAr ? e.requirementsAr : e.requirementsEn) as string[],
+        useCases: (isAr ? e.useCasesAr : e.useCasesEn) as string[],
+        indexable: e.indexable,
+      }));
+    }
   } catch (err) {
-    return MOCK_EMBASSIES(isAr);
+    // Fallback to static embassy dataset
   }
+
+  return ALL_EMBASSY_POSTS.map((e) => ({
+    id: e.id,
+    name: e.title,
+    slug: e.slug,
+    countryCode: e.countryCode,
+    region: e.region,
+    requirements: e.requirements,
+    useCases: e.useCases,
+    indexable: e.indexable,
+  }));
 }
 
-export async function getEmbassyBySlug(slug: string, locale: string): Promise<LocalizedEmbassy & { popularDocuments: LocalizedDocument[] } | null> {
+export async function getEmbassyBySlug(
+  slug: string,
+  locale: string
+): Promise<(LocalizedEmbassy & { popularDocuments: LocalizedDocument[]; body?: string; faqs?: { question: string; answer: string }[] }) | null> {
   const isAr = locale === 'ar';
+  let decodedSlug = slug;
+  try {
+    decodedSlug = decodeURIComponent(slug);
+  } catch (e) {
+    decodedSlug = slug;
+  }
+
   try {
     const e = await prisma.embassy.findUnique({
-      where: { slug },
+      where: { slug: decodedSlug },
       include: {
         popularDocuments: true,
       },
     });
-    if (!e) {
-      const emb = MOCK_EMBASSIES(isAr).find(em => em.slug === slug);
-      return emb ? { ...emb, popularDocuments: [] } : null;
+    if (e) {
+      return {
+        id: e.id,
+        name: isAr ? e.nameAr : e.nameEn,
+        slug: e.slug,
+        countryCode: e.countryCode,
+        region: e.region,
+        requirements: (isAr ? e.requirementsAr : e.requirementsEn) as string[],
+        useCases: (isAr ? e.useCasesAr : e.useCasesEn) as string[],
+        indexable: e.indexable,
+        popularDocuments: e.popularDocuments.map((d) => ({
+          id: d.id,
+          name: isAr ? d.nameAr : d.nameEn,
+          slug: d.slug,
+          priceEGP: d.priceEGP,
+          deliveryHours: d.deliveryHours,
+          description: isAr ? d.descriptionAr : d.descriptionEn,
+          answerBox: isAr ? d.answerBoxAr : d.answerBoxEn,
+          sampleImageUrl: d.sampleImageUrl,
+          indexable: d.indexable,
+        })),
+      };
     }
-    return {
-      id: e.id,
-      name: isAr ? e.nameAr : e.nameEn,
-      slug: e.slug,
-      countryCode: e.countryCode,
-      region: e.region,
-      requirements: (isAr ? e.requirementsAr : e.requirementsEn) as string[],
-      useCases: (isAr ? e.useCasesAr : e.useCasesEn) as string[],
-      indexable: e.indexable,
-      popularDocuments: e.popularDocuments.map((d) => ({
-        id: d.id,
-        name: isAr ? d.nameAr : d.nameEn,
-        slug: d.slug,
-        priceEGP: d.priceEGP,
-        deliveryHours: d.deliveryHours,
-        description: isAr ? d.descriptionAr : d.descriptionEn,
-        answerBox: isAr ? d.answerBoxAr : d.answerBoxEn,
-        sampleImageUrl: d.sampleImageUrl,
-        indexable: d.indexable,
-      })),
-    };
   } catch (err) {
-    const emb = MOCK_EMBASSIES(isAr).find(em => em.slug === slug);
-    return emb ? { ...emb, popularDocuments: [] } : null;
+    // Fallback to static audited embassy dataset
   }
+
+  const emb = ALL_EMBASSY_POSTS.find((e) => e.slug === decodedSlug || e.slug === slug);
+  if (!emb) return null;
+
+  return {
+    id: emb.id,
+    name: emb.title,
+    slug: emb.slug,
+    countryCode: emb.countryCode,
+    region: emb.region,
+    requirements: emb.requirements,
+    useCases: emb.useCases,
+    indexable: emb.indexable,
+    body: emb.body,
+    faqs: emb.faqs,
+    popularDocuments: [
+      { id: 'doc-1', name: 'شهادة ميلاد معتمدة', slug: 'certified-birth-certificate', priceEGP: 350, deliveryHours: 24, description: 'ترجمة معتمدة لشهادة الميلاد وموثقة', answerBox: 'ترجمة معتمدة مقبولة بالسفارة', sampleImageUrl: null, indexable: true },
+      { id: 'doc-2', name: 'صحيفة حالة جنائية (فيش وتشبيه)', slug: 'criminal-record-cert', priceEGP: 400, deliveryHours: 24, description: 'ترجمة معتمدة لفيش وتشبيه خالي من السوابق', answerBox: 'مقبول رسمياً بسفارات العالم', sampleImageUrl: null, indexable: true },
+      { id: 'doc-3', name: 'كشف حساب بنكي معتمد', slug: 'bank-statement', priceEGP: 450, deliveryHours: 24, description: 'ترجمة معتمدة للحركات البنكية والملاءة المالية', answerBox: 'مقبول لملفات الفيزا والتأشيرات', sampleImageUrl: null, indexable: true }
+    ],
+  };
 }
 
 export async function getGovEntities(locale: string): Promise<LocalizedGovEntity[]> {
