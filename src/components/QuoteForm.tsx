@@ -20,6 +20,7 @@ export default function QuoteForm({ services = [] }: { services?: ServiceOption[
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
   const [errors, setErrors] = useState<Record<string, string>>({});
+  const [lastSubmittedWaUrl, setLastSubmittedWaUrl] = useState<string>("");
 
   const validate = () => {
     const errs: Record<string, string> = {};
@@ -35,6 +36,14 @@ export default function QuoteForm({ services = [] }: { services?: ServiceOption[
     return Object.keys(errs).length === 0;
   };
 
+  const defaultServices = [
+    { slug: "certified", name: locale === "ar" ? "ترجمة معتمدة" : "Certified Translation" },
+    { slug: "localization", name: locale === "ar" ? "توطين مواقع وتطبيقات" : "Localization" },
+    { slug: "interpretation", name: locale === "ar" ? "ترجمة فورية للمؤتمرات" : "Interpretation" },
+  ];
+
+  const activeServices = services.length > 0 ? services : defaultServices;
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!validate()) return;
@@ -42,9 +51,18 @@ export default function QuoteForm({ services = [] }: { services?: ServiceOption[
     setLoading(true);
     setStatus("idle");
 
+    // Prepare direct WhatsApp message with all submitted details
+    const selectedServiceObj = activeServices.find(s => s.slug === serviceType);
+    const serviceName = selectedServiceObj ? selectedServiceObj.name : serviceType;
+    
+    const waMessage = locale === "ar"
+      ? `مرحباً جلوبالايز جروب، أود طلب تسعير لخدمة:\n• *الخدمة:* ${serviceName}\n• *الاسم:* ${name}\n• *رقم الهاتف:* ${phone}${notes ? `\n• *ملاحظات:* ${notes}` : ""}`
+      : `Hello Globalize Group, I would like to request a quote:\n• *Service:* ${serviceName}\n• *Name:* ${name}\n• *Phone:* ${phone}${notes ? `\n• *Notes:* ${notes}` : ""}`;
+    
+    const waUrl = `https://wa.me/201062990808?text=${encodeURIComponent(waMessage)}`;
+    setLastSubmittedWaUrl(waUrl);
+
     try {
-      // In production, we'd handle file upload to Cloud/S3 and get fileUrl.
-      // For now, we mock the fileUrl or send form data.
       const mockFileUrl = file ? `/uploads/${Date.now()}_${file.name}` : null;
 
       const response = await fetch("/api/quote", {
@@ -61,6 +79,10 @@ export default function QuoteForm({ services = [] }: { services?: ServiceOption[
 
       if (response.ok) {
         setStatus("success");
+        // Automatically open WhatsApp in new tab for instant communication
+        if (typeof window !== "undefined") {
+          window.open(waUrl, "_blank", "noopener,noreferrer");
+        }
         setName("");
         setPhone("");
         setServiceType("");
@@ -77,14 +99,6 @@ export default function QuoteForm({ services = [] }: { services?: ServiceOption[
     }
   };
 
-  const defaultServices = [
-    { slug: "certified", name: locale === "ar" ? "ترجمة معتمدة" : "Certified Translation" },
-    { slug: "localization", name: locale === "ar" ? "توطين مواقع وتطبيقات" : "Localization" },
-    { slug: "interpretation", name: locale === "ar" ? "ترجمة فورية للمؤتمرات" : "Interpretation" },
-  ];
-
-  const activeServices = services.length > 0 ? services : defaultServices;
-
   return (
     <div className="rounded-2xl bg-white p-6 shadow-xl border border-gray-100 relative overflow-hidden transition-all duration-300 hover:shadow-2xl">
       {/* Decorative colored corner */}
@@ -98,30 +112,27 @@ export default function QuoteForm({ services = [] }: { services?: ServiceOption[
       </p>
 
       {status === "success" && (
-        <div className="mb-6 rounded-xl bg-green-50 p-4 text-green-800 border border-green-200">
+        <div className="mb-6 rounded-xl bg-green-50 p-5 text-green-800 border border-green-200 shadow-sm">
           <div className="flex items-start gap-3">
-            <CheckCircle className="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0" />
+            <CheckCircle className="h-6 w-6 text-green-600 mt-0.5 flex-shrink-0" />
             <div>
-              <p className="text-sm font-bold">{locale === "ar" ? "تم استلام طلبك بنجاح!" : "Request Received Successfully!"}</p>
+              <p className="text-base font-bold">{locale === "ar" ? "تم استلام وحفظ طلبك بنجاح!" : "Request Received & Saved!"}</p>
               <p className="text-xs mt-1 text-green-700 leading-relaxed">
                 {locale === "ar" 
-                  ? "شكراً لتواصلك مع جلوبالايز جروب. سيقوم ممثل خدمة العملاء بمراجعة تفاصيل طلبك والتواصل معك خلال 15 دقيقة."
-                  : "Thank you for contacting Globalize Group. Our customer representative will review your request and contact you within 15 minutes."}
+                  ? "شكراً لتواصلك مع جلوبالايز جروب. تم إرسال الطلب، ويمكنك الآن متابعته أو إرسال المستندات عبر واتساب فوراً."
+                  : "Thank you for contacting Globalize Group. Your request has been recorded. You can follow up or attach documents via WhatsApp."}
               </p>
             </div>
           </div>
-          <div className="mt-3 pt-3 border-t border-green-200/60 flex justify-end">
+          <div className="mt-4 pt-3 border-t border-green-200 flex flex-col sm:flex-row items-center justify-between gap-3">
             <a
-              href={`https://wa.me/201062990808?text=${encodeURIComponent(
-                locale === "ar"
-                  ? "مرحباً، لقد أرسلت طلب عرض سعر عبر الموقع وأود متابعته."
-                  : "Hello, I have submitted a quote request on the website and would like to follow up."
-              )}`}
+              href={lastSubmittedWaUrl || "https://wa.me/201062990808"}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-xs font-bold text-whatsapp-green hover:underline"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-whatsapp-green text-white text-xs font-bold shadow-md hover:bg-green-600 transition-all"
             >
-              <span>{locale === "ar" ? "أو تابع طلبك فوراً عبر واتساب ←" : "Or follow up on WhatsApp now →"}</span>
+              <span>📲</span>
+              <span>{locale === "ar" ? "متابعة الطلب وإرسال الأوراق عبر واتساب" : "Follow up & send docs on WhatsApp"}</span>
             </a>
           </div>
         </div>
