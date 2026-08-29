@@ -3,7 +3,7 @@ import { prisma } from "@/lib/prisma";
 import { ALL_BLOG_POSTS } from "@/lib/blog-data";
 import { ALL_EMBASSY_POSTS } from "@/lib/embassies-data";
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://globalizetl.com";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.globalizetl.com";
 
 export async function GET() {
   let services: any[] = [];

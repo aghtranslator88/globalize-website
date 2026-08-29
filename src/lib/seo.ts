@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://globalizetl.com';
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.globalizetl.com';
 
 interface AlternateLinks {
   canonical: string;
@@ -14,7 +14,7 @@ export function getSEOHeaders(
   indexable: boolean = true,
   locale: string = 'ar'
 ): Metadata {
-  const cleanPath = path.startsWith('/') ? path : `/${path}`;
+  const cleanPath = path ? (path.startsWith('/') ? path : `/${path}`) : '';
   const canonicalUrl = `${SITE_URL}/${locale}${cleanPath}`;
   const arUrl = `${SITE_URL}/ar${cleanPath}`;
   const enUrl = `${SITE_URL}/en${cleanPath}`;
