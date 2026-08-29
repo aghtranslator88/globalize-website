@@ -73,7 +73,7 @@ export function generateOrganizationJsonLd() {
     'contactPoint': [
       {
         '@type': 'ContactPoint',
-        'telephone': '+201555592535',
+        'telephone': '+20 106 299 0808',
         'contactType': 'customer service',
         'areaServed': ['EG', 'GCC'],
         'availableLanguage': ['Arabic', 'English'],
@@ -110,7 +110,7 @@ export function generateServiceJsonLd(service: { name: string; description: stri
       '@type': 'LocalBusiness',
       'name': 'جلوبالايز جروب لأعمال الترجمة المعتمدة',
       'image': `${SITE_URL}/logo.png`,
-      'telephone': '+201555592535',
+      'telephone': '+20 106 299 0808',
       'url': SITE_URL,
     },
   };
@@ -229,7 +229,7 @@ export function generateAggregateRatingJsonLd(rating: number, count: number) {
     '@type': 'LocalBusiness',
     'name': 'جلوبالايز جروب لأعمال الترجمة المعتمدة',
     'image': `${SITE_URL}/logo.png`,
-    'telepphone': '+201555592535',
+    'telephone': '+201062990808',
     'url': SITE_URL,
     'aggregateRating': {
       '@type': 'AggregateRating',

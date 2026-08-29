@@ -242,7 +242,7 @@ export default async function BlogPostDetailPage({
                 </p>
                 <div className="pt-2">
                   <a
-                    href={`https://wa.me/201555592535?text=${encodeURIComponent(isAr ? 'أريد الاستفسار عن ترجمة معتمدة' : 'I want to inquire about certified translation')}`}
+                    href={`https://wa.me/201062990808?text=${encodeURIComponent(isAr ? 'أريد الاستفسار عن ترجمة معتمدة' : 'I want to inquire about certified translation')}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 rounded-xl bg-whatsapp-green hover:bg-emerald-600 text-white px-6 py-3 text-xs font-bold shadow-md hover:scale-[1.03] transition-transform animate-pulse-glow"

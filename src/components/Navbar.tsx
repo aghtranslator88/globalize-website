@@ -57,7 +57,7 @@ export default function Navbar() {
           {/* Top Right: Call center */}
           <div className="flex items-center gap-1 text-[10px] text-gray-500 font-bold">
             <Phone className="h-3 w-3 text-primary-blue" />
-            <span>+201555592535</span>
+            <span>+20 106 299 0808</span>
           </div>
         </div>
       </div>
@@ -113,7 +113,7 @@ export default function Navbar() {
           <div className="hidden lg:flex items-center gap-4">
             {/* Gold WhatsApp CTA button */}
             <a
-              href={`https://wa.me/201555592535?text=${encodeURIComponent(locale === 'ar' ? 'أريد الاستفسار عن ترجمة معتمدة' : 'I would like to inquire about certified translation')}`}
+              href={`https://wa.me/201062990808?text=${encodeURIComponent(locale === 'ar' ? 'أريد الاستفسار عن ترجمة معتمدة' : 'I would like to inquire about certified translation')}`}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-1.5 rounded-xl bg-whatsapp-green text-white px-4 py-2 text-xs font-bold shadow-sm transition-all duration-300 hover:shadow-md animate-pulse-glow"
@@ -156,7 +156,7 @@ export default function Navbar() {
 
             <div className="mt-4 pt-4 border-t border-gray-100">
               <a
-                href={`https://wa.me/201555592535?text=${encodeURIComponent(locale === 'ar' ? 'أريد الاستفسار عن ترجمة معتمدة' : 'I would like to inquire about certified translation')}`}
+                href={`https://wa.me/201062990808?text=${encodeURIComponent(locale === 'ar' ? 'أريد الاستفسار عن ترجمة معتمدة' : 'I would like to inquire about certified translation')}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex w-full items-center justify-center gap-2 rounded-xl bg-whatsapp-green py-3 text-sm font-bold text-white shadow-sm animate-pulse-glow"

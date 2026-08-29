@@ -161,7 +161,7 @@ export default async function CertifiedPage({
                         </td>
                         <td className="px-6 py-4 text-center">
                            <a
-                            href={`https://wa.me/201555592535?text=${encodeURIComponent(
+                            href={`https://wa.me/201062990808?text=${encodeURIComponent(
                               isAr
                                 ? `أريد الاستفسار عن ترجمة: ${doc.name}`
                                 : `I want to inquire about translating: ${doc.name}`

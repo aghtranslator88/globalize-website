@@ -143,7 +143,7 @@ export default async function LanguageDetailPage({
               <div className="mt-6 rounded-2xl bg-whatsapp-green/5 border border-whatsapp-green/20 p-6 text-center">
                 <h4 className="font-bold text-xs text-whatsapp-green mb-2">{isAr ? "طلب تسعير فوري عبر الواتساب" : "Instant Quote on WhatsApp"}</h4>
                 <a
-                  href={`https://wa.me/201555592535?text=${encodeURIComponent(
+                  href={`https://wa.me/201062990808?text=${encodeURIComponent(
                     isAr 
                       ? `أريد الاستفسار عن ترجمة للغة: ${lang.name}`
                       : `I want to inquire about translation into: ${lang.name}`

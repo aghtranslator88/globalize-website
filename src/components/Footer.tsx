@@ -109,11 +109,11 @@ export default function Footer() {
             <ul className="flex flex-col gap-3 text-xs text-gray-300">
               <li className="flex items-center gap-2">
                 <Phone className="h-4 w-4 text-gold flex-shrink-0" />
-                <span dir="ltr">+20 155 559 2535</span>
+                <span dir="ltr">+20 106 299 0808</span>
               </li>
               <li className="flex items-center gap-2">
                 <Phone className="h-4 w-4 text-gold flex-shrink-0" />
-                <span dir="ltr">02 37804005</span>
+                <span dir="ltr">01062990808</span>
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="h-4 w-4 text-gold flex-shrink-0" />
@@ -149,7 +149,7 @@ export default function Footer() {
 
       {/* Floating WhatsApp button at lower right */}
       <a
-        href={`https://wa.me/201555592535?text=${encodeURIComponent(locale === 'ar' ? 'أريد الاستفسار عن ترجمة معتمدة' : 'I would like to inquire about certified translation')}`}
+        href={`https://wa.me/201062990808?text=${encodeURIComponent(locale === 'ar' ? 'أريد الاستفسار عن ترجمة معتمدة' : 'I would like to inquire about certified translation')}`}
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-whatsapp-green text-white shadow-lg transition-transform duration-300 hover:scale-110 active:scale-95 animate-pulse-glow"

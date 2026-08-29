@@ -271,7 +271,7 @@ export default async function EmbassyDetailPage({
                     : "Connect directly with an embassy translation specialist on WhatsApp for immediate answers."}
                 </p>
                 <a
-                  href={`https://wa.me/201555592535?text=${encodeURIComponent(
+                  href={`https://wa.me/201062990808?text=${encodeURIComponent(
                     isAr 
                       ? `أريد الاستفسار عن متطلبات: ${embassy.name}`
                       : `I want to inquire about requirements for: ${embassy.name}`

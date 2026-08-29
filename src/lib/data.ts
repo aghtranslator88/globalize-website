@@ -161,7 +161,7 @@ const MOCK_LANGS = (isAr: boolean): LocalizedLanguage[] => [
 ];
 
 const MOCK_BRANCHES = (isAr: boolean): LocalizedBranch[] => [
-  { id: 'b1', name: isAr ? 'فرع الهرم الرئيسي' : 'Haram Main Branch', slug: 'haram-main-branch', address: isAr ? '6 شارع أيوب، الجيزة' : '6 Ayoub St, Giza', phone: '02 37804005', whatsapp: '+201555592535', workingHours: isAr ? 'السبت - الخميس 9 ص - 9 م' : 'Sat - Thu 9 AM - 9 PM', lat: 29.9886, lng: 31.1856, photoUrl: null, googleMapsUrl: '#' }
+  { id: 'b1', name: isAr ? 'فرع الهرم الرئيسي' : 'Haram Main Branch', slug: 'haram-main-branch', address: isAr ? '6 شارع أيوب، الجيزة' : '6 Ayoub St, Giza', phone: '01062990808', whatsapp: '+20 106 299 0808', workingHours: isAr ? 'السبت - الخميس 9 ص - 9 م' : 'Sat - Thu 9 AM - 9 PM', lat: 29.9886, lng: 31.1856, photoUrl: null, googleMapsUrl: '#' }
 ];
 
 const MOCK_TEAM = (isAr: boolean): LocalizedTeamMember[] => [
@@ -202,16 +202,16 @@ export async function getSiteSettings() {
     // Ensure critical fallbacks exist
     if (!settings.company_name_ar) settings.company_name_ar = 'جلوبالايز جروب';
     if (!settings.company_name_en) settings.company_name_en = 'Globalize Group';
-    if (!settings.whatsapp) settings.whatsapp = '+201555592535';
-    if (!settings.phone) settings.phone = '02 37804005';
+    if (!settings.whatsapp) settings.whatsapp = '+20 106 299 0808';
+    if (!settings.phone) settings.phone = '01062990808';
     if (!settings.email) settings.email = 'info@globalizetl.com';
     return settings;
   } catch (err) {
     return {
       company_name_ar: 'جلوبالايز جروب لأعمال الترجمة المعتمدة',
       company_name_en: 'Globalize Group for Certified Translation',
-      phone: '02 37804005',
-      whatsapp: '+201555592535',
+      phone: '01062990808',
+      whatsapp: '+20 106 299 0808',
       email: 'info@globalizetl.com',
       meta_default_title_ar: 'جلوبالايز جروب — ترجمة معتمدة لدى جميع السفارات والهيئات الحكومية',
       meta_default_title_en: 'Globalize Group — Certified Translation for All Embassies & Gov Entities',

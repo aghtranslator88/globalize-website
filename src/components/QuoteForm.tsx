@@ -143,7 +143,7 @@ export default function QuoteForm({ services = [] }: { services?: ServiceOption[
             className={`w-full rounded-xl border ${
               errors.phone ? "border-red-400 focus:ring-red-200" : "border-gray-200 focus:ring-primary-blue/20"
             } px-4 py-3 text-xs bg-gray-50/50 outline-none focus:bg-white focus:ring-4 transition-all`}
-            placeholder={locale === "ar" ? "مثال: +201555592535" : "e.g., +201555592535"}
+            placeholder={locale === "ar" ? "مثال: +20 106 299 0808" : "e.g., +20 106 299 0808"}
           />
           {errors.phone && <span className="text-[10px] text-red-500 mt-1 block">{errors.phone}</span>}
         </div>

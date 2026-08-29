@@ -221,7 +221,7 @@ export default async function DocumentDetailPage({
                 </div>
                 
                 <a
-                  href={`https://wa.me/201555592535?text=${encodeURIComponent(
+                  href={`https://wa.me/201062990808?text=${encodeURIComponent(
                     isAr 
                       ? `أريد ترجمة شهادة: ${doc.name} بسعر ${doc.priceEGP} ج.م`
                       : `I want to translate: ${doc.name} for ${doc.priceEGP} EGP`

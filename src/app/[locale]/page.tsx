@@ -86,7 +86,7 @@ export default async function HomePage({
                 {isAr ? "اطلب عرض سعر" : "Request a Quote"}
               </Link>
               <a
-                href="https://wa.me/201555592535?text=%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%AA%D8%B1%D8%AC%D9%85%D8%A9%20%D9%85%D8%B9%D8%AA%D9%85%D8%AF%D8%A9"
+                href="https://wa.me/201062990808?text=%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%AA%D8%B1%D8%AC%D9%85%D8%A9%20%D9%85%D8%B9%D8%AA%D9%85%D8%AF%D8%A9"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full sm:w-auto flex items-center justify-center gap-2 rounded-xl bg-whatsapp-green text-white px-8 py-4 text-sm font-bold shadow-md hover:shadow-xl transition-all animate-pulse-glow"
@@ -205,7 +205,7 @@ export default async function HomePage({
 
               {/* WhatsApp Quick Order button */}
               <a
-                href={`https://wa.me/201555592535?text=${encodeURIComponent(
+                href={`https://wa.me/201062990808?text=${encodeURIComponent(
                   isAr
                     ? "أريد طلب ترجمة وثيقة رسمية"
                     : "I would like to order an official document translation"

@@ -214,7 +214,7 @@ export default async function GovEntityDetailPage({
                     : "Send us the originals to guide you through MOFA steps, translate them, and deliver certified."}
                 </p>
                 <a
-                  href={`https://wa.me/201555592535?text=${encodeURIComponent(
+                  href={`https://wa.me/201062990808?text=${encodeURIComponent(
                     isAr 
                       ? `أريد الاستفسار عن توثيقات: ${gov.name}`
                       : `I want to inquire about: ${gov.name} legalizations`
