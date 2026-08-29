@@ -19,50 +19,34 @@ export default async function DashboardPage({
     redirect(`/${locale}/dashboard/login`);
   }
 
-  // Fetch initial data lists for the dashboard
-  const quotes = await prisma.quoteRequest.findMany({
-    orderBy: { createdAt: "desc" },
-  });
+  // Fetch initial data lists for the dashboard with fallback handling
+  let quotes: any[] = [];
+  let docs: any[] = [];
+  let embassies: any[] = [];
+  let govs: any[] = [];
+  let langs: any[] = [];
+  let branches: any[] = [];
+  let team: any[] = [];
+  let reviews: any[] = [];
+  let posts: any[] = [];
+  let faqs: any[] = [];
+  let settings: any[] = [];
 
-  const docs = await prisma.document.findMany({
-    orderBy: { priceEGP: "asc" },
-  });
-
-  const embassies = await prisma.embassy.findMany({
-    orderBy: { nameAr: "asc" },
-  });
-
-  const govs = await prisma.govEntity.findMany({
-    orderBy: { nameAr: "asc" },
-  });
-
-  const langs = await prisma.language.findMany({
-    orderBy: [{ popular: "desc" }, { nameAr: "asc" }],
-  });
-
-  const branches = await prisma.branch.findMany({
-    orderBy: { nameAr: "asc" },
-  });
-
-  const team = await prisma.teamMember.findMany({
-    orderBy: [{ isLeadership: "desc" }, { nameAr: "asc" }],
-  });
-
-  const reviews = await prisma.review.findMany({
-    orderBy: { date: "desc" },
-  });
-
-  const posts = await prisma.blogPost.findMany({
-    orderBy: { publishedAt: "desc" },
-  });
-
-  const faqs = await prisma.fAQ.findMany({
-    orderBy: { sortOrder: "asc" },
-  });
-
-  const settings = await prisma.siteSetting.findMany({
-    orderBy: { key: "asc" },
-  });
+  try {
+    quotes = await prisma.quoteRequest.findMany({ orderBy: { createdAt: "desc" } });
+    docs = await prisma.document.findMany({ orderBy: { priceEGP: "asc" } });
+    embassies = await prisma.embassy.findMany({ orderBy: { nameAr: "asc" } });
+    govs = await prisma.govEntity.findMany({ orderBy: { nameAr: "asc" } });
+    langs = await prisma.language.findMany({ orderBy: [{ popular: "desc" }, { nameAr: "asc" }] });
+    branches = await prisma.branch.findMany({ orderBy: { nameAr: "asc" } });
+    team = await prisma.teamMember.findMany({ orderBy: [{ isLeadership: "desc" }, { nameAr: "asc" }] });
+    reviews = await prisma.review.findMany({ orderBy: { date: "desc" } });
+    posts = await prisma.blogPost.findMany({ orderBy: { publishedAt: "desc" } });
+    faqs = await prisma.fAQ.findMany({ orderBy: { sortOrder: "asc" } });
+    settings = await prisma.siteSetting.findMany({ orderBy: { key: "asc" } });
+  } catch (err) {
+    console.warn("Database offline during dashboard load, using fallback data structures");
+  }
 
   // Serialize models for Next.js App Router Client Component boundary safety
   const serializeList = (list: any[]) =>
