@@ -98,11 +98,31 @@ export default function QuoteForm({ services = [] }: { services?: ServiceOption[
       </p>
 
       {status === "success" && (
-        <div className="mb-6 flex items-start gap-3 rounded-xl bg-green-50 p-4 text-green-800 border border-green-200">
-          <CheckCircle className="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0" />
-          <div>
-            <p className="text-sm font-bold">{locale === "ar" ? "تم بنجاح!" : "Submitted!"}</p>
-            <p className="text-xs mt-1 text-green-700">{t("success")}</p>
+        <div className="mb-6 rounded-xl bg-green-50 p-4 text-green-800 border border-green-200">
+          <div className="flex items-start gap-3">
+            <CheckCircle className="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0" />
+            <div>
+              <p className="text-sm font-bold">{locale === "ar" ? "تم استلام طلبك بنجاح!" : "Request Received Successfully!"}</p>
+              <p className="text-xs mt-1 text-green-700 leading-relaxed">
+                {locale === "ar" 
+                  ? "شكراً لتواصلك مع جلوبالايز جروب. سيقوم ممثل خدمة العملاء بمراجعة تفاصيل طلبك والتواصل معك خلال 15 دقيقة."
+                  : "Thank you for contacting Globalize Group. Our customer representative will review your request and contact you within 15 minutes."}
+              </p>
+            </div>
+          </div>
+          <div className="mt-3 pt-3 border-t border-green-200/60 flex justify-end">
+            <a
+              href={`https://wa.me/201062990808?text=${encodeURIComponent(
+                locale === "ar"
+                  ? "مرحباً، لقد أرسلت طلب عرض سعر عبر الموقع وأود متابعته."
+                  : "Hello, I have submitted a quote request on the website and would like to follow up."
+              )}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-xs font-bold text-whatsapp-green hover:underline"
+            >
+              <span>{locale === "ar" ? "أو تابع طلبك فوراً عبر واتساب ←" : "Or follow up on WhatsApp now →"}</span>
+            </a>
           </div>
         </div>
       )}
