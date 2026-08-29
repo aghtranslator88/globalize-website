@@ -192,7 +192,33 @@ const MOCK_FAQS = (isAr: boolean): LocalizedFAQ[] => [
   { id: 'f1', question: isAr ? 'هل الترجمة معتمدة؟' : 'Is it certified?', answer: isAr ? 'نعم معتمدة رسمياً.' : 'Yes, officially certified.', sortOrder: 1 }
 ];
 
+export function isDatabaseAvailable(): boolean {
+  const url = process.env.DATABASE_URL;
+  if (!url) return false;
+  // If running on Vercel or cloud without external postgres, skip local connection to avoid 15s timeout
+  if (url.includes('localhost') || url.includes('127.0.0.1')) {
+    return false;
+  }
+  return true;
+}
+
+const DEFAULT_SITE_SETTINGS = {
+  company_name_ar: 'جلوبالايز جروب لأعمال الترجمة المعتمدة',
+  company_name_en: 'Globalize Group for Certified Translation',
+  phone: '01062990808',
+  whatsapp: '+20 106 299 0808',
+  email: 'info@globalizetl.com',
+  meta_default_title_ar: 'جلوبالايز جروب — ترجمة معتمدة لدى جميع السفارات والهيئات الحكومية',
+  meta_default_title_en: 'Globalize Group — Certified Translation for All Embassies & Gov Entities',
+  meta_description_ar: 'مكتب ترجمة معتمد رائد في مصر والخليج.',
+  meta_description_en: 'Leading certified translation firm in Egypt and GCC.'
+};
+
 export async function getSiteSettings() {
+  if (!isDatabaseAvailable()) {
+    return DEFAULT_SITE_SETTINGS;
+  }
+
   try {
     const dbSettings = await prisma.siteSetting.findMany();
     const settings: Record<string, string> = {};
@@ -207,22 +233,13 @@ export async function getSiteSettings() {
     if (!settings.email) settings.email = 'info@globalizetl.com';
     return settings;
   } catch (err) {
-    return {
-      company_name_ar: 'جلوبالايز جروب لأعمال الترجمة المعتمدة',
-      company_name_en: 'Globalize Group for Certified Translation',
-      phone: '01062990808',
-      whatsapp: '+20 106 299 0808',
-      email: 'info@globalizetl.com',
-      meta_default_title_ar: 'جلوبالايز جروب — ترجمة معتمدة لدى جميع السفارات والهيئات الحكومية',
-      meta_default_title_en: 'Globalize Group — Certified Translation for All Embassies & Gov Entities',
-      meta_description_ar: 'مكتب ترجمة معتمد رائد في مصر والخليج.',
-      meta_description_en: 'Leading certified translation firm in Egypt and GCC.'
-    };
+    return DEFAULT_SITE_SETTINGS;
   }
 }
 
 export async function getServices(locale: string): Promise<LocalizedService[]> {
   const isAr = locale === 'ar';
+  if (!isDatabaseAvailable()) return MOCK_SERVICES(isAr);
   try {
     const services = await prisma.service.findMany({
       orderBy: { createdAt: 'asc' },
@@ -244,6 +261,7 @@ export async function getServices(locale: string): Promise<LocalizedService[]> {
 
 export async function getServiceBySlug(slug: string, locale: string): Promise<LocalizedService | null> {
   const isAr = locale === 'ar';
+  if (!isDatabaseAvailable()) return MOCK_SERVICES(isAr).find(srv => srv.slug === slug) || null;
   try {
     const s = await prisma.service.findUnique({
       where: { slug },
@@ -265,6 +283,7 @@ export async function getServiceBySlug(slug: string, locale: string): Promise<Lo
 
 export async function getDocuments(locale: string): Promise<LocalizedDocument[]> {
   const isAr = locale === 'ar';
+  if (!isDatabaseAvailable()) return MOCK_DOCS(isAr);
   try {
     const docs = await prisma.document.findMany({
       orderBy: { priceEGP: 'asc' },
@@ -288,6 +307,10 @@ export async function getDocuments(locale: string): Promise<LocalizedDocument[]>
 
 export async function getDocumentBySlug(slug: string, locale: string): Promise<LocalizedDocument & { relatedDocuments: LocalizedDocument[] } | null> {
   const isAr = locale === 'ar';
+  if (!isDatabaseAvailable()) {
+    const doc = MOCK_DOCS(isAr).find(dc => dc.slug === slug);
+    return doc ? { ...doc, relatedDocuments: [] } : null;
+  }
   try {
     const d = await prisma.document.findUnique({
       where: { slug },
@@ -329,6 +352,18 @@ export async function getDocumentBySlug(slug: string, locale: string): Promise<L
 
 export async function getEmbassies(locale: string): Promise<LocalizedEmbassy[]> {
   const isAr = locale === 'ar';
+  if (!isDatabaseAvailable()) {
+    return ALL_EMBASSY_POSTS.map((e) => ({
+      id: e.id,
+      name: e.title,
+      slug: e.slug,
+      countryCode: e.countryCode,
+      region: e.region,
+      requirements: e.requirements,
+      useCases: e.useCases,
+      indexable: e.indexable,
+    }));
+  }
   try {
     const embassies = await prisma.embassy.findMany({
       orderBy: { nameAr: 'asc' },
@@ -371,6 +406,29 @@ export async function getEmbassyBySlug(
     decodedSlug = decodeURIComponent(slug);
   } catch (e) {
     decodedSlug = slug;
+  }
+
+  if (!isDatabaseAvailable()) {
+    const emb = ALL_EMBASSY_POSTS.find((e) => e.slug === decodedSlug || e.slug === slug);
+    if (!emb) return null;
+
+    return {
+      id: emb.id,
+      name: emb.title,
+      slug: emb.slug,
+      countryCode: emb.countryCode,
+      region: emb.region,
+      requirements: emb.requirements,
+      useCases: emb.useCases,
+      indexable: emb.indexable,
+      body: emb.body,
+      faqs: emb.faqs,
+      popularDocuments: [
+        { id: 'doc-1', name: 'شهادة ميلاد معتمدة', slug: 'certified-birth-certificate', priceEGP: 350, deliveryHours: 24, description: 'ترجمة معتمدة لشهادة الميلاد وموثقة', answerBox: 'ترجمة معتمدة مقبولة بالسفارة', sampleImageUrl: null, indexable: true },
+        { id: 'doc-2', name: 'صحيفة حالة جنائية (فيش وتشبيه)', slug: 'criminal-record-cert', priceEGP: 400, deliveryHours: 24, description: 'ترجمة معتمدة لفيش وتشبيه خالي من السوابق', answerBox: 'مقبول رسمياً بسفارات العالم', sampleImageUrl: null, indexable: true },
+        { id: 'doc-3', name: 'كشف حساب بنكي معتمد', slug: 'bank-statement', priceEGP: 450, deliveryHours: 24, description: 'ترجمة معتمدة للحركات البنكية والملاءة المالية', answerBox: 'مقبول لملفات الفيزا والتأشيرات', sampleImageUrl: null, indexable: true }
+      ],
+    };
   }
 
   try {
@@ -431,6 +489,7 @@ export async function getEmbassyBySlug(
 
 export async function getGovEntities(locale: string): Promise<LocalizedGovEntity[]> {
   const isAr = locale === 'ar';
+  if (!isDatabaseAvailable()) return MOCK_GOVS(isAr);
   try {
     const entities = await prisma.govEntity.findMany({
       orderBy: { nameAr: 'asc' },
@@ -451,6 +510,10 @@ export async function getGovEntities(locale: string): Promise<LocalizedGovEntity
 
 export async function getGovEntityBySlug(slug: string, locale: string): Promise<LocalizedGovEntity & { acceptedDocuments: LocalizedDocument[] } | null> {
   const isAr = locale === 'ar';
+  if (!isDatabaseAvailable()) {
+    const gov = MOCK_GOVS(isAr).find(gv => gv.slug === slug);
+    return gov ? { ...gov, acceptedDocuments: [] } : null;
+  }
   try {
     const g = await prisma.govEntity.findUnique({
       where: { slug },
@@ -489,6 +552,7 @@ export async function getGovEntityBySlug(slug: string, locale: string): Promise<
 
 export async function getLanguages(locale: string): Promise<LocalizedLanguage[]> {
   const isAr = locale === 'ar';
+  if (!isDatabaseAvailable()) return MOCK_LANGS(isAr);
   try {
     const languages = await prisma.language.findMany({
       orderBy: [{ popular: 'desc' }, { nameAr: 'asc' }],
@@ -509,6 +573,7 @@ export async function getLanguages(locale: string): Promise<LocalizedLanguage[]>
 
 export async function getLanguageBySlug(slug: string, locale: string): Promise<LocalizedLanguage | null> {
   const isAr = locale === 'ar';
+  if (!isDatabaseAvailable()) return MOCK_LANGS(isAr).find(lang => lang.slug === slug) || null;
   try {
     const l = await prisma.language.findUnique({
       where: { slug },
@@ -529,6 +594,7 @@ export async function getLanguageBySlug(slug: string, locale: string): Promise<L
 
 export async function getBranches(locale: string): Promise<LocalizedBranch[]> {
   const isAr = locale === 'ar';
+  if (!isDatabaseAvailable()) return MOCK_BRANCHES(isAr);
   try {
     const branches = await prisma.branch.findMany({
       orderBy: { nameAr: 'asc' },
@@ -554,6 +620,7 @@ export async function getBranches(locale: string): Promise<LocalizedBranch[]> {
 
 export async function getTeamMembers(locale: string): Promise<LocalizedTeamMember[]> {
   const isAr = locale === 'ar';
+  if (!isDatabaseAvailable()) return MOCK_TEAM(isAr);
   try {
     const team = await prisma.teamMember.findMany({
       orderBy: [{ isLeadership: 'desc' }, { nameAr: 'asc' }],
@@ -577,6 +644,7 @@ export async function getTeamMembers(locale: string): Promise<LocalizedTeamMembe
 
 export async function getReviews(locale: string): Promise<LocalizedReview[]> {
   const isAr = locale === 'ar';
+  if (!isDatabaseAvailable()) return MOCK_REVIEWS(isAr);
   try {
     const reviews = await prisma.review.findMany({
       where: { published: true },
@@ -599,6 +667,31 @@ export async function getReviews(locale: string): Promise<LocalizedReview[]> {
 
 export async function getBlogPosts(locale: string): Promise<LocalizedBlogPost[]> {
   const isAr = locale === 'ar';
+  if (!isDatabaseAvailable()) {
+    return ALL_BLOG_POSTS.map((p) => ({
+      id: p.id,
+      title: p.title,
+      slug: p.slug,
+      excerpt: p.excerpt,
+      body: p.body,
+      category: p.category,
+      featuredImageUrl: p.featuredImageUrl,
+      videoUrl: null,
+      publishedAt: new Date(p.publishedAt),
+      readMinutes: p.readMinutes,
+      author: {
+        id: p.author.id,
+        name: p.author.name,
+        title: p.author.title,
+        languagePair: 'جميع اللغات',
+        yearsExperience: 15,
+        certifications: ['مترجم محلف', 'اعتماد جميع السفارات'],
+        photoUrl: p.author.photoUrl,
+        isLeadership: true,
+        bio: p.author.bio,
+      },
+    }));
+  }
   try {
     const posts = await prisma.blogPost.findMany({
       where: { published: true },
@@ -666,6 +759,35 @@ export async function getBlogPostBySlug(slug: string, locale: string): Promise<L
     decodedSlug = decodeURIComponent(slug);
   } catch (e) {
     decodedSlug = slug;
+  }
+
+  if (!isDatabaseAvailable()) {
+    const p = ALL_BLOG_POSTS.find((pst) => pst.slug === decodedSlug || pst.slug === slug);
+    if (!p) return null;
+
+    return {
+      id: p.id,
+      title: p.title,
+      slug: p.slug,
+      excerpt: p.excerpt,
+      body: p.body,
+      category: p.category,
+      featuredImageUrl: p.featuredImageUrl,
+      videoUrl: null,
+      publishedAt: new Date(p.publishedAt),
+      readMinutes: p.readMinutes,
+      author: {
+        id: p.author.id,
+        name: p.author.name,
+        title: p.author.title,
+        languagePair: 'جميع اللغات',
+        yearsExperience: 15,
+        certifications: ['مترجم محلف', 'اعتماد جميع السفارات'],
+        photoUrl: p.author.photoUrl,
+        isLeadership: true,
+        bio: p.author.bio,
+      },
+    };
   }
 
   try {
@@ -746,6 +868,7 @@ export async function getFAQs(
   locale?: string
 ): Promise<LocalizedFAQ[]> {
   const isAr = !locale || locale === 'ar';
+  if (!isDatabaseAvailable()) return MOCK_FAQS(isAr);
   try {
     const whereClause: any = {};
     
