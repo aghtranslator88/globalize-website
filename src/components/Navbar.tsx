@@ -39,6 +39,7 @@ export default function Navbar() {
           <div className="flex items-center gap-1 rounded-md border border-gray-200 bg-white p-0.5 shadow-sm">
             <button
               onClick={() => switchLocale("ar")}
+              aria-label="تغيير اللغة إلى العربية"
               className={`rounded px-2 py-0.5 text-[10px] font-bold transition-all cursor-pointer ${
                 locale === "ar" ? "bg-primary-blue text-white" : "text-gray-500 hover:text-gray-900"
               }`}
@@ -47,6 +48,7 @@ export default function Navbar() {
             </button>
             <button
               onClick={() => switchLocale("en")}
+              aria-label="Switch language to English"
               className={`rounded px-2 py-0.5 text-[10px] font-bold transition-all cursor-pointer ${
                 locale === "en" ? "bg-primary-blue text-white" : "text-gray-500 hover:text-gray-900"
               }`}
@@ -128,6 +130,7 @@ export default function Navbar() {
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="rounded-lg p-2 text-gray-600 hover:bg-gray-100 hover:text-gray-900 focus:outline-none"
+              aria-label={isOpen ? (locale === 'ar' ? 'إغلاق القائمة الرئيسية' : 'Close navigation menu') : (locale === 'ar' ? 'فتح القائمة الرئيسية' : 'Open navigation menu')}
             >
               {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
