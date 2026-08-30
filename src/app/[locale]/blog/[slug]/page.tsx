@@ -20,7 +20,7 @@ export async function generateMetadata({
   return getSEOHeaders(post.title, post.excerpt, `/blog/${slug}`, true, locale);
 }
 
-// Enhanced Markdown Parser & TOC Generator with Table Support
+// Enhanced Markdown Parser & TOC Generator with Table, Card Steps, and Full Justified Typography
 function parseMarkdown(markdown: string) {
   const headings: { id: string; text: string; level: number }[] = [];
   const lines = markdown.split("\n");
@@ -95,8 +95,8 @@ function parseMarkdown(markdown: string) {
           ${row
             .map(
               (cell, cIdx) =>
-                `<td class="px-5 py-4 text-xs text-gray-700 leading-relaxed ${
-                  cIdx === 0 ? "font-bold text-dark-navy" : ""
+                `<td class="px-5 py-4 text-xs text-gray-700 leading-relaxed [text-align:justify] [text-justify:inter-word] ${
+                  cIdx === 0 ? "font-bold text-dark-navy whitespace-nowrap" : ""
                 }">${inlineFormat(cell)}</td>`
             )
             .join("")}
@@ -111,7 +111,22 @@ function parseMarkdown(markdown: string) {
       }
     }
 
-    // 2. Headings: #, ##, ###
+    // 2. Blockquotes / Alerts (> Quote)
+    if (trimmed.startsWith("> ")) {
+      const quoteLines: string[] = [];
+      while (i < lines.length && lines[i].trim().startsWith(">")) {
+        quoteLines.push(lines[i].trim().replace(/^>\s*/, ""));
+        i++;
+      }
+      const quoteHtml = `
+<div class="my-6 p-5 rounded-2xl bg-amber-500/10 border-r-4 border-amber-500 text-dark-navy font-arabic text-xs sm:text-sm leading-relaxed [text-align:justify] [text-justify:inter-word] shadow-xs">
+  ${inlineFormat(quoteLines.join(" "))}
+</div>`;
+      output.push(quoteHtml);
+      continue;
+    }
+
+    // 3. Headings: #, ##, ###
     const headingMatch = trimmed.match(/^(#{1,6})\s+(.+)$/);
     if (headingMatch) {
       const level = headingMatch[1].length;
@@ -126,46 +141,93 @@ function parseMarkdown(markdown: string) {
 
       const headingClasses =
         level === 2
-          ? "text-lg sm:text-xl font-bold text-dark-navy mt-8 mb-4 border-b border-gray-150 pb-2 font-arabic"
-          : "text-sm sm:text-base font-bold text-dark-navy mt-6 mb-3 font-arabic";
+          ? "text-lg sm:text-xl font-black text-dark-navy mt-10 mb-5 border-b border-gray-150 pb-3 font-arabic"
+          : "text-sm sm:text-base font-bold text-dark-navy mt-7 mb-3 font-arabic";
 
       output.push(`<h${level} id="${id}" class="${headingClasses}">${inlineFormat(rawText)}</h${level}>`);
       i++;
       continue;
     }
 
-    // 3. Numbered List: 1. Item
+    // 4. Numbered List: 1. Item
     if (/^\d+\.\s+/.test(trimmed)) {
-      const listItems: string[] = [];
+      const stepItems: string[] = [];
       while (i < lines.length && /^\d+\.\s+/.test(lines[i].trim())) {
-        listItems.push(lines[i].trim().replace(/^\d+\.\s+/, ""));
+        let stepText = lines[i].trim().replace(/^\d+\.\s+/, "");
         i++;
+        // Collect following lines that belong to this step
+        while (
+          i < lines.length &&
+          lines[i].trim() &&
+          !/^\d+\.\s+/.test(lines[i].trim()) &&
+          !lines[i].trim().startsWith("- ") &&
+          !lines[i].trim().startsWith("* ") &&
+          !lines[i].trim().startsWith("#") &&
+          !lines[i].trim().startsWith("|")
+        ) {
+          stepText += " " + lines[i].trim();
+          i++;
+        }
+        stepItems.push(stepText);
       }
-      const listHtml = `
-<ol class="space-y-3.5 my-6 list-decimal list-inside text-xs sm:text-sm text-gray-700 leading-relaxed font-arabic bg-blue-50/30 p-6 rounded-2xl border border-blue-100/60 shadow-xs">
-  ${listItems.map((item) => `<li class="leading-relaxed pl-1 pr-1">${inlineFormat(item)}</li>`).join("")}
-</ol>`;
-      output.push(listHtml);
+      const stepsHtml = `
+<div class="space-y-3.5 my-7 font-arabic">
+  ${stepItems
+    .map(
+      (item, sIdx) => `
+    <div class="flex items-start gap-4 bg-gradient-to-r from-blue-50/60 to-slate-50/50 hover:from-blue-50 p-4 sm:p-5 rounded-2xl border border-blue-100 shadow-xs transition-all">
+      <span class="flex-shrink-0 h-7 w-7 rounded-xl bg-primary-blue text-white flex items-center justify-center text-xs font-black shadow-xs mt-0.5">${sIdx + 1}</span>
+      <div class="text-xs sm:text-sm text-gray-700 leading-relaxed [text-align:justify] [text-justify:inter-word] flex-1">
+        ${inlineFormat(item)}
+      </div>
+    </div>`
+    )
+    .join("")}
+</div>`;
+      output.push(stepsHtml);
       continue;
     }
 
-    // 4. Bullet List: - Item or * Item
+    // 5. Bullet List: - Item or * Item
     if (trimmed.startsWith("- ") || trimmed.startsWith("* ")) {
       const listItems: string[] = [];
       while (i < lines.length && (lines[i].trim().startsWith("- ") || lines[i].trim().startsWith("* "))) {
-        listItems.push(lines[i].trim().substring(2));
+        let bulletText = lines[i].trim().substring(2);
         i++;
+        while (
+          i < lines.length &&
+          lines[i].trim() &&
+          !lines[i].trim().startsWith("- ") &&
+          !lines[i].trim().startsWith("* ") &&
+          !/^\d+\.\s+/.test(lines[i].trim()) &&
+          !lines[i].trim().startsWith("#") &&
+          !lines[i].trim().startsWith("|")
+        ) {
+          bulletText += " " + lines[i].trim();
+          i++;
+        }
+        listItems.push(bulletText);
       }
       const listHtml = `
-<ul class="space-y-2.5 my-5 list-disc list-inside text-xs sm:text-sm text-gray-600 leading-relaxed font-arabic bg-gray-50/60 p-5 rounded-2xl border border-gray-100 shadow-xs">
-  ${listItems.map((item) => `<li class="leading-relaxed">${inlineFormat(item)}</li>`).join("")}
-</ul>`;
+<div class="space-y-3 my-6 font-arabic">
+  ${listItems
+    .map(
+      (item) => `
+    <div class="flex items-start gap-3.5 bg-gray-50/70 hover:bg-gray-50 p-4 rounded-xl border border-gray-150 shadow-xs transition-all">
+      <span class="flex-shrink-0 h-2.5 w-2.5 rounded-full bg-primary-blue mt-1.5 shadow-xs"></span>
+      <div class="text-xs sm:text-sm text-gray-700 leading-relaxed [text-align:justify] [text-justify:inter-word] flex-1">
+        ${inlineFormat(item)}
+      </div>
+    </div>`
+    )
+    .join("")}
+</div>`;
       output.push(listHtml);
       continue;
     }
 
-    // 5. Normal paragraph
-    output.push(`<p class="text-xs sm:text-sm text-gray-600 leading-relaxed mb-4 font-arabic">${inlineFormat(trimmed)}</p>`);
+    // 6. Normal paragraph (with full text justification - Ctrl + J)
+    output.push(`<p class="text-xs sm:text-sm text-gray-700 leading-relaxed mb-5 font-arabic [text-align:justify] [text-justify:inter-word]">${inlineFormat(trimmed)}</p>`);
     i++;
   }
 
@@ -328,7 +390,7 @@ export default async function BlogPostDetailPage({
 
             {/* Markdown Body Content */}
             <article
-              className="prose max-w-none text-xs sm:text-sm text-gray-600 leading-relaxed font-arabic"
+              className="prose max-w-none text-xs sm:text-sm text-gray-700 leading-relaxed font-arabic [text-align:justify] [text-justify:inter-word]"
               dangerouslySetInnerHTML={{ __html: bodyHtml }}
             />
 
