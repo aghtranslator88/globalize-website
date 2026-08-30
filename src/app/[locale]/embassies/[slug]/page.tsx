@@ -151,7 +151,7 @@ export default async function EmbassyDetailPage({
                           إجابة سريعة وموجزة (GEO Summary)
                         </span>
                         <p className="text-xs sm:text-sm text-dark-navy font-semibold leading-relaxed">
-                          {paragraph.replace(/.*GEO Summary\)/s, '').trim()}
+                          {paragraph.replace(/[\s\S]*GEO Summary\)/, '').trim()}
                         </p>
                       </div>
                     );

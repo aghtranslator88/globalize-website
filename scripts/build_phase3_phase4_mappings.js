@@ -1,0 +1,246 @@
+const fs = require('fs');
+const path = require('path');
+
+const blogContent = fs.readFileSync(path.resolve(__dirname, '..', 'src', 'lib', 'blog-data.ts'), 'utf8');
+const embassiesContent = fs.readFileSync(path.resolve(__dirname, '..', 'src', 'lib', 'embassies-data.ts'), 'utf8');
+
+// Truncation fixer helper on word boundary
+function generateSafeSlug(title) {
+  if (!title) return '';
+  let clean = title
+    .trim()
+    .replace(/[^\w\u0600-\u06FF\s-]/g, '')
+    .replace(/[\s_-]+/g, '-')
+    .replace(/-+/g, '-')
+    .replace(/^-+|-+$/g, '');
+
+  // Strip dangling prepositions at the end
+  const danglingEndRegex = /-(في|من|لدى|مع|ال|عن|إلى|الي|على|علي)$/;
+  while (danglingEndRegex.test(clean)) {
+    clean = clean.replace(danglingEndRegex, '');
+  }
+  return clean;
+}
+
+// 1. Truncated Embassy Slugs Mapping
+const embassyTruncatedMap = [
+  {
+    oldSlug: 'افضل-مترجم-ايطالي-معتمد-من-السفارة-الا',
+    newSlug: 'افضل-مترجم-ايطالي-معتمد-من-السفارة-الايطالية',
+    title: 'أفضل مترجم إيطالي معتمد من السفارة الإيطالية',
+    section: 'embassies',
+    reason: 'Truncated mid-word at 40 chars'
+  },
+  {
+    oldSlug: 'مكتب-ترجمة-معتمد-من-السفارة-الاوكراني',
+    newSlug: 'مكتب-ترجمة-معتمد-من-السفارة-الاوكرانية',
+    title: 'مكتب ترجمة معتمد من السفارة الأوكرانية',
+    section: 'embassies',
+    reason: 'Truncated mid-word at 40 chars'
+  },
+  {
+    oldSlug: 'مكتب-ترجمة-معتمد-من-السفارة-سان-بيار-مي',
+    newSlug: 'مكتب-ترجمة-معتمد-من-السفارة-سان-بيار-وميكلون',
+    title: 'مكتب ترجمة معتمد من سفارة سان بيار وميكلون',
+    section: 'embassies',
+    reason: 'Truncated mid-word at 40 chars'
+  },
+  {
+    oldSlug: 'مكتب-ترجمة-معتمد-لدى-سفارة-الولايات-ال',
+    newSlug: 'مكتب-ترجمة-معتمد-لدى-سفارة-الولايات-المتحدة',
+    title: 'مكتب ترجمة معتمد لدى سفارة الولايات المتحدة',
+    section: 'embassies',
+    reason: 'Truncated mid-word at 40 chars'
+  },
+  {
+    oldSlug: 'مكتب-ترجمة-معتمد-من-سفارة-جزر-الأنتيل-ا',
+    newSlug: 'مكتب-ترجمة-معتمد-من-سفارة-جزر-الأنتيل-الهولندية',
+    title: 'مكتب ترجمة معتمد من سفارة جزر الأنتيل الهولندية',
+    section: 'embassies',
+    reason: 'Truncated mid-word at 40 chars'
+  },
+  {
+    oldSlug: 'مكتب-ترجمة-معتمد-من-سفارة-منغوليا-في-ال',
+    newSlug: 'مكتب-ترجمة-معتمد-من-سفارة-منغوليا',
+    title: 'مكتب ترجمة معتمد من سفارة منغوليا',
+    section: 'embassies',
+    reason: 'Dangling preposition "في-ال" at end of slug'
+  },
+  {
+    oldSlug: 'مكتب-ترجمة-معتمد-من-سفارة-كاليدونيا',
+    newSlug: 'مكتب-ترجمة-معتمد-من-سفارة-كاليدونيا-الجديدة',
+    title: 'مكتب ترجمة معتمد من سفارة كاليدونيا الجديدة',
+    section: 'embassies',
+    reason: 'Truncated country name'
+  },
+  {
+    oldSlug: 'مكتب-ترجمة-فيا-ترنسليشن-سفارة-الجبل',
+    newSlug: 'مكتب-ترجمة-معتمد-سفارة-الجبل-الأسود',
+    title: 'مكتب ترجمة معتمد سفارة الجبل الأسود',
+    section: 'embassies',
+    reason: 'Competitor legacy brand & truncated name'
+  },
+  {
+    oldSlug: 'مكتب-ترجمة-فيا-ترنسليشن-سفارة-المملكة',
+    newSlug: 'مكتب-ترجمة-معتمد-سفارة-المملكة-المتحدة',
+    title: 'مكتب ترجمة معتمد سفارة المملكة المتحدة',
+    section: 'embassies',
+    reason: 'Competitor legacy brand & truncated name'
+  },
+  {
+    oldSlug: 'مكتب-ترجمة-معتمدة-من-السفارة-الامريكي',
+    newSlug: 'مكتب-ترجمة-معتمد-من-السفارة-الامريكية',
+    title: 'مكتب ترجمة معتمد من السفارة الأمريكية',
+    section: 'embassies',
+    reason: 'Truncated mid-word at 40 chars'
+  },
+  {
+    oldSlug: 'مكتب-ترجمة-معتمد-لدى-السفارات-والجهات',
+    newSlug: 'مكتب-ترجمة-معتمد-لدى-السفارات-والجهات-الحكومية',
+    title: 'مكتب ترجمة معتمد لدى السفارات والجهات الحكومية',
+    section: 'embassies',
+    reason: 'Truncated title'
+  },
+  {
+    oldSlug: 'قائمة-المترجمين-المعتمدين-من-السفارة',
+    newSlug: 'قائمة-المترجمين-المعتمدين-من-السفارات',
+    title: 'قائمة المترجمين المعتمدين من السفارات',
+    section: 'embassies',
+    reason: 'Truncated title'
+  },
+  // Typo duplicate pair in embassies:
+  {
+    oldSlug: 'مكتب-ترجمة-معتمد-من-السفارة-اليبانية',
+    newSlug: 'مكتب-ترجمة-معتمد-من-السفارة-اليابانية',
+    title: 'مكتب ترجمة معتمد من السفارة اليابانية',
+    section: 'embassies',
+    reason: 'Typo in country name (اليبانية -> اليابانية)'
+  }
+];
+
+// 2. Truncated & Mangled Blog Slugs Mapping
+const blogTruncatedMap = [
+  {
+    oldSlug: 'أفضل-مترجم-معتمد-في-دبي-والشرق-الأوسط-في-مع',
+    newSlug: 'أفضل-مترجم-معتمد-في-دبي-والشرق-الأوسط',
+    title: 'أفضل مترجم معتمد في دبي والشرق الأوسط',
+    section: 'blog',
+    reason: 'Dangling preposition "في-مع" at end of slug'
+  },
+  {
+    oldSlug: 'أفضل-مكتب-ترجمة-معتمد-في-الشرق-الأوسط-في',
+    newSlug: 'أفضل-مكتب-ترجمة-معتمد-في-الشرق-الأوسط',
+    title: 'أفضل مكتب ترجمة معتمد في الشرق الأوسط',
+    section: 'blog',
+    reason: 'Dangling preposition "في" at end of slug'
+  },
+  {
+    oldSlug: 'إيجار-سماعات-وشاشات-وكافة-معدات-الترجمة-الفورية-في',
+    newSlug: 'إيجار-سماعات-وشاشات-ومعدات-الترجمة-الفورية',
+    title: 'إيجار سماعات وشاشات ومعدات الترجمة الفورية',
+    section: 'blog',
+    reason: 'Dangling preposition "في" at end of slug'
+  },
+  {
+    oldSlug: 'جلوباليز-جروب-للترجمة-المعتمدة-أفضل-مكتب-ترجمة-فورية-في',
+    newSlug: 'جلوباليز-جروب-أفضل-مكتب-ترجمة-فورية',
+    title: 'جلوباليز جروب أفضل مكتب ترجمة فورية',
+    section: 'blog',
+    reason: 'Dangling preposition "في" at end of slug'
+  },
+  {
+    oldSlug: 'حجز-موعد-سفارة-المانيا-في-خدمات-الترجمة-المعتمدة',
+    newSlug: 'حجز-موعد-سفارة-المانيا-للترجمة-المعتمدة',
+    title: 'حجز موعد سفارة ألمانيا للترجمة المعتمدة',
+    section: 'blog',
+    reason: 'Mangled boilerplate keyword insertion'
+  },
+  {
+    oldSlug: 'مكتب-ترجمة-معتمد-في-رمسيس-والقاهرة-وجمهورية-مصر-العربية',
+    newSlug: 'مكتب-ترجمة-معتمد-في-رمسيس-والقاهرة',
+    title: 'مكتب ترجمة معتمد في رمسيس والقاهرة',
+    section: 'blog',
+    reason: 'Keyword stuffing / overly long slug'
+  },
+  // Mixed English/Arabic mangled slugs:
+  {
+    oldSlug: 'services-في-خدمات-الترجمة-المعتمدة',
+    newSlug: 'خدمات-الترجمة-المعتمدة-الشاملة',
+    title: 'خدمات الترجمة المعتمدة الشاملة',
+    section: 'blog',
+    reason: 'Mangled machine slug mixing "services" with Arabic'
+  },
+  {
+    oldSlug: 'about-us-في-خدمات-الترجمة-المعتمدة',
+    newSlug: 'عن-جلوباليز-جروب-للترجمة-المعتمدة',
+    title: 'عن جلوباليز جروب للترجمة المعتمدة',
+    section: 'blog',
+    reason: 'Mangled machine slug mixing "about-us" with Arabic'
+  },
+  {
+    oldSlug: 'contact-us-في-خدمات-الترجمة-المعتمدة',
+    newSlug: 'تواصل-مع-مكتب-ترجمة-معتمد',
+    title: 'تواصل مع مكتب ترجمة معتمد',
+    section: 'blog',
+    reason: 'Mangled machine slug mixing "contact-us" with Arabic'
+  },
+  {
+    oldSlug: 'quotes-delivery-في-خدمات-الترجمة-المعتمدة',
+    newSlug: 'أسعار-وتسليم-الترجمة-المعتمدة',
+    title: 'أسعار وتسليم الترجمة المعتمدة',
+    section: 'blog',
+    reason: 'Mangled machine slug mixing "quotes-delivery" with Arabic'
+  },
+  {
+    oldSlug: 'transcription-في-خدمات-الترجمة-المعتمدة',
+    newSlug: 'خدمات-التفريغ-الصوتي-والترجمة',
+    title: 'خدمات التفريغ الصوتي والترجمة المعتمدة',
+    section: 'blog',
+    reason: 'Mangled machine slug mixing "transcription" with Arabic'
+  },
+  {
+    oldSlug: 'content-writing-في-خدمات-الترجمة-المعتمدة',
+    newSlug: 'خدمات-صناعة-المحتوى-والترجمة',
+    title: 'خدمات صناعة المحتوى والترجمة',
+    section: 'blog',
+    reason: 'Mangled machine slug mixing "content-writing" with Arabic'
+  },
+  {
+    oldSlug: 'e-الدفع-الإلكتروني-في-خدمات-الترجمة-المعتمدة',
+    newSlug: 'طرق-الدفع-الإلكتروني-للترجمة',
+    title: 'طرق الدفع الإلكتروني للترجمة',
+    section: 'blog',
+    reason: 'Mangled machine slug mixing "e-" prefix with Arabic'
+  },
+  {
+    oldSlug: 'medical-ترجمة',
+    newSlug: 'الترجمة-الطبية-المعتمدة',
+    title: 'الترجمة الطبية المعتمدة للتقارير والتحاليل',
+    section: 'blog',
+    reason: 'Mangled machine slug mixing "medical" with Arabic'
+  },
+  {
+    oldSlug: 'جلوباليز-جروب-للترجمة-المعتمدة-is-translation',
+    newSlug: 'معايير-الترجمة-المعتمدة-جلوباليز-جروب',
+    title: 'معايير الترجمة المعتمدة لدى جلوباليز جروب',
+    section: 'blog',
+    reason: 'Mangled machine slug mixing English "is-translation" with Arabic'
+  }
+];
+
+// 3. Duplicate Numbers Map (-2, -3, -4, -5)
+const duplicatesMap = [
+  { oldSlug: 'مكتب-ترجمة-معتمد-2', newSlug: 'مكتب-ترجمة-معتمد', section: 'blog', reason: 'Duplicate numbered slug' },
+  { oldSlug: 'مكتب-ترجمة-معتمد-3', newSlug: 'مكتب-ترجمة-معتمد', section: 'blog', reason: 'Duplicate numbered slug' },
+  { oldSlug: 'مكتب-ترجمة-معتمد-4', newSlug: 'مكتب-ترجمة-معتمد', section: 'blog', reason: 'Duplicate numbered slug' },
+  { oldSlug: 'مكتب-ترجمة-معتمد-5', newSlug: 'مكتب-ترجمة-معتمد', section: 'blog', reason: 'Duplicate numbered slug' },
+  { oldSlug: 'ترجمة-معتمدة-2', newSlug: 'ترجمة-معتمدة', section: 'blog', reason: 'Duplicate numbered slug' },
+  { oldSlug: 'الترجمة-التجارية-2', newSlug: 'الترجمة-التجارية', section: 'blog', reason: 'Duplicate numbered slug' },
+  { oldSlug: 'مكتب-ترجمة-معتمد-من-سفارة-مالطا-2', newSlug: 'مكتب-ترجمة-معتمد-من-سفارة-مالطا', section: 'embassies', reason: 'Duplicate numbered slug' },
+  { oldSlug: 'مكتب-ترجمة-معتمد-من-السفارة-الامريكية-2', newSlug: 'certified-translation-us-embassy-cairo', section: 'embassies', reason: 'Duplicate numbered slug / canonical US embassy page' },
+];
+
+const allMappings = [...embassyTruncatedMap, ...blogTruncatedMap, ...duplicatesMap];
+
+fs.writeFileSync(path.resolve(__dirname, 'phase3_phase4_mapping_table.json'), JSON.stringify(allMappings, null, 2), 'utf8');
+console.log(`Generated ${allMappings.length} total Phase 3 & 4 mappings.`);

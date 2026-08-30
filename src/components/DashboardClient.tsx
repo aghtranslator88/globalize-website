@@ -1063,7 +1063,7 @@ export default function DashboardClient({
                     <>
                       <div>
                         <label className="block font-bold mb-1.5">اسم المترجم (بالعربية)</label>
-                        <input type="text" required value={member => member.nameAr} onChange={(e) => setFormData({...formData, nameAr: e.target.value})} className="w-full rounded-xl border border-gray-200 p-2.5 outline-none" />
+                        <input type="text" required value={formData.nameAr || ""} onChange={(e) => setFormData({...formData, nameAr: e.target.value})} className="w-full rounded-xl border border-gray-200 p-2.5 outline-none" />
                       </div>
                       <div>
                         <label className="block font-bold mb-1.5">المسمى الوظيفي (بالعربية)</label>
@@ -1358,8 +1358,8 @@ export default function DashboardClient({
                         : "bg-red-50 text-red-600 border border-red-200"
                     }`}>
                       {formData.indexable || (activeTab === "posts" && formData.published) 
-                        ? (isAr ? "مفهرس (Indexable) ✓" : "Indexable ✓")
-                        : (isAr ? "غير مفهرس (NoIndex) ✗" : "NoIndex ✗")}
+                        ? (formTab === "ar" ? "مفهرس (Indexable) ✓" : "Indexable ✓")
+                        : (formTab === "ar" ? "غير مفهرس (NoIndex) ✗" : "NoIndex ✗")}
                     </span>
                   </div>
                 </div>

@@ -113,7 +113,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   ALL_EMBASSY_POSTS.forEach((e) => {
     if (!embassySlugs.has(e.slug)) {
       embassySlugs.add(e.slug);
-      const hasEn = isGenuineEnglish(e.name, e.requirements?.join(' '));
+      const hasEn = isGenuineEnglish(e.title, e.requirements?.join(' '));
       addPath(`/embassies/${e.slug}`, undefined, hasEn);
     }
   });
