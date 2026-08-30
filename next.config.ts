@@ -9,6 +9,14 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      // .html duplicate & extension catch-all redirects (Phase 2)
+      { source: '/:locale(ar|en)/embassies/accredited-office-embassy-cyprus.html', destination: '/:locale/embassies/accredited-office-embassy-cyprus', permanent: true },
+      { source: '/:locale(ar|en)/embassies/greek-translation-office-accredited-embassy.html', destination: '/:locale/embassies/greek-translation-office-accredited-embassy', permanent: true },
+      { source: '/:locale(ar|en)/embassies/translation-certified-by-the-turkish-embassy.html', destination: '/:locale/embassies/translation-certified-by-the-turkish-embassy', permanent: true },
+      { source: '/:locale(ar|en)/embassies/translation-italian-embassy.html', destination: '/:locale/embassies/translation-italian-embassy', permanent: true },
+      { source: '/:locale(ar|en)/:path*.html', destination: '/:locale/:path*', permanent: true },
+      { source: '/:path*.html', destination: '/ar/:path*', permanent: true },
+
       // Old home paths
       { source: '/home', destination: '/ar', permanent: true },
       { source: '/home/:path*', destination: '/ar', permanent: true },
