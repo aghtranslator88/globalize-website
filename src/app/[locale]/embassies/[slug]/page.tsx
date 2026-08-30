@@ -164,6 +164,43 @@ export default async function EmbassyDetailPage({
                       </ul>
                     );
                   }
+                  if (paragraph.startsWith('|') && paragraph.includes('\n|')) {
+                    const rows = paragraph.trim().split('\n').map(r => r.trim()).filter(r => r.startsWith('|'));
+                    if (rows.length >= 2) {
+                      const headerRow = rows[0].slice(1, -1).split('|').map(c => c.trim());
+                      let startIndex = 1;
+                      if (rows[1] && rows[1].replace(/[\s\-\|\:]/g, "").length === 0) {
+                        startIndex = 2;
+                      }
+                      const bodyRows = rows.slice(startIndex).map(r => r.slice(1, -1).split('|').map(c => c.trim()));
+                      return (
+                        <div key={idx} className="overflow-x-auto my-6 rounded-2xl border border-gray-200 bg-white shadow-xs">
+                          <table className="min-w-full text-xs text-right border-collapse divide-y divide-gray-200">
+                            <thead className="bg-gray-100/90 text-dark-navy">
+                              <tr>
+                                {headerRow.map((h, hIdx) => (
+                                  <th key={hIdx} className="px-5 py-3.5 text-xs font-bold text-dark-navy font-arabic tracking-wide border-b border-gray-200 text-right">
+                                    {h}
+                                  </th>
+                                ))}
+                              </tr>
+                            </thead>
+                            <tbody className="divide-y divide-gray-100 bg-white font-arabic">
+                              {bodyRows.map((row, rIdx) => (
+                                <tr key={rIdx} className={`hover:bg-blue-50/40 transition-colors ${rIdx % 2 === 1 ? "bg-gray-50/40" : "bg-white"}`}>
+                                  {row.map((cell, cIdx) => (
+                                    <td key={cIdx} className={`px-5 py-4 text-xs text-gray-700 leading-relaxed ${cIdx === 0 ? "font-bold text-dark-navy" : ""}`}>
+                                      {cell}
+                                    </td>
+                                  ))}
+                                </tr>
+                              ))}
+                            </tbody>
+                          </table>
+                        </div>
+                      );
+                    }
+                  }
                   return (
                     <p key={idx} className="text-xs sm:text-sm text-gray-600 leading-relaxed">
                       {paragraph}

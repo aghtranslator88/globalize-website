@@ -20,54 +20,157 @@ export async function generateMetadata({
   return getSEOHeaders(post.title, post.excerpt, `/blog/${slug}`, true, locale);
 }
 
-// Simple Markdown Parser & TOC Generator
+// Enhanced Markdown Parser & TOC Generator with Table Support
 function parseMarkdown(markdown: string) {
   const headings: { id: string; text: string; level: number }[] = [];
   const lines = markdown.split("\n");
-  
-  const htmlLines = lines.map((line) => {
-    const trimmed = line.trim();
-    
-    // Headings matching: ## Title or ### Title
+  const output: string[] = [];
+  let i = 0;
+
+  function inlineFormat(text: string): string {
+    return text
+      .replace(/\*\*(.*?)\*\*/g, "<strong class='font-bold text-dark-navy'>$1</strong>")
+      .replace(/\*(.*?)\*/g, "<em class='italic'>$1</em>")
+      .replace(/\[(.*?)\]\((.*?)\)/g, "<a href='$2' class='text-primary-blue hover:underline font-bold transition-colors' target='_blank' rel='noopener noreferrer'>$1</a>");
+  }
+
+  while (i < lines.length) {
+    const rawLine = lines[i];
+    const trimmed = rawLine.trim();
+
+    if (!trimmed) {
+      i++;
+      continue;
+    }
+
+    // 1. Markdown Table Check (starts and ends with | or contains | separators)
+    if (trimmed.startsWith("|") && trimmed.endsWith("|")) {
+      const tableLines: string[] = [];
+      while (i < lines.length && lines[i].trim().startsWith("|") && lines[i].trim().endsWith("|")) {
+        tableLines.push(lines[i].trim());
+        i++;
+      }
+
+      if (tableLines.length >= 2) {
+        const headerRow = tableLines[0]
+          .slice(1, -1)
+          .split("|")
+          .map((c) => c.trim());
+
+        // Check if row 1 is delimiter row e.g. |---|---|---|
+        let startIndex = 1;
+        if (tableLines[1] && tableLines[1].replace(/[\s\-\|\:]/g, "").length === 0) {
+          startIndex = 2;
+        }
+
+        const bodyRows = tableLines.slice(startIndex).map((rowStr) =>
+          rowStr
+            .slice(1, -1)
+            .split("|")
+            .map((c) => c.trim())
+        );
+
+        let tableHtml = `
+<div class="overflow-x-auto my-8 rounded-2xl border border-gray-200 bg-white shadow-xs">
+  <table class="min-w-full text-xs text-right border-collapse divide-y divide-gray-200">
+    <thead class="bg-gray-100/90 text-dark-navy">
+      <tr>
+        ${headerRow
+          .map(
+            (h) =>
+              `<th class="px-5 py-3.5 text-xs font-bold text-dark-navy font-arabic tracking-wide border-b border-gray-200 text-right">${inlineFormat(
+                h
+              )}</th>`
+          )
+          .join("")}
+      </tr>
+    </thead>
+    <tbody class="divide-y divide-gray-100 bg-white font-arabic">
+      ${bodyRows
+        .map(
+          (row, rIdx) => `
+        <tr class="hover:bg-blue-50/40 transition-colors ${
+          rIdx % 2 === 1 ? "bg-gray-50/40" : "bg-white"
+        }">
+          ${row
+            .map(
+              (cell, cIdx) =>
+                `<td class="px-5 py-4 text-xs text-gray-700 leading-relaxed ${
+                  cIdx === 0 ? "font-bold text-dark-navy" : ""
+                }">${inlineFormat(cell)}</td>`
+            )
+            .join("")}
+        </tr>`
+        )
+        .join("")}
+    </tbody>
+  </table>
+</div>`;
+        output.push(tableHtml);
+        continue;
+      }
+    }
+
+    // 2. Headings: #, ##, ###
     const headingMatch = trimmed.match(/^(#{1,6})\s+(.+)$/);
     if (headingMatch) {
       const level = headingMatch[1].length;
       const rawText = headingMatch[2].trim();
       const text = rawText.replace(/\*\*|__/g, "");
-      // Create slug: support Arabic unicode letters
       const id = text
         .toLowerCase()
         .replace(/[^a-z0-9\u0600-\u06FF]+/g, "-")
         .replace(/^-+|-+$/g, "");
-        
+
       headings.push({ id, text, level });
-      
+
       const headingClasses =
         level === 2
           ? "text-lg sm:text-xl font-bold text-dark-navy mt-8 mb-4 border-b border-gray-150 pb-2 font-arabic"
           : "text-sm sm:text-base font-bold text-dark-navy mt-6 mb-3 font-arabic";
-          
-      return `<h${level} id="${id}" class="${headingClasses}">${rawText}</h${level}>`;
+
+      output.push(`<h${level} id="${id}" class="${headingClasses}">${inlineFormat(rawText)}</h${level}>`);
+      i++;
+      continue;
     }
 
-    // Bold replacement
-    let processed = trimmed.replace(/\*\*(.*?)\*\*/g, "<strong class='font-bold text-dark-navy'>$1</strong>");
-
-    // Bullet points: - item
-    if (processed.startsWith("- ")) {
-      return `<li class="list-disc list-inside text-xs text-gray-600 mb-2 leading-relaxed font-arabic">${processed.substring(2)}</li>`;
+    // 3. Numbered List: 1. Item
+    if (/^\d+\.\s+/.test(trimmed)) {
+      const listItems: string[] = [];
+      while (i < lines.length && /^\d+\.\s+/.test(lines[i].trim())) {
+        listItems.push(lines[i].trim().replace(/^\d+\.\s+/, ""));
+        i++;
+      }
+      const listHtml = `
+<ol class="space-y-3.5 my-6 list-decimal list-inside text-xs sm:text-sm text-gray-700 leading-relaxed font-arabic bg-blue-50/30 p-6 rounded-2xl border border-blue-100/60 shadow-xs">
+  ${listItems.map((item) => `<li class="leading-relaxed pl-1 pr-1">${inlineFormat(item)}</li>`).join("")}
+</ol>`;
+      output.push(listHtml);
+      continue;
     }
 
-    // Paragraph
-    if (processed) {
-      return `<p class="text-xs sm:text-sm text-gray-600 leading-relaxed mb-4 font-arabic">${processed}</p>`;
+    // 4. Bullet List: - Item or * Item
+    if (trimmed.startsWith("- ") || trimmed.startsWith("* ")) {
+      const listItems: string[] = [];
+      while (i < lines.length && (lines[i].trim().startsWith("- ") || lines[i].trim().startsWith("* "))) {
+        listItems.push(lines[i].trim().substring(2));
+        i++;
+      }
+      const listHtml = `
+<ul class="space-y-2.5 my-5 list-disc list-inside text-xs sm:text-sm text-gray-600 leading-relaxed font-arabic bg-gray-50/60 p-5 rounded-2xl border border-gray-100 shadow-xs">
+  ${listItems.map((item) => `<li class="leading-relaxed">${inlineFormat(item)}</li>`).join("")}
+</ul>`;
+      output.push(listHtml);
+      continue;
     }
 
-    return "";
-  });
+    // 5. Normal paragraph
+    output.push(`<p class="text-xs sm:text-sm text-gray-600 leading-relaxed mb-4 font-arabic">${inlineFormat(trimmed)}</p>`);
+    i++;
+  }
 
   return {
-    html: htmlLines.join(""),
+    html: output.join("\n"),
     headings,
   };
 }
