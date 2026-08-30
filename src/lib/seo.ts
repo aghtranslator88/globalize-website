@@ -71,6 +71,14 @@ export function getSEOHeaders(
       description,
       images: [`${SITE_URL}/globalize-og.jpg`],
     },
+    icons: {
+      icon: [
+        { url: '/logo-icon.png', type: 'image/png' },
+        { url: '/favicon.ico', sizes: 'any' },
+      ],
+      shortcut: '/logo-icon.png',
+      apple: '/logo-icon.png',
+    },
   };
 }
 

@@ -20,6 +20,14 @@ const inter = Inter({
 
 export const metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://www.globalizetl.com'),
+  icons: {
+    icon: [
+      { url: '/logo-icon.png', type: 'image/png' },
+      { url: '/favicon.ico', sizes: 'any' },
+    ],
+    shortcut: '/logo-icon.png',
+    apple: '/logo-icon.png',
+  },
 };
 
 export function generateStaticParams() {
