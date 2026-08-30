@@ -130,15 +130,33 @@ export default async function ContactPage({
               
               <div className="space-y-6">
                 {branches.map((b) => (
-                  <div key={b.id} className="space-y-2">
-                    <h4 className="font-bold text-xs text-primary-blue flex items-center gap-1.5 font-arabic">
-                      <Landmark className="h-4 w-4" />
-                      <span>{b.name}</span>
-                    </h4>
+                  <div key={b.id} className="space-y-2 border-b border-gray-100 last:border-0 pb-4 last:pb-0">
+                    <div className="flex items-center justify-between gap-2">
+                      <h4 className="font-bold text-xs text-primary-blue flex items-center gap-1.5 font-arabic">
+                        <Landmark className="h-4 w-4" />
+                        <span>{b.name}</span>
+                      </h4>
+                      <a
+                        href={b.googleMapsUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1 text-[10px] text-primary-blue hover:underline font-bold"
+                      >
+                        <MapPin className="h-3 w-3" />
+                        <span>{isAr ? "الخريطة ↗" : "Maps ↗"}</span>
+                      </a>
+                    </div>
                     <div className="space-y-1.5 text-[11px] text-gray-500 pl-5 pr-5">
                       <div className="flex items-start gap-2">
                         <MapPin className="h-3.5 w-3.5 mt-0.5 flex-shrink-0 text-gray-400" />
-                        <span className="font-arabic">{b.address}</span>
+                        <a
+                          href={b.googleMapsUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="font-arabic hover:text-primary-blue hover:underline transition-colors"
+                        >
+                          {b.address}
+                        </a>
                       </div>
                       <div className="flex items-center gap-2">
                         <Clock className="h-3.5 w-3.5 flex-shrink-0 text-gray-400" />

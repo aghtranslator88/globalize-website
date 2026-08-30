@@ -121,11 +121,16 @@ export default function Footer() {
               </li>
               <li className="flex items-start gap-2">
                 <MapPin className="h-4 w-4 text-gold mt-0.5 flex-shrink-0" />
-                <span>
-                  {locale === 'ar'
-                    ? 'فرع الهرم: 6 شارع أيوب، الجيزة'
-                    : 'Haram Branch: 6 Ayoub St., Giza, Egypt'}
-                </span>
+                <div>
+                  <span className="block font-medium">
+                    {locale === 'ar'
+                      ? 'المقر الرئيسي: 1 ش جامعة القاهرة، الجيزة'
+                      : 'Head Office: 1 Cairo Univ. St., Giza'}
+                  </span>
+                  <Link href="/branches" className="text-[11px] text-gold hover:underline mt-0.5 inline-block">
+                    {locale === 'ar' ? 'عرض فروعنا الأربعة (الدقي، الهرم، مصر الجديدة) ↗' : 'View all 4 branches (Dokki, Haram, Heliopolis) ↗'}
+                  </Link>
+                </div>
               </li>
             </ul>
           </div>

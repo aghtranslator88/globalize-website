@@ -100,28 +100,51 @@ export default async function BranchesPage({
               className="rounded-2xl border border-gray-150 bg-white overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
             >
               <div className="p-6 sm:p-8 space-y-6">
-                <div className="flex items-center gap-3">
-                  <div className="h-10 w-10 rounded-xl bg-primary-blue/10 text-primary-blue flex items-center justify-center flex-shrink-0">
-                    <Landmark className="h-5 w-5" />
+                <div className="flex items-center justify-between gap-3">
+                  <div className="flex items-center gap-3">
+                    <div className="h-11 w-11 rounded-xl bg-primary-blue/10 text-primary-blue flex items-center justify-center flex-shrink-0">
+                      <Landmark className="h-6 w-6" />
+                    </div>
+                    <h2 className="text-lg font-bold text-dark-navy font-arabic">
+                      {b.name}
+                    </h2>
                   </div>
-                  <h2 className="text-lg font-bold text-dark-navy font-arabic">
-                    {b.name}
-                  </h2>
+                  <a
+                    href={b.googleMapsUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-blue-50 hover:bg-blue-100 text-primary-blue text-[11px] font-bold transition-colors"
+                  >
+                    <MapPin className="h-3.5 w-3.5" />
+                    <span>{isAr ? "Google Maps" : "Google Maps"}</span>
+                  </a>
                 </div>
 
                 <div className="space-y-3.5 text-xs text-gray-600">
                   <div className="flex items-start gap-3">
                     <MapPin className="h-4.5 w-4.5 text-primary-blue mt-0.5 flex-shrink-0" />
-                    <p className="leading-relaxed font-arabic">{b.address}</p>
+                    <a
+                      href={b.googleMapsUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="leading-relaxed font-arabic hover:text-primary-blue hover:underline transition-colors"
+                      title={isAr ? "افتح الموقع في خرائط جوجل" : "Open location in Google Maps"}
+                    >
+                      {b.address}
+                    </a>
                   </div>
                   <div className="flex items-center gap-3">
                     <Phone className="h-4.5 w-4.5 text-primary-blue flex-shrink-0" />
-                    <span dir="ltr">{b.phone}</span>
+                    <a href={`tel:${b.phone}`} className="hover:text-primary-blue hover:underline" dir="ltr">
+                      {b.phone}
+                    </a>
                   </div>
                   <div className="flex items-center gap-3">
                     <Phone className="h-4.5 w-4.5 text-whatsapp-green flex-shrink-0" />
                     <a
-                      href={`https://wa.me/${b.whatsapp.replace("+", "")}`}
+                      href={`https://wa.me/${b.whatsapp.replace(/[^0-9]/g, "")}?text=${encodeURIComponent(
+                        isAr ? `مرحباً، أود الاستفسار عن زيارة ${b.name}` : `Hello, I'd like to inquire about visiting ${b.name}`
+                      )}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="hover:underline text-whatsapp-green font-bold"
@@ -136,23 +159,42 @@ export default async function BranchesPage({
                 </div>
               </div>
 
-              {/* Map Embed Placeholder */}
-              <div className="h-52 bg-gray-100 relative border-t border-gray-100 flex items-center justify-center text-center p-4">
-                <div className="space-y-2">
-                  <MapPin className="h-8 w-8 text-primary-blue/60 mx-auto" />
-                  <p className="text-[10px] text-gray-500 font-bold">
-                    {isAr ? "موقع الخريطة الجغرافي" : "Geographic Map Coordinates"}
-                  </p>
-                  <p className="text-[9px] text-gray-400 font-medium">
-                    Lat: {b.lat} | Lng: {b.lng}
-                  </p>
+              {/* Interactive Google Map Box & Direct Link */}
+              <div className="bg-gray-50 border-t border-gray-150 p-4 space-y-3">
+                <div className="w-full h-44 rounded-xl overflow-hidden border border-gray-200 shadow-inner relative bg-gray-100">
+                  <iframe
+                    title={`Google Map - ${b.name}`}
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    loading="lazy"
+                    allowFullScreen
+                    referrerPolicy="no-referrer-when-downgrade"
+                    src={`https://maps.google.com/maps?q=${b.lat},${b.lng}&hl=${locale}&z=15&output=embed`}
+                  />
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1">
                   <a
                     href={b.googleMapsUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-block text-[10px] text-primary-blue hover:underline font-bold mt-2"
+                    className="flex items-center justify-center gap-2 rounded-xl bg-primary-blue hover:bg-blue-800 text-white py-2.5 px-4 text-xs font-bold shadow-xs hover:shadow-md transition-all text-center"
                   >
-                    {isAr ? "افتح في خرائط جوجل ↗" : "Open in Google Maps ↗"}
+                    <MapPin className="h-3.5 w-3.5" />
+                    <span>{isAr ? "فتح في خرائط Google ↗" : "Open in Google Maps ↗"}</span>
+                  </a>
+
+                  <a
+                    href={`https://wa.me/${b.whatsapp.replace(/[^0-9]/g, "")}?text=${encodeURIComponent(
+                      isAr ? `أريد الاستفسار عن ترجمة أوراق في ${b.name}` : `I want to translate documents at ${b.name}`
+                    )}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center gap-2 rounded-xl bg-whatsapp-green hover:bg-emerald-600 text-white py-2.5 px-4 text-xs font-bold shadow-xs hover:shadow-md transition-all text-center"
+                  >
+                    <Phone className="h-3.5 w-3.5" />
+                    <span>{isAr ? "تواصل مع الفرع واتساب" : "WhatsApp This Branch"}</span>
                   </a>
                 </div>
               </div>

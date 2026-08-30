@@ -247,7 +247,58 @@ const MOCK_LANGS = (isAr: boolean): LocalizedLanguage[] => [
 ];
 
 const MOCK_BRANCHES = (isAr: boolean): LocalizedBranch[] => [
-  { id: 'b1', name: isAr ? 'فرع الهرم الرئيسي' : 'Haram Main Branch', slug: 'haram-main-branch', address: isAr ? '6 شارع أيوب، الجيزة' : '6 Ayoub St, Giza', phone: '01062990808', whatsapp: '+20 106 299 0808', workingHours: isAr ? 'السبت - الخميس 9 ص - 9 م' : 'Sat - Thu 9 AM - 9 PM', lat: 29.9886, lng: 31.1856, photoUrl: null, googleMapsUrl: '#' }
+  {
+    id: 'b1',
+    name: isAr ? 'الجيزة – المقر الرئيسي' : 'Giza – Head Office',
+    slug: 'giza-headquarters',
+    address: isAr ? '1 شارع جامعة القاهرة، مكتب 29، الدور الثامن، أعلى عمر أفندي، الجيزة.' : '1 Cairo University St., Office 29, 8th Floor, Above Omar Effendi, Giza, Egypt.',
+    phone: '01062990808',
+    whatsapp: '+20 106 299 0808',
+    workingHours: isAr ? 'السبت - الخميس: 9:00 ص - 9:00 م' : 'Saturday - Thursday: 9:00 AM - 9:00 PM',
+    lat: 30.0131,
+    lng: 31.2089,
+    photoUrl: null,
+    googleMapsUrl: 'https://maps.google.com/?q=1+Cairo+University+St,+Giza,+Egypt+Globalize+Group'
+  },
+  {
+    id: 'b2',
+    name: isAr ? 'الدقي – الجيزة' : 'Dokki Branch – Giza',
+    slug: 'dokki-branch',
+    address: isAr ? '2 ب شارع عكاشة، الدور الخامس، بجوار مأمورية الشهر العقاري، الدقي، الجيزة.' : '2B Okasha St., 5th Floor, Next to Real Estate Registry Office, Dokki, Giza, Egypt.',
+    phone: '01062990808',
+    whatsapp: '+20 106 299 0808',
+    workingHours: isAr ? 'السبت - الخميس: 9:00 ص - 9:00 م' : 'Saturday - Thursday: 9:00 AM - 9:00 PM',
+    lat: 30.0385,
+    lng: 31.2123,
+    photoUrl: null,
+    googleMapsUrl: 'https://maps.google.com/?q=2B+Okasha+St,+Dokki,+Giza,+Egypt+Globalize+Group'
+  },
+  {
+    id: 'b3',
+    name: isAr ? 'الهرم – الجيزة' : 'Haram Branch – Giza',
+    slug: 'haram-branch',
+    address: isAr ? '6 شارع أيوب، متفرع من شارع الهرم، بجوار كايرو مول، الهرم، الجيزة.' : '6 Ayoub St., Off Haram St., Next to Cairo Mall, Haram, Giza, Egypt.',
+    phone: '01062990808',
+    whatsapp: '+20 106 299 0808',
+    workingHours: isAr ? 'السبت - الخميس: 9:00 ص - 9:00 م' : 'Saturday - Thursday: 9:00 AM - 9:00 PM',
+    lat: 29.9986,
+    lng: 31.1756,
+    photoUrl: null,
+    googleMapsUrl: 'https://maps.google.com/?q=6+Ayoub+St,+Haram,+Giza,+Egypt+Globalize+Group'
+  },
+  {
+    id: 'b4',
+    name: isAr ? 'صلاح سالم – مصر الجديدة (عمارات العبور)' : 'Salah Salem Branch – Heliopolis (Al-Obour Bldgs)',
+    slug: 'salah-salem-branch',
+    address: isAr ? 'عمارة 31، مكتب 4، عمارات العبور، شارع صلاح سالم، القاهرة.' : 'Building 31, Office 4, Al-Obour Buildings, Salah Salem St., Heliopolis, Cairo, Egypt.',
+    phone: '01062990808',
+    whatsapp: '+20 106 299 0808',
+    workingHours: isAr ? 'السبت - الخميس: 9:00 ص - 9:00 م' : 'Saturday - Thursday: 9:00 AM - 9:00 PM',
+    lat: 30.0732,
+    lng: 31.3115,
+    photoUrl: null,
+    googleMapsUrl: 'https://maps.google.com/?q=Building+31+Al-Obour+Buildings,+Salah+Salem+St,+Cairo,+Egypt+Globalize+Group'
+  }
 ];
 
 const MOCK_TEAM = (isAr: boolean): LocalizedTeamMember[] => [
