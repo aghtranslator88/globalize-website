@@ -13,16 +13,34 @@ export function getSEOHeaders(
   description: string,
   path: string,
   indexable: boolean = true,
-  locale: string = 'ar'
+  locale: string = 'ar',
+  hasEnglishTranslation: boolean = true
 ): Metadata {
   const cleanPath = path ? (path.startsWith('/') ? path : `/${path}`) : '';
-  const canonicalUrl = `${SITE_URL}/${locale}${cleanPath}`;
   const arUrl = `${SITE_URL}/ar${cleanPath}`;
   const enUrl = `${SITE_URL}/en${cleanPath}`;
 
-  const robots = indexable
+  // If locale is 'en' and no genuine English translation exists:
+  // 1. noindex, follow
+  // 2. Cross-canonical to /ar counterpart
+  // 3. Do not declare invalid hreflang
+  const isUntranslatedEn = locale === 'en' && !hasEnglishTranslation;
+  
+  const canonicalUrl = isUntranslatedEn ? arUrl : `${SITE_URL}/${locale}${cleanPath}`;
+
+  const robots = (indexable && !isUntranslatedEn)
     ? { index: true, follow: true }
-    : { index: false, follow: false };
+    : { index: false, follow: true };
+
+  // Hreflang alternates: If no English translation exists, hreflang must NOT point to noindex /en
+  const languages: Record<string, string> = {
+    'ar': arUrl,
+    'x-default': arUrl,
+  };
+
+  if (hasEnglishTranslation) {
+    languages['en'] = enUrl;
+  }
 
   return {
     title,
@@ -30,11 +48,7 @@ export function getSEOHeaders(
     robots,
     alternates: {
       canonical: canonicalUrl,
-      languages: {
-        'ar': arUrl,
-        'en': enUrl,
-        'x-default': arUrl, // Arabic is the default locale
-      },
+      languages,
     },
     openGraph: {
       title,

@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { setRequestLocale } from "next-intl/server";
 import { getDocumentBySlug, getFAQs } from "@/lib/data";
 import { getSEOHeaders, generateOfferJsonLd, generateFAQJsonLd, generateBreadcrumbJsonLd } from "@/lib/seo";
+import { isGenuineEnglish } from "@/lib/translationDetection";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import QuoteForm from "@/components/QuoteForm";
@@ -17,7 +18,8 @@ export async function generateMetadata({
   const { locale, slug } = await params;
   const doc = await getDocumentBySlug(slug, locale);
   if (!doc) return {};
-  return getSEOHeaders(doc.name, `${doc.name} translation price, speed, and legalization.`, `/documents/${slug}`, doc.indexable, locale);
+  const hasEnglishTranslation = isGenuineEnglish(doc.name, doc.description);
+  return getSEOHeaders(doc.name, `${doc.name} translation price, speed, and legalization.`, `/documents/${slug}`, doc.indexable, locale, hasEnglishTranslation);
 }
 
 export default async function DocumentDetailPage({

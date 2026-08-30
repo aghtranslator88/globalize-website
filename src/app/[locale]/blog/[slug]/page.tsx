@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { setRequestLocale } from "next-intl/server";
 import { getBlogPostBySlug, getRawBlogPostBySlug, getFAQs } from "@/lib/data";
 import { getSEOHeaders, generateArticleJsonLd, generateFAQJsonLd, generateBreadcrumbJsonLd } from "@/lib/seo";
+import { isGenuineEnglish } from "@/lib/translationDetection";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import QuoteForm from "@/components/QuoteForm";
@@ -17,7 +18,8 @@ export async function generateMetadata({
   const { locale, slug } = await params;
   const post = await getBlogPostBySlug(slug, locale);
   if (!post) return {};
-  return getSEOHeaders(post.title, post.excerpt, `/blog/${slug}`, true, locale);
+  const hasEnglishTranslation = isGenuineEnglish(post.title, post.body);
+  return getSEOHeaders(post.title, post.excerpt, `/blog/${slug}`, true, locale, hasEnglishTranslation);
 }
 
 // Enhanced Markdown Parser & TOC Generator with Table, Card Steps, and Full Justified Typography

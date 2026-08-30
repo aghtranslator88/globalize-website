@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { setRequestLocale } from "next-intl/server";
 import { getEmbassyBySlug, getFAQs } from "@/lib/data";
 import { getSEOHeaders, generateFAQJsonLd, generateBreadcrumbJsonLd } from "@/lib/seo";
+import { isGenuineEnglish } from "@/lib/translationDetection";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import QuoteForm from "@/components/QuoteForm";
@@ -17,7 +18,8 @@ export async function generateMetadata({
   const { locale, slug } = await params;
   const embassy = await getEmbassyBySlug(slug, locale);
   if (!embassy) return {};
-  return getSEOHeaders(embassy.name, `${embassy.name} requirements and certified translation details.`, `/embassies/${slug}`, embassy.indexable, locale);
+  const hasEnglishTranslation = isGenuineEnglish(embassy.name, embassy.requirements?.join(" "));
+  return getSEOHeaders(embassy.name, `${embassy.name} requirements and certified translation details.`, `/embassies/${slug}`, embassy.indexable, locale, hasEnglishTranslation);
 }
 
 export default async function EmbassyDetailPage({

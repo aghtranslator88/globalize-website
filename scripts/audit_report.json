@@ -1,0 +1,1468 @@
+{
+  "totalRoutesScanned": 279,
+  "totalUniqueCategorySlugs": 277,
+  "arabicCount": 183,
+  "mixedCount": 10,
+  "htmlCount": 4,
+  "transliteratedCount": 0,
+  "specialOrFormattingCount": 0,
+  "totalNeedingChange": 199,
+  "totalRemainingUnchanged": 78,
+  "needsChangeDetails": [
+    {
+      "slug": "الترجمة-الاحترافية-والترجمة-المعتمدة-مع-مكتب-ترجمة-معتمد",
+      "category": "Blog",
+      "source": "blog-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "أفضل-مكتب-ترجمة-معتمد-من-سفارة-رومانيا",
+      "category": "Blog",
+      "source": "blog-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "خدمات-الترجمة-المعتمدة",
+      "category": "Blog",
+      "source": "blog-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "أفضل-مكتب-ترجمة-فورية-في-القاهرة",
+      "category": "Blog",
+      "source": "blog-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "ترجمة-مستندات-السياحة-والسفر",
+      "category": "Blog",
+      "source": "blog-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "مكتب-ترجمة-معتمد-القاهرة-مصر",
+      "category": "Blog",
+      "source": "blog-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "services-في-خدمات-الترجمة-المعتمدة",
+      "category": "Blog",
+      "source": "blog-data.ts",
+      "reasons": "Contains Arabic, Mixed Arabic/English, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "ترجمة-تتبعية",
+      "category": "Blog",
+      "source": "blog-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "e-الدفع-الإلكتروني-في-خدمات-الترجمة-المعتمدة",
+      "category": "Blog",
+      "source": "blog-data.ts",
+      "reasons": "Contains Arabic, Mixed Arabic/English, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "الترجمة-المالية-المعتمدة",
+      "category": "Blog",
+      "source": "blog-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "احذر-من-أخطاء-الترجمة",
+      "category": "Blog",
+      "source": "blog-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "ما-أفضل-مكتب-ترجمة-فورية-بالإنجليزية-بالسعودية؟",
+      "category": "Blog",
+      "source": "blog-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "ترجمة-معتمدة",
+      "category": "Blog",
+      "source": "blog-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "about-us-في-خدمات-الترجمة-المعتمدة",
+      "category": "Blog",
+      "source": "blog-data.ts",
+      "reasons": "Contains Arabic, Mixed Arabic/English, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "contact-us-في-خدمات-الترجمة-المعتمدة",
+      "category": "Blog",
+      "source": "blog-data.ts",
+      "reasons": "Contains Arabic, Mixed Arabic/English, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "جلوباليز-جروب-للترجمة-المعتمدة",
+      "category": "Blog",
+      "source": "blog-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "جلوباليز-جروب-للترجمة-المعتمدة-company-translation-services",
+      "category": "Blog",
+      "source": "blog-data.ts",
+      "reasons": "Contains Arabic, Mixed Arabic/English, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "ترجمة-المجال-الأدبي",
+      "category": "Blog",
+      "source": "blog-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "ترجمة-المجال-التقني",
+      "category": "Blog",
+      "source": "blog-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "تدريب-الشركات-في-خدمات-الترجمة-المعتمدة",
+      "category": "Blog",
+      "source": "blog-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "مترجم-برتغالي",
+      "category": "Blog",
+      "source": "blog-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "ترجمة",
+      "category": "Blog",
+      "source": "blog-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "مكتب-ترجمة-معتمد-من-السفارة-الالمانية",
+      "category": "Blog",
+      "source": "blog-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "الترجمة-الطبية",
+      "category": "Blog",
+      "source": "blog-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "ترجمة-معتمدة-2",
+      "category": "Blog",
+      "source": "blog-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "مكتب-ترجمة-معتمد-من-السفارة-البريطانية",
+      "category": "Blog",
+      "source": "blog-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "إيجار-سماعات-وشاشات-وكافة-معدات-الترجمة-الفورية-في",
+      "category": "Blog",
+      "source": "blog-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "إدفع-اون-لاين-في-خدمات-الترجمة-المعتمدة",
+      "category": "Blog",
+      "source": "blog-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "quotes-delivery-في-خدمات-الترجمة-المعتمدة",
+      "category": "Blog",
+      "source": "blog-data.ts",
+      "reasons": "Contains Arabic, Mixed Arabic/English, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "الأسعار-والتسليم-في-خدمات-الترجمة-المعتمدة",
+      "category": "Blog",
+      "source": "blog-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "الترجمة-الفورية",
+      "category": "Blog",
+      "source": "blog-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "ترجمة-ورش-العمل",
+      "category": "Blog",
+      "source": "blog-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "مكتب-ترجمة-طبية-في-القاهرة",
+      "category": "Blog",
+      "source": "blog-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "مكتب-ترجمة-فورية-معتمد-من-السفارة-الامريكية",
+      "category": "Blog",
+      "source": "blog-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "transcription-في-خدمات-الترجمة-المعتمدة",
+      "category": "Blog",
+      "source": "blog-data.ts",
+      "reasons": "Contains Arabic, Mixed Arabic/English, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "مترجم-فيديو-على-اللغة-العربية",
+      "category": "Blog",
+      "source": "blog-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "أخلاقيات-الترجمة",
+      "category": "Blog",
+      "source": "blog-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "الأسعار-والتسليم-مكتب-ترجمة-معتمدة",
+      "category": "Blog",
+      "source": "blog-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "الترجمة-التجارية",
+      "category": "Blog",
+      "source": "blog-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "جلوباليز-جروب-للترجمة-المعتمدة-للترجمة-المعتمدة",
+      "category": "Blog",
+      "source": "blog-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "ترجمة-جواز-السفر",
+      "category": "Blog",
+      "source": "blog-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "ترجمة-عقد-الزواج",
+      "category": "Blog",
+      "source": "blog-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "خدمة-ترجمة-دينية",
+      "category": "Blog",
+      "source": "blog-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "مكتب-ترجمة-معتمد",
+      "category": "Blog",
+      "source": "blog-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "ترجمة-فورية",
+      "category": "Blog",
+      "source": "blog-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "جلوباليز-جروب-للترجمة-المعتمدة-في-خدمات-الترجمة-المعتمدة",
+      "category": "Blog",
+      "source": "blog-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "الترجمة-الابداعية",
+      "category": "Blog",
+      "source": "blog-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "الترجمة-التجارية-2",
+      "category": "Blog",
+      "source": "blog-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "ترجمة-ابحاث-علمية",
+      "category": "Blog",
+      "source": "blog-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "ترجمة-جوجل-للنصوص",
+      "category": "Blog",
+      "source": "blog-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "جلوباليز-جروب-للترجمة-المعتمدة-أفضل-شركة-ترجمة-في-دبي",
+      "category": "Blog",
+      "source": "blog-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "شركة-ترجمة-معتمدة",
+      "category": "Blog",
+      "source": "blog-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "مكتب-ترجمة-معتمدة-لدى-جميع-السفارات-جلوباليز-جروب-للترجمة",
+      "category": "Blog",
+      "source": "blog-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "مواقع-ترجمة-الصور",
+      "category": "Blog",
+      "source": "blog-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "ترجمة-نتائج-فحوص-الدم-لوحدات-المتبعة-في-الخارج",
+      "category": "Blog",
+      "source": "blog-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "content-writing-في-خدمات-الترجمة-المعتمدة",
+      "category": "Blog",
+      "source": "blog-data.ts",
+      "reasons": "Contains Arabic, Mixed Arabic/English, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "مكتب-ترجمة-معتمد-في-رمسيس-والقاهرة-وجمهورية-مصر-العربية",
+      "category": "Blog",
+      "source": "blog-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "ترجمان-محلف-في-دبي-في-خدمات-الترجمة-المعتمدة",
+      "category": "Blog",
+      "source": "blog-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "مترجم-قانوني-معتمد",
+      "category": "Blog",
+      "source": "blog-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "أفضل-مترجم-معتمد-في-دبي-والشرق-الأوسط-في-مع",
+      "category": "Blog",
+      "source": "blog-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "مكتب-ترجمة-معتمد-2",
+      "category": "Blog",
+      "source": "blog-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "مكتب-ترجمة-معتمد-3",
+      "category": "Blog",
+      "source": "blog-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "أفضل-مكتب-ترجمة-معتمد-في-الشرق-الأوسط-في",
+      "category": "Blog",
+      "source": "blog-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "مكتب-ترجمة-معتمد-4",
+      "category": "Blog",
+      "source": "blog-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "شهادة-تحركات-مترجمة",
+      "category": "Blog",
+      "source": "blog-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "مترجم-معتمد",
+      "category": "Blog",
+      "source": "blog-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "الترجمة-النسوية",
+      "category": "Blog",
+      "source": "blog-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "ترجمة-البطاقة-الضريبية-بالإنجليزي",
+      "category": "Blog",
+      "source": "blog-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "اسعار-الترجمة-في-مكه-المكرمة-بالسعودية",
+      "category": "Blog",
+      "source": "blog-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "مكتب-ترجمة-معتمد-5",
+      "category": "Blog",
+      "source": "blog-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "مركز-ترجمة-معتمد",
+      "category": "Blog",
+      "source": "blog-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "جلوباليز-جروب-للترجمة-المعتمدة-is-translation",
+      "category": "Blog",
+      "source": "blog-data.ts",
+      "reasons": "Contains Arabic, Mixed Arabic/English, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "جلوباليز-جروب-للترجمة-المعتمدة-أفضل-مكتب-ترجمة-فورية-في",
+      "category": "Blog",
+      "source": "blog-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "ترجمة-الشعر",
+      "category": "Blog",
+      "source": "blog-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "تاريخ-الهجرة-إلى-كندا-في-خدمات-الترجمة-المعتمدة",
+      "category": "Blog",
+      "source": "blog-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "ترجمة-من-عربي-لإسباني",
+      "category": "Blog",
+      "source": "blog-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "أفضل-مترجم-فوري-في-القاهرة-للترجمة-الفورية-الاحترافية",
+      "category": "Blog",
+      "source": "blog-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "مكتب-ترجمة-تشيكي-عربي",
+      "category": "Blog",
+      "source": "blog-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "مكتب-ترجمة-تقرير-اشعة",
+      "category": "Blog",
+      "source": "blog-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "مكتب-ترجمة-معتمد-من-سفارة-قبرص-لترجمة-الوثائق-والمستندات",
+      "category": "Blog",
+      "source": "blog-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "مكتب-ترجمة-عقود-العمل",
+      "category": "Blog",
+      "source": "blog-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "مكتب-ترجمة-اللغة-السويدية",
+      "category": "Blog",
+      "source": "blog-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "مكتب-ترجمة-لغة-يبانية",
+      "category": "Blog",
+      "source": "blog-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "الخدمات-في-خدمات-الترجمة-المعتمدة",
+      "category": "Blog",
+      "source": "blog-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "مكتب-ترجمة-معتمد-مرخص",
+      "category": "Blog",
+      "source": "blog-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "مهارات-المترجم-الفوري",
+      "category": "Blog",
+      "source": "blog-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "medical-ترجمة",
+      "category": "Blog",
+      "source": "blog-data.ts",
+      "reasons": "Contains Arabic, Mixed Arabic/English, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "أفضل-جهاز-ترجمه-فوري-ما-بين-اللغات-وتأجير-أجهزة",
+      "category": "Blog",
+      "source": "blog-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "ترجمان-محلف-في-أبو-ظبي-في-خدمات-الترجمة-المعتمدة",
+      "category": "Blog",
+      "source": "blog-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "ترجمة-شهادة-البكالوريا",
+      "category": "Blog",
+      "source": "blog-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "حجز-موعد-سفارة-المانيا-في-خدمات-الترجمة-المعتمدة",
+      "category": "Blog",
+      "source": "blog-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "نوفر-للعميل-حقوق-عميل-مكتب-الترجمة",
+      "category": "Blog",
+      "source": "blog-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "مشكلات-تواجه-المترجمين-العرب",
+      "category": "Blog",
+      "source": "blog-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "معيار-الترجمة-المعتمدة",
+      "category": "Blog",
+      "source": "blog-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "مكتب-ترجمة-لغة-هولندية",
+      "category": "Blog",
+      "source": "blog-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "مكتب-ترجمة-معتمد-الخبر",
+      "category": "Blog",
+      "source": "blog-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "التواصل-الفعال-مع-الترجمة-الفورية",
+      "category": "Blog",
+      "source": "blog-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "مكتب-ترجمة-معتمد-من-السفارة-الالمانية-بالقاهرة",
+      "category": "Blog",
+      "source": "blog-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "ترجمة-ورقة-مصورة",
+      "category": "Blog",
+      "source": "blog-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "أحذر-من-الترجمة-اللآلية-في-مواقع-ترجمة",
+      "category": "Blog",
+      "source": "blog-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "accredited-office-embassy-cyprus.html",
+      "category": "Embassy",
+      "source": "embassies-data.ts",
+      "reasons": "Contains .html, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "greek-translation-office-accredited-embassy.html",
+      "category": "Embassy",
+      "source": "embassies-data.ts",
+      "reasons": "Contains .html, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "translation-certified-by-the-turkish-embassy.html",
+      "category": "Embassy",
+      "source": "embassies-data.ts",
+      "reasons": "Contains .html, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "translation-italian-embassy.html",
+      "category": "Embassy",
+      "source": "embassies-data.ts",
+      "reasons": "Contains .html, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "أفضل-مكتب-ترجمة-معتمد-من-سفارة-سويسرا",
+      "category": "Embassy",
+      "source": "embassies-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "افضل-مترجم-ايطالي-معتمد-من-السفارة-الا",
+      "category": "Embassy",
+      "source": "embassies-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "الترجمة-سفارة-المانيا-بالقاهرة",
+      "category": "Embassy",
+      "source": "embassies-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "ترجمة-معتمد-سفارة-سانت-لوسيا",
+      "category": "Embassy",
+      "source": "embassies-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "ترجمة-معتمد-سفارة-فنزويلا",
+      "category": "Embassy",
+      "source": "embassies-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "ترجمه-السفارة-لسفارة-الأردنية",
+      "category": "Embassy",
+      "source": "embassies-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "توثيق-الشهادات-من-السفارة-الصينية",
+      "category": "Embassy",
+      "source": "embassies-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "حجز-مواعيد-تأشيرات-لسفارة-كرواتيا",
+      "category": "Embassy",
+      "source": "embassies-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "حجز-مواعيد-سفارة-البرتغال",
+      "category": "Embassy",
+      "source": "embassies-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "حجز-مواعيد-سفارة-ايطاليا",
+      "category": "Embassy",
+      "source": "embassies-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "حجز-مواعيد-سفارة-بولندا",
+      "category": "Embassy",
+      "source": "embassies-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "حجز-موعد-سفارة-المانيا",
+      "category": "Embassy",
+      "source": "embassies-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "قائمة-المترجمين-المعتمدين-من-السفارة",
+      "category": "Embassy",
+      "source": "embassies-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "مترجم-معتمد-من-السفارة-الانجليزية",
+      "category": "Embassy",
+      "source": "embassies-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "مركز-ترجمة-معتمد-من-السفارة-الهولندية",
+      "category": "Embassy",
+      "source": "embassies-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "مكتب-الترجمة-المعتمد-من-سفارة-السنغال",
+      "category": "Embassy",
+      "source": "embassies-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "مكتب-الترجمة-المعتمد-من-سفارة-ساموا",
+      "category": "Embassy",
+      "source": "embassies-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "مكتب-الترجمة-المعتمد-من-سفارة-سورينام",
+      "category": "Embassy",
+      "source": "embassies-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "مكتب-الترجمة-المعتمد-من-سفارة-نيبال",
+      "category": "Embassy",
+      "source": "embassies-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "مكتب-ترجمة-السفارة-الامريكية",
+      "category": "Embassy",
+      "source": "embassies-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "مكتب-ترجمة-سفارة-سانت-كيتس-ونيفيس",
+      "category": "Embassy",
+      "source": "embassies-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "مكتب-ترجمة-سفارة-قبرص",
+      "category": "Embassy",
+      "source": "embassies-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "مكتب-ترجمة-فيا-ترنسلشن-سفارة-المانيا",
+      "category": "Embassy",
+      "source": "embassies-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "مكتب-ترجمة-فيا-ترنسليشن-سفارة-الجبل",
+      "category": "Embassy",
+      "source": "embassies-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "مكتب-ترجمة-فيا-ترنسليشن-سفارة-المملكة",
+      "category": "Embassy",
+      "source": "embassies-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "مكتب-ترجمة-فيا-ترنسليشن-سفارة-اليونان",
+      "category": "Embassy",
+      "source": "embassies-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "مكتب-ترجمة-فيا-ترنسليشن-سفارة-ايطاليا",
+      "category": "Embassy",
+      "source": "embassies-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "مكتب-ترجمة-فيا-ترنسليشن-سفارة-جورجيا",
+      "category": "Embassy",
+      "source": "embassies-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "مكتب-ترجمة-فيا-ترنسليشن-سفارة-كندا",
+      "category": "Embassy",
+      "source": "embassies-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "مكتب-ترجمة-معتمد-السفارة-الألمانية",
+      "category": "Embassy",
+      "source": "embassies-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "مكتب-ترجمة-معتمد-لدى-السفارات-والجهات",
+      "category": "Embassy",
+      "source": "embassies-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "مكتب-ترجمة-معتمد-لدى-جميع-السفارات",
+      "category": "Embassy",
+      "source": "embassies-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "مكتب-ترجمة-معتمد-لدى-سفارة-الولايات-ال",
+      "category": "Embassy",
+      "source": "embassies-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "مكتب-ترجمة-معتمد-لسفارة-السويد",
+      "category": "Embassy",
+      "source": "embassies-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "مكتب-ترجمة-معتمد-من-السفارة-الألمانية",
+      "category": "Embassy",
+      "source": "embassies-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "مكتب-ترجمة-معتمد-من-السفارة-الامريكية",
+      "category": "Embassy",
+      "source": "embassies-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "مكتب-ترجمة-معتمد-من-السفارة-الامريكية-2",
+      "category": "Embassy",
+      "source": "embassies-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "مكتب-ترجمة-معتمد-من-السفارة-الاوكراني",
+      "category": "Embassy",
+      "source": "embassies-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "مكتب-ترجمة-معتمد-من-السفارة-البريطاني",
+      "category": "Embassy",
+      "source": "embassies-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "مكتب-ترجمة-معتمد-من-السفارة-البلغارية",
+      "category": "Embassy",
+      "source": "embassies-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "مكتب-ترجمة-معتمد-من-السفارة-البولندية",
+      "category": "Embassy",
+      "source": "embassies-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "مكتب-ترجمة-معتمد-من-السفارة-التركية",
+      "category": "Embassy",
+      "source": "embassies-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "مكتب-ترجمة-معتمد-من-السفارة-الروسية",
+      "category": "Embassy",
+      "source": "embassies-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "مكتب-ترجمة-معتمد-من-السفارة-الفرنسية",
+      "category": "Embassy",
+      "source": "embassies-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "مكتب-ترجمة-معتمد-من-السفارة-اليابانية",
+      "category": "Embassy",
+      "source": "embassies-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "مكتب-ترجمة-معتمد-من-السفارة-اليبانية",
+      "category": "Embassy",
+      "source": "embassies-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "مكتب-ترجمة-معتمد-من-السفارة-سان-بيار-مي",
+      "category": "Embassy",
+      "source": "embassies-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "مكتب-ترجمة-معتمد-من-السفارة-سانت-فنسنت",
+      "category": "Embassy",
+      "source": "embassies-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "مكتب-ترجمة-معتمد-من-السفارة-سانت-مارتن",
+      "category": "Embassy",
+      "source": "embassies-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "مكتب-ترجمة-معتمد-من-السفارة-صربيا",
+      "category": "Embassy",
+      "source": "embassies-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "مكتب-ترجمة-معتمد-من-السفارة-مايوت",
+      "category": "Embassy",
+      "source": "embassies-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "مكتب-ترجمة-معتمد-من-السفارة-موريشيوس",
+      "category": "Embassy",
+      "source": "embassies-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "مكتب-ترجمة-معتمد-من-سفارة-ألبانيا",
+      "category": "Embassy",
+      "source": "embassies-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "مكتب-ترجمة-معتمد-من-سفارة-إريتريا",
+      "category": "Embassy",
+      "source": "embassies-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "مكتب-ترجمة-معتمد-من-سفارة-السودان",
+      "category": "Embassy",
+      "source": "embassies-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "مكتب-ترجمة-معتمد-من-سفارة-الفلبين",
+      "category": "Embassy",
+      "source": "embassies-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "مكتب-ترجمة-معتمد-من-سفارة-المكسيك",
+      "category": "Embassy",
+      "source": "embassies-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "مكتب-ترجمة-معتمد-من-سفارة-بنما",
+      "category": "Embassy",
+      "source": "embassies-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "مكتب-ترجمة-معتمد-من-سفارة-بوليفيا",
+      "category": "Embassy",
+      "source": "embassies-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "مكتب-ترجمة-معتمد-من-سفارة-بيرو",
+      "category": "Embassy",
+      "source": "embassies-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "مكتب-ترجمة-معتمد-من-سفارة-بيلاروسيا",
+      "category": "Embassy",
+      "source": "embassies-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "مكتب-ترجمة-معتمد-من-سفارة-جزر-الأنتيل-ا",
+      "category": "Embassy",
+      "source": "embassies-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "مكتب-ترجمة-معتمد-من-سفارة-جزر-مارشال",
+      "category": "Embassy",
+      "source": "embassies-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "مكتب-ترجمة-معتمد-من-سفارة-جنوب-السودان",
+      "category": "Embassy",
+      "source": "embassies-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "مكتب-ترجمة-معتمد-من-سفارة-سان-مارينو",
+      "category": "Embassy",
+      "source": "embassies-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "مكتب-ترجمة-معتمد-من-سفارة-سانت-هيلانة",
+      "category": "Embassy",
+      "source": "embassies-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "مكتب-ترجمة-معتمد-من-سفارة-سيشل",
+      "category": "Embassy",
+      "source": "embassies-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "مكتب-ترجمة-معتمد-من-سفارة-فنلندا",
+      "category": "Embassy",
+      "source": "embassies-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "مكتب-ترجمة-معتمد-من-سفارة-قبرص",
+      "category": "Embassy",
+      "source": "embassies-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "مكتب-ترجمة-معتمد-من-سفارة-كاليدونيا",
+      "category": "Embassy",
+      "source": "embassies-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "مكتب-ترجمة-معتمد-من-سفارة-مارتينيك",
+      "category": "Embassy",
+      "source": "embassies-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "مكتب-ترجمة-معتمد-من-سفارة-مالطا",
+      "category": "Embassy",
+      "source": "embassies-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "مكتب-ترجمة-معتمد-من-سفارة-مالطا-2",
+      "category": "Embassy",
+      "source": "embassies-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "مكتب-ترجمة-معتمد-من-سفارة-مقدونيا",
+      "category": "Embassy",
+      "source": "embassies-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "مكتب-ترجمة-معتمد-من-سفارة-منغوليا-في-ال",
+      "category": "Embassy",
+      "source": "embassies-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "مكتب-ترجمة-معتمد-من-سفارة-موناكو",
+      "category": "Embassy",
+      "source": "embassies-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "مكتب-ترجمة-معتمد-من-سفارة-ميكرونيسيا",
+      "category": "Embassy",
+      "source": "embassies-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "مكتب-ترجمة-معتمد-من-سفارة-نيكاراغوا",
+      "category": "Embassy",
+      "source": "embassies-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "مكتب-ترجمة-معتمدة-من-السفارة-الامريكي",
+      "category": "Embassy",
+      "source": "embassies-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "مكتب-ترجمة-من-سفارة-الفاتيكان",
+      "category": "Embassy",
+      "source": "embassies-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "مكتب-ترجمه-معتمد-للسفارات",
+      "category": "Embassy",
+      "source": "embassies-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "مكتب-ترجمه-معتمده-من-السفارة-الإيطالي",
+      "category": "Embassy",
+      "source": "embassies-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "مكتب-معتمد-من-سفارة-النرويج",
+      "category": "Embassy",
+      "source": "embassies-data.ts",
+      "reasons": "Contains Arabic, Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "/certified",
+      "category": "Static",
+      "source": "App Router",
+      "reasons": "Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "/localization",
+      "category": "Static",
+      "source": "App Router",
+      "reasons": "Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "/interpretation",
+      "category": "Static",
+      "source": "App Router",
+      "reasons": "Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "/embassies",
+      "category": "Static",
+      "source": "App Router",
+      "reasons": "Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "/government",
+      "category": "Static",
+      "source": "App Router",
+      "reasons": "Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "/documents",
+      "category": "Static",
+      "source": "App Router",
+      "reasons": "Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "/languages",
+      "category": "Static",
+      "source": "App Router",
+      "reasons": "Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "/branches",
+      "category": "Static",
+      "source": "App Router",
+      "reasons": "Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "/team",
+      "category": "Static",
+      "source": "App Router",
+      "reasons": "Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "/reviews",
+      "category": "Static",
+      "source": "App Router",
+      "reasons": "Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "/blog",
+      "category": "Static",
+      "source": "App Router",
+      "reasons": "Special Characters",
+      "meta": {}
+    },
+    {
+      "slug": "/contact",
+      "category": "Static",
+      "source": "App Router",
+      "reasons": "Special Characters",
+      "meta": {}
+    }
+  ],
+  "unchangedSample": [
+    {
+      "slug": "certified-translation-us-embassy-cairo",
+      "category": "Blog"
+    },
+    {
+      "slug": "us-embassy-cairo",
+      "category": "Embassy"
+    },
+    {
+      "slug": "a-korean-arabic-translator-certified-by-the-korean-embassy",
+      "category": "Embassy"
+    },
+    {
+      "slug": "a-translation-office-approved-by-the-chinese-embassy",
+      "category": "Embassy"
+    },
+    {
+      "slug": "a-translation-office-approved-by-the-embassy-of-iceland",
+      "category": "Embassy"
+    },
+    {
+      "slug": "a-translation-office-approved-by-the-gabon-embassy",
+      "category": "Embassy"
+    },
+    {
+      "slug": "a-translation-office-approved-by-the-turkish-embassy-in-riyadh",
+      "category": "Embassy"
+    },
+    {
+      "slug": "a-translation-office-approved-by-the-uruguayan-embassy",
+      "category": "Embassy"
+    },
+    {
+      "slug": "accredited-office-embassy-cyprus",
+      "category": "Embassy"
+    },
+    {
+      "slug": "accredited-translation-offices-of-the-us-embassy-in-jordan",
+      "category": "Embassy"
+    },
+    {
+      "slug": "american-embassy",
+      "category": "Embassy"
+    },
+    {
+      "slug": "attestation-of-certificates-from-the-turkish-embassy-in-egypt",
+      "category": "Embassy"
+    },
+    {
+      "slug": "british-embassy",
+      "category": "Embassy"
+    },
+    {
+      "slug": "certified-translation-from-the-korean-embassy",
+      "category": "Embassy"
+    },
+    {
+      "slug": "certified-translation-hungarian-embassy",
+      "category": "Embassy"
+    }
+  ]
+}

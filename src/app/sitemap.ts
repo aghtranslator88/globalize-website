@@ -3,6 +3,7 @@ import { prisma } from '@/lib/prisma';
 import { ALL_BLOG_POSTS } from '@/lib/blog-data';
 import { ALL_EMBASSY_POSTS } from '@/lib/embassies-data';
 import { getSiteUrl } from '@/lib/siteUrl';
+import { isGenuineEnglish } from '@/lib/translationDetection';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const SITE_URL = getSiteUrl();
@@ -40,84 +41,104 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const entries: MetadataRoute.Sitemap = [];
 
-  const addPath = (path: string, lastModified: Date = new Date(), priority = 0.8) => {
-    const arUrl = `${SITE_URL}/ar${path}`;
-    const enUrl = `${SITE_URL}/en${path}`;
+  const addPath = (rawPath: string, lastModified?: Date, hasEnglishTranslation = true) => {
+    // Percent-encode non-ASCII path segments cleanly
+    const encodedPath = encodeURI(rawPath);
+    const arUrl = `${SITE_URL}/ar${encodedPath}`;
+    const enUrl = `${SITE_URL}/en${encodedPath}`;
 
-    entries.push({
+    const arLanguages: Record<string, string> = {
+      ar: arUrl,
+      'x-default': arUrl,
+    };
+
+    if (hasEnglishTranslation) {
+      arLanguages.en = enUrl;
+    }
+
+    const arEntry: MetadataRoute.Sitemap[number] = {
       url: arUrl,
-      lastModified,
-      changeFrequency: path === '' ? 'daily' : 'weekly',
-      priority: path === '' ? 1.0 : priority,
       alternates: {
-        languages: {
-          ar: arUrl,
-          en: enUrl,
-          'x-default': arUrl,
-        },
+        languages: arLanguages,
       },
-    });
+    };
+    if (lastModified) {
+      arEntry.lastModified = lastModified;
+    }
+    entries.push(arEntry);
 
-    entries.push({
-      url: enUrl,
-      lastModified,
-      changeFrequency: path === '' ? 'daily' : 'weekly',
-      priority: path === '' ? 0.9 : priority,
-      alternates: {
-        languages: {
-          ar: arUrl,
-          en: enUrl,
-          'x-default': arUrl,
+    // Only emit /en URL into sitemap if it has a genuine English translation
+    if (hasEnglishTranslation) {
+      const enEntry: MetadataRoute.Sitemap[number] = {
+        url: enUrl,
+        alternates: {
+          languages: {
+            ar: arUrl,
+            en: enUrl,
+            'x-default': arUrl,
+          },
         },
-      },
-    });
+      };
+      if (lastModified) {
+        enEntry.lastModified = lastModified;
+      }
+      entries.push(enEntry);
+    }
   };
 
-  // Add static routes
-  staticPaths.forEach((path) => addPath(path, new Date(), path === '' ? 1.0 : 0.9));
+  // Add 13 static landing pages (all have full English translation)
+  staticPaths.forEach((path) => addPath(path, undefined, true));
 
   // Add services
   services.forEach((s) => {
     if (!['certified', 'localization', 'interpretation'].includes(s.slug)) {
-      addPath(`/services/${s.slug}`, s.updatedAt || new Date(), 0.85);
+      const hasEn = isGenuineEnglish(s.nameEn, s.descriptionEn);
+      addPath(`/services/${s.slug}`, s.updatedAt, hasEn);
     }
   });
 
   // Add documents
   documents.forEach((d) => {
-    addPath(`/documents/${d.slug}`, d.updatedAt || new Date(), 0.85);
+    const hasEn = isGenuineEnglish(d.nameEn, d.descriptionEn);
+    addPath(`/documents/${d.slug}`, d.updatedAt, hasEn);
   });
 
   // Add embassies (combining DB and static fallback)
   const embassySlugs = new Set<string>();
   embassies.forEach((e) => {
     embassySlugs.add(e.slug);
-    addPath(`/embassies/${e.slug}`, e.updatedAt || new Date(), 0.85);
+    const hasEn = isGenuineEnglish(e.nameEn, e.requirementsEn);
+    addPath(`/embassies/${e.slug}`, e.updatedAt, hasEn);
   });
   ALL_EMBASSY_POSTS.forEach((e) => {
     if (!embassySlugs.has(e.slug)) {
       embassySlugs.add(e.slug);
-      addPath(`/embassies/${e.slug}`, new Date(), 0.85);
+      const hasEn = isGenuineEnglish(e.name, e.requirements?.join(' '));
+      addPath(`/embassies/${e.slug}`, undefined, hasEn);
     }
   });
 
   // Add gov entities
   govEntities.forEach((g) => {
-    addPath(`/government/${g.slug}`, g.updatedAt || new Date(), 0.85);
+    const hasEn = isGenuineEnglish(g.nameEn, g.requirementsEn);
+    addPath(`/government/${g.slug}`, g.updatedAt, hasEn);
   });
 
   // Add blog posts (combining DB and static fallback)
   const blogSlugs = new Set<string>();
   blogPosts.forEach((bp) => {
     blogSlugs.add(bp.slug);
-    addPath(`/blog/${bp.slug}`, bp.updatedAt || new Date(), 0.8);
+    const hasEn = isGenuineEnglish(bp.titleEn, bp.bodyEn);
+    addPath(`/blog/${bp.slug}`, bp.updatedAt, hasEn);
   });
   ALL_BLOG_POSTS.forEach((bp) => {
     if (!blogSlugs.has(bp.slug)) {
       blogSlugs.add(bp.slug);
-      addPath(`/blog/${bp.slug}`, new Date(bp.publishedAt || Date.now()), 0.8);
+      const hasEn = isGenuineEnglish(bp.title, bp.body);
+      addPath(`/blog/${bp.slug}`, bp.publishedAt ? new Date(bp.publishedAt) : undefined, hasEn);
     }
   });
 
   return entries;
 }
+

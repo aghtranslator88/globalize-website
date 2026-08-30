@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { setRequestLocale } from "next-intl/server";
 import { getGovEntityBySlug, getFAQs } from "@/lib/data";
 import { getSEOHeaders, generateFAQJsonLd, generateBreadcrumbJsonLd } from "@/lib/seo";
+import { isGenuineEnglish } from "@/lib/translationDetection";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import QuoteForm from "@/components/QuoteForm";
@@ -17,7 +18,8 @@ export async function generateMetadata({
   const { locale, slug } = await params;
   const gov = await getGovEntityBySlug(slug, locale);
   if (!gov) return {};
-  return getSEOHeaders(gov.name, `${gov.name} requirements and certified translation details.`, `/government/${slug}`, gov.indexable, locale);
+  const hasEnglishTranslation = isGenuineEnglish(gov.name, gov.requirements?.join(" "));
+  return getSEOHeaders(gov.name, `${gov.name} requirements and certified translation details.`, `/government/${slug}`, gov.indexable, locale, hasEnglishTranslation);
 }
 
 export default async function GovEntityDetailPage({
