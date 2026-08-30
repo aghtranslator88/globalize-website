@@ -227,12 +227,12 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
         "publisher": {
           "@type": "Organization",
           "name": "جلوباليز جروب للترجمة المعتمدة",
-          "url": "https://globalize-group.com"
+          "url": "https://www.globalizetl.com"
         },
-        "mainEntityOfPage": "https://globalize-group.com/ar/blog/الترجمة-الاحترافية-والترجمة-المعتمدة-مع-مكتب-ترجمة-معتمد",
+        "mainEntityOfPage": "https://www.globalizetl.com/ar/blog/الترجمة-الاحترافية-والترجمة-المعتمدة-مع-مكتب-ترجمة-معتمد",
         "datePublished": "2026-01-15T08:00:00+02:00",
         "dateModified": "2026-07-19T00:00:00+02:00",
-        "image": "https://globalize-group.com/images/blog/001-الترجمة-الاحترافية-والترجمة-المعتمدة-مع-.svg"
+        "image": "https://www.globalizetl.com/images/blog/001-الترجمة-الاحترافية-والترجمة-المعتمدة-مع-.svg"
       },
       "faq": {
         "@context": "https://schema.org",
@@ -280,19 +280,19 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
             "@type": "ListItem",
             "position": 1,
             "name": "الرئيسية",
-            "item": "https://globalize-group.com/ar"
+            "item": "https://www.globalizetl.com/ar"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "المدونة",
-            "item": "https://globalize-group.com/ar/blog"
+            "item": "https://www.globalizetl.com/ar/blog"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "الترجمة الاحترافية والترجمة المعتمدة مع مكتب ترجمة معتمد | جلوباليز جروب للترجمة المعتمدة",
-            "item": "https://globalize-group.com/ar/blog/الترجمة-الاحترافية-والترجمة-المعتمدة-مع-مكتب-ترجمة-معتمد"
+            "item": "https://www.globalizetl.com/ar/blog/الترجمة-الاحترافية-والترجمة-المعتمدة-مع-مكتب-ترجمة-معتمد"
           }
         ]
       }
@@ -369,12 +369,12 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
         "publisher": {
           "@type": "Organization",
           "name": "جلوباليز جروب للترجمة المعتمدة",
-          "url": "https://globalize-group.com"
+          "url": "https://www.globalizetl.com"
         },
-        "mainEntityOfPage": "https://globalize-group.com/ar/blog/أفضل-مكتب-ترجمة-معتمد-من-سفارة-رومانيا",
+        "mainEntityOfPage": "https://www.globalizetl.com/ar/blog/أفضل-مكتب-ترجمة-معتمد-من-سفارة-رومانيا",
         "datePublished": "2026-01-15T08:00:00+02:00",
         "dateModified": "2026-07-19T00:00:00+02:00",
-        "image": "https://globalize-group.com/images/blog/002-أفضل-مكتب-ترجمة-معتمد-من-سفارة-رومانيا.svg"
+        "image": "https://www.globalizetl.com/images/blog/002-أفضل-مكتب-ترجمة-معتمد-من-سفارة-رومانيا.svg"
       },
       "faq": {
         "@context": "https://schema.org",
@@ -422,19 +422,19 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
             "@type": "ListItem",
             "position": 1,
             "name": "الرئيسية",
-            "item": "https://globalize-group.com/ar"
+            "item": "https://www.globalizetl.com/ar"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "المدونة",
-            "item": "https://globalize-group.com/ar/blog"
+            "item": "https://www.globalizetl.com/ar/blog"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "أفضل مكتب ترجمة معتمد من سفارة رومانيا | جلوباليز جروب للترجمة المعتمدة",
-            "item": "https://globalize-group.com/ar/blog/أفضل-مكتب-ترجمة-معتمد-من-سفارة-رومانيا"
+            "item": "https://www.globalizetl.com/ar/blog/أفضل-مكتب-ترجمة-معتمد-من-سفارة-رومانيا"
           }
         ]
       }
@@ -511,12 +511,12 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
         "publisher": {
           "@type": "Organization",
           "name": "جلوباليز جروب للترجمة المعتمدة",
-          "url": "https://globalize-group.com"
+          "url": "https://www.globalizetl.com"
         },
-        "mainEntityOfPage": "https://globalize-group.com/ar/blog/خدمات-الترجمة-المعتمدة",
+        "mainEntityOfPage": "https://www.globalizetl.com/ar/blog/خدمات-الترجمة-المعتمدة",
         "datePublished": "2026-01-15T08:00:00+02:00",
         "dateModified": "2026-07-19T00:00:00+02:00",
-        "image": "https://globalize-group.com/images/blog/003-خدمات-الترجمة-المعتمدة.svg"
+        "image": "https://www.globalizetl.com/images/blog/003-خدمات-الترجمة-المعتمدة.svg"
       },
       "faq": {
         "@context": "https://schema.org",
@@ -564,19 +564,19 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
             "@type": "ListItem",
             "position": 1,
             "name": "الرئيسية",
-            "item": "https://globalize-group.com/ar"
+            "item": "https://www.globalizetl.com/ar"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "المدونة",
-            "item": "https://globalize-group.com/ar/blog"
+            "item": "https://www.globalizetl.com/ar/blog"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "خدمات الترجمة المعتمدة | جلوباليز جروب للترجمة المعتمدة",
-            "item": "https://globalize-group.com/ar/blog/خدمات-الترجمة-المعتمدة"
+            "item": "https://www.globalizetl.com/ar/blog/خدمات-الترجمة-المعتمدة"
           }
         ]
       }
@@ -653,12 +653,12 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
         "publisher": {
           "@type": "Organization",
           "name": "جلوباليز جروب للترجمة المعتمدة",
-          "url": "https://globalize-group.com"
+          "url": "https://www.globalizetl.com"
         },
-        "mainEntityOfPage": "https://globalize-group.com/ar/blog/أفضل-مكتب-ترجمة-فورية-في-القاهرة",
+        "mainEntityOfPage": "https://www.globalizetl.com/ar/blog/أفضل-مكتب-ترجمة-فورية-في-القاهرة",
         "datePublished": "2026-01-15T08:00:00+02:00",
         "dateModified": "2026-07-19T00:00:00+02:00",
-        "image": "https://globalize-group.com/images/blog/004-أفضل-مكتب-ترجمة-فورية-في-القاهرة.svg"
+        "image": "https://www.globalizetl.com/images/blog/004-أفضل-مكتب-ترجمة-فورية-في-القاهرة.svg"
       },
       "faq": {
         "@context": "https://schema.org",
@@ -706,19 +706,19 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
             "@type": "ListItem",
             "position": 1,
             "name": "الرئيسية",
-            "item": "https://globalize-group.com/ar"
+            "item": "https://www.globalizetl.com/ar"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "المدونة",
-            "item": "https://globalize-group.com/ar/blog"
+            "item": "https://www.globalizetl.com/ar/blog"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "أفضل مكتب ترجمة فورية في القاهرة | جلوباليز جروب للترجمة المعتمدة",
-            "item": "https://globalize-group.com/ar/blog/أفضل-مكتب-ترجمة-فورية-في-القاهرة"
+            "item": "https://www.globalizetl.com/ar/blog/أفضل-مكتب-ترجمة-فورية-في-القاهرة"
           }
         ]
       }
@@ -795,12 +795,12 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
         "publisher": {
           "@type": "Organization",
           "name": "جلوباليز جروب للترجمة المعتمدة",
-          "url": "https://globalize-group.com"
+          "url": "https://www.globalizetl.com"
         },
-        "mainEntityOfPage": "https://globalize-group.com/ar/blog/ترجمة-مستندات-السياحة-والسفر",
+        "mainEntityOfPage": "https://www.globalizetl.com/ar/blog/ترجمة-مستندات-السياحة-والسفر",
         "datePublished": "2026-01-15T08:00:00+02:00",
         "dateModified": "2026-07-19T00:00:00+02:00",
-        "image": "https://globalize-group.com/images/blog/005-ترجمة-مستندات-السياحة-والسفر.svg"
+        "image": "https://www.globalizetl.com/images/blog/005-ترجمة-مستندات-السياحة-والسفر.svg"
       },
       "faq": {
         "@context": "https://schema.org",
@@ -848,19 +848,19 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
             "@type": "ListItem",
             "position": 1,
             "name": "الرئيسية",
-            "item": "https://globalize-group.com/ar"
+            "item": "https://www.globalizetl.com/ar"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "المدونة",
-            "item": "https://globalize-group.com/ar/blog"
+            "item": "https://www.globalizetl.com/ar/blog"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "ترجمة مستندات السياحة والسفر | جلوباليز جروب للترجمة المعتمدة",
-            "item": "https://globalize-group.com/ar/blog/ترجمة-مستندات-السياحة-والسفر"
+            "item": "https://www.globalizetl.com/ar/blog/ترجمة-مستندات-السياحة-والسفر"
           }
         ]
       }
@@ -937,12 +937,12 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
         "publisher": {
           "@type": "Organization",
           "name": "جلوباليز جروب للترجمة المعتمدة",
-          "url": "https://globalize-group.com"
+          "url": "https://www.globalizetl.com"
         },
-        "mainEntityOfPage": "https://globalize-group.com/ar/blog/مكتب-ترجمة-معتمد-القاهرة-مصر",
+        "mainEntityOfPage": "https://www.globalizetl.com/ar/blog/مكتب-ترجمة-معتمد-القاهرة-مصر",
         "datePublished": "2026-01-15T08:00:00+02:00",
         "dateModified": "2026-07-19T00:00:00+02:00",
-        "image": "https://globalize-group.com/images/blog/006-مكتب-ترجمة-معتمد-القاهرة-مصر.svg"
+        "image": "https://www.globalizetl.com/images/blog/006-مكتب-ترجمة-معتمد-القاهرة-مصر.svg"
       },
       "faq": {
         "@context": "https://schema.org",
@@ -990,19 +990,19 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
             "@type": "ListItem",
             "position": 1,
             "name": "الرئيسية",
-            "item": "https://globalize-group.com/ar"
+            "item": "https://www.globalizetl.com/ar"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "المدونة",
-            "item": "https://globalize-group.com/ar/blog"
+            "item": "https://www.globalizetl.com/ar/blog"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "مكتب ترجمة معتمد- القاهرة – مصر | جلوباليز جروب للترجمة المعتمدة",
-            "item": "https://globalize-group.com/ar/blog/مكتب-ترجمة-معتمد-القاهرة-مصر"
+            "item": "https://www.globalizetl.com/ar/blog/مكتب-ترجمة-معتمد-القاهرة-مصر"
           }
         ]
       }
@@ -1079,12 +1079,12 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
         "publisher": {
           "@type": "Organization",
           "name": "جلوباليز جروب للترجمة المعتمدة",
-          "url": "https://globalize-group.com"
+          "url": "https://www.globalizetl.com"
         },
-        "mainEntityOfPage": "https://globalize-group.com/ar/blog/services-في-خدمات-الترجمة-المعتمدة",
+        "mainEntityOfPage": "https://www.globalizetl.com/ar/blog/services-في-خدمات-الترجمة-المعتمدة",
         "datePublished": "2026-01-15T08:00:00+02:00",
         "dateModified": "2026-07-19T00:00:00+02:00",
-        "image": "https://globalize-group.com/images/blog/007-services-في-خدمات-الترجمة-المعتمدة.svg"
+        "image": "https://www.globalizetl.com/images/blog/007-services-في-خدمات-الترجمة-المعتمدة.svg"
       },
       "faq": {
         "@context": "https://schema.org",
@@ -1132,19 +1132,19 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
             "@type": "ListItem",
             "position": 1,
             "name": "الرئيسية",
-            "item": "https://globalize-group.com/ar"
+            "item": "https://www.globalizetl.com/ar"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "المدونة",
-            "item": "https://globalize-group.com/ar/blog"
+            "item": "https://www.globalizetl.com/ar/blog"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "services في خدمات الترجمة المعتمدة | جلوباليز جروب للترجمة المعتمدة",
-            "item": "https://globalize-group.com/ar/blog/services-في-خدمات-الترجمة-المعتمدة"
+            "item": "https://www.globalizetl.com/ar/blog/services-في-خدمات-الترجمة-المعتمدة"
           }
         ]
       }
@@ -1221,12 +1221,12 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
         "publisher": {
           "@type": "Organization",
           "name": "جلوباليز جروب للترجمة المعتمدة",
-          "url": "https://globalize-group.com"
+          "url": "https://www.globalizetl.com"
         },
-        "mainEntityOfPage": "https://globalize-group.com/ar/blog/ترجمة-تتبعية",
+        "mainEntityOfPage": "https://www.globalizetl.com/ar/blog/ترجمة-تتبعية",
         "datePublished": "2026-01-15T08:00:00+02:00",
         "dateModified": "2026-07-19T00:00:00+02:00",
-        "image": "https://globalize-group.com/images/blog/008-ترجمة-تتبعية.svg"
+        "image": "https://www.globalizetl.com/images/blog/008-ترجمة-تتبعية.svg"
       },
       "faq": {
         "@context": "https://schema.org",
@@ -1274,19 +1274,19 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
             "@type": "ListItem",
             "position": 1,
             "name": "الرئيسية",
-            "item": "https://globalize-group.com/ar"
+            "item": "https://www.globalizetl.com/ar"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "المدونة",
-            "item": "https://globalize-group.com/ar/blog"
+            "item": "https://www.globalizetl.com/ar/blog"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "ترجمة تتبعية | جلوباليز جروب للترجمة المعتمدة",
-            "item": "https://globalize-group.com/ar/blog/ترجمة-تتبعية"
+            "item": "https://www.globalizetl.com/ar/blog/ترجمة-تتبعية"
           }
         ]
       }
@@ -1363,12 +1363,12 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
         "publisher": {
           "@type": "Organization",
           "name": "جلوباليز جروب للترجمة المعتمدة",
-          "url": "https://globalize-group.com"
+          "url": "https://www.globalizetl.com"
         },
-        "mainEntityOfPage": "https://globalize-group.com/ar/blog/e-الدفع-الإلكتروني-في-خدمات-الترجمة-المعتمدة",
+        "mainEntityOfPage": "https://www.globalizetl.com/ar/blog/e-الدفع-الإلكتروني-في-خدمات-الترجمة-المعتمدة",
         "datePublished": "2026-01-15T08:00:00+02:00",
         "dateModified": "2026-07-19T00:00:00+02:00",
-        "image": "https://globalize-group.com/images/blog/009-e-الدفع-الإلكتروني-في-خدمات-الترجمة-المع.svg"
+        "image": "https://www.globalizetl.com/images/blog/009-e-الدفع-الإلكتروني-في-خدمات-الترجمة-المع.svg"
       },
       "faq": {
         "@context": "https://schema.org",
@@ -1416,19 +1416,19 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
             "@type": "ListItem",
             "position": 1,
             "name": "الرئيسية",
-            "item": "https://globalize-group.com/ar"
+            "item": "https://www.globalizetl.com/ar"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "المدونة",
-            "item": "https://globalize-group.com/ar/blog"
+            "item": "https://www.globalizetl.com/ar/blog"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "e الدفع الإلكتروني في خدمات الترجمة المعتمدة | جلوباليز جروب للترجمة المعتمدة",
-            "item": "https://globalize-group.com/ar/blog/e-الدفع-الإلكتروني-في-خدمات-الترجمة-المعتمدة"
+            "item": "https://www.globalizetl.com/ar/blog/e-الدفع-الإلكتروني-في-خدمات-الترجمة-المعتمدة"
           }
         ]
       }
@@ -1505,12 +1505,12 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
         "publisher": {
           "@type": "Organization",
           "name": "جلوباليز جروب للترجمة المعتمدة",
-          "url": "https://globalize-group.com"
+          "url": "https://www.globalizetl.com"
         },
-        "mainEntityOfPage": "https://globalize-group.com/ar/blog/الترجمة-المالية-المعتمدة",
+        "mainEntityOfPage": "https://www.globalizetl.com/ar/blog/الترجمة-المالية-المعتمدة",
         "datePublished": "2026-01-15T08:00:00+02:00",
         "dateModified": "2026-07-19T00:00:00+02:00",
-        "image": "https://globalize-group.com/images/blog/010-الترجمة-المالية-المعتمدة.svg"
+        "image": "https://www.globalizetl.com/images/blog/010-الترجمة-المالية-المعتمدة.svg"
       },
       "faq": {
         "@context": "https://schema.org",
@@ -1558,19 +1558,19 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
             "@type": "ListItem",
             "position": 1,
             "name": "الرئيسية",
-            "item": "https://globalize-group.com/ar"
+            "item": "https://www.globalizetl.com/ar"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "المدونة",
-            "item": "https://globalize-group.com/ar/blog"
+            "item": "https://www.globalizetl.com/ar/blog"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "الترجمة المالية المعتمدة | جلوباليز جروب للترجمة المعتمدة",
-            "item": "https://globalize-group.com/ar/blog/الترجمة-المالية-المعتمدة"
+            "item": "https://www.globalizetl.com/ar/blog/الترجمة-المالية-المعتمدة"
           }
         ]
       }
@@ -1647,12 +1647,12 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
         "publisher": {
           "@type": "Organization",
           "name": "جلوباليز جروب للترجمة المعتمدة",
-          "url": "https://globalize-group.com"
+          "url": "https://www.globalizetl.com"
         },
-        "mainEntityOfPage": "https://globalize-group.com/ar/blog/احذر-من-أخطاء-الترجمة",
+        "mainEntityOfPage": "https://www.globalizetl.com/ar/blog/احذر-من-أخطاء-الترجمة",
         "datePublished": "2026-01-15T08:00:00+02:00",
         "dateModified": "2026-07-19T00:00:00+02:00",
-        "image": "https://globalize-group.com/images/blog/011-احذر-من-أخطاء-الترجمة.svg"
+        "image": "https://www.globalizetl.com/images/blog/011-احذر-من-أخطاء-الترجمة.svg"
       },
       "faq": {
         "@context": "https://schema.org",
@@ -1700,19 +1700,19 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
             "@type": "ListItem",
             "position": 1,
             "name": "الرئيسية",
-            "item": "https://globalize-group.com/ar"
+            "item": "https://www.globalizetl.com/ar"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "المدونة",
-            "item": "https://globalize-group.com/ar/blog"
+            "item": "https://www.globalizetl.com/ar/blog"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "احذر من أخطاء الترجمة | جلوباليز جروب للترجمة المعتمدة",
-            "item": "https://globalize-group.com/ar/blog/احذر-من-أخطاء-الترجمة"
+            "item": "https://www.globalizetl.com/ar/blog/احذر-من-أخطاء-الترجمة"
           }
         ]
       }
@@ -1789,12 +1789,12 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
         "publisher": {
           "@type": "Organization",
           "name": "جلوباليز جروب للترجمة المعتمدة",
-          "url": "https://globalize-group.com"
+          "url": "https://www.globalizetl.com"
         },
-        "mainEntityOfPage": "https://globalize-group.com/ar/blog/ما-أفضل-مكتب-ترجمة-فورية-بالإنجليزية-بالسعودية؟",
+        "mainEntityOfPage": "https://www.globalizetl.com/ar/blog/ما-أفضل-مكتب-ترجمة-فورية-بالإنجليزية-بالسعودية؟",
         "datePublished": "2026-01-15T08:00:00+02:00",
         "dateModified": "2026-07-19T00:00:00+02:00",
-        "image": "https://globalize-group.com/images/blog/012-ما-أفضل-مكتب-ترجمة-فورية-بالإنجليزية-بال.svg"
+        "image": "https://www.globalizetl.com/images/blog/012-ما-أفضل-مكتب-ترجمة-فورية-بالإنجليزية-بال.svg"
       },
       "faq": {
         "@context": "https://schema.org",
@@ -1842,19 +1842,19 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
             "@type": "ListItem",
             "position": 1,
             "name": "الرئيسية",
-            "item": "https://globalize-group.com/ar"
+            "item": "https://www.globalizetl.com/ar"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "المدونة",
-            "item": "https://globalize-group.com/ar/blog"
+            "item": "https://www.globalizetl.com/ar/blog"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "ما أفضل مكتب ترجمة فورية بالإنجليزية بالسعودية؟ | جلوباليز جروب للترجمة المعتمدة",
-            "item": "https://globalize-group.com/ar/blog/ما-أفضل-مكتب-ترجمة-فورية-بالإنجليزية-بالسعودية؟"
+            "item": "https://www.globalizetl.com/ar/blog/ما-أفضل-مكتب-ترجمة-فورية-بالإنجليزية-بالسعودية؟"
           }
         ]
       }
@@ -1930,12 +1930,12 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
         "publisher": {
           "@type": "Organization",
           "name": "جلوباليز جروب للترجمة المعتمدة",
-          "url": "https://globalize-group.com"
+          "url": "https://www.globalizetl.com"
         },
-        "mainEntityOfPage": "https://globalize-group.com/ar/blog/ترجمة-معتمدة",
+        "mainEntityOfPage": "https://www.globalizetl.com/ar/blog/ترجمة-معتمدة",
         "datePublished": "2026-01-15T08:00:00+02:00",
         "dateModified": "2026-07-19T00:00:00+02:00",
-        "image": "https://globalize-group.com/images/blog/013-ترجمة-معتمدة.svg"
+        "image": "https://www.globalizetl.com/images/blog/013-ترجمة-معتمدة.svg"
       },
       "faq": {
         "@context": "https://schema.org",
@@ -1983,19 +1983,19 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
             "@type": "ListItem",
             "position": 1,
             "name": "الرئيسية",
-            "item": "https://globalize-group.com/ar"
+            "item": "https://www.globalizetl.com/ar"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "المدونة",
-            "item": "https://globalize-group.com/ar/blog"
+            "item": "https://www.globalizetl.com/ar/blog"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "ترجمة معتمدة | جلوباليز جروب للترجمة المعتمدة",
-            "item": "https://globalize-group.com/ar/blog/ترجمة-معتمدة"
+            "item": "https://www.globalizetl.com/ar/blog/ترجمة-معتمدة"
           }
         ]
       }
@@ -2072,12 +2072,12 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
         "publisher": {
           "@type": "Organization",
           "name": "جلوباليز جروب للترجمة المعتمدة",
-          "url": "https://globalize-group.com"
+          "url": "https://www.globalizetl.com"
         },
-        "mainEntityOfPage": "https://globalize-group.com/ar/blog/about-us-في-خدمات-الترجمة-المعتمدة",
+        "mainEntityOfPage": "https://www.globalizetl.com/ar/blog/about-us-في-خدمات-الترجمة-المعتمدة",
         "datePublished": "2026-01-15T08:00:00+02:00",
         "dateModified": "2026-07-19T00:00:00+02:00",
-        "image": "https://globalize-group.com/images/blog/014-about-us-في-خدمات-الترجمة-المعتمدة.svg"
+        "image": "https://www.globalizetl.com/images/blog/014-about-us-في-خدمات-الترجمة-المعتمدة.svg"
       },
       "faq": {
         "@context": "https://schema.org",
@@ -2125,19 +2125,19 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
             "@type": "ListItem",
             "position": 1,
             "name": "الرئيسية",
-            "item": "https://globalize-group.com/ar"
+            "item": "https://www.globalizetl.com/ar"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "المدونة",
-            "item": "https://globalize-group.com/ar/blog"
+            "item": "https://www.globalizetl.com/ar/blog"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "about us في خدمات الترجمة المعتمدة | جلوباليز جروب للترجمة المعتمدة",
-            "item": "https://globalize-group.com/ar/blog/about-us-في-خدمات-الترجمة-المعتمدة"
+            "item": "https://www.globalizetl.com/ar/blog/about-us-في-خدمات-الترجمة-المعتمدة"
           }
         ]
       }
@@ -2214,12 +2214,12 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
         "publisher": {
           "@type": "Organization",
           "name": "جلوباليز جروب للترجمة المعتمدة",
-          "url": "https://globalize-group.com"
+          "url": "https://www.globalizetl.com"
         },
-        "mainEntityOfPage": "https://globalize-group.com/ar/blog/contact-us-في-خدمات-الترجمة-المعتمدة",
+        "mainEntityOfPage": "https://www.globalizetl.com/ar/blog/contact-us-في-خدمات-الترجمة-المعتمدة",
         "datePublished": "2026-01-15T08:00:00+02:00",
         "dateModified": "2026-07-19T00:00:00+02:00",
-        "image": "https://globalize-group.com/images/blog/015-contact-us-في-خدمات-الترجمة-المعتمدة.svg"
+        "image": "https://www.globalizetl.com/images/blog/015-contact-us-في-خدمات-الترجمة-المعتمدة.svg"
       },
       "faq": {
         "@context": "https://schema.org",
@@ -2267,19 +2267,19 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
             "@type": "ListItem",
             "position": 1,
             "name": "الرئيسية",
-            "item": "https://globalize-group.com/ar"
+            "item": "https://www.globalizetl.com/ar"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "المدونة",
-            "item": "https://globalize-group.com/ar/blog"
+            "item": "https://www.globalizetl.com/ar/blog"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "contact us في خدمات الترجمة المعتمدة | جلوباليز جروب للترجمة المعتمدة",
-            "item": "https://globalize-group.com/ar/blog/contact-us-في-خدمات-الترجمة-المعتمدة"
+            "item": "https://www.globalizetl.com/ar/blog/contact-us-في-خدمات-الترجمة-المعتمدة"
           }
         ]
       }
@@ -2356,12 +2356,12 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
         "publisher": {
           "@type": "Organization",
           "name": "جلوباليز جروب للترجمة المعتمدة",
-          "url": "https://globalize-group.com"
+          "url": "https://www.globalizetl.com"
         },
-        "mainEntityOfPage": "https://globalize-group.com/ar/blog/جلوباليز-جروب-للترجمة-المعتمدة",
+        "mainEntityOfPage": "https://www.globalizetl.com/ar/blog/جلوباليز-جروب-للترجمة-المعتمدة",
         "datePublished": "2026-01-15T08:00:00+02:00",
         "dateModified": "2026-07-19T00:00:00+02:00",
-        "image": "https://globalize-group.com/images/blog/016-جلوباليز-جروب-للترجمة-المعتمدة.svg"
+        "image": "https://www.globalizetl.com/images/blog/016-جلوباليز-جروب-للترجمة-المعتمدة.svg"
       },
       "faq": {
         "@context": "https://schema.org",
@@ -2409,19 +2409,19 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
             "@type": "ListItem",
             "position": 1,
             "name": "الرئيسية",
-            "item": "https://globalize-group.com/ar"
+            "item": "https://www.globalizetl.com/ar"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "المدونة",
-            "item": "https://globalize-group.com/ar/blog"
+            "item": "https://www.globalizetl.com/ar/blog"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "جلوباليز جروب للترجمة المعتمدة للترجمة المعتمدة",
-            "item": "https://globalize-group.com/ar/blog/جلوباليز-جروب-للترجمة-المعتمدة"
+            "item": "https://www.globalizetl.com/ar/blog/جلوباليز-جروب-للترجمة-المعتمدة"
           }
         ]
       }
@@ -2498,12 +2498,12 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
         "publisher": {
           "@type": "Organization",
           "name": "جلوباليز جروب للترجمة المعتمدة",
-          "url": "https://globalize-group.com"
+          "url": "https://www.globalizetl.com"
         },
-        "mainEntityOfPage": "https://globalize-group.com/ar/blog/جلوباليز-جروب-للترجمة-المعتمدة-company-translation-services",
+        "mainEntityOfPage": "https://www.globalizetl.com/ar/blog/جلوباليز-جروب-للترجمة-المعتمدة-company-translation-services",
         "datePublished": "2026-01-15T08:00:00+02:00",
         "dateModified": "2026-07-19T00:00:00+02:00",
-        "image": "https://globalize-group.com/images/blog/017-جلوباليز-جروب-للترجمة-المعتمدة-company-t.svg"
+        "image": "https://www.globalizetl.com/images/blog/017-جلوباليز-جروب-للترجمة-المعتمدة-company-t.svg"
       },
       "faq": {
         "@context": "https://schema.org",
@@ -2551,19 +2551,19 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
             "@type": "ListItem",
             "position": 1,
             "name": "الرئيسية",
-            "item": "https://globalize-group.com/ar"
+            "item": "https://www.globalizetl.com/ar"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "المدونة",
-            "item": "https://globalize-group.com/ar/blog"
+            "item": "https://www.globalizetl.com/ar/blog"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "جلوباليز جروب للترجمة المعتمدة للترجمة المعتمدة company translation services",
-            "item": "https://globalize-group.com/ar/blog/جلوباليز-جروب-للترجمة-المعتمدة-company-translation-services"
+            "item": "https://www.globalizetl.com/ar/blog/جلوباليز-جروب-للترجمة-المعتمدة-company-translation-services"
           }
         ]
       }
@@ -2640,12 +2640,12 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
         "publisher": {
           "@type": "Organization",
           "name": "جلوباليز جروب للترجمة المعتمدة",
-          "url": "https://globalize-group.com"
+          "url": "https://www.globalizetl.com"
         },
-        "mainEntityOfPage": "https://globalize-group.com/ar/blog/ترجمة-المجال-الأدبي",
+        "mainEntityOfPage": "https://www.globalizetl.com/ar/blog/ترجمة-المجال-الأدبي",
         "datePublished": "2026-01-15T08:00:00+02:00",
         "dateModified": "2026-07-19T00:00:00+02:00",
-        "image": "https://globalize-group.com/images/blog/018-ترجمة-المجال-الأدبي.svg"
+        "image": "https://www.globalizetl.com/images/blog/018-ترجمة-المجال-الأدبي.svg"
       },
       "faq": {
         "@context": "https://schema.org",
@@ -2693,19 +2693,19 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
             "@type": "ListItem",
             "position": 1,
             "name": "الرئيسية",
-            "item": "https://globalize-group.com/ar"
+            "item": "https://www.globalizetl.com/ar"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "المدونة",
-            "item": "https://globalize-group.com/ar/blog"
+            "item": "https://www.globalizetl.com/ar/blog"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "ترجمة المجال الأدبي | جلوباليز جروب للترجمة المعتمدة",
-            "item": "https://globalize-group.com/ar/blog/ترجمة-المجال-الأدبي"
+            "item": "https://www.globalizetl.com/ar/blog/ترجمة-المجال-الأدبي"
           }
         ]
       }
@@ -2782,12 +2782,12 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
         "publisher": {
           "@type": "Organization",
           "name": "جلوباليز جروب للترجمة المعتمدة",
-          "url": "https://globalize-group.com"
+          "url": "https://www.globalizetl.com"
         },
-        "mainEntityOfPage": "https://globalize-group.com/ar/blog/ترجمة-المجال-التقني",
+        "mainEntityOfPage": "https://www.globalizetl.com/ar/blog/ترجمة-المجال-التقني",
         "datePublished": "2026-01-15T08:00:00+02:00",
         "dateModified": "2026-07-19T00:00:00+02:00",
-        "image": "https://globalize-group.com/images/blog/019-ترجمة-المجال-التقني.svg"
+        "image": "https://www.globalizetl.com/images/blog/019-ترجمة-المجال-التقني.svg"
       },
       "faq": {
         "@context": "https://schema.org",
@@ -2835,19 +2835,19 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
             "@type": "ListItem",
             "position": 1,
             "name": "الرئيسية",
-            "item": "https://globalize-group.com/ar"
+            "item": "https://www.globalizetl.com/ar"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "المدونة",
-            "item": "https://globalize-group.com/ar/blog"
+            "item": "https://www.globalizetl.com/ar/blog"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "ترجمة المجال التقني | جلوباليز جروب للترجمة المعتمدة",
-            "item": "https://globalize-group.com/ar/blog/ترجمة-المجال-التقني"
+            "item": "https://www.globalizetl.com/ar/blog/ترجمة-المجال-التقني"
           }
         ]
       }
@@ -2924,12 +2924,12 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
         "publisher": {
           "@type": "Organization",
           "name": "جلوباليز جروب للترجمة المعتمدة",
-          "url": "https://globalize-group.com"
+          "url": "https://www.globalizetl.com"
         },
-        "mainEntityOfPage": "https://globalize-group.com/ar/blog/تدريب-الشركات-في-خدمات-الترجمة-المعتمدة",
+        "mainEntityOfPage": "https://www.globalizetl.com/ar/blog/تدريب-الشركات-في-خدمات-الترجمة-المعتمدة",
         "datePublished": "2026-01-15T08:00:00+02:00",
         "dateModified": "2026-07-19T00:00:00+02:00",
-        "image": "https://globalize-group.com/images/blog/020-تدريب-الشركات-في-خدمات-الترجمة-المعتمدة.svg"
+        "image": "https://www.globalizetl.com/images/blog/020-تدريب-الشركات-في-خدمات-الترجمة-المعتمدة.svg"
       },
       "faq": {
         "@context": "https://schema.org",
@@ -2977,19 +2977,19 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
             "@type": "ListItem",
             "position": 1,
             "name": "الرئيسية",
-            "item": "https://globalize-group.com/ar"
+            "item": "https://www.globalizetl.com/ar"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "المدونة",
-            "item": "https://globalize-group.com/ar/blog"
+            "item": "https://www.globalizetl.com/ar/blog"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "تدريب الشركات في خدمات الترجمة المعتمدة | جلوباليز جروب للترجمة المعتمدة",
-            "item": "https://globalize-group.com/ar/blog/تدريب-الشركات-في-خدمات-الترجمة-المعتمدة"
+            "item": "https://www.globalizetl.com/ar/blog/تدريب-الشركات-في-خدمات-الترجمة-المعتمدة"
           }
         ]
       }
@@ -3066,12 +3066,12 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
         "publisher": {
           "@type": "Organization",
           "name": "جلوباليز جروب للترجمة المعتمدة",
-          "url": "https://globalize-group.com"
+          "url": "https://www.globalizetl.com"
         },
-        "mainEntityOfPage": "https://globalize-group.com/ar/blog/مترجم-برتغالي",
+        "mainEntityOfPage": "https://www.globalizetl.com/ar/blog/مترجم-برتغالي",
         "datePublished": "2026-01-15T08:00:00+02:00",
         "dateModified": "2026-07-19T00:00:00+02:00",
-        "image": "https://globalize-group.com/images/blog/021-مترجم-برتغالي.svg"
+        "image": "https://www.globalizetl.com/images/blog/021-مترجم-برتغالي.svg"
       },
       "faq": {
         "@context": "https://schema.org",
@@ -3119,19 +3119,19 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
             "@type": "ListItem",
             "position": 1,
             "name": "الرئيسية",
-            "item": "https://globalize-group.com/ar"
+            "item": "https://www.globalizetl.com/ar"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "المدونة",
-            "item": "https://globalize-group.com/ar/blog"
+            "item": "https://www.globalizetl.com/ar/blog"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "مترجم برتغالي | جلوباليز جروب للترجمة المعتمدة",
-            "item": "https://globalize-group.com/ar/blog/مترجم-برتغالي"
+            "item": "https://www.globalizetl.com/ar/blog/مترجم-برتغالي"
           }
         ]
       }
@@ -3207,12 +3207,12 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
         "publisher": {
           "@type": "Organization",
           "name": "جلوباليز جروب للترجمة المعتمدة",
-          "url": "https://globalize-group.com"
+          "url": "https://www.globalizetl.com"
         },
-        "mainEntityOfPage": "https://globalize-group.com/ar/blog/ترجمة",
+        "mainEntityOfPage": "https://www.globalizetl.com/ar/blog/ترجمة",
         "datePublished": "2026-01-15T08:00:00+02:00",
         "dateModified": "2026-07-19T00:00:00+02:00",
-        "image": "https://globalize-group.com/images/blog/022-ترجمة.svg"
+        "image": "https://www.globalizetl.com/images/blog/022-ترجمة.svg"
       },
       "faq": {
         "@context": "https://schema.org",
@@ -3260,19 +3260,19 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
             "@type": "ListItem",
             "position": 1,
             "name": "الرئيسية",
-            "item": "https://globalize-group.com/ar"
+            "item": "https://www.globalizetl.com/ar"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "المدونة",
-            "item": "https://globalize-group.com/ar/blog"
+            "item": "https://www.globalizetl.com/ar/blog"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "ترجمة | جلوباليز جروب للترجمة المعتمدة",
-            "item": "https://globalize-group.com/ar/blog/ترجمة"
+            "item": "https://www.globalizetl.com/ar/blog/ترجمة"
           }
         ]
       }
@@ -3349,12 +3349,12 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
         "publisher": {
           "@type": "Organization",
           "name": "جلوباليز جروب للترجمة المعتمدة",
-          "url": "https://globalize-group.com"
+          "url": "https://www.globalizetl.com"
         },
-        "mainEntityOfPage": "https://globalize-group.com/ar/blog/مكتب-ترجمة-معتمد-من-السفارة-الالمانية",
+        "mainEntityOfPage": "https://www.globalizetl.com/ar/blog/مكتب-ترجمة-معتمد-من-السفارة-الالمانية",
         "datePublished": "2026-01-15T08:00:00+02:00",
         "dateModified": "2026-07-19T00:00:00+02:00",
-        "image": "https://globalize-group.com/images/blog/023-مكتب-ترجمة-معتمد-من-السفارة-الالمانية.svg"
+        "image": "https://www.globalizetl.com/images/blog/023-مكتب-ترجمة-معتمد-من-السفارة-الالمانية.svg"
       },
       "faq": {
         "@context": "https://schema.org",
@@ -3402,19 +3402,19 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
             "@type": "ListItem",
             "position": 1,
             "name": "الرئيسية",
-            "item": "https://globalize-group.com/ar"
+            "item": "https://www.globalizetl.com/ar"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "المدونة",
-            "item": "https://globalize-group.com/ar/blog"
+            "item": "https://www.globalizetl.com/ar/blog"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "مكتب ترجمة معتمد من السفارة الالمانية | جلوباليز جروب للترجمة المعتمدة",
-            "item": "https://globalize-group.com/ar/blog/مكتب-ترجمة-معتمد-من-السفارة-الالمانية"
+            "item": "https://www.globalizetl.com/ar/blog/مكتب-ترجمة-معتمد-من-السفارة-الالمانية"
           }
         ]
       }
@@ -3491,12 +3491,12 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
         "publisher": {
           "@type": "Organization",
           "name": "جلوباليز جروب للترجمة المعتمدة",
-          "url": "https://globalize-group.com"
+          "url": "https://www.globalizetl.com"
         },
-        "mainEntityOfPage": "https://globalize-group.com/ar/blog/الترجمة-الطبية",
+        "mainEntityOfPage": "https://www.globalizetl.com/ar/blog/الترجمة-الطبية",
         "datePublished": "2026-01-15T08:00:00+02:00",
         "dateModified": "2026-07-19T00:00:00+02:00",
-        "image": "https://globalize-group.com/images/blog/024-الترجمة-الطبية.svg"
+        "image": "https://www.globalizetl.com/images/blog/024-الترجمة-الطبية.svg"
       },
       "faq": {
         "@context": "https://schema.org",
@@ -3544,19 +3544,19 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
             "@type": "ListItem",
             "position": 1,
             "name": "الرئيسية",
-            "item": "https://globalize-group.com/ar"
+            "item": "https://www.globalizetl.com/ar"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "المدونة",
-            "item": "https://globalize-group.com/ar/blog"
+            "item": "https://www.globalizetl.com/ar/blog"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "الترجمة الطبية | جلوباليز جروب للترجمة المعتمدة",
-            "item": "https://globalize-group.com/ar/blog/الترجمة-الطبية"
+            "item": "https://www.globalizetl.com/ar/blog/الترجمة-الطبية"
           }
         ]
       }
@@ -3632,12 +3632,12 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
         "publisher": {
           "@type": "Organization",
           "name": "جلوباليز جروب للترجمة المعتمدة",
-          "url": "https://globalize-group.com"
+          "url": "https://www.globalizetl.com"
         },
-        "mainEntityOfPage": "https://globalize-group.com/ar/blog/ترجمة-معتمدة-2",
+        "mainEntityOfPage": "https://www.globalizetl.com/ar/blog/ترجمة-معتمدة-2",
         "datePublished": "2026-01-15T08:00:00+02:00",
         "dateModified": "2026-07-19T00:00:00+02:00",
-        "image": "https://globalize-group.com/images/blog/025-ترجمة-معتمدة-2.svg"
+        "image": "https://www.globalizetl.com/images/blog/025-ترجمة-معتمدة-2.svg"
       },
       "faq": {
         "@context": "https://schema.org",
@@ -3685,19 +3685,19 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
             "@type": "ListItem",
             "position": 1,
             "name": "الرئيسية",
-            "item": "https://globalize-group.com/ar"
+            "item": "https://www.globalizetl.com/ar"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "المدونة",
-            "item": "https://globalize-group.com/ar/blog"
+            "item": "https://www.globalizetl.com/ar/blog"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "ترجمة معتمدة | جلوباليز جروب للترجمة المعتمدة",
-            "item": "https://globalize-group.com/ar/blog/ترجمة-معتمدة-2"
+            "item": "https://www.globalizetl.com/ar/blog/ترجمة-معتمدة-2"
           }
         ]
       }
@@ -3774,12 +3774,12 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
         "publisher": {
           "@type": "Organization",
           "name": "جلوباليز جروب للترجمة المعتمدة",
-          "url": "https://globalize-group.com"
+          "url": "https://www.globalizetl.com"
         },
-        "mainEntityOfPage": "https://globalize-group.com/ar/blog/مكتب-ترجمة-معتمد-من-السفارة-البريطانية",
+        "mainEntityOfPage": "https://www.globalizetl.com/ar/blog/مكتب-ترجمة-معتمد-من-السفارة-البريطانية",
         "datePublished": "2026-01-15T08:00:00+02:00",
         "dateModified": "2026-07-19T00:00:00+02:00",
-        "image": "https://globalize-group.com/images/blog/026-مكتب-ترجمة-معتمد-من-السفارة-البريطانية.svg"
+        "image": "https://www.globalizetl.com/images/blog/026-مكتب-ترجمة-معتمد-من-السفارة-البريطانية.svg"
       },
       "faq": {
         "@context": "https://schema.org",
@@ -3827,19 +3827,19 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
             "@type": "ListItem",
             "position": 1,
             "name": "الرئيسية",
-            "item": "https://globalize-group.com/ar"
+            "item": "https://www.globalizetl.com/ar"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "المدونة",
-            "item": "https://globalize-group.com/ar/blog"
+            "item": "https://www.globalizetl.com/ar/blog"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "مكتب ترجمة معتمد من السفارة البريطانية | جلوباليز جروب للترجمة المعتمدة",
-            "item": "https://globalize-group.com/ar/blog/مكتب-ترجمة-معتمد-من-السفارة-البريطانية"
+            "item": "https://www.globalizetl.com/ar/blog/مكتب-ترجمة-معتمد-من-السفارة-البريطانية"
           }
         ]
       }
@@ -3916,12 +3916,12 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
         "publisher": {
           "@type": "Organization",
           "name": "جلوباليز جروب للترجمة المعتمدة",
-          "url": "https://globalize-group.com"
+          "url": "https://www.globalizetl.com"
         },
-        "mainEntityOfPage": "https://globalize-group.com/ar/blog/إيجار-سماعات-وشاشات-وكافة-معدات-الترجمة-الفورية-في",
+        "mainEntityOfPage": "https://www.globalizetl.com/ar/blog/إيجار-سماعات-وشاشات-وكافة-معدات-الترجمة-الفورية-في",
         "datePublished": "2026-01-15T08:00:00+02:00",
         "dateModified": "2026-07-19T00:00:00+02:00",
-        "image": "https://globalize-group.com/images/blog/027-إيجار-سماعات-وشاشات-وكافة-معدات-الترجمة-.svg"
+        "image": "https://www.globalizetl.com/images/blog/027-إيجار-سماعات-وشاشات-وكافة-معدات-الترجمة-.svg"
       },
       "faq": {
         "@context": "https://schema.org",
@@ -3969,19 +3969,19 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
             "@type": "ListItem",
             "position": 1,
             "name": "الرئيسية",
-            "item": "https://globalize-group.com/ar"
+            "item": "https://www.globalizetl.com/ar"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "المدونة",
-            "item": "https://globalize-group.com/ar/blog"
+            "item": "https://www.globalizetl.com/ar/blog"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "إيجار سماعات وشاشات وكافة معدات الترجمة الفورية في | جلوباليز جروب للترجمة المعتمدة",
-            "item": "https://globalize-group.com/ar/blog/إيجار-سماعات-وشاشات-وكافة-معدات-الترجمة-الفورية-في"
+            "item": "https://www.globalizetl.com/ar/blog/إيجار-سماعات-وشاشات-وكافة-معدات-الترجمة-الفورية-في"
           }
         ]
       }
@@ -4058,12 +4058,12 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
         "publisher": {
           "@type": "Organization",
           "name": "جلوباليز جروب للترجمة المعتمدة",
-          "url": "https://globalize-group.com"
+          "url": "https://www.globalizetl.com"
         },
-        "mainEntityOfPage": "https://globalize-group.com/ar/blog/إدفع-اون-لاين-في-خدمات-الترجمة-المعتمدة",
+        "mainEntityOfPage": "https://www.globalizetl.com/ar/blog/إدفع-اون-لاين-في-خدمات-الترجمة-المعتمدة",
         "datePublished": "2026-01-15T08:00:00+02:00",
         "dateModified": "2026-07-19T00:00:00+02:00",
-        "image": "https://globalize-group.com/images/blog/028-إدفع-اون-لاين-في-خدمات-الترجمة-المعتمدة.svg"
+        "image": "https://www.globalizetl.com/images/blog/028-إدفع-اون-لاين-في-خدمات-الترجمة-المعتمدة.svg"
       },
       "faq": {
         "@context": "https://schema.org",
@@ -4111,19 +4111,19 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
             "@type": "ListItem",
             "position": 1,
             "name": "الرئيسية",
-            "item": "https://globalize-group.com/ar"
+            "item": "https://www.globalizetl.com/ar"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "المدونة",
-            "item": "https://globalize-group.com/ar/blog"
+            "item": "https://www.globalizetl.com/ar/blog"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "إدفع اون لاين في خدمات الترجمة المعتمدة | جلوباليز جروب للترجمة المعتمدة",
-            "item": "https://globalize-group.com/ar/blog/إدفع-اون-لاين-في-خدمات-الترجمة-المعتمدة"
+            "item": "https://www.globalizetl.com/ar/blog/إدفع-اون-لاين-في-خدمات-الترجمة-المعتمدة"
           }
         ]
       }
@@ -4200,12 +4200,12 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
         "publisher": {
           "@type": "Organization",
           "name": "جلوباليز جروب للترجمة المعتمدة",
-          "url": "https://globalize-group.com"
+          "url": "https://www.globalizetl.com"
         },
-        "mainEntityOfPage": "https://globalize-group.com/ar/blog/quotes-delivery-في-خدمات-الترجمة-المعتمدة",
+        "mainEntityOfPage": "https://www.globalizetl.com/ar/blog/quotes-delivery-في-خدمات-الترجمة-المعتمدة",
         "datePublished": "2026-01-15T08:00:00+02:00",
         "dateModified": "2026-07-19T00:00:00+02:00",
-        "image": "https://globalize-group.com/images/blog/029-quotes-delivery-في-خدمات-الترجمة-المعتمد.svg"
+        "image": "https://www.globalizetl.com/images/blog/029-quotes-delivery-في-خدمات-الترجمة-المعتمد.svg"
       },
       "faq": {
         "@context": "https://schema.org",
@@ -4253,19 +4253,19 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
             "@type": "ListItem",
             "position": 1,
             "name": "الرئيسية",
-            "item": "https://globalize-group.com/ar"
+            "item": "https://www.globalizetl.com/ar"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "المدونة",
-            "item": "https://globalize-group.com/ar/blog"
+            "item": "https://www.globalizetl.com/ar/blog"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "quotes delivery في خدمات الترجمة المعتمدة | جلوباليز جروب للترجمة المعتمدة",
-            "item": "https://globalize-group.com/ar/blog/quotes-delivery-في-خدمات-الترجمة-المعتمدة"
+            "item": "https://www.globalizetl.com/ar/blog/quotes-delivery-في-خدمات-الترجمة-المعتمدة"
           }
         ]
       }
@@ -4342,12 +4342,12 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
         "publisher": {
           "@type": "Organization",
           "name": "جلوباليز جروب للترجمة المعتمدة",
-          "url": "https://globalize-group.com"
+          "url": "https://www.globalizetl.com"
         },
-        "mainEntityOfPage": "https://globalize-group.com/ar/blog/الأسعار-والتسليم-في-خدمات-الترجمة-المعتمدة",
+        "mainEntityOfPage": "https://www.globalizetl.com/ar/blog/الأسعار-والتسليم-في-خدمات-الترجمة-المعتمدة",
         "datePublished": "2026-01-15T08:00:00+02:00",
         "dateModified": "2026-07-19T00:00:00+02:00",
-        "image": "https://globalize-group.com/images/blog/030-الأسعار-والتسليم-في-خدمات-الترجمة-المعتم.svg"
+        "image": "https://www.globalizetl.com/images/blog/030-الأسعار-والتسليم-في-خدمات-الترجمة-المعتم.svg"
       },
       "faq": {
         "@context": "https://schema.org",
@@ -4395,19 +4395,19 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
             "@type": "ListItem",
             "position": 1,
             "name": "الرئيسية",
-            "item": "https://globalize-group.com/ar"
+            "item": "https://www.globalizetl.com/ar"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "المدونة",
-            "item": "https://globalize-group.com/ar/blog"
+            "item": "https://www.globalizetl.com/ar/blog"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "الأسعار والتسليم في خدمات الترجمة المعتمدة | جلوباليز جروب للترجمة المعتمدة",
-            "item": "https://globalize-group.com/ar/blog/الأسعار-والتسليم-في-خدمات-الترجمة-المعتمدة"
+            "item": "https://www.globalizetl.com/ar/blog/الأسعار-والتسليم-في-خدمات-الترجمة-المعتمدة"
           }
         ]
       }
@@ -4483,12 +4483,12 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
         "publisher": {
           "@type": "Organization",
           "name": "جلوباليز جروب للترجمة المعتمدة",
-          "url": "https://globalize-group.com"
+          "url": "https://www.globalizetl.com"
         },
-        "mainEntityOfPage": "https://globalize-group.com/ar/blog/الترجمة-الفورية",
+        "mainEntityOfPage": "https://www.globalizetl.com/ar/blog/الترجمة-الفورية",
         "datePublished": "2026-01-15T08:00:00+02:00",
         "dateModified": "2026-07-19T00:00:00+02:00",
-        "image": "https://globalize-group.com/images/blog/031-الترجمة-الفورية.svg"
+        "image": "https://www.globalizetl.com/images/blog/031-الترجمة-الفورية.svg"
       },
       "faq": {
         "@context": "https://schema.org",
@@ -4536,19 +4536,19 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
             "@type": "ListItem",
             "position": 1,
             "name": "الرئيسية",
-            "item": "https://globalize-group.com/ar"
+            "item": "https://www.globalizetl.com/ar"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "المدونة",
-            "item": "https://globalize-group.com/ar/blog"
+            "item": "https://www.globalizetl.com/ar/blog"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "الترجمة الفورية | جلوباليز جروب للترجمة المعتمدة",
-            "item": "https://globalize-group.com/ar/blog/الترجمة-الفورية"
+            "item": "https://www.globalizetl.com/ar/blog/الترجمة-الفورية"
           }
         ]
       }
@@ -4625,12 +4625,12 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
         "publisher": {
           "@type": "Organization",
           "name": "جلوباليز جروب للترجمة المعتمدة",
-          "url": "https://globalize-group.com"
+          "url": "https://www.globalizetl.com"
         },
-        "mainEntityOfPage": "https://globalize-group.com/ar/blog/ترجمة-ورش-العمل",
+        "mainEntityOfPage": "https://www.globalizetl.com/ar/blog/ترجمة-ورش-العمل",
         "datePublished": "2026-01-15T08:00:00+02:00",
         "dateModified": "2026-07-19T00:00:00+02:00",
-        "image": "https://globalize-group.com/images/blog/032-ترجمة-ورش-العمل.svg"
+        "image": "https://www.globalizetl.com/images/blog/032-ترجمة-ورش-العمل.svg"
       },
       "faq": {
         "@context": "https://schema.org",
@@ -4678,19 +4678,19 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
             "@type": "ListItem",
             "position": 1,
             "name": "الرئيسية",
-            "item": "https://globalize-group.com/ar"
+            "item": "https://www.globalizetl.com/ar"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "المدونة",
-            "item": "https://globalize-group.com/ar/blog"
+            "item": "https://www.globalizetl.com/ar/blog"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "ترجمة ورش العمل | جلوباليز جروب للترجمة المعتمدة",
-            "item": "https://globalize-group.com/ar/blog/ترجمة-ورش-العمل"
+            "item": "https://www.globalizetl.com/ar/blog/ترجمة-ورش-العمل"
           }
         ]
       }
@@ -4767,12 +4767,12 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
         "publisher": {
           "@type": "Organization",
           "name": "جلوباليز جروب للترجمة المعتمدة",
-          "url": "https://globalize-group.com"
+          "url": "https://www.globalizetl.com"
         },
-        "mainEntityOfPage": "https://globalize-group.com/ar/blog/مكتب-ترجمة-طبية-في-القاهرة",
+        "mainEntityOfPage": "https://www.globalizetl.com/ar/blog/مكتب-ترجمة-طبية-في-القاهرة",
         "datePublished": "2026-01-15T08:00:00+02:00",
         "dateModified": "2026-07-19T00:00:00+02:00",
-        "image": "https://globalize-group.com/images/blog/033-مكتب-ترجمة-طبية-في-القاهرة.svg"
+        "image": "https://www.globalizetl.com/images/blog/033-مكتب-ترجمة-طبية-في-القاهرة.svg"
       },
       "faq": {
         "@context": "https://schema.org",
@@ -4820,19 +4820,19 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
             "@type": "ListItem",
             "position": 1,
             "name": "الرئيسية",
-            "item": "https://globalize-group.com/ar"
+            "item": "https://www.globalizetl.com/ar"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "المدونة",
-            "item": "https://globalize-group.com/ar/blog"
+            "item": "https://www.globalizetl.com/ar/blog"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "مكتب ترجمة طبية في القاهرة | جلوباليز جروب للترجمة المعتمدة",
-            "item": "https://globalize-group.com/ar/blog/مكتب-ترجمة-طبية-في-القاهرة"
+            "item": "https://www.globalizetl.com/ar/blog/مكتب-ترجمة-طبية-في-القاهرة"
           }
         ]
       }
@@ -4909,12 +4909,12 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
         "publisher": {
           "@type": "Organization",
           "name": "جلوباليز جروب للترجمة المعتمدة",
-          "url": "https://globalize-group.com"
+          "url": "https://www.globalizetl.com"
         },
-        "mainEntityOfPage": "https://globalize-group.com/ar/blog/مكتب-ترجمة-فورية-معتمد-من-السفارة-الامريكية",
+        "mainEntityOfPage": "https://www.globalizetl.com/ar/blog/مكتب-ترجمة-فورية-معتمد-من-السفارة-الامريكية",
         "datePublished": "2026-01-15T08:00:00+02:00",
         "dateModified": "2026-07-19T00:00:00+02:00",
-        "image": "https://globalize-group.com/images/blog/034-مكتب-ترجمة-فورية-معتمد-من-السفارة-الامري.svg"
+        "image": "https://www.globalizetl.com/images/blog/034-مكتب-ترجمة-فورية-معتمد-من-السفارة-الامري.svg"
       },
       "faq": {
         "@context": "https://schema.org",
@@ -4962,19 +4962,19 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
             "@type": "ListItem",
             "position": 1,
             "name": "الرئيسية",
-            "item": "https://globalize-group.com/ar"
+            "item": "https://www.globalizetl.com/ar"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "المدونة",
-            "item": "https://globalize-group.com/ar/blog"
+            "item": "https://www.globalizetl.com/ar/blog"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "مكتب ترجمة فورية معتمد من السفارة الامريكية | جلوباليز جروب للترجمة المعتمدة",
-            "item": "https://globalize-group.com/ar/blog/مكتب-ترجمة-فورية-معتمد-من-السفارة-الامريكية"
+            "item": "https://www.globalizetl.com/ar/blog/مكتب-ترجمة-فورية-معتمد-من-السفارة-الامريكية"
           }
         ]
       }
@@ -5051,12 +5051,12 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
         "publisher": {
           "@type": "Organization",
           "name": "جلوباليز جروب للترجمة المعتمدة",
-          "url": "https://globalize-group.com"
+          "url": "https://www.globalizetl.com"
         },
-        "mainEntityOfPage": "https://globalize-group.com/ar/blog/transcription-في-خدمات-الترجمة-المعتمدة",
+        "mainEntityOfPage": "https://www.globalizetl.com/ar/blog/transcription-في-خدمات-الترجمة-المعتمدة",
         "datePublished": "2026-01-15T08:00:00+02:00",
         "dateModified": "2026-07-19T00:00:00+02:00",
-        "image": "https://globalize-group.com/images/blog/035-transcription-في-خدمات-الترجمة-المعتمدة.svg"
+        "image": "https://www.globalizetl.com/images/blog/035-transcription-في-خدمات-الترجمة-المعتمدة.svg"
       },
       "faq": {
         "@context": "https://schema.org",
@@ -5104,19 +5104,19 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
             "@type": "ListItem",
             "position": 1,
             "name": "الرئيسية",
-            "item": "https://globalize-group.com/ar"
+            "item": "https://www.globalizetl.com/ar"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "المدونة",
-            "item": "https://globalize-group.com/ar/blog"
+            "item": "https://www.globalizetl.com/ar/blog"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "transcription في خدمات الترجمة المعتمدة | جلوباليز جروب للترجمة المعتمدة",
-            "item": "https://globalize-group.com/ar/blog/transcription-في-خدمات-الترجمة-المعتمدة"
+            "item": "https://www.globalizetl.com/ar/blog/transcription-في-خدمات-الترجمة-المعتمدة"
           }
         ]
       }
@@ -5193,12 +5193,12 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
         "publisher": {
           "@type": "Organization",
           "name": "جلوباليز جروب للترجمة المعتمدة",
-          "url": "https://globalize-group.com"
+          "url": "https://www.globalizetl.com"
         },
-        "mainEntityOfPage": "https://globalize-group.com/ar/blog/مترجم-فيديو-على-اللغة-العربية",
+        "mainEntityOfPage": "https://www.globalizetl.com/ar/blog/مترجم-فيديو-على-اللغة-العربية",
         "datePublished": "2026-01-15T08:00:00+02:00",
         "dateModified": "2026-07-19T00:00:00+02:00",
-        "image": "https://globalize-group.com/images/blog/036-مترجم-فيديو-على-اللغة-العربية.svg"
+        "image": "https://www.globalizetl.com/images/blog/036-مترجم-فيديو-على-اللغة-العربية.svg"
       },
       "faq": {
         "@context": "https://schema.org",
@@ -5246,19 +5246,19 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
             "@type": "ListItem",
             "position": 1,
             "name": "الرئيسية",
-            "item": "https://globalize-group.com/ar"
+            "item": "https://www.globalizetl.com/ar"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "المدونة",
-            "item": "https://globalize-group.com/ar/blog"
+            "item": "https://www.globalizetl.com/ar/blog"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "مترجم فيديو على اللغة العربية | جلوباليز جروب للترجمة المعتمدة",
-            "item": "https://globalize-group.com/ar/blog/مترجم-فيديو-على-اللغة-العربية"
+            "item": "https://www.globalizetl.com/ar/blog/مترجم-فيديو-على-اللغة-العربية"
           }
         ]
       }
@@ -5335,12 +5335,12 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
         "publisher": {
           "@type": "Organization",
           "name": "جلوباليز جروب للترجمة المعتمدة",
-          "url": "https://globalize-group.com"
+          "url": "https://www.globalizetl.com"
         },
-        "mainEntityOfPage": "https://globalize-group.com/ar/blog/أخلاقيات-الترجمة",
+        "mainEntityOfPage": "https://www.globalizetl.com/ar/blog/أخلاقيات-الترجمة",
         "datePublished": "2026-01-15T08:00:00+02:00",
         "dateModified": "2026-07-19T00:00:00+02:00",
-        "image": "https://globalize-group.com/images/blog/037-أخلاقيات-الترجمة.svg"
+        "image": "https://www.globalizetl.com/images/blog/037-أخلاقيات-الترجمة.svg"
       },
       "faq": {
         "@context": "https://schema.org",
@@ -5388,19 +5388,19 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
             "@type": "ListItem",
             "position": 1,
             "name": "الرئيسية",
-            "item": "https://globalize-group.com/ar"
+            "item": "https://www.globalizetl.com/ar"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "المدونة",
-            "item": "https://globalize-group.com/ar/blog"
+            "item": "https://www.globalizetl.com/ar/blog"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "أخلاقيات الترجمة | جلوباليز جروب للترجمة المعتمدة",
-            "item": "https://globalize-group.com/ar/blog/أخلاقيات-الترجمة"
+            "item": "https://www.globalizetl.com/ar/blog/أخلاقيات-الترجمة"
           }
         ]
       }
@@ -5477,12 +5477,12 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
         "publisher": {
           "@type": "Organization",
           "name": "جلوباليز جروب للترجمة المعتمدة",
-          "url": "https://globalize-group.com"
+          "url": "https://www.globalizetl.com"
         },
-        "mainEntityOfPage": "https://globalize-group.com/ar/blog/الأسعار-والتسليم-مكتب-ترجمة-معتمدة",
+        "mainEntityOfPage": "https://www.globalizetl.com/ar/blog/الأسعار-والتسليم-مكتب-ترجمة-معتمدة",
         "datePublished": "2026-01-15T08:00:00+02:00",
         "dateModified": "2026-07-19T00:00:00+02:00",
-        "image": "https://globalize-group.com/images/blog/038-الأسعار-والتسليم-مكتب-ترجمة-معتمدة.svg"
+        "image": "https://www.globalizetl.com/images/blog/038-الأسعار-والتسليم-مكتب-ترجمة-معتمدة.svg"
       },
       "faq": {
         "@context": "https://schema.org",
@@ -5530,19 +5530,19 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
             "@type": "ListItem",
             "position": 1,
             "name": "الرئيسية",
-            "item": "https://globalize-group.com/ar"
+            "item": "https://www.globalizetl.com/ar"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "المدونة",
-            "item": "https://globalize-group.com/ar/blog"
+            "item": "https://www.globalizetl.com/ar/blog"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "الأسعار والتسليم مكتب ترجمة معتمدة | جلوباليز جروب للترجمة المعتمدة",
-            "item": "https://globalize-group.com/ar/blog/الأسعار-والتسليم-مكتب-ترجمة-معتمدة"
+            "item": "https://www.globalizetl.com/ar/blog/الأسعار-والتسليم-مكتب-ترجمة-معتمدة"
           }
         ]
       }
@@ -5619,12 +5619,12 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
         "publisher": {
           "@type": "Organization",
           "name": "جلوباليز جروب للترجمة المعتمدة",
-          "url": "https://globalize-group.com"
+          "url": "https://www.globalizetl.com"
         },
-        "mainEntityOfPage": "https://globalize-group.com/ar/blog/الترجمة-التجارية",
+        "mainEntityOfPage": "https://www.globalizetl.com/ar/blog/الترجمة-التجارية",
         "datePublished": "2026-01-15T08:00:00+02:00",
         "dateModified": "2026-07-19T00:00:00+02:00",
-        "image": "https://globalize-group.com/images/blog/039-الترجمة-التجارية.svg"
+        "image": "https://www.globalizetl.com/images/blog/039-الترجمة-التجارية.svg"
       },
       "faq": {
         "@context": "https://schema.org",
@@ -5672,19 +5672,19 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
             "@type": "ListItem",
             "position": 1,
             "name": "الرئيسية",
-            "item": "https://globalize-group.com/ar"
+            "item": "https://www.globalizetl.com/ar"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "المدونة",
-            "item": "https://globalize-group.com/ar/blog"
+            "item": "https://www.globalizetl.com/ar/blog"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "الترجمة التجارية | جلوباليز جروب للترجمة المعتمدة",
-            "item": "https://globalize-group.com/ar/blog/الترجمة-التجارية"
+            "item": "https://www.globalizetl.com/ar/blog/الترجمة-التجارية"
           }
         ]
       }
@@ -5761,12 +5761,12 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
         "publisher": {
           "@type": "Organization",
           "name": "جلوباليز جروب للترجمة المعتمدة",
-          "url": "https://globalize-group.com"
+          "url": "https://www.globalizetl.com"
         },
-        "mainEntityOfPage": "https://globalize-group.com/ar/blog/جلوباليز-جروب-للترجمة-المعتمدة-للترجمة-المعتمدة",
+        "mainEntityOfPage": "https://www.globalizetl.com/ar/blog/جلوباليز-جروب-للترجمة-المعتمدة-للترجمة-المعتمدة",
         "datePublished": "2026-01-15T08:00:00+02:00",
         "dateModified": "2026-07-19T00:00:00+02:00",
-        "image": "https://globalize-group.com/images/blog/040-جلوباليز-جروب-للترجمة-المعتمدة-للترجمة-ا.svg"
+        "image": "https://www.globalizetl.com/images/blog/040-جلوباليز-جروب-للترجمة-المعتمدة-للترجمة-ا.svg"
       },
       "faq": {
         "@context": "https://schema.org",
@@ -5814,19 +5814,19 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
             "@type": "ListItem",
             "position": 1,
             "name": "الرئيسية",
-            "item": "https://globalize-group.com/ar"
+            "item": "https://www.globalizetl.com/ar"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "المدونة",
-            "item": "https://globalize-group.com/ar/blog"
+            "item": "https://www.globalizetl.com/ar/blog"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "جلوباليز جروب للترجمة المعتمدة للترجمة المعتمدة للترجمة المعتمدة",
-            "item": "https://globalize-group.com/ar/blog/جلوباليز-جروب-للترجمة-المعتمدة-للترجمة-المعتمدة"
+            "item": "https://www.globalizetl.com/ar/blog/جلوباليز-جروب-للترجمة-المعتمدة-للترجمة-المعتمدة"
           }
         ]
       }
@@ -5903,12 +5903,12 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
         "publisher": {
           "@type": "Organization",
           "name": "جلوباليز جروب للترجمة المعتمدة",
-          "url": "https://globalize-group.com"
+          "url": "https://www.globalizetl.com"
         },
-        "mainEntityOfPage": "https://globalize-group.com/ar/blog/ترجمة-جواز-السفر",
+        "mainEntityOfPage": "https://www.globalizetl.com/ar/blog/ترجمة-جواز-السفر",
         "datePublished": "2026-01-15T08:00:00+02:00",
         "dateModified": "2026-07-19T00:00:00+02:00",
-        "image": "https://globalize-group.com/images/blog/041-ترجمة-جواز-السفر.svg"
+        "image": "https://www.globalizetl.com/images/blog/041-ترجمة-جواز-السفر.svg"
       },
       "faq": {
         "@context": "https://schema.org",
@@ -5956,19 +5956,19 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
             "@type": "ListItem",
             "position": 1,
             "name": "الرئيسية",
-            "item": "https://globalize-group.com/ar"
+            "item": "https://www.globalizetl.com/ar"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "المدونة",
-            "item": "https://globalize-group.com/ar/blog"
+            "item": "https://www.globalizetl.com/ar/blog"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "ترجمة جواز السفر | جلوباليز جروب للترجمة المعتمدة",
-            "item": "https://globalize-group.com/ar/blog/ترجمة-جواز-السفر"
+            "item": "https://www.globalizetl.com/ar/blog/ترجمة-جواز-السفر"
           }
         ]
       }
@@ -6045,12 +6045,12 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
         "publisher": {
           "@type": "Organization",
           "name": "جلوباليز جروب للترجمة المعتمدة",
-          "url": "https://globalize-group.com"
+          "url": "https://www.globalizetl.com"
         },
-        "mainEntityOfPage": "https://globalize-group.com/ar/blog/ترجمة-عقد-الزواج",
+        "mainEntityOfPage": "https://www.globalizetl.com/ar/blog/ترجمة-عقد-الزواج",
         "datePublished": "2026-01-15T08:00:00+02:00",
         "dateModified": "2026-07-19T00:00:00+02:00",
-        "image": "https://globalize-group.com/images/blog/042-ترجمة-عقد-الزواج.svg"
+        "image": "https://www.globalizetl.com/images/blog/042-ترجمة-عقد-الزواج.svg"
       },
       "faq": {
         "@context": "https://schema.org",
@@ -6098,19 +6098,19 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
             "@type": "ListItem",
             "position": 1,
             "name": "الرئيسية",
-            "item": "https://globalize-group.com/ar"
+            "item": "https://www.globalizetl.com/ar"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "المدونة",
-            "item": "https://globalize-group.com/ar/blog"
+            "item": "https://www.globalizetl.com/ar/blog"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "ترجمة عقد الزواج | جلوباليز جروب للترجمة المعتمدة",
-            "item": "https://globalize-group.com/ar/blog/ترجمة-عقد-الزواج"
+            "item": "https://www.globalizetl.com/ar/blog/ترجمة-عقد-الزواج"
           }
         ]
       }
@@ -6187,12 +6187,12 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
         "publisher": {
           "@type": "Organization",
           "name": "جلوباليز جروب للترجمة المعتمدة",
-          "url": "https://globalize-group.com"
+          "url": "https://www.globalizetl.com"
         },
-        "mainEntityOfPage": "https://globalize-group.com/ar/blog/خدمة-ترجمة-دينية",
+        "mainEntityOfPage": "https://www.globalizetl.com/ar/blog/خدمة-ترجمة-دينية",
         "datePublished": "2026-01-15T08:00:00+02:00",
         "dateModified": "2026-07-19T00:00:00+02:00",
-        "image": "https://globalize-group.com/images/blog/043-خدمة-ترجمة-دينية.svg"
+        "image": "https://www.globalizetl.com/images/blog/043-خدمة-ترجمة-دينية.svg"
       },
       "faq": {
         "@context": "https://schema.org",
@@ -6240,19 +6240,19 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
             "@type": "ListItem",
             "position": 1,
             "name": "الرئيسية",
-            "item": "https://globalize-group.com/ar"
+            "item": "https://www.globalizetl.com/ar"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "المدونة",
-            "item": "https://globalize-group.com/ar/blog"
+            "item": "https://www.globalizetl.com/ar/blog"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "خدمة ترجمة دينية | جلوباليز جروب للترجمة المعتمدة",
-            "item": "https://globalize-group.com/ar/blog/خدمة-ترجمة-دينية"
+            "item": "https://www.globalizetl.com/ar/blog/خدمة-ترجمة-دينية"
           }
         ]
       }
@@ -6329,12 +6329,12 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
         "publisher": {
           "@type": "Organization",
           "name": "جلوباليز جروب للترجمة المعتمدة",
-          "url": "https://globalize-group.com"
+          "url": "https://www.globalizetl.com"
         },
-        "mainEntityOfPage": "https://globalize-group.com/ar/blog/مكتب-ترجمة-معتمد",
+        "mainEntityOfPage": "https://www.globalizetl.com/ar/blog/مكتب-ترجمة-معتمد",
         "datePublished": "2026-01-15T08:00:00+02:00",
         "dateModified": "2026-07-19T00:00:00+02:00",
-        "image": "https://globalize-group.com/images/blog/044-مكتب-ترجمة-معتمد.svg"
+        "image": "https://www.globalizetl.com/images/blog/044-مكتب-ترجمة-معتمد.svg"
       },
       "faq": {
         "@context": "https://schema.org",
@@ -6382,19 +6382,19 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
             "@type": "ListItem",
             "position": 1,
             "name": "الرئيسية",
-            "item": "https://globalize-group.com/ar"
+            "item": "https://www.globalizetl.com/ar"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "المدونة",
-            "item": "https://globalize-group.com/ar/blog"
+            "item": "https://www.globalizetl.com/ar/blog"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "مكتب ترجمة معتمد | جلوباليز جروب للترجمة المعتمدة",
-            "item": "https://globalize-group.com/ar/blog/مكتب-ترجمة-معتمد"
+            "item": "https://www.globalizetl.com/ar/blog/مكتب-ترجمة-معتمد"
           }
         ]
       }
@@ -6471,12 +6471,12 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
         "publisher": {
           "@type": "Organization",
           "name": "جلوباليز جروب للترجمة المعتمدة",
-          "url": "https://globalize-group.com"
+          "url": "https://www.globalizetl.com"
         },
-        "mainEntityOfPage": "https://globalize-group.com/ar/blog/ترجمة-فورية",
+        "mainEntityOfPage": "https://www.globalizetl.com/ar/blog/ترجمة-فورية",
         "datePublished": "2026-01-15T08:00:00+02:00",
         "dateModified": "2026-07-19T00:00:00+02:00",
-        "image": "https://globalize-group.com/images/blog/045-ترجمة-فورية.svg"
+        "image": "https://www.globalizetl.com/images/blog/045-ترجمة-فورية.svg"
       },
       "faq": {
         "@context": "https://schema.org",
@@ -6524,19 +6524,19 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
             "@type": "ListItem",
             "position": 1,
             "name": "الرئيسية",
-            "item": "https://globalize-group.com/ar"
+            "item": "https://www.globalizetl.com/ar"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "المدونة",
-            "item": "https://globalize-group.com/ar/blog"
+            "item": "https://www.globalizetl.com/ar/blog"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "ترجمة فورية | جلوباليز جروب للترجمة المعتمدة",
-            "item": "https://globalize-group.com/ar/blog/ترجمة-فورية"
+            "item": "https://www.globalizetl.com/ar/blog/ترجمة-فورية"
           }
         ]
       }
@@ -6613,12 +6613,12 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
         "publisher": {
           "@type": "Organization",
           "name": "جلوباليز جروب للترجمة المعتمدة",
-          "url": "https://globalize-group.com"
+          "url": "https://www.globalizetl.com"
         },
-        "mainEntityOfPage": "https://globalize-group.com/ar/blog/جلوباليز-جروب-للترجمة-المعتمدة-في-خدمات-الترجمة-المعتمدة",
+        "mainEntityOfPage": "https://www.globalizetl.com/ar/blog/جلوباليز-جروب-للترجمة-المعتمدة-في-خدمات-الترجمة-المعتمدة",
         "datePublished": "2026-01-15T08:00:00+02:00",
         "dateModified": "2026-07-19T00:00:00+02:00",
-        "image": "https://globalize-group.com/images/blog/046-جلوباليز-جروب-للترجمة-المعتمدة-في-خدمات-.svg"
+        "image": "https://www.globalizetl.com/images/blog/046-جلوباليز-جروب-للترجمة-المعتمدة-في-خدمات-.svg"
       },
       "faq": {
         "@context": "https://schema.org",
@@ -6666,19 +6666,19 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
             "@type": "ListItem",
             "position": 1,
             "name": "الرئيسية",
-            "item": "https://globalize-group.com/ar"
+            "item": "https://www.globalizetl.com/ar"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "المدونة",
-            "item": "https://globalize-group.com/ar/blog"
+            "item": "https://www.globalizetl.com/ar/blog"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "جلوباليز جروب للترجمة المعتمدة للترجمة المعتمدة في خدمات الترجمة المعتمدة",
-            "item": "https://globalize-group.com/ar/blog/جلوباليز-جروب-للترجمة-المعتمدة-في-خدمات-الترجمة-المعتمدة"
+            "item": "https://www.globalizetl.com/ar/blog/جلوباليز-جروب-للترجمة-المعتمدة-في-خدمات-الترجمة-المعتمدة"
           }
         ]
       }
@@ -6755,12 +6755,12 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
         "publisher": {
           "@type": "Organization",
           "name": "جلوباليز جروب للترجمة المعتمدة",
-          "url": "https://globalize-group.com"
+          "url": "https://www.globalizetl.com"
         },
-        "mainEntityOfPage": "https://globalize-group.com/ar/blog/الترجمة-الابداعية",
+        "mainEntityOfPage": "https://www.globalizetl.com/ar/blog/الترجمة-الابداعية",
         "datePublished": "2026-01-15T08:00:00+02:00",
         "dateModified": "2026-07-19T00:00:00+02:00",
-        "image": "https://globalize-group.com/images/blog/047-الترجمة-الابداعية.svg"
+        "image": "https://www.globalizetl.com/images/blog/047-الترجمة-الابداعية.svg"
       },
       "faq": {
         "@context": "https://schema.org",
@@ -6808,19 +6808,19 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
             "@type": "ListItem",
             "position": 1,
             "name": "الرئيسية",
-            "item": "https://globalize-group.com/ar"
+            "item": "https://www.globalizetl.com/ar"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "المدونة",
-            "item": "https://globalize-group.com/ar/blog"
+            "item": "https://www.globalizetl.com/ar/blog"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "الترجمة الابداعية | جلوباليز جروب للترجمة المعتمدة",
-            "item": "https://globalize-group.com/ar/blog/الترجمة-الابداعية"
+            "item": "https://www.globalizetl.com/ar/blog/الترجمة-الابداعية"
           }
         ]
       }
@@ -6897,12 +6897,12 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
         "publisher": {
           "@type": "Organization",
           "name": "جلوباليز جروب للترجمة المعتمدة",
-          "url": "https://globalize-group.com"
+          "url": "https://www.globalizetl.com"
         },
-        "mainEntityOfPage": "https://globalize-group.com/ar/blog/الترجمة-التجارية-2",
+        "mainEntityOfPage": "https://www.globalizetl.com/ar/blog/الترجمة-التجارية-2",
         "datePublished": "2026-01-15T08:00:00+02:00",
         "dateModified": "2026-07-19T00:00:00+02:00",
-        "image": "https://globalize-group.com/images/blog/048-الترجمة-التجارية-2.svg"
+        "image": "https://www.globalizetl.com/images/blog/048-الترجمة-التجارية-2.svg"
       },
       "faq": {
         "@context": "https://schema.org",
@@ -6950,19 +6950,19 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
             "@type": "ListItem",
             "position": 1,
             "name": "الرئيسية",
-            "item": "https://globalize-group.com/ar"
+            "item": "https://www.globalizetl.com/ar"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "المدونة",
-            "item": "https://globalize-group.com/ar/blog"
+            "item": "https://www.globalizetl.com/ar/blog"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "الترجمة التجارية | جلوباليز جروب للترجمة المعتمدة",
-            "item": "https://globalize-group.com/ar/blog/الترجمة-التجارية-2"
+            "item": "https://www.globalizetl.com/ar/blog/الترجمة-التجارية-2"
           }
         ]
       }
@@ -7039,12 +7039,12 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
         "publisher": {
           "@type": "Organization",
           "name": "جلوباليز جروب للترجمة المعتمدة",
-          "url": "https://globalize-group.com"
+          "url": "https://www.globalizetl.com"
         },
-        "mainEntityOfPage": "https://globalize-group.com/ar/blog/ترجمة-ابحاث-علمية",
+        "mainEntityOfPage": "https://www.globalizetl.com/ar/blog/ترجمة-ابحاث-علمية",
         "datePublished": "2026-01-15T08:00:00+02:00",
         "dateModified": "2026-07-19T00:00:00+02:00",
-        "image": "https://globalize-group.com/images/blog/049-ترجمة-ابحاث-علمية.svg"
+        "image": "https://www.globalizetl.com/images/blog/049-ترجمة-ابحاث-علمية.svg"
       },
       "faq": {
         "@context": "https://schema.org",
@@ -7092,19 +7092,19 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
             "@type": "ListItem",
             "position": 1,
             "name": "الرئيسية",
-            "item": "https://globalize-group.com/ar"
+            "item": "https://www.globalizetl.com/ar"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "المدونة",
-            "item": "https://globalize-group.com/ar/blog"
+            "item": "https://www.globalizetl.com/ar/blog"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "ترجمة ابحاث علمية | جلوباليز جروب للترجمة المعتمدة",
-            "item": "https://globalize-group.com/ar/blog/ترجمة-ابحاث-علمية"
+            "item": "https://www.globalizetl.com/ar/blog/ترجمة-ابحاث-علمية"
           }
         ]
       }
@@ -7181,12 +7181,12 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
         "publisher": {
           "@type": "Organization",
           "name": "جلوباليز جروب للترجمة المعتمدة",
-          "url": "https://globalize-group.com"
+          "url": "https://www.globalizetl.com"
         },
-        "mainEntityOfPage": "https://globalize-group.com/ar/blog/ترجمة-جوجل-للنصوص",
+        "mainEntityOfPage": "https://www.globalizetl.com/ar/blog/ترجمة-جوجل-للنصوص",
         "datePublished": "2026-01-15T08:00:00+02:00",
         "dateModified": "2026-07-19T00:00:00+02:00",
-        "image": "https://globalize-group.com/images/blog/050-ترجمة-جوجل-للنصوص.svg"
+        "image": "https://www.globalizetl.com/images/blog/050-ترجمة-جوجل-للنصوص.svg"
       },
       "faq": {
         "@context": "https://schema.org",
@@ -7234,19 +7234,19 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
             "@type": "ListItem",
             "position": 1,
             "name": "الرئيسية",
-            "item": "https://globalize-group.com/ar"
+            "item": "https://www.globalizetl.com/ar"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "المدونة",
-            "item": "https://globalize-group.com/ar/blog"
+            "item": "https://www.globalizetl.com/ar/blog"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "ترجمة جوجل للنصوص | جلوباليز جروب للترجمة المعتمدة",
-            "item": "https://globalize-group.com/ar/blog/ترجمة-جوجل-للنصوص"
+            "item": "https://www.globalizetl.com/ar/blog/ترجمة-جوجل-للنصوص"
           }
         ]
       }
@@ -7323,12 +7323,12 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
         "publisher": {
           "@type": "Organization",
           "name": "جلوباليز جروب للترجمة المعتمدة",
-          "url": "https://globalize-group.com"
+          "url": "https://www.globalizetl.com"
         },
-        "mainEntityOfPage": "https://globalize-group.com/ar/blog/جلوباليز-جروب-للترجمة-المعتمدة-أفضل-شركة-ترجمة-في-دبي",
+        "mainEntityOfPage": "https://www.globalizetl.com/ar/blog/جلوباليز-جروب-للترجمة-المعتمدة-أفضل-شركة-ترجمة-في-دبي",
         "datePublished": "2026-01-15T08:00:00+02:00",
         "dateModified": "2026-07-19T00:00:00+02:00",
-        "image": "https://globalize-group.com/images/blog/051-جلوباليز-جروب-للترجمة-المعتمدة-أفضل-شركة.svg"
+        "image": "https://www.globalizetl.com/images/blog/051-جلوباليز-جروب-للترجمة-المعتمدة-أفضل-شركة.svg"
       },
       "faq": {
         "@context": "https://schema.org",
@@ -7376,19 +7376,19 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
             "@type": "ListItem",
             "position": 1,
             "name": "الرئيسية",
-            "item": "https://globalize-group.com/ar"
+            "item": "https://www.globalizetl.com/ar"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "المدونة",
-            "item": "https://globalize-group.com/ar/blog"
+            "item": "https://www.globalizetl.com/ar/blog"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "جلوباليز جروب للترجمة المعتمدة للترجمة المعتمدة أفضل شركة ترجمة في دبي",
-            "item": "https://globalize-group.com/ar/blog/جلوباليز-جروب-للترجمة-المعتمدة-أفضل-شركة-ترجمة-في-دبي"
+            "item": "https://www.globalizetl.com/ar/blog/جلوباليز-جروب-للترجمة-المعتمدة-أفضل-شركة-ترجمة-في-دبي"
           }
         ]
       }
@@ -7465,12 +7465,12 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
         "publisher": {
           "@type": "Organization",
           "name": "جلوباليز جروب للترجمة المعتمدة",
-          "url": "https://globalize-group.com"
+          "url": "https://www.globalizetl.com"
         },
-        "mainEntityOfPage": "https://globalize-group.com/ar/blog/شركة-ترجمة-معتمدة",
+        "mainEntityOfPage": "https://www.globalizetl.com/ar/blog/شركة-ترجمة-معتمدة",
         "datePublished": "2026-01-15T08:00:00+02:00",
         "dateModified": "2026-07-19T00:00:00+02:00",
-        "image": "https://globalize-group.com/images/blog/052-شركة-ترجمة-معتمدة.svg"
+        "image": "https://www.globalizetl.com/images/blog/052-شركة-ترجمة-معتمدة.svg"
       },
       "faq": {
         "@context": "https://schema.org",
@@ -7518,19 +7518,19 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
             "@type": "ListItem",
             "position": 1,
             "name": "الرئيسية",
-            "item": "https://globalize-group.com/ar"
+            "item": "https://www.globalizetl.com/ar"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "المدونة",
-            "item": "https://globalize-group.com/ar/blog"
+            "item": "https://www.globalizetl.com/ar/blog"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "شركة ترجمة معتمدة | جلوباليز جروب للترجمة المعتمدة",
-            "item": "https://globalize-group.com/ar/blog/شركة-ترجمة-معتمدة"
+            "item": "https://www.globalizetl.com/ar/blog/شركة-ترجمة-معتمدة"
           }
         ]
       }
@@ -7607,12 +7607,12 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
         "publisher": {
           "@type": "Organization",
           "name": "جلوباليز جروب للترجمة المعتمدة",
-          "url": "https://globalize-group.com"
+          "url": "https://www.globalizetl.com"
         },
-        "mainEntityOfPage": "https://globalize-group.com/ar/blog/مكتب-ترجمة-معتمدة-لدى-جميع-السفارات-جلوباليز-جروب-للترجمة",
+        "mainEntityOfPage": "https://www.globalizetl.com/ar/blog/مكتب-ترجمة-معتمدة-لدى-جميع-السفارات-جلوباليز-جروب-للترجمة",
         "datePublished": "2026-01-15T08:00:00+02:00",
         "dateModified": "2026-07-19T00:00:00+02:00",
-        "image": "https://globalize-group.com/images/blog/053-مكتب-ترجمة-معتمدة-لدى-جميع-السفارات-جلوب.svg"
+        "image": "https://www.globalizetl.com/images/blog/053-مكتب-ترجمة-معتمدة-لدى-جميع-السفارات-جلوب.svg"
       },
       "faq": {
         "@context": "https://schema.org",
@@ -7660,19 +7660,19 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
             "@type": "ListItem",
             "position": 1,
             "name": "الرئيسية",
-            "item": "https://globalize-group.com/ar"
+            "item": "https://www.globalizetl.com/ar"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "المدونة",
-            "item": "https://globalize-group.com/ar/blog"
+            "item": "https://www.globalizetl.com/ar/blog"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "مكتب ترجمة معتمدة لدى جميع السفارات - جلوباليز جروب للترجمة المعتمدة للترجمة المعتمدة Services",
-            "item": "https://globalize-group.com/ar/blog/مكتب-ترجمة-معتمدة-لدى-جميع-السفارات-جلوباليز-جروب-للترجمة"
+            "item": "https://www.globalizetl.com/ar/blog/مكتب-ترجمة-معتمدة-لدى-جميع-السفارات-جلوباليز-جروب-للترجمة"
           }
         ]
       }
@@ -7749,12 +7749,12 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
         "publisher": {
           "@type": "Organization",
           "name": "جلوباليز جروب للترجمة المعتمدة",
-          "url": "https://globalize-group.com"
+          "url": "https://www.globalizetl.com"
         },
-        "mainEntityOfPage": "https://globalize-group.com/ar/blog/مواقع-ترجمة-الصور",
+        "mainEntityOfPage": "https://www.globalizetl.com/ar/blog/مواقع-ترجمة-الصور",
         "datePublished": "2026-01-15T08:00:00+02:00",
         "dateModified": "2026-07-19T00:00:00+02:00",
-        "image": "https://globalize-group.com/images/blog/054-مواقع-ترجمة-الصور.svg"
+        "image": "https://www.globalizetl.com/images/blog/054-مواقع-ترجمة-الصور.svg"
       },
       "faq": {
         "@context": "https://schema.org",
@@ -7802,19 +7802,19 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
             "@type": "ListItem",
             "position": 1,
             "name": "الرئيسية",
-            "item": "https://globalize-group.com/ar"
+            "item": "https://www.globalizetl.com/ar"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "المدونة",
-            "item": "https://globalize-group.com/ar/blog"
+            "item": "https://www.globalizetl.com/ar/blog"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "مواقع ترجمة الصور | جلوباليز جروب للترجمة المعتمدة",
-            "item": "https://globalize-group.com/ar/blog/مواقع-ترجمة-الصور"
+            "item": "https://www.globalizetl.com/ar/blog/مواقع-ترجمة-الصور"
           }
         ]
       }
@@ -7891,12 +7891,12 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
         "publisher": {
           "@type": "Organization",
           "name": "جلوباليز جروب للترجمة المعتمدة",
-          "url": "https://globalize-group.com"
+          "url": "https://www.globalizetl.com"
         },
-        "mainEntityOfPage": "https://globalize-group.com/ar/blog/ترجمة-نتائج-فحوص-الدم-لوحدات-المتبعة-في-الخارج",
+        "mainEntityOfPage": "https://www.globalizetl.com/ar/blog/ترجمة-نتائج-فحوص-الدم-لوحدات-المتبعة-في-الخارج",
         "datePublished": "2026-01-15T08:00:00+02:00",
         "dateModified": "2026-07-19T00:00:00+02:00",
-        "image": "https://globalize-group.com/images/blog/055-ترجمة-نتائج-فحوص-الدم-لوحدات-المتبعة-في-.svg"
+        "image": "https://www.globalizetl.com/images/blog/055-ترجمة-نتائج-فحوص-الدم-لوحدات-المتبعة-في-.svg"
       },
       "faq": {
         "@context": "https://schema.org",
@@ -7944,19 +7944,19 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
             "@type": "ListItem",
             "position": 1,
             "name": "الرئيسية",
-            "item": "https://globalize-group.com/ar"
+            "item": "https://www.globalizetl.com/ar"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "المدونة",
-            "item": "https://globalize-group.com/ar/blog"
+            "item": "https://www.globalizetl.com/ar/blog"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "ترجمة نتائج فحوص الدم لوحدات المتبعة في الخارج | جلوباليز جروب للترجمة المعتمدة",
-            "item": "https://globalize-group.com/ar/blog/ترجمة-نتائج-فحوص-الدم-لوحدات-المتبعة-في-الخارج"
+            "item": "https://www.globalizetl.com/ar/blog/ترجمة-نتائج-فحوص-الدم-لوحدات-المتبعة-في-الخارج"
           }
         ]
       }
@@ -8033,12 +8033,12 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
         "publisher": {
           "@type": "Organization",
           "name": "جلوباليز جروب للترجمة المعتمدة",
-          "url": "https://globalize-group.com"
+          "url": "https://www.globalizetl.com"
         },
-        "mainEntityOfPage": "https://globalize-group.com/ar/blog/content-writing-في-خدمات-الترجمة-المعتمدة",
+        "mainEntityOfPage": "https://www.globalizetl.com/ar/blog/content-writing-في-خدمات-الترجمة-المعتمدة",
         "datePublished": "2026-01-15T08:00:00+02:00",
         "dateModified": "2026-07-19T00:00:00+02:00",
-        "image": "https://globalize-group.com/images/blog/056-content-writing-في-خدمات-الترجمة-المعتمد.svg"
+        "image": "https://www.globalizetl.com/images/blog/056-content-writing-في-خدمات-الترجمة-المعتمد.svg"
       },
       "faq": {
         "@context": "https://schema.org",
@@ -8086,19 +8086,19 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
             "@type": "ListItem",
             "position": 1,
             "name": "الرئيسية",
-            "item": "https://globalize-group.com/ar"
+            "item": "https://www.globalizetl.com/ar"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "المدونة",
-            "item": "https://globalize-group.com/ar/blog"
+            "item": "https://www.globalizetl.com/ar/blog"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "content writing في خدمات الترجمة المعتمدة | جلوباليز جروب للترجمة المعتمدة",
-            "item": "https://globalize-group.com/ar/blog/content-writing-في-خدمات-الترجمة-المعتمدة"
+            "item": "https://www.globalizetl.com/ar/blog/content-writing-في-خدمات-الترجمة-المعتمدة"
           }
         ]
       }
@@ -8175,12 +8175,12 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
         "publisher": {
           "@type": "Organization",
           "name": "جلوباليز جروب للترجمة المعتمدة",
-          "url": "https://globalize-group.com"
+          "url": "https://www.globalizetl.com"
         },
-        "mainEntityOfPage": "https://globalize-group.com/ar/blog/مكتب-ترجمة-معتمد-في-رمسيس-والقاهرة-وجمهورية-مصر-العربية",
+        "mainEntityOfPage": "https://www.globalizetl.com/ar/blog/مكتب-ترجمة-معتمد-في-رمسيس-والقاهرة-وجمهورية-مصر-العربية",
         "datePublished": "2026-01-15T08:00:00+02:00",
         "dateModified": "2026-07-19T00:00:00+02:00",
-        "image": "https://globalize-group.com/images/blog/057-مكتب-ترجمة-معتمد-في-رمسيس-والقاهرة-وجمهو.svg"
+        "image": "https://www.globalizetl.com/images/blog/057-مكتب-ترجمة-معتمد-في-رمسيس-والقاهرة-وجمهو.svg"
       },
       "faq": {
         "@context": "https://schema.org",
@@ -8228,19 +8228,19 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
             "@type": "ListItem",
             "position": 1,
             "name": "الرئيسية",
-            "item": "https://globalize-group.com/ar"
+            "item": "https://www.globalizetl.com/ar"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "المدونة",
-            "item": "https://globalize-group.com/ar/blog"
+            "item": "https://www.globalizetl.com/ar/blog"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "مكتب ترجمة معتمد في رمسيس والقاهرة وجمهورية مصر العربية | جلوباليز جروب للترجمة المعتمدة",
-            "item": "https://globalize-group.com/ar/blog/مكتب-ترجمة-معتمد-في-رمسيس-والقاهرة-وجمهورية-مصر-العربية"
+            "item": "https://www.globalizetl.com/ar/blog/مكتب-ترجمة-معتمد-في-رمسيس-والقاهرة-وجمهورية-مصر-العربية"
           }
         ]
       }
@@ -8317,12 +8317,12 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
         "publisher": {
           "@type": "Organization",
           "name": "جلوباليز جروب للترجمة المعتمدة",
-          "url": "https://globalize-group.com"
+          "url": "https://www.globalizetl.com"
         },
-        "mainEntityOfPage": "https://globalize-group.com/ar/blog/ترجمان-محلف-في-دبي-في-خدمات-الترجمة-المعتمدة",
+        "mainEntityOfPage": "https://www.globalizetl.com/ar/blog/ترجمان-محلف-في-دبي-في-خدمات-الترجمة-المعتمدة",
         "datePublished": "2026-01-15T08:00:00+02:00",
         "dateModified": "2026-07-19T00:00:00+02:00",
-        "image": "https://globalize-group.com/images/blog/058-ترجمان-محلف-في-دبي-في-خدمات-الترجمة-المع.svg"
+        "image": "https://www.globalizetl.com/images/blog/058-ترجمان-محلف-في-دبي-في-خدمات-الترجمة-المع.svg"
       },
       "faq": {
         "@context": "https://schema.org",
@@ -8370,19 +8370,19 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
             "@type": "ListItem",
             "position": 1,
             "name": "الرئيسية",
-            "item": "https://globalize-group.com/ar"
+            "item": "https://www.globalizetl.com/ar"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "المدونة",
-            "item": "https://globalize-group.com/ar/blog"
+            "item": "https://www.globalizetl.com/ar/blog"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "ترجمان محلف في دبي في خدمات الترجمة المعتمدة | جلوباليز جروب للترجمة المعتمدة",
-            "item": "https://globalize-group.com/ar/blog/ترجمان-محلف-في-دبي-في-خدمات-الترجمة-المعتمدة"
+            "item": "https://www.globalizetl.com/ar/blog/ترجمان-محلف-في-دبي-في-خدمات-الترجمة-المعتمدة"
           }
         ]
       }
@@ -8459,12 +8459,12 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
         "publisher": {
           "@type": "Organization",
           "name": "جلوباليز جروب للترجمة المعتمدة",
-          "url": "https://globalize-group.com"
+          "url": "https://www.globalizetl.com"
         },
-        "mainEntityOfPage": "https://globalize-group.com/ar/blog/مترجم-قانوني-معتمد",
+        "mainEntityOfPage": "https://www.globalizetl.com/ar/blog/مترجم-قانوني-معتمد",
         "datePublished": "2026-01-15T08:00:00+02:00",
         "dateModified": "2026-07-19T00:00:00+02:00",
-        "image": "https://globalize-group.com/images/blog/059-مترجم-قانوني-معتمد.svg"
+        "image": "https://www.globalizetl.com/images/blog/059-مترجم-قانوني-معتمد.svg"
       },
       "faq": {
         "@context": "https://schema.org",
@@ -8512,19 +8512,19 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
             "@type": "ListItem",
             "position": 1,
             "name": "الرئيسية",
-            "item": "https://globalize-group.com/ar"
+            "item": "https://www.globalizetl.com/ar"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "المدونة",
-            "item": "https://globalize-group.com/ar/blog"
+            "item": "https://www.globalizetl.com/ar/blog"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "مترجم قانوني معتمد | جلوباليز جروب للترجمة المعتمدة",
-            "item": "https://globalize-group.com/ar/blog/مترجم-قانوني-معتمد"
+            "item": "https://www.globalizetl.com/ar/blog/مترجم-قانوني-معتمد"
           }
         ]
       }
@@ -8601,12 +8601,12 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
         "publisher": {
           "@type": "Organization",
           "name": "جلوباليز جروب للترجمة المعتمدة",
-          "url": "https://globalize-group.com"
+          "url": "https://www.globalizetl.com"
         },
-        "mainEntityOfPage": "https://globalize-group.com/ar/blog/أفضل-مترجم-معتمد-في-دبي-والشرق-الأوسط-في-مع",
+        "mainEntityOfPage": "https://www.globalizetl.com/ar/blog/أفضل-مترجم-معتمد-في-دبي-والشرق-الأوسط-في-مع",
         "datePublished": "2026-01-15T08:00:00+02:00",
         "dateModified": "2026-07-19T00:00:00+02:00",
-        "image": "https://globalize-group.com/images/blog/060-أفضل-مترجم-معتمد-في-دبي-والشرق-الأوسط-في.svg"
+        "image": "https://www.globalizetl.com/images/blog/060-أفضل-مترجم-معتمد-في-دبي-والشرق-الأوسط-في.svg"
       },
       "faq": {
         "@context": "https://schema.org",
@@ -8654,19 +8654,19 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
             "@type": "ListItem",
             "position": 1,
             "name": "الرئيسية",
-            "item": "https://globalize-group.com/ar"
+            "item": "https://www.globalizetl.com/ar"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "المدونة",
-            "item": "https://globalize-group.com/ar/blog"
+            "item": "https://www.globalizetl.com/ar/blog"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "أفضل مترجم معتمد في دبي والشرق الأوسط في مع | جلوباليز جروب للترجمة المعتمدة",
-            "item": "https://globalize-group.com/ar/blog/أفضل-مترجم-معتمد-في-دبي-والشرق-الأوسط-في-مع"
+            "item": "https://www.globalizetl.com/ar/blog/أفضل-مترجم-معتمد-في-دبي-والشرق-الأوسط-في-مع"
           }
         ]
       }
@@ -8743,12 +8743,12 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
         "publisher": {
           "@type": "Organization",
           "name": "جلوباليز جروب للترجمة المعتمدة",
-          "url": "https://globalize-group.com"
+          "url": "https://www.globalizetl.com"
         },
-        "mainEntityOfPage": "https://globalize-group.com/ar/blog/مكتب-ترجمة-معتمد-2",
+        "mainEntityOfPage": "https://www.globalizetl.com/ar/blog/مكتب-ترجمة-معتمد-2",
         "datePublished": "2026-01-15T08:00:00+02:00",
         "dateModified": "2026-07-19T00:00:00+02:00",
-        "image": "https://globalize-group.com/images/blog/061-مكتب-ترجمة-معتمد-2.svg"
+        "image": "https://www.globalizetl.com/images/blog/061-مكتب-ترجمة-معتمد-2.svg"
       },
       "faq": {
         "@context": "https://schema.org",
@@ -8796,19 +8796,19 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
             "@type": "ListItem",
             "position": 1,
             "name": "الرئيسية",
-            "item": "https://globalize-group.com/ar"
+            "item": "https://www.globalizetl.com/ar"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "المدونة",
-            "item": "https://globalize-group.com/ar/blog"
+            "item": "https://www.globalizetl.com/ar/blog"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "مكتب ترجمة معتمد 2 | جلوباليز جروب للترجمة المعتمدة",
-            "item": "https://globalize-group.com/ar/blog/مكتب-ترجمة-معتمد-2"
+            "item": "https://www.globalizetl.com/ar/blog/مكتب-ترجمة-معتمد-2"
           }
         ]
       }
@@ -8885,12 +8885,12 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
         "publisher": {
           "@type": "Organization",
           "name": "جلوباليز جروب للترجمة المعتمدة",
-          "url": "https://globalize-group.com"
+          "url": "https://www.globalizetl.com"
         },
-        "mainEntityOfPage": "https://globalize-group.com/ar/blog/مكتب-ترجمة-معتمد-3",
+        "mainEntityOfPage": "https://www.globalizetl.com/ar/blog/مكتب-ترجمة-معتمد-3",
         "datePublished": "2026-01-15T08:00:00+02:00",
         "dateModified": "2026-07-19T00:00:00+02:00",
-        "image": "https://globalize-group.com/images/blog/062-مكتب-ترجمة-معتمد-3.svg"
+        "image": "https://www.globalizetl.com/images/blog/062-مكتب-ترجمة-معتمد-3.svg"
       },
       "faq": {
         "@context": "https://schema.org",
@@ -8938,19 +8938,19 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
             "@type": "ListItem",
             "position": 1,
             "name": "الرئيسية",
-            "item": "https://globalize-group.com/ar"
+            "item": "https://www.globalizetl.com/ar"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "المدونة",
-            "item": "https://globalize-group.com/ar/blog"
+            "item": "https://www.globalizetl.com/ar/blog"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "مكتب ترجمة معتمد 3 | جلوباليز جروب للترجمة المعتمدة",
-            "item": "https://globalize-group.com/ar/blog/مكتب-ترجمة-معتمد-3"
+            "item": "https://www.globalizetl.com/ar/blog/مكتب-ترجمة-معتمد-3"
           }
         ]
       }
@@ -9027,12 +9027,12 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
         "publisher": {
           "@type": "Organization",
           "name": "جلوباليز جروب للترجمة المعتمدة",
-          "url": "https://globalize-group.com"
+          "url": "https://www.globalizetl.com"
         },
-        "mainEntityOfPage": "https://globalize-group.com/ar/blog/أفضل-مكتب-ترجمة-معتمد-في-الشرق-الأوسط-في",
+        "mainEntityOfPage": "https://www.globalizetl.com/ar/blog/أفضل-مكتب-ترجمة-معتمد-في-الشرق-الأوسط-في",
         "datePublished": "2026-01-15T08:00:00+02:00",
         "dateModified": "2026-07-19T00:00:00+02:00",
-        "image": "https://globalize-group.com/images/blog/063-أفضل-مكتب-ترجمة-معتمد-في-الشرق-الأوسط-في.svg"
+        "image": "https://www.globalizetl.com/images/blog/063-أفضل-مكتب-ترجمة-معتمد-في-الشرق-الأوسط-في.svg"
       },
       "faq": {
         "@context": "https://schema.org",
@@ -9080,19 +9080,19 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
             "@type": "ListItem",
             "position": 1,
             "name": "الرئيسية",
-            "item": "https://globalize-group.com/ar"
+            "item": "https://www.globalizetl.com/ar"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "المدونة",
-            "item": "https://globalize-group.com/ar/blog"
+            "item": "https://www.globalizetl.com/ar/blog"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "أفضل مكتب ترجمة معتمد في الشرق الأوسط في | جلوباليز جروب للترجمة المعتمدة",
-            "item": "https://globalize-group.com/ar/blog/أفضل-مكتب-ترجمة-معتمد-في-الشرق-الأوسط-في"
+            "item": "https://www.globalizetl.com/ar/blog/أفضل-مكتب-ترجمة-معتمد-في-الشرق-الأوسط-في"
           }
         ]
       }
@@ -9169,12 +9169,12 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
         "publisher": {
           "@type": "Organization",
           "name": "جلوباليز جروب للترجمة المعتمدة",
-          "url": "https://globalize-group.com"
+          "url": "https://www.globalizetl.com"
         },
-        "mainEntityOfPage": "https://globalize-group.com/ar/blog/مكتب-ترجمة-معتمد-4",
+        "mainEntityOfPage": "https://www.globalizetl.com/ar/blog/مكتب-ترجمة-معتمد-4",
         "datePublished": "2026-01-15T08:00:00+02:00",
         "dateModified": "2026-07-19T00:00:00+02:00",
-        "image": "https://globalize-group.com/images/blog/064-مكتب-ترجمة-معتمد-4.svg"
+        "image": "https://www.globalizetl.com/images/blog/064-مكتب-ترجمة-معتمد-4.svg"
       },
       "faq": {
         "@context": "https://schema.org",
@@ -9222,19 +9222,19 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
             "@type": "ListItem",
             "position": 1,
             "name": "الرئيسية",
-            "item": "https://globalize-group.com/ar"
+            "item": "https://www.globalizetl.com/ar"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "المدونة",
-            "item": "https://globalize-group.com/ar/blog"
+            "item": "https://www.globalizetl.com/ar/blog"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "مكتب ترجمة معتمد. | جلوباليز جروب للترجمة المعتمدة",
-            "item": "https://globalize-group.com/ar/blog/مكتب-ترجمة-معتمد-4"
+            "item": "https://www.globalizetl.com/ar/blog/مكتب-ترجمة-معتمد-4"
           }
         ]
       }
@@ -9311,12 +9311,12 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
         "publisher": {
           "@type": "Organization",
           "name": "جلوباليز جروب للترجمة المعتمدة",
-          "url": "https://globalize-group.com"
+          "url": "https://www.globalizetl.com"
         },
-        "mainEntityOfPage": "https://globalize-group.com/ar/blog/شهادة-تحركات-مترجمة",
+        "mainEntityOfPage": "https://www.globalizetl.com/ar/blog/شهادة-تحركات-مترجمة",
         "datePublished": "2026-01-15T08:00:00+02:00",
         "dateModified": "2026-07-19T00:00:00+02:00",
-        "image": "https://globalize-group.com/images/blog/065-شهادة-تحركات-مترجمة.svg"
+        "image": "https://www.globalizetl.com/images/blog/065-شهادة-تحركات-مترجمة.svg"
       },
       "faq": {
         "@context": "https://schema.org",
@@ -9364,19 +9364,19 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
             "@type": "ListItem",
             "position": 1,
             "name": "الرئيسية",
-            "item": "https://globalize-group.com/ar"
+            "item": "https://www.globalizetl.com/ar"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "المدونة",
-            "item": "https://globalize-group.com/ar/blog"
+            "item": "https://www.globalizetl.com/ar/blog"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "شهادة تحركات مترجمة | جلوباليز جروب للترجمة المعتمدة",
-            "item": "https://globalize-group.com/ar/blog/شهادة-تحركات-مترجمة"
+            "item": "https://www.globalizetl.com/ar/blog/شهادة-تحركات-مترجمة"
           }
         ]
       }
@@ -9452,12 +9452,12 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
         "publisher": {
           "@type": "Organization",
           "name": "جلوباليز جروب للترجمة المعتمدة",
-          "url": "https://globalize-group.com"
+          "url": "https://www.globalizetl.com"
         },
-        "mainEntityOfPage": "https://globalize-group.com/ar/blog/مترجم-معتمد",
+        "mainEntityOfPage": "https://www.globalizetl.com/ar/blog/مترجم-معتمد",
         "datePublished": "2026-01-15T08:00:00+02:00",
         "dateModified": "2026-07-19T00:00:00+02:00",
-        "image": "https://globalize-group.com/images/blog/066-مترجم-معتمد.svg"
+        "image": "https://www.globalizetl.com/images/blog/066-مترجم-معتمد.svg"
       },
       "faq": {
         "@context": "https://schema.org",
@@ -9505,19 +9505,19 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
             "@type": "ListItem",
             "position": 1,
             "name": "الرئيسية",
-            "item": "https://globalize-group.com/ar"
+            "item": "https://www.globalizetl.com/ar"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "المدونة",
-            "item": "https://globalize-group.com/ar/blog"
+            "item": "https://www.globalizetl.com/ar/blog"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "مترجم معتمد | جلوباليز جروب للترجمة المعتمدة",
-            "item": "https://globalize-group.com/ar/blog/مترجم-معتمد"
+            "item": "https://www.globalizetl.com/ar/blog/مترجم-معتمد"
           }
         ]
       }
@@ -9594,12 +9594,12 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
         "publisher": {
           "@type": "Organization",
           "name": "جلوباليز جروب للترجمة المعتمدة",
-          "url": "https://globalize-group.com"
+          "url": "https://www.globalizetl.com"
         },
-        "mainEntityOfPage": "https://globalize-group.com/ar/blog/الترجمة-النسوية",
+        "mainEntityOfPage": "https://www.globalizetl.com/ar/blog/الترجمة-النسوية",
         "datePublished": "2026-01-15T08:00:00+02:00",
         "dateModified": "2026-07-19T00:00:00+02:00",
-        "image": "https://globalize-group.com/images/blog/067-الترجمة-النسوية.svg"
+        "image": "https://www.globalizetl.com/images/blog/067-الترجمة-النسوية.svg"
       },
       "faq": {
         "@context": "https://schema.org",
@@ -9647,19 +9647,19 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
             "@type": "ListItem",
             "position": 1,
             "name": "الرئيسية",
-            "item": "https://globalize-group.com/ar"
+            "item": "https://www.globalizetl.com/ar"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "المدونة",
-            "item": "https://globalize-group.com/ar/blog"
+            "item": "https://www.globalizetl.com/ar/blog"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "الترجمة النسوية | جلوباليز جروب للترجمة المعتمدة",
-            "item": "https://globalize-group.com/ar/blog/الترجمة-النسوية"
+            "item": "https://www.globalizetl.com/ar/blog/الترجمة-النسوية"
           }
         ]
       }
@@ -9736,12 +9736,12 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
         "publisher": {
           "@type": "Organization",
           "name": "جلوباليز جروب للترجمة المعتمدة",
-          "url": "https://globalize-group.com"
+          "url": "https://www.globalizetl.com"
         },
-        "mainEntityOfPage": "https://globalize-group.com/ar/blog/ترجمة-البطاقة-الضريبية-بالإنجليزي",
+        "mainEntityOfPage": "https://www.globalizetl.com/ar/blog/ترجمة-البطاقة-الضريبية-بالإنجليزي",
         "datePublished": "2026-01-15T08:00:00+02:00",
         "dateModified": "2026-07-19T00:00:00+02:00",
-        "image": "https://globalize-group.com/images/blog/068-ترجمة-البطاقة-الضريبية-بالإنجليزي.svg"
+        "image": "https://www.globalizetl.com/images/blog/068-ترجمة-البطاقة-الضريبية-بالإنجليزي.svg"
       },
       "faq": {
         "@context": "https://schema.org",
@@ -9789,19 +9789,19 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
             "@type": "ListItem",
             "position": 1,
             "name": "الرئيسية",
-            "item": "https://globalize-group.com/ar"
+            "item": "https://www.globalizetl.com/ar"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "المدونة",
-            "item": "https://globalize-group.com/ar/blog"
+            "item": "https://www.globalizetl.com/ar/blog"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "ترجمة البطاقة الضريبية بالإنجليزي | جلوباليز جروب للترجمة المعتمدة",
-            "item": "https://globalize-group.com/ar/blog/ترجمة-البطاقة-الضريبية-بالإنجليزي"
+            "item": "https://www.globalizetl.com/ar/blog/ترجمة-البطاقة-الضريبية-بالإنجليزي"
           }
         ]
       }
@@ -9878,12 +9878,12 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
         "publisher": {
           "@type": "Organization",
           "name": "جلوباليز جروب للترجمة المعتمدة",
-          "url": "https://globalize-group.com"
+          "url": "https://www.globalizetl.com"
         },
-        "mainEntityOfPage": "https://globalize-group.com/ar/blog/اسعار-الترجمة-في-مكه-المكرمة-بالسعودية",
+        "mainEntityOfPage": "https://www.globalizetl.com/ar/blog/اسعار-الترجمة-في-مكه-المكرمة-بالسعودية",
         "datePublished": "2026-01-15T08:00:00+02:00",
         "dateModified": "2026-07-19T00:00:00+02:00",
-        "image": "https://globalize-group.com/images/blog/069-اسعار-الترجمة-في-مكه-المكرمة-بالسعودية.svg"
+        "image": "https://www.globalizetl.com/images/blog/069-اسعار-الترجمة-في-مكه-المكرمة-بالسعودية.svg"
       },
       "faq": {
         "@context": "https://schema.org",
@@ -9931,19 +9931,19 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
             "@type": "ListItem",
             "position": 1,
             "name": "الرئيسية",
-            "item": "https://globalize-group.com/ar"
+            "item": "https://www.globalizetl.com/ar"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "المدونة",
-            "item": "https://globalize-group.com/ar/blog"
+            "item": "https://www.globalizetl.com/ar/blog"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "اسعار الترجمة في مكه المكرمة بالسعودية | جلوباليز جروب للترجمة المعتمدة",
-            "item": "https://globalize-group.com/ar/blog/اسعار-الترجمة-في-مكه-المكرمة-بالسعودية"
+            "item": "https://www.globalizetl.com/ar/blog/اسعار-الترجمة-في-مكه-المكرمة-بالسعودية"
           }
         ]
       }
@@ -10020,12 +10020,12 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
         "publisher": {
           "@type": "Organization",
           "name": "جلوباليز جروب للترجمة المعتمدة",
-          "url": "https://globalize-group.com"
+          "url": "https://www.globalizetl.com"
         },
-        "mainEntityOfPage": "https://globalize-group.com/ar/blog/مكتب-ترجمة-معتمد-5",
+        "mainEntityOfPage": "https://www.globalizetl.com/ar/blog/مكتب-ترجمة-معتمد-5",
         "datePublished": "2026-01-15T08:00:00+02:00",
         "dateModified": "2026-07-19T00:00:00+02:00",
-        "image": "https://globalize-group.com/images/blog/070-مكتب-ترجمة-معتمد-5.svg"
+        "image": "https://www.globalizetl.com/images/blog/070-مكتب-ترجمة-معتمد-5.svg"
       },
       "faq": {
         "@context": "https://schema.org",
@@ -10073,19 +10073,19 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
             "@type": "ListItem",
             "position": 1,
             "name": "الرئيسية",
-            "item": "https://globalize-group.com/ar"
+            "item": "https://www.globalizetl.com/ar"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "المدونة",
-            "item": "https://globalize-group.com/ar/blog"
+            "item": "https://www.globalizetl.com/ar/blog"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "مكتب ترجمة معتمد | جلوباليز جروب للترجمة المعتمدة",
-            "item": "https://globalize-group.com/ar/blog/مكتب-ترجمة-معتمد-5"
+            "item": "https://www.globalizetl.com/ar/blog/مكتب-ترجمة-معتمد-5"
           }
         ]
       }
@@ -10162,12 +10162,12 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
         "publisher": {
           "@type": "Organization",
           "name": "جلوباليز جروب للترجمة المعتمدة",
-          "url": "https://globalize-group.com"
+          "url": "https://www.globalizetl.com"
         },
-        "mainEntityOfPage": "https://globalize-group.com/ar/blog/مركز-ترجمة-معتمد",
+        "mainEntityOfPage": "https://www.globalizetl.com/ar/blog/مركز-ترجمة-معتمد",
         "datePublished": "2026-01-15T08:00:00+02:00",
         "dateModified": "2026-07-19T00:00:00+02:00",
-        "image": "https://globalize-group.com/images/blog/071-مركز-ترجمة-معتمد.svg"
+        "image": "https://www.globalizetl.com/images/blog/071-مركز-ترجمة-معتمد.svg"
       },
       "faq": {
         "@context": "https://schema.org",
@@ -10215,19 +10215,19 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
             "@type": "ListItem",
             "position": 1,
             "name": "الرئيسية",
-            "item": "https://globalize-group.com/ar"
+            "item": "https://www.globalizetl.com/ar"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "المدونة",
-            "item": "https://globalize-group.com/ar/blog"
+            "item": "https://www.globalizetl.com/ar/blog"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "مركز ترجمة معتمد | جلوباليز جروب للترجمة المعتمدة",
-            "item": "https://globalize-group.com/ar/blog/مركز-ترجمة-معتمد"
+            "item": "https://www.globalizetl.com/ar/blog/مركز-ترجمة-معتمد"
           }
         ]
       }
@@ -10304,12 +10304,12 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
         "publisher": {
           "@type": "Organization",
           "name": "جلوباليز جروب للترجمة المعتمدة",
-          "url": "https://globalize-group.com"
+          "url": "https://www.globalizetl.com"
         },
-        "mainEntityOfPage": "https://globalize-group.com/ar/blog/جلوباليز-جروب-للترجمة-المعتمدة-is-translation",
+        "mainEntityOfPage": "https://www.globalizetl.com/ar/blog/جلوباليز-جروب-للترجمة-المعتمدة-is-translation",
         "datePublished": "2026-01-15T08:00:00+02:00",
         "dateModified": "2026-07-19T00:00:00+02:00",
-        "image": "https://globalize-group.com/images/blog/072-جلوباليز-جروب-للترجمة-المعتمدة-is-transl.svg"
+        "image": "https://www.globalizetl.com/images/blog/072-جلوباليز-جروب-للترجمة-المعتمدة-is-transl.svg"
       },
       "faq": {
         "@context": "https://schema.org",
@@ -10357,19 +10357,19 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
             "@type": "ListItem",
             "position": 1,
             "name": "الرئيسية",
-            "item": "https://globalize-group.com/ar"
+            "item": "https://www.globalizetl.com/ar"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "المدونة",
-            "item": "https://globalize-group.com/ar/blog"
+            "item": "https://www.globalizetl.com/ar/blog"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "جلوباليز جروب للترجمة المعتمدة للترجمة المعتمدة is translation",
-            "item": "https://globalize-group.com/ar/blog/جلوباليز-جروب-للترجمة-المعتمدة-is-translation"
+            "item": "https://www.globalizetl.com/ar/blog/جلوباليز-جروب-للترجمة-المعتمدة-is-translation"
           }
         ]
       }
@@ -10446,12 +10446,12 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
         "publisher": {
           "@type": "Organization",
           "name": "جلوباليز جروب للترجمة المعتمدة",
-          "url": "https://globalize-group.com"
+          "url": "https://www.globalizetl.com"
         },
-        "mainEntityOfPage": "https://globalize-group.com/ar/blog/جلوباليز-جروب-للترجمة-المعتمدة-أفضل-مكتب-ترجمة-فورية-في",
+        "mainEntityOfPage": "https://www.globalizetl.com/ar/blog/جلوباليز-جروب-للترجمة-المعتمدة-أفضل-مكتب-ترجمة-فورية-في",
         "datePublished": "2026-01-15T08:00:00+02:00",
         "dateModified": "2026-07-19T00:00:00+02:00",
-        "image": "https://globalize-group.com/images/blog/073-جلوباليز-جروب-للترجمة-المعتمدة-أفضل-مكتب.svg"
+        "image": "https://www.globalizetl.com/images/blog/073-جلوباليز-جروب-للترجمة-المعتمدة-أفضل-مكتب.svg"
       },
       "faq": {
         "@context": "https://schema.org",
@@ -10499,19 +10499,19 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
             "@type": "ListItem",
             "position": 1,
             "name": "الرئيسية",
-            "item": "https://globalize-group.com/ar"
+            "item": "https://www.globalizetl.com/ar"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "المدونة",
-            "item": "https://globalize-group.com/ar/blog"
+            "item": "https://www.globalizetl.com/ar/blog"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "جلوباليز جروب للترجمة المعتمدة للترجمة المعتمدة أفضل مكتب ترجمة فورية في مصر في",
-            "item": "https://globalize-group.com/ar/blog/جلوباليز-جروب-للترجمة-المعتمدة-أفضل-مكتب-ترجمة-فورية-في"
+            "item": "https://www.globalizetl.com/ar/blog/جلوباليز-جروب-للترجمة-المعتمدة-أفضل-مكتب-ترجمة-فورية-في"
           }
         ]
       }
@@ -10588,12 +10588,12 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
         "publisher": {
           "@type": "Organization",
           "name": "جلوباليز جروب للترجمة المعتمدة",
-          "url": "https://globalize-group.com"
+          "url": "https://www.globalizetl.com"
         },
-        "mainEntityOfPage": "https://globalize-group.com/ar/blog/ترجمة-الشعر",
+        "mainEntityOfPage": "https://www.globalizetl.com/ar/blog/ترجمة-الشعر",
         "datePublished": "2026-01-15T08:00:00+02:00",
         "dateModified": "2026-07-19T00:00:00+02:00",
-        "image": "https://globalize-group.com/images/blog/074-ترجمة-الشعر.svg"
+        "image": "https://www.globalizetl.com/images/blog/074-ترجمة-الشعر.svg"
       },
       "faq": {
         "@context": "https://schema.org",
@@ -10641,19 +10641,19 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
             "@type": "ListItem",
             "position": 1,
             "name": "الرئيسية",
-            "item": "https://globalize-group.com/ar"
+            "item": "https://www.globalizetl.com/ar"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "المدونة",
-            "item": "https://globalize-group.com/ar/blog"
+            "item": "https://www.globalizetl.com/ar/blog"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "ترجمة الشعر | جلوباليز جروب للترجمة المعتمدة",
-            "item": "https://globalize-group.com/ar/blog/ترجمة-الشعر"
+            "item": "https://www.globalizetl.com/ar/blog/ترجمة-الشعر"
           }
         ]
       }
@@ -10730,12 +10730,12 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
         "publisher": {
           "@type": "Organization",
           "name": "جلوباليز جروب للترجمة المعتمدة",
-          "url": "https://globalize-group.com"
+          "url": "https://www.globalizetl.com"
         },
-        "mainEntityOfPage": "https://globalize-group.com/ar/blog/تاريخ-الهجرة-إلى-كندا-في-خدمات-الترجمة-المعتمدة",
+        "mainEntityOfPage": "https://www.globalizetl.com/ar/blog/تاريخ-الهجرة-إلى-كندا-في-خدمات-الترجمة-المعتمدة",
         "datePublished": "2026-01-15T08:00:00+02:00",
         "dateModified": "2026-07-19T00:00:00+02:00",
-        "image": "https://globalize-group.com/images/blog/075-تاريخ-الهجرة-إلى-كندا-في-خدمات-الترجمة-ا.svg"
+        "image": "https://www.globalizetl.com/images/blog/075-تاريخ-الهجرة-إلى-كندا-في-خدمات-الترجمة-ا.svg"
       },
       "faq": {
         "@context": "https://schema.org",
@@ -10783,19 +10783,19 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
             "@type": "ListItem",
             "position": 1,
             "name": "الرئيسية",
-            "item": "https://globalize-group.com/ar"
+            "item": "https://www.globalizetl.com/ar"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "المدونة",
-            "item": "https://globalize-group.com/ar/blog"
+            "item": "https://www.globalizetl.com/ar/blog"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "تاريخ الهجرة إلى كندا في خدمات الترجمة المعتمدة | جلوباليز جروب للترجمة المعتمدة",
-            "item": "https://globalize-group.com/ar/blog/تاريخ-الهجرة-إلى-كندا-في-خدمات-الترجمة-المعتمدة"
+            "item": "https://www.globalizetl.com/ar/blog/تاريخ-الهجرة-إلى-كندا-في-خدمات-الترجمة-المعتمدة"
           }
         ]
       }
@@ -10872,12 +10872,12 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
         "publisher": {
           "@type": "Organization",
           "name": "جلوباليز جروب للترجمة المعتمدة",
-          "url": "https://globalize-group.com"
+          "url": "https://www.globalizetl.com"
         },
-        "mainEntityOfPage": "https://globalize-group.com/ar/blog/ترجمة-من-عربي-لإسباني",
+        "mainEntityOfPage": "https://www.globalizetl.com/ar/blog/ترجمة-من-عربي-لإسباني",
         "datePublished": "2026-01-15T08:00:00+02:00",
         "dateModified": "2026-07-19T00:00:00+02:00",
-        "image": "https://globalize-group.com/images/blog/076-ترجمة-من-عربي-لإسباني.svg"
+        "image": "https://www.globalizetl.com/images/blog/076-ترجمة-من-عربي-لإسباني.svg"
       },
       "faq": {
         "@context": "https://schema.org",
@@ -10925,19 +10925,19 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
             "@type": "ListItem",
             "position": 1,
             "name": "الرئيسية",
-            "item": "https://globalize-group.com/ar"
+            "item": "https://www.globalizetl.com/ar"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "المدونة",
-            "item": "https://globalize-group.com/ar/blog"
+            "item": "https://www.globalizetl.com/ar/blog"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "ترجمة من عربي لإسباني | جلوباليز جروب للترجمة المعتمدة",
-            "item": "https://globalize-group.com/ar/blog/ترجمة-من-عربي-لإسباني"
+            "item": "https://www.globalizetl.com/ar/blog/ترجمة-من-عربي-لإسباني"
           }
         ]
       }
@@ -11014,12 +11014,12 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
         "publisher": {
           "@type": "Organization",
           "name": "جلوباليز جروب للترجمة المعتمدة",
-          "url": "https://globalize-group.com"
+          "url": "https://www.globalizetl.com"
         },
-        "mainEntityOfPage": "https://globalize-group.com/ar/blog/أفضل-مترجم-فوري-في-القاهرة-للترجمة-الفورية-الاحترافية",
+        "mainEntityOfPage": "https://www.globalizetl.com/ar/blog/أفضل-مترجم-فوري-في-القاهرة-للترجمة-الفورية-الاحترافية",
         "datePublished": "2026-01-15T08:00:00+02:00",
         "dateModified": "2026-07-19T00:00:00+02:00",
-        "image": "https://globalize-group.com/images/blog/077-أفضل-مترجم-فوري-في-القاهرة-للترجمة-الفور.svg"
+        "image": "https://www.globalizetl.com/images/blog/077-أفضل-مترجم-فوري-في-القاهرة-للترجمة-الفور.svg"
       },
       "faq": {
         "@context": "https://schema.org",
@@ -11067,19 +11067,19 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
             "@type": "ListItem",
             "position": 1,
             "name": "الرئيسية",
-            "item": "https://globalize-group.com/ar"
+            "item": "https://www.globalizetl.com/ar"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "المدونة",
-            "item": "https://globalize-group.com/ar/blog"
+            "item": "https://www.globalizetl.com/ar/blog"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "أفضل مترجم فوري في القاهرة للترجمة الفورية الاحترافية | جلوباليز جروب للترجمة المعتمدة",
-            "item": "https://globalize-group.com/ar/blog/أفضل-مترجم-فوري-في-القاهرة-للترجمة-الفورية-الاحترافية"
+            "item": "https://www.globalizetl.com/ar/blog/أفضل-مترجم-فوري-في-القاهرة-للترجمة-الفورية-الاحترافية"
           }
         ]
       }
@@ -11156,12 +11156,12 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
         "publisher": {
           "@type": "Organization",
           "name": "جلوباليز جروب للترجمة المعتمدة",
-          "url": "https://globalize-group.com"
+          "url": "https://www.globalizetl.com"
         },
-        "mainEntityOfPage": "https://globalize-group.com/ar/blog/مكتب-ترجمة-تشيكي-عربي",
+        "mainEntityOfPage": "https://www.globalizetl.com/ar/blog/مكتب-ترجمة-تشيكي-عربي",
         "datePublished": "2026-01-15T08:00:00+02:00",
         "dateModified": "2026-07-19T00:00:00+02:00",
-        "image": "https://globalize-group.com/images/blog/078-مكتب-ترجمة-تشيكي-عربي.svg"
+        "image": "https://www.globalizetl.com/images/blog/078-مكتب-ترجمة-تشيكي-عربي.svg"
       },
       "faq": {
         "@context": "https://schema.org",
@@ -11209,19 +11209,19 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
             "@type": "ListItem",
             "position": 1,
             "name": "الرئيسية",
-            "item": "https://globalize-group.com/ar"
+            "item": "https://www.globalizetl.com/ar"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "المدونة",
-            "item": "https://globalize-group.com/ar/blog"
+            "item": "https://www.globalizetl.com/ar/blog"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "مكتب ترجمة تشيكي عربي | جلوباليز جروب للترجمة المعتمدة",
-            "item": "https://globalize-group.com/ar/blog/مكتب-ترجمة-تشيكي-عربي"
+            "item": "https://www.globalizetl.com/ar/blog/مكتب-ترجمة-تشيكي-عربي"
           }
         ]
       }
@@ -11298,12 +11298,12 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
         "publisher": {
           "@type": "Organization",
           "name": "جلوباليز جروب للترجمة المعتمدة",
-          "url": "https://globalize-group.com"
+          "url": "https://www.globalizetl.com"
         },
-        "mainEntityOfPage": "https://globalize-group.com/ar/blog/مكتب-ترجمة-تقرير-اشعة",
+        "mainEntityOfPage": "https://www.globalizetl.com/ar/blog/مكتب-ترجمة-تقرير-اشعة",
         "datePublished": "2026-01-15T08:00:00+02:00",
         "dateModified": "2026-07-19T00:00:00+02:00",
-        "image": "https://globalize-group.com/images/blog/079-مكتب-ترجمة-تقرير-اشعة.svg"
+        "image": "https://www.globalizetl.com/images/blog/079-مكتب-ترجمة-تقرير-اشعة.svg"
       },
       "faq": {
         "@context": "https://schema.org",
@@ -11351,19 +11351,19 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
             "@type": "ListItem",
             "position": 1,
             "name": "الرئيسية",
-            "item": "https://globalize-group.com/ar"
+            "item": "https://www.globalizetl.com/ar"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "المدونة",
-            "item": "https://globalize-group.com/ar/blog"
+            "item": "https://www.globalizetl.com/ar/blog"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "مكتب ترجمة تقرير اشعة | جلوباليز جروب للترجمة المعتمدة",
-            "item": "https://globalize-group.com/ar/blog/مكتب-ترجمة-تقرير-اشعة"
+            "item": "https://www.globalizetl.com/ar/blog/مكتب-ترجمة-تقرير-اشعة"
           }
         ]
       }
@@ -11440,12 +11440,12 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
         "publisher": {
           "@type": "Organization",
           "name": "جلوباليز جروب للترجمة المعتمدة",
-          "url": "https://globalize-group.com"
+          "url": "https://www.globalizetl.com"
         },
-        "mainEntityOfPage": "https://globalize-group.com/ar/blog/مكتب-ترجمة-معتمد-من-سفارة-قبرص-لترجمة-الوثائق-والمستندات",
+        "mainEntityOfPage": "https://www.globalizetl.com/ar/blog/مكتب-ترجمة-معتمد-من-سفارة-قبرص-لترجمة-الوثائق-والمستندات",
         "datePublished": "2026-01-15T08:00:00+02:00",
         "dateModified": "2026-07-19T00:00:00+02:00",
-        "image": "https://globalize-group.com/images/blog/080-مكتب-ترجمة-معتمد-من-سفارة-قبرص-لترجمة-ال.svg"
+        "image": "https://www.globalizetl.com/images/blog/080-مكتب-ترجمة-معتمد-من-سفارة-قبرص-لترجمة-ال.svg"
       },
       "faq": {
         "@context": "https://schema.org",
@@ -11493,19 +11493,19 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
             "@type": "ListItem",
             "position": 1,
             "name": "الرئيسية",
-            "item": "https://globalize-group.com/ar"
+            "item": "https://www.globalizetl.com/ar"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "المدونة",
-            "item": "https://globalize-group.com/ar/blog"
+            "item": "https://www.globalizetl.com/ar/blog"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "مكتب ترجمة معتمد من سفارة قبرص لترجمة الوثائق والمستندات | جلوباليز جروب للترجمة المعتمدة",
-            "item": "https://globalize-group.com/ar/blog/مكتب-ترجمة-معتمد-من-سفارة-قبرص-لترجمة-الوثائق-والمستندات"
+            "item": "https://www.globalizetl.com/ar/blog/مكتب-ترجمة-معتمد-من-سفارة-قبرص-لترجمة-الوثائق-والمستندات"
           }
         ]
       }
@@ -11582,12 +11582,12 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
         "publisher": {
           "@type": "Organization",
           "name": "جلوباليز جروب للترجمة المعتمدة",
-          "url": "https://globalize-group.com"
+          "url": "https://www.globalizetl.com"
         },
-        "mainEntityOfPage": "https://globalize-group.com/ar/blog/مكتب-ترجمة-عقود-العمل",
+        "mainEntityOfPage": "https://www.globalizetl.com/ar/blog/مكتب-ترجمة-عقود-العمل",
         "datePublished": "2026-01-15T08:00:00+02:00",
         "dateModified": "2026-07-19T00:00:00+02:00",
-        "image": "https://globalize-group.com/images/blog/081-مكتب-ترجمة-عقود-العمل.svg"
+        "image": "https://www.globalizetl.com/images/blog/081-مكتب-ترجمة-عقود-العمل.svg"
       },
       "faq": {
         "@context": "https://schema.org",
@@ -11635,19 +11635,19 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
             "@type": "ListItem",
             "position": 1,
             "name": "الرئيسية",
-            "item": "https://globalize-group.com/ar"
+            "item": "https://www.globalizetl.com/ar"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "المدونة",
-            "item": "https://globalize-group.com/ar/blog"
+            "item": "https://www.globalizetl.com/ar/blog"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "مكتب ترجمة عقود العمل | جلوباليز جروب للترجمة المعتمدة",
-            "item": "https://globalize-group.com/ar/blog/مكتب-ترجمة-عقود-العمل"
+            "item": "https://www.globalizetl.com/ar/blog/مكتب-ترجمة-عقود-العمل"
           }
         ]
       }
@@ -11724,12 +11724,12 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
         "publisher": {
           "@type": "Organization",
           "name": "جلوباليز جروب للترجمة المعتمدة",
-          "url": "https://globalize-group.com"
+          "url": "https://www.globalizetl.com"
         },
-        "mainEntityOfPage": "https://globalize-group.com/ar/blog/مكتب-ترجمة-اللغة-السويدية",
+        "mainEntityOfPage": "https://www.globalizetl.com/ar/blog/مكتب-ترجمة-اللغة-السويدية",
         "datePublished": "2026-01-15T08:00:00+02:00",
         "dateModified": "2026-07-19T00:00:00+02:00",
-        "image": "https://globalize-group.com/images/blog/082-مكتب-ترجمة-اللغة-السويدية.svg"
+        "image": "https://www.globalizetl.com/images/blog/082-مكتب-ترجمة-اللغة-السويدية.svg"
       },
       "faq": {
         "@context": "https://schema.org",
@@ -11777,19 +11777,19 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
             "@type": "ListItem",
             "position": 1,
             "name": "الرئيسية",
-            "item": "https://globalize-group.com/ar"
+            "item": "https://www.globalizetl.com/ar"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "المدونة",
-            "item": "https://globalize-group.com/ar/blog"
+            "item": "https://www.globalizetl.com/ar/blog"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "مكتب ترجمة اللغة السويدية | جلوباليز جروب للترجمة المعتمدة",
-            "item": "https://globalize-group.com/ar/blog/مكتب-ترجمة-اللغة-السويدية"
+            "item": "https://www.globalizetl.com/ar/blog/مكتب-ترجمة-اللغة-السويدية"
           }
         ]
       }
@@ -11866,12 +11866,12 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
         "publisher": {
           "@type": "Organization",
           "name": "جلوباليز جروب للترجمة المعتمدة",
-          "url": "https://globalize-group.com"
+          "url": "https://www.globalizetl.com"
         },
-        "mainEntityOfPage": "https://globalize-group.com/ar/blog/مكتب-ترجمة-لغة-يبانية",
+        "mainEntityOfPage": "https://www.globalizetl.com/ar/blog/مكتب-ترجمة-لغة-يبانية",
         "datePublished": "2026-01-15T08:00:00+02:00",
         "dateModified": "2026-07-19T00:00:00+02:00",
-        "image": "https://globalize-group.com/images/blog/083-مكتب-ترجمة-لغة-يبانية.svg"
+        "image": "https://www.globalizetl.com/images/blog/083-مكتب-ترجمة-لغة-يبانية.svg"
       },
       "faq": {
         "@context": "https://schema.org",
@@ -11919,19 +11919,19 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
             "@type": "ListItem",
             "position": 1,
             "name": "الرئيسية",
-            "item": "https://globalize-group.com/ar"
+            "item": "https://www.globalizetl.com/ar"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "المدونة",
-            "item": "https://globalize-group.com/ar/blog"
+            "item": "https://www.globalizetl.com/ar/blog"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "مكتب ترجمة لغة يبانية | جلوباليز جروب للترجمة المعتمدة",
-            "item": "https://globalize-group.com/ar/blog/مكتب-ترجمة-لغة-يبانية"
+            "item": "https://www.globalizetl.com/ar/blog/مكتب-ترجمة-لغة-يبانية"
           }
         ]
       }
@@ -12008,12 +12008,12 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
         "publisher": {
           "@type": "Organization",
           "name": "جلوباليز جروب للترجمة المعتمدة",
-          "url": "https://globalize-group.com"
+          "url": "https://www.globalizetl.com"
         },
-        "mainEntityOfPage": "https://globalize-group.com/ar/blog/الخدمات-في-خدمات-الترجمة-المعتمدة",
+        "mainEntityOfPage": "https://www.globalizetl.com/ar/blog/الخدمات-في-خدمات-الترجمة-المعتمدة",
         "datePublished": "2026-01-15T08:00:00+02:00",
         "dateModified": "2026-07-19T00:00:00+02:00",
-        "image": "https://globalize-group.com/images/blog/084-الخدمات-في-خدمات-الترجمة-المعتمدة.svg"
+        "image": "https://www.globalizetl.com/images/blog/084-الخدمات-في-خدمات-الترجمة-المعتمدة.svg"
       },
       "faq": {
         "@context": "https://schema.org",
@@ -12061,19 +12061,19 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
             "@type": "ListItem",
             "position": 1,
             "name": "الرئيسية",
-            "item": "https://globalize-group.com/ar"
+            "item": "https://www.globalizetl.com/ar"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "المدونة",
-            "item": "https://globalize-group.com/ar/blog"
+            "item": "https://www.globalizetl.com/ar/blog"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "الخدمات في خدمات الترجمة المعتمدة | جلوباليز جروب للترجمة المعتمدة",
-            "item": "https://globalize-group.com/ar/blog/الخدمات-في-خدمات-الترجمة-المعتمدة"
+            "item": "https://www.globalizetl.com/ar/blog/الخدمات-في-خدمات-الترجمة-المعتمدة"
           }
         ]
       }
@@ -12150,12 +12150,12 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
         "publisher": {
           "@type": "Organization",
           "name": "جلوباليز جروب للترجمة المعتمدة",
-          "url": "https://globalize-group.com"
+          "url": "https://www.globalizetl.com"
         },
-        "mainEntityOfPage": "https://globalize-group.com/ar/blog/مكتب-ترجمة-معتمد-مرخص",
+        "mainEntityOfPage": "https://www.globalizetl.com/ar/blog/مكتب-ترجمة-معتمد-مرخص",
         "datePublished": "2026-01-15T08:00:00+02:00",
         "dateModified": "2026-07-19T00:00:00+02:00",
-        "image": "https://globalize-group.com/images/blog/085-مكتب-ترجمة-معتمد-مرخص.svg"
+        "image": "https://www.globalizetl.com/images/blog/085-مكتب-ترجمة-معتمد-مرخص.svg"
       },
       "faq": {
         "@context": "https://schema.org",
@@ -12203,19 +12203,19 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
             "@type": "ListItem",
             "position": 1,
             "name": "الرئيسية",
-            "item": "https://globalize-group.com/ar"
+            "item": "https://www.globalizetl.com/ar"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "المدونة",
-            "item": "https://globalize-group.com/ar/blog"
+            "item": "https://www.globalizetl.com/ar/blog"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "مكتب ترجمة معتمد مرخص | جلوباليز جروب للترجمة المعتمدة",
-            "item": "https://globalize-group.com/ar/blog/مكتب-ترجمة-معتمد-مرخص"
+            "item": "https://www.globalizetl.com/ar/blog/مكتب-ترجمة-معتمد-مرخص"
           }
         ]
       }
@@ -12292,12 +12292,12 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
         "publisher": {
           "@type": "Organization",
           "name": "جلوباليز جروب للترجمة المعتمدة",
-          "url": "https://globalize-group.com"
+          "url": "https://www.globalizetl.com"
         },
-        "mainEntityOfPage": "https://globalize-group.com/ar/blog/مهارات-المترجم-الفوري",
+        "mainEntityOfPage": "https://www.globalizetl.com/ar/blog/مهارات-المترجم-الفوري",
         "datePublished": "2026-01-15T08:00:00+02:00",
         "dateModified": "2026-07-19T00:00:00+02:00",
-        "image": "https://globalize-group.com/images/blog/086-مهارات-المترجم-الفوري.svg"
+        "image": "https://www.globalizetl.com/images/blog/086-مهارات-المترجم-الفوري.svg"
       },
       "faq": {
         "@context": "https://schema.org",
@@ -12345,19 +12345,19 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
             "@type": "ListItem",
             "position": 1,
             "name": "الرئيسية",
-            "item": "https://globalize-group.com/ar"
+            "item": "https://www.globalizetl.com/ar"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "المدونة",
-            "item": "https://globalize-group.com/ar/blog"
+            "item": "https://www.globalizetl.com/ar/blog"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "مهارات المترجم الفوري | جلوباليز جروب للترجمة المعتمدة",
-            "item": "https://globalize-group.com/ar/blog/مهارات-المترجم-الفوري"
+            "item": "https://www.globalizetl.com/ar/blog/مهارات-المترجم-الفوري"
           }
         ]
       }
@@ -12434,12 +12434,12 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
         "publisher": {
           "@type": "Organization",
           "name": "جلوباليز جروب للترجمة المعتمدة",
-          "url": "https://globalize-group.com"
+          "url": "https://www.globalizetl.com"
         },
-        "mainEntityOfPage": "https://globalize-group.com/ar/blog/medical-ترجمة",
+        "mainEntityOfPage": "https://www.globalizetl.com/ar/blog/medical-ترجمة",
         "datePublished": "2026-01-15T08:00:00+02:00",
         "dateModified": "2026-07-19T00:00:00+02:00",
-        "image": "https://globalize-group.com/images/blog/087-medical-ترجمة.svg"
+        "image": "https://www.globalizetl.com/images/blog/087-medical-ترجمة.svg"
       },
       "faq": {
         "@context": "https://schema.org",
@@ -12487,19 +12487,19 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
             "@type": "ListItem",
             "position": 1,
             "name": "الرئيسية",
-            "item": "https://globalize-group.com/ar"
+            "item": "https://www.globalizetl.com/ar"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "المدونة",
-            "item": "https://globalize-group.com/ar/blog"
+            "item": "https://www.globalizetl.com/ar/blog"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "medical ترجمة | جلوباليز جروب للترجمة المعتمدة",
-            "item": "https://globalize-group.com/ar/blog/medical-ترجمة"
+            "item": "https://www.globalizetl.com/ar/blog/medical-ترجمة"
           }
         ]
       }
@@ -12576,12 +12576,12 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
         "publisher": {
           "@type": "Organization",
           "name": "جلوباليز جروب للترجمة المعتمدة",
-          "url": "https://globalize-group.com"
+          "url": "https://www.globalizetl.com"
         },
-        "mainEntityOfPage": "https://globalize-group.com/ar/blog/أفضل-جهاز-ترجمه-فوري-ما-بين-اللغات-وتأجير-أجهزة",
+        "mainEntityOfPage": "https://www.globalizetl.com/ar/blog/أفضل-جهاز-ترجمه-فوري-ما-بين-اللغات-وتأجير-أجهزة",
         "datePublished": "2026-01-15T08:00:00+02:00",
         "dateModified": "2026-07-19T00:00:00+02:00",
-        "image": "https://globalize-group.com/images/blog/088-أفضل-جهاز-ترجمه-فوري-ما-بين-اللغات-وتأجي.svg"
+        "image": "https://www.globalizetl.com/images/blog/088-أفضل-جهاز-ترجمه-فوري-ما-بين-اللغات-وتأجي.svg"
       },
       "faq": {
         "@context": "https://schema.org",
@@ -12629,19 +12629,19 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
             "@type": "ListItem",
             "position": 1,
             "name": "الرئيسية",
-            "item": "https://globalize-group.com/ar"
+            "item": "https://www.globalizetl.com/ar"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "المدونة",
-            "item": "https://globalize-group.com/ar/blog"
+            "item": "https://www.globalizetl.com/ar/blog"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "أفضل جهاز ترجمه فوري ما بين اللغات وتأجير أجهزة الترجمة الفورية في | جلوباليز جروب للترجمة المعتمدة",
-            "item": "https://globalize-group.com/ar/blog/أفضل-جهاز-ترجمه-فوري-ما-بين-اللغات-وتأجير-أجهزة"
+            "item": "https://www.globalizetl.com/ar/blog/أفضل-جهاز-ترجمه-فوري-ما-بين-اللغات-وتأجير-أجهزة"
           }
         ]
       }
@@ -12718,12 +12718,12 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
         "publisher": {
           "@type": "Organization",
           "name": "جلوباليز جروب للترجمة المعتمدة",
-          "url": "https://globalize-group.com"
+          "url": "https://www.globalizetl.com"
         },
-        "mainEntityOfPage": "https://globalize-group.com/ar/blog/ترجمان-محلف-في-أبو-ظبي-في-خدمات-الترجمة-المعتمدة",
+        "mainEntityOfPage": "https://www.globalizetl.com/ar/blog/ترجمان-محلف-في-أبو-ظبي-في-خدمات-الترجمة-المعتمدة",
         "datePublished": "2026-01-15T08:00:00+02:00",
         "dateModified": "2026-07-19T00:00:00+02:00",
-        "image": "https://globalize-group.com/images/blog/089-ترجمان-محلف-في-أبو-ظبي-في-خدمات-الترجمة-.svg"
+        "image": "https://www.globalizetl.com/images/blog/089-ترجمان-محلف-في-أبو-ظبي-في-خدمات-الترجمة-.svg"
       },
       "faq": {
         "@context": "https://schema.org",
@@ -12771,19 +12771,19 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
             "@type": "ListItem",
             "position": 1,
             "name": "الرئيسية",
-            "item": "https://globalize-group.com/ar"
+            "item": "https://www.globalizetl.com/ar"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "المدونة",
-            "item": "https://globalize-group.com/ar/blog"
+            "item": "https://www.globalizetl.com/ar/blog"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "ترجمان محلف في أبو ظبي في خدمات الترجمة المعتمدة | جلوباليز جروب للترجمة المعتمدة",
-            "item": "https://globalize-group.com/ar/blog/ترجمان-محلف-في-أبو-ظبي-في-خدمات-الترجمة-المعتمدة"
+            "item": "https://www.globalizetl.com/ar/blog/ترجمان-محلف-في-أبو-ظبي-في-خدمات-الترجمة-المعتمدة"
           }
         ]
       }
@@ -12860,12 +12860,12 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
         "publisher": {
           "@type": "Organization",
           "name": "جلوباليز جروب للترجمة المعتمدة",
-          "url": "https://globalize-group.com"
+          "url": "https://www.globalizetl.com"
         },
-        "mainEntityOfPage": "https://globalize-group.com/ar/blog/ترجمة-شهادة-البكالوريا",
+        "mainEntityOfPage": "https://www.globalizetl.com/ar/blog/ترجمة-شهادة-البكالوريا",
         "datePublished": "2026-01-15T08:00:00+02:00",
         "dateModified": "2026-07-19T00:00:00+02:00",
-        "image": "https://globalize-group.com/images/blog/090-ترجمة-شهادة-البكالوريا.svg"
+        "image": "https://www.globalizetl.com/images/blog/090-ترجمة-شهادة-البكالوريا.svg"
       },
       "faq": {
         "@context": "https://schema.org",
@@ -12913,19 +12913,19 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
             "@type": "ListItem",
             "position": 1,
             "name": "الرئيسية",
-            "item": "https://globalize-group.com/ar"
+            "item": "https://www.globalizetl.com/ar"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "المدونة",
-            "item": "https://globalize-group.com/ar/blog"
+            "item": "https://www.globalizetl.com/ar/blog"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "ترجمة شهادة البكالوريا | جلوباليز جروب للترجمة المعتمدة",
-            "item": "https://globalize-group.com/ar/blog/ترجمة-شهادة-البكالوريا"
+            "item": "https://www.globalizetl.com/ar/blog/ترجمة-شهادة-البكالوريا"
           }
         ]
       }
@@ -13002,12 +13002,12 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
         "publisher": {
           "@type": "Organization",
           "name": "جلوباليز جروب للترجمة المعتمدة",
-          "url": "https://globalize-group.com"
+          "url": "https://www.globalizetl.com"
         },
-        "mainEntityOfPage": "https://globalize-group.com/ar/blog/حجز-موعد-سفارة-المانيا-في-خدمات-الترجمة-المعتمدة",
+        "mainEntityOfPage": "https://www.globalizetl.com/ar/blog/حجز-موعد-سفارة-المانيا-في-خدمات-الترجمة-المعتمدة",
         "datePublished": "2026-01-15T08:00:00+02:00",
         "dateModified": "2026-07-19T00:00:00+02:00",
-        "image": "https://globalize-group.com/images/blog/091-حجز-موعد-سفارة-المانيا-في-خدمات-الترجمة-.svg"
+        "image": "https://www.globalizetl.com/images/blog/091-حجز-موعد-سفارة-المانيا-في-خدمات-الترجمة-.svg"
       },
       "faq": {
         "@context": "https://schema.org",
@@ -13055,19 +13055,19 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
             "@type": "ListItem",
             "position": 1,
             "name": "الرئيسية",
-            "item": "https://globalize-group.com/ar"
+            "item": "https://www.globalizetl.com/ar"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "المدونة",
-            "item": "https://globalize-group.com/ar/blog"
+            "item": "https://www.globalizetl.com/ar/blog"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "حجز موعد سفارة المانيا في خدمات الترجمة المعتمدة | جلوباليز جروب للترجمة المعتمدة",
-            "item": "https://globalize-group.com/ar/blog/حجز-موعد-سفارة-المانيا-في-خدمات-الترجمة-المعتمدة"
+            "item": "https://www.globalizetl.com/ar/blog/حجز-موعد-سفارة-المانيا-في-خدمات-الترجمة-المعتمدة"
           }
         ]
       }
@@ -13144,12 +13144,12 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
         "publisher": {
           "@type": "Organization",
           "name": "جلوباليز جروب للترجمة المعتمدة",
-          "url": "https://globalize-group.com"
+          "url": "https://www.globalizetl.com"
         },
-        "mainEntityOfPage": "https://globalize-group.com/ar/blog/نوفر-للعميل-حقوق-عميل-مكتب-الترجمة",
+        "mainEntityOfPage": "https://www.globalizetl.com/ar/blog/نوفر-للعميل-حقوق-عميل-مكتب-الترجمة",
         "datePublished": "2026-01-15T08:00:00+02:00",
         "dateModified": "2026-07-19T00:00:00+02:00",
-        "image": "https://globalize-group.com/images/blog/092-نوفر-للعميل-حقوق-عميل-مكتب-الترجمة.svg"
+        "image": "https://www.globalizetl.com/images/blog/092-نوفر-للعميل-حقوق-عميل-مكتب-الترجمة.svg"
       },
       "faq": {
         "@context": "https://schema.org",
@@ -13197,19 +13197,19 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
             "@type": "ListItem",
             "position": 1,
             "name": "الرئيسية",
-            "item": "https://globalize-group.com/ar"
+            "item": "https://www.globalizetl.com/ar"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "المدونة",
-            "item": "https://globalize-group.com/ar/blog"
+            "item": "https://www.globalizetl.com/ar/blog"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "نوفر للعميل حقوق عميل مكتب الترجمة | جلوباليز جروب للترجمة المعتمدة",
-            "item": "https://globalize-group.com/ar/blog/نوفر-للعميل-حقوق-عميل-مكتب-الترجمة"
+            "item": "https://www.globalizetl.com/ar/blog/نوفر-للعميل-حقوق-عميل-مكتب-الترجمة"
           }
         ]
       }
@@ -13286,12 +13286,12 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
         "publisher": {
           "@type": "Organization",
           "name": "جلوباليز جروب للترجمة المعتمدة",
-          "url": "https://globalize-group.com"
+          "url": "https://www.globalizetl.com"
         },
-        "mainEntityOfPage": "https://globalize-group.com/ar/blog/مشكلات-تواجه-المترجمين-العرب",
+        "mainEntityOfPage": "https://www.globalizetl.com/ar/blog/مشكلات-تواجه-المترجمين-العرب",
         "datePublished": "2026-01-15T08:00:00+02:00",
         "dateModified": "2026-07-19T00:00:00+02:00",
-        "image": "https://globalize-group.com/images/blog/093-مشكلات-تواجه-المترجمين-العرب.svg"
+        "image": "https://www.globalizetl.com/images/blog/093-مشكلات-تواجه-المترجمين-العرب.svg"
       },
       "faq": {
         "@context": "https://schema.org",
@@ -13339,19 +13339,19 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
             "@type": "ListItem",
             "position": 1,
             "name": "الرئيسية",
-            "item": "https://globalize-group.com/ar"
+            "item": "https://www.globalizetl.com/ar"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "المدونة",
-            "item": "https://globalize-group.com/ar/blog"
+            "item": "https://www.globalizetl.com/ar/blog"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "مشكلات تواجه المترجمين العرب | جلوباليز جروب للترجمة المعتمدة",
-            "item": "https://globalize-group.com/ar/blog/مشكلات-تواجه-المترجمين-العرب"
+            "item": "https://www.globalizetl.com/ar/blog/مشكلات-تواجه-المترجمين-العرب"
           }
         ]
       }
@@ -13428,12 +13428,12 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
         "publisher": {
           "@type": "Organization",
           "name": "جلوباليز جروب للترجمة المعتمدة",
-          "url": "https://globalize-group.com"
+          "url": "https://www.globalizetl.com"
         },
-        "mainEntityOfPage": "https://globalize-group.com/ar/blog/معيار-الترجمة-المعتمدة",
+        "mainEntityOfPage": "https://www.globalizetl.com/ar/blog/معيار-الترجمة-المعتمدة",
         "datePublished": "2026-01-15T08:00:00+02:00",
         "dateModified": "2026-07-19T00:00:00+02:00",
-        "image": "https://globalize-group.com/images/blog/094-معيار-الترجمة-المعتمدة.svg"
+        "image": "https://www.globalizetl.com/images/blog/094-معيار-الترجمة-المعتمدة.svg"
       },
       "faq": {
         "@context": "https://schema.org",
@@ -13481,19 +13481,19 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
             "@type": "ListItem",
             "position": 1,
             "name": "الرئيسية",
-            "item": "https://globalize-group.com/ar"
+            "item": "https://www.globalizetl.com/ar"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "المدونة",
-            "item": "https://globalize-group.com/ar/blog"
+            "item": "https://www.globalizetl.com/ar/blog"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "معيار الترجمة المعتمدة | جلوباليز جروب للترجمة المعتمدة",
-            "item": "https://globalize-group.com/ar/blog/معيار-الترجمة-المعتمدة"
+            "item": "https://www.globalizetl.com/ar/blog/معيار-الترجمة-المعتمدة"
           }
         ]
       }
@@ -13570,12 +13570,12 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
         "publisher": {
           "@type": "Organization",
           "name": "جلوباليز جروب للترجمة المعتمدة",
-          "url": "https://globalize-group.com"
+          "url": "https://www.globalizetl.com"
         },
-        "mainEntityOfPage": "https://globalize-group.com/ar/blog/مكتب-ترجمة-لغة-هولندية",
+        "mainEntityOfPage": "https://www.globalizetl.com/ar/blog/مكتب-ترجمة-لغة-هولندية",
         "datePublished": "2026-01-15T08:00:00+02:00",
         "dateModified": "2026-07-19T00:00:00+02:00",
-        "image": "https://globalize-group.com/images/blog/095-مكتب-ترجمة-لغة-هولندية.svg"
+        "image": "https://www.globalizetl.com/images/blog/095-مكتب-ترجمة-لغة-هولندية.svg"
       },
       "faq": {
         "@context": "https://schema.org",
@@ -13623,19 +13623,19 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
             "@type": "ListItem",
             "position": 1,
             "name": "الرئيسية",
-            "item": "https://globalize-group.com/ar"
+            "item": "https://www.globalizetl.com/ar"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "المدونة",
-            "item": "https://globalize-group.com/ar/blog"
+            "item": "https://www.globalizetl.com/ar/blog"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "مكتب ترجمة لغة هولندية | جلوباليز جروب للترجمة المعتمدة",
-            "item": "https://globalize-group.com/ar/blog/مكتب-ترجمة-لغة-هولندية"
+            "item": "https://www.globalizetl.com/ar/blog/مكتب-ترجمة-لغة-هولندية"
           }
         ]
       }
@@ -13712,12 +13712,12 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
         "publisher": {
           "@type": "Organization",
           "name": "جلوباليز جروب للترجمة المعتمدة",
-          "url": "https://globalize-group.com"
+          "url": "https://www.globalizetl.com"
         },
-        "mainEntityOfPage": "https://globalize-group.com/ar/blog/مكتب-ترجمة-معتمد-الخبر",
+        "mainEntityOfPage": "https://www.globalizetl.com/ar/blog/مكتب-ترجمة-معتمد-الخبر",
         "datePublished": "2026-01-15T08:00:00+02:00",
         "dateModified": "2026-07-19T00:00:00+02:00",
-        "image": "https://globalize-group.com/images/blog/096-مكتب-ترجمة-معتمد-الخبر.svg"
+        "image": "https://www.globalizetl.com/images/blog/096-مكتب-ترجمة-معتمد-الخبر.svg"
       },
       "faq": {
         "@context": "https://schema.org",
@@ -13765,19 +13765,19 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
             "@type": "ListItem",
             "position": 1,
             "name": "الرئيسية",
-            "item": "https://globalize-group.com/ar"
+            "item": "https://www.globalizetl.com/ar"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "المدونة",
-            "item": "https://globalize-group.com/ar/blog"
+            "item": "https://www.globalizetl.com/ar/blog"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "مكتب ترجمة معتمد الخبر | جلوباليز جروب للترجمة المعتمدة",
-            "item": "https://globalize-group.com/ar/blog/مكتب-ترجمة-معتمد-الخبر"
+            "item": "https://www.globalizetl.com/ar/blog/مكتب-ترجمة-معتمد-الخبر"
           }
         ]
       }
@@ -13854,12 +13854,12 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
         "publisher": {
           "@type": "Organization",
           "name": "جلوباليز جروب للترجمة المعتمدة",
-          "url": "https://globalize-group.com"
+          "url": "https://www.globalizetl.com"
         },
-        "mainEntityOfPage": "https://globalize-group.com/ar/blog/التواصل-الفعال-مع-الترجمة-الفورية",
+        "mainEntityOfPage": "https://www.globalizetl.com/ar/blog/التواصل-الفعال-مع-الترجمة-الفورية",
         "datePublished": "2026-01-15T08:00:00+02:00",
         "dateModified": "2026-07-19T00:00:00+02:00",
-        "image": "https://globalize-group.com/images/blog/097-التواصل-الفعال-مع-الترجمة-الفورية.svg"
+        "image": "https://www.globalizetl.com/images/blog/097-التواصل-الفعال-مع-الترجمة-الفورية.svg"
       },
       "faq": {
         "@context": "https://schema.org",
@@ -13907,19 +13907,19 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
             "@type": "ListItem",
             "position": 1,
             "name": "الرئيسية",
-            "item": "https://globalize-group.com/ar"
+            "item": "https://www.globalizetl.com/ar"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "المدونة",
-            "item": "https://globalize-group.com/ar/blog"
+            "item": "https://www.globalizetl.com/ar/blog"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "التواصل الفعال مع الترجمة الفورية | جلوباليز جروب للترجمة المعتمدة",
-            "item": "https://globalize-group.com/ar/blog/التواصل-الفعال-مع-الترجمة-الفورية"
+            "item": "https://www.globalizetl.com/ar/blog/التواصل-الفعال-مع-الترجمة-الفورية"
           }
         ]
       }
@@ -13996,12 +13996,12 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
         "publisher": {
           "@type": "Organization",
           "name": "جلوباليز جروب للترجمة المعتمدة",
-          "url": "https://globalize-group.com"
+          "url": "https://www.globalizetl.com"
         },
-        "mainEntityOfPage": "https://globalize-group.com/ar/blog/مكتب-ترجمة-معتمد-من-السفارة-الالمانية-بالقاهرة",
+        "mainEntityOfPage": "https://www.globalizetl.com/ar/blog/مكتب-ترجمة-معتمد-من-السفارة-الالمانية-بالقاهرة",
         "datePublished": "2026-01-15T08:00:00+02:00",
         "dateModified": "2026-07-19T00:00:00+02:00",
-        "image": "https://globalize-group.com/images/blog/098-مكتب-ترجمة-معتمد-من-السفارة-الالمانية-با.svg"
+        "image": "https://www.globalizetl.com/images/blog/098-مكتب-ترجمة-معتمد-من-السفارة-الالمانية-با.svg"
       },
       "faq": {
         "@context": "https://schema.org",
@@ -14049,19 +14049,19 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
             "@type": "ListItem",
             "position": 1,
             "name": "الرئيسية",
-            "item": "https://globalize-group.com/ar"
+            "item": "https://www.globalizetl.com/ar"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "المدونة",
-            "item": "https://globalize-group.com/ar/blog"
+            "item": "https://www.globalizetl.com/ar/blog"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "مكتب ترجمة معتمد من السفارة الالمانية بالقاهرة | جلوباليز جروب للترجمة المعتمدة",
-            "item": "https://globalize-group.com/ar/blog/مكتب-ترجمة-معتمد-من-السفارة-الالمانية-بالقاهرة"
+            "item": "https://www.globalizetl.com/ar/blog/مكتب-ترجمة-معتمد-من-السفارة-الالمانية-بالقاهرة"
           }
         ]
       }
@@ -14138,12 +14138,12 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
         "publisher": {
           "@type": "Organization",
           "name": "جلوباليز جروب للترجمة المعتمدة",
-          "url": "https://globalize-group.com"
+          "url": "https://www.globalizetl.com"
         },
-        "mainEntityOfPage": "https://globalize-group.com/ar/blog/ترجمة-ورقة-مصورة",
+        "mainEntityOfPage": "https://www.globalizetl.com/ar/blog/ترجمة-ورقة-مصورة",
         "datePublished": "2026-01-15T08:00:00+02:00",
         "dateModified": "2026-07-19T00:00:00+02:00",
-        "image": "https://globalize-group.com/images/blog/099-ترجمة-ورقة-مصورة.svg"
+        "image": "https://www.globalizetl.com/images/blog/099-ترجمة-ورقة-مصورة.svg"
       },
       "faq": {
         "@context": "https://schema.org",
@@ -14191,19 +14191,19 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
             "@type": "ListItem",
             "position": 1,
             "name": "الرئيسية",
-            "item": "https://globalize-group.com/ar"
+            "item": "https://www.globalizetl.com/ar"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "المدونة",
-            "item": "https://globalize-group.com/ar/blog"
+            "item": "https://www.globalizetl.com/ar/blog"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "ترجمة ورقة مصورة | جلوباليز جروب للترجمة المعتمدة",
-            "item": "https://globalize-group.com/ar/blog/ترجمة-ورقة-مصورة"
+            "item": "https://www.globalizetl.com/ar/blog/ترجمة-ورقة-مصورة"
           }
         ]
       }
@@ -14280,12 +14280,12 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
         "publisher": {
           "@type": "Organization",
           "name": "جلوباليز جروب للترجمة المعتمدة",
-          "url": "https://globalize-group.com"
+          "url": "https://www.globalizetl.com"
         },
-        "mainEntityOfPage": "https://globalize-group.com/ar/blog/أحذر-من-الترجمة-اللآلية-في-مواقع-ترجمة",
+        "mainEntityOfPage": "https://www.globalizetl.com/ar/blog/أحذر-من-الترجمة-اللآلية-في-مواقع-ترجمة",
         "datePublished": "2026-01-15T08:00:00+02:00",
         "dateModified": "2026-07-19T00:00:00+02:00",
-        "image": "https://globalize-group.com/images/blog/100-أحذر-من-الترجمة-اللآلية-في-مواقع-ترجمة.svg"
+        "image": "https://www.globalizetl.com/images/blog/100-أحذر-من-الترجمة-اللآلية-في-مواقع-ترجمة.svg"
       },
       "faq": {
         "@context": "https://schema.org",
@@ -14333,19 +14333,19 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
             "@type": "ListItem",
             "position": 1,
             "name": "الرئيسية",
-            "item": "https://globalize-group.com/ar"
+            "item": "https://www.globalizetl.com/ar"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "المدونة",
-            "item": "https://globalize-group.com/ar/blog"
+            "item": "https://www.globalizetl.com/ar/blog"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "أحذر من الترجمة اللآلية في مواقع ترجمة | جلوباليز جروب للترجمة المعتمدة",
-            "item": "https://globalize-group.com/ar/blog/أحذر-من-الترجمة-اللآلية-في-مواقع-ترجمة"
+            "item": "https://www.globalizetl.com/ar/blog/أحذر-من-الترجمة-اللآلية-في-مواقع-ترجمة"
           }
         ]
       }
