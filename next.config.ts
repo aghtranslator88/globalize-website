@@ -53,6 +53,24 @@ const nextConfig: NextConfig = {
       { source: '/job/:path*', destination: '/ar/team', permanent: true },
       { source: '/jobs/:path*', destination: '/ar/team', permanent: true },
 
+      // Public prefix stripping from legacy CMS
+      { source: '/public/:path*', destination: '/:path*', permanent: true },
+
+      // Legacy standalone blog post slugs
+      { source: '/power-of-words', destination: '/ar/blog', permanent: true },
+      { source: '/power-of-words/:path*', destination: '/ar/blog', permanent: true },
+      { source: '/why-human-translators-will-not-be-replaced-by-machine-translation', destination: '/ar/blog', permanent: true },
+      { source: '/why-human-translators-will-not-be-replaced-by-machine-translation/:path*', destination: '/ar/blog', permanent: true },
+      { source: '/ar/blog/altkaryr-altby-ahmytha-omkonatha-okyfy-aaadadha', destination: '/ar/blog', permanent: true },
+
+      // Specialized Service & Project details
+      { source: '/service-details/1/transcription-services', destination: '/ar/interpretation', permanent: true },
+      { source: '/service-details/2/medical-translation-project', destination: '/ar/certified', permanent: true },
+      { source: '/service-details/8/it-translation-project', destination: '/ar/localization', permanent: true },
+      { source: '/project-details/8/it-translation-project', destination: '/ar/localization', permanent: true },
+      { source: '/project-details/6/e-commerce-translation-project', destination: '/ar/localization', permanent: true },
+      { source: '/project-details/5/financial-translation-project', destination: '/ar/certified', permanent: true },
+
       // Legacy locale prefixes
       { source: '/ja', destination: '/ar', permanent: true },
       { source: '/ja/:path*', destination: '/ar', permanent: true },
