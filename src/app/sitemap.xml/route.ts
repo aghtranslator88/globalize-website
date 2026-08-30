@@ -82,15 +82,17 @@ export async function GET() {
   });
 
   // Add dynamic paths (Embassies)
-  if (embassies.length > 0) {
-    embassies.forEach((e) => {
-      addEntry(`/embassies/${e.slug}`, e.updatedAt);
-    });
-  } else {
-    ALL_EMBASSY_POSTS.forEach((e) => {
+  const embassySlugs = new Set<string>();
+  embassies.forEach((e) => {
+    embassySlugs.add(e.slug);
+    addEntry(`/embassies/${e.slug}`, e.updatedAt);
+  });
+  ALL_EMBASSY_POSTS.forEach((e) => {
+    if (!embassySlugs.has(e.slug)) {
+      embassySlugs.add(e.slug);
       addEntry(`/embassies/${e.slug}`);
-    });
-  }
+    }
+  });
 
   // Add dynamic paths (Gov Entities)
   govEntities.forEach((g) => {
@@ -98,15 +100,17 @@ export async function GET() {
   });
 
   // Add dynamic paths (Blog posts)
-  if (blogPosts.length > 0) {
-    blogPosts.forEach((bp) => {
-      addEntry(`/blog/${bp.slug}`, bp.updatedAt);
-    });
-  } else {
-    ALL_BLOG_POSTS.forEach((bp) => {
+  const blogSlugs = new Set<string>();
+  blogPosts.forEach((bp) => {
+    blogSlugs.add(bp.slug);
+    addEntry(`/blog/${bp.slug}`, bp.updatedAt);
+  });
+  ALL_BLOG_POSTS.forEach((bp) => {
+    if (!blogSlugs.has(bp.slug)) {
+      blogSlugs.add(bp.slug);
       addEntry(`/blog/${bp.slug}`, new Date(bp.publishedAt));
-    });
-  }
+    }
+  });
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
