@@ -98,6 +98,29 @@ export default async function EmbassyDetailPage({
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
           {/* Main content body */}
           <div className="lg:col-span-2 space-y-12">
+            {/* Featured Guide Banner for US Embassy */}
+            {(embassy.countryCode?.toUpperCase() === 'US' || slug.includes('us-embassy')) && (
+              <div className="rounded-2xl bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 p-6 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-sm">
+                <div className="space-y-2 text-center sm:text-right">
+                  <span className="inline-block px-3 py-1 bg-primary-blue text-white text-[10px] font-bold rounded-full">
+                    {isAr ? "دليل شامل ومحدث 2026" : "Comprehensive Guide 2026"}
+                  </span>
+                  <h3 className="text-base sm:text-lg font-black text-dark-navy font-arabic">
+                    {isAr ? "ترجمة معتمدة للسفارة الأمريكية في القاهرة: كيف تجهز مستنداتك بدون تأخير؟" : "Certified Translation for U.S. Embassy Cairo: How to Prepare Your Documents"}
+                  </h3>
+                  <p className="text-xs text-gray-600 font-arabic leading-relaxed">
+                    {isAr ? "اطلع على تفاصيل ترجمة شهادات الميلاد، عقود الزواج، صحيفة الحالة الجنائية، ورفع الملفات على CEAC." : "Check complete instructions on civil documents, marriage/birth certificates, and CEAC uploads."}
+                  </p>
+                </div>
+                <Link
+                  href="/blog/certified-translation-us-embassy-cairo"
+                  className="flex-shrink-0 px-5 py-2.5 rounded-xl bg-primary-blue hover:bg-blue-800 text-white font-bold text-xs shadow-md transition-all whitespace-nowrap"
+                >
+                  {isAr ? "قراءة الدليل الكامل ↗" : "Read Full Guide ↗"}
+                </Link>
+              </div>
+            )}
+
             {/* Rich Embassy Article Body */}
             {embassy.body && (
               <div className="bg-white rounded-2xl p-6 sm:p-8 border border-gray-100 shadow-sm space-y-6 text-gray-700 leading-relaxed font-arabic text-sm">
