@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
+import { getSiteUrl } from './siteUrl';
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.globalizetl.com';
+const SITE_URL = getSiteUrl();
 
 interface AlternateLinks {
   canonical: string;

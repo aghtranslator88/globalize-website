@@ -2,10 +2,10 @@ import type { MetadataRoute } from 'next';
 import { prisma } from '@/lib/prisma';
 import { ALL_BLOG_POSTS } from '@/lib/blog-data';
 import { ALL_EMBASSY_POSTS } from '@/lib/embassies-data';
-
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.globalizetl.com';
+import { getSiteUrl } from '@/lib/siteUrl';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const SITE_URL = getSiteUrl();
   let services: any[] = [];
   let documents: any[] = [];
   let embassies: any[] = [];
