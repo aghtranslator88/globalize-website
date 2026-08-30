@@ -190,13 +190,16 @@ export default async function HomePage({
                     key={doc.slug}
                     className="bg-white/10 border border-white/10 rounded-xl p-4 text-center w-full max-w-[170px]"
                   >
-                    <h3 className="text-xs font-bold text-white mb-2 truncate">
+                    <h3 className="text-xs font-bold text-white mb-1.5 truncate">
                       {doc.name}
                     </h3>
-                    <p className="text-lg font-black text-gold mb-1">
-                      {doc.priceEGP} <span className="text-[10px] font-normal">{isAr ? "ج.م" : "EGP"}</span>
+                    <p className="text-lg font-black text-gold mb-0.5">
+                      200 <span className="text-[9px] font-normal text-white">{isAr ? "ج.م / صفحة" : "EGP / page"}</span>
                     </p>
-                    <span className="text-[9px] text-gray-300 block">
+                    <span className="text-[9px] text-emerald-300 block mb-1">
+                      {isAr ? "300 ج.م للغات الأخرى" : "300 EGP other langs"}
+                    </span>
+                    <span className="text-[8px] text-gray-300 block">
                       {doc.deliveryHours} {isAr ? "ساعة تسليم" : "hrs delivery"}
                     </span>
                   </div>

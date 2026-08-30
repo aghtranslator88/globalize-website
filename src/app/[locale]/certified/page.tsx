@@ -133,14 +133,15 @@ export default async function CertifiedPage({
             {/* Full Pricing Table */}
             <div>
               <h2 className="text-xl font-bold text-dark-navy mb-6 border-b border-gray-100 pb-3 font-arabic">
-                {isAr ? "جدول أسعار ترجمة الوثائق الرسمية" : "Certified Document Pricing Table"}
+                {isAr ? "جدول أسعار ترجمة الوثائق الرسمية (سعر الصفحة)" : "Certified Document Pricing Table (Per Page)"}
               </h2>
-              <div className="overflow-x-auto rounded-xl border border-gray-150 shadow-sm bg-white">
+              <div className="overflow-x-auto rounded-xl border border-gray-150 shadow-sm bg-white mb-3">
                 <table className="min-w-full divide-y divide-gray-200 text-right">
                   <thead className="bg-gray-50 text-dark-navy text-xs font-bold">
                     <tr>
                       <th className="px-6 py-4">{isAr ? "الوثيقة" : "Document"}</th>
-                      <th className="px-6 py-4">{isAr ? "السعر التقريبي" : "Approx. Price"}</th>
+                      <th className="px-6 py-4">{isAr ? "عربي ↔ إنجليزي" : "Arabic ↔ English"}</th>
+                      <th className="px-6 py-4">{isAr ? "اللغات الأخرى" : "Other Languages"}</th>
                       <th className="px-6 py-4">{isAr ? "مدة التسليم" : "Turnaround"}</th>
                       <th className="px-6 py-4 text-center">{isAr ? "طلب الخدمة" : "Order"}</th>
                     </tr>
@@ -153,8 +154,11 @@ export default async function CertifiedPage({
                             {doc.name}
                           </Link>
                         </td>
-                        <td className="px-6 py-4 font-semibold text-primary-blue">
-                          {doc.priceEGP} {isAr ? "ج.م" : "EGP"}
+                        <td className="px-6 py-4 font-black text-primary-blue">
+                          200 <span className="text-[10px] font-normal">{isAr ? "ج.م / صفحة" : "EGP / page"}</span>
+                        </td>
+                        <td className="px-6 py-4 font-bold text-emerald-700">
+                          300 <span className="text-[10px] font-normal">{isAr ? "ج.م / صفحة" : "EGP / page"}</span>
                         </td>
                         <td className="px-6 py-4 text-gray-500">
                           {doc.deliveryHours} {isAr ? "ساعة" : "hours"}
@@ -163,8 +167,8 @@ export default async function CertifiedPage({
                            <a
                             href={`https://wa.me/201062990808?text=${encodeURIComponent(
                               isAr
-                                ? `أريد الاستفسار عن ترجمة: ${doc.name}`
-                                : `I want to inquire about translating: ${doc.name}`
+                                ? `أريد الاستفسار عن ترجمة: ${doc.name} (سعر الصفحة 200 ج.م عربي-إنجليزي أو 300 ج.م للغات الأخرى)`
+                                : `I want to inquire about translating: ${doc.name} (200 EGP/page AR-EN or 300 EGP/page other languages)`
                             )}`}
                             target="_blank"
                             rel="noopener noreferrer"
@@ -179,6 +183,11 @@ export default async function CertifiedPage({
                   </tbody>
                 </table>
               </div>
+              <p className="text-[11px] text-gray-500 bg-gray-50 p-3 rounded-lg border border-gray-200 leading-relaxed">
+                {isAr
+                  ? "📌 ملاحظة هامة: الأسعار أعلاه تُحسب لكل صفحة (200 جنيه للترجمة بين العربية والإنجليزية، و 300 جنيه لأي لغة ثانية كالفرنسية والألمانية والإيطالية). إذا كانت الوثيقة تحتوي على أكثر من صفحة يُحسب الإجمالي وفقاً لعدد الصفحات."
+                  : "📌 Important Note: Rates above are calculated per page (200 EGP for Arabic ↔ English, 300 EGP for other foreign languages such as German, French, Italian). For multi-page documents, the total is calculated per page."}
+              </p>
             </div>
 
             {/* Why Us / Quality Bar */}

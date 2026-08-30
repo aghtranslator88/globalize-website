@@ -86,89 +86,89 @@ async function main() {
       nameAr: 'شهادة ميلاد مميكنة',
       nameEn: 'Certified Birth Certificate',
       slug: 'birth-certificate',
-      priceEGP: 250,
+      priceEGP: 200,
       deliveryHours: 24,
       descriptionAr: 'ترجمة معتمدة لشهادة الميلاد المصرية المميكنة (الكمبيوتر) إلى مختلف اللغات الأجنبية لتقديمها للسفارات والجامعات.',
       descriptionEn: 'Certified translation of Egyptian computerized birth certificate into various foreign languages for embassies and universities.',
-      answerBoxAr: 'سعر ترجمة شهادة الميلاد المميكنة هو 250 جنيه مصري وتستغرق عملية الترجمة والاعتماد 24 ساعة فقط.',
-      answerBoxEn: 'The price for translating a birth certificate is 250 EGP, with a processing and certification time of 24 hours.'
+      answerBoxAr: 'سعر ترجمة الصفحة الواحدة لشهادة الميلاد هو 200 جنيه مصري للترجمة بين العربية والإنجليزية، و300 جنيه مصري للصفحة لأي لغة أجنبية أخرى. وفي حال تعدد الصفحات يُحسب الإجمالي بعدد الصفحات مع تسليم معتمد خلال 24 ساعة.',
+      answerBoxEn: 'The certified translation rate for a birth certificate starts at 200 EGP per page (Arabic ↔ English) and 300 EGP per page for any other foreign language. Multi-page documents are charged per page with 24-hour delivery.'
     },
     {
       nameAr: 'عقد زواج مميكن',
       nameEn: 'Certified Marriage Contract',
       slug: 'marriage-contract',
-      priceEGP: 300,
+      priceEGP: 200,
       deliveryHours: 24,
       descriptionAr: 'ترجمة معتمدة لعقود الزواج الرسمية المميكنة الصادرة عن وزارة الداخلية والسجل المدني لجميع الأغراض الرسمية والسفر.',
       descriptionEn: 'Certified translation of official marriage contracts issued by the Ministry of Interior and Civil Registry for travel and official procedures.',
-      answerBoxAr: 'سعر ترجمة عقد الزواج المميكن هو 300 جنيه مصري ويتم تسليمه مترجماً ومعتمداً خلال 24 ساعة.',
-      answerBoxEn: 'The price for marriage contract translation is 300 EGP, delivered certified within 24 hours.'
+      answerBoxAr: 'سعر ترجمة الصفحة الواحدة لعقد الزواج هو 200 جنيه مصري للترجمة بين العربية والإنجليزية، و300 جنيه مصري للصفحة للغات الأجنبية الأخرى، ويُحسب الإجمالي بعدد الصفحات مع تسليم معتمد خلال 24 ساعة.',
+      answerBoxEn: 'The certified translation fee for marriage contracts is 200 EGP per page (Arabic ↔ English) and 300 EGP per page for other languages, calculated per page with 24-hour turnaround.'
     },
     {
       nameAr: 'قيد عائلي مميكن',
       nameEn: 'Certified Family Record',
       slug: 'family-record',
-      priceEGP: 300,
+      priceEGP: 200,
       deliveryHours: 24,
       descriptionAr: 'ترجمة معتمدة لوثيقة القيد العائلي المميكن المطلوبة للسفر والهجرة وإجراءات شؤون الأسرة بالخارج.',
       descriptionEn: 'Certified translation of the computerized family record required for travel, immigration, and family affairs abroad.',
-      answerBoxAr: 'تكلفة ترجمة القيد العائلي المميكن تبلغ 300 جنيه مصري ويستغرق استلامه معتمداً 24 ساعة.',
-      answerBoxEn: 'The cost for family record translation is 300 EGP, with a turnaround time of 24 hours.'
+      answerBoxAr: 'تكلفة ترجمة الصفحة للقيد العائلي المميكن تبدأ من 200 جنيه مصري (عربي ↔ إنجليزي) و300 جنيه مصري للغات الأخرى للصفحة، ويُحسب الإجمالي بعدد الصفحات.',
+      answerBoxEn: 'Family record certified translation starts at 200 EGP per page (Arabic ↔ English) and 300 EGP per page for other languages, calculated based on total page count.'
     },
     {
       nameAr: 'شهادة تحركات',
       nameEn: 'Movement Certificate',
       slug: 'movement-certificate',
-      priceEGP: 250,
+      priceEGP: 200,
       deliveryHours: 24,
       descriptionAr: 'ترجمة معتمدة لشهادة التحركات الصادرة من مصلحة الجوازات والهجرة لتوضيح سجل السفر وتأشيرات الخروج والدخول.',
       descriptionEn: 'Certified translation of the movement certificate issued by the Passport Administration showing travel history and entry/exit stamps.',
-      answerBoxAr: 'سعر ترجمة شهادة التحركات هو 250 جنيه مصري ويتم تسليمها معتمدة رسمياً خلال 24 ساعة.',
-      answerBoxEn: 'The translation of a movement certificate costs 250 EGP and is delivered fully certified within 24 hours.'
+      answerBoxAr: 'سعر ترجمة الصفحة لشهادة التحركات هو 200 جنيه مصري (عربي ↔ إنجليزي) و300 جنيه مصري للغات الأخرى، وتُحسب الشهادات المتعددة الصفحات بسعر الصفحة.',
+      answerBoxEn: 'Movement certificate translation rate is 200 EGP per page (Arabic ↔ English) and 300 EGP per page for other languages, charged per page with official certification.'
     },
     {
       nameAr: 'شهادة وفاة مميكنة',
       nameEn: 'Certified Death Certificate',
       slug: 'death-certificate',
-      priceEGP: 250,
+      priceEGP: 200,
       deliveryHours: 24,
       descriptionAr: 'ترجمة معتمدة لشهادة الوفاة الصادرة عن السجل المدني لإجراءات المواريث والمعاملات القانونية بالخارج.',
       descriptionEn: 'Certified translation of death certificates issued by the Civil Registry for inheritance and official legal transactions abroad.',
-      answerBoxAr: 'سعر ترجمة شهادة الوفاة المميكنة هو 250 جنيه مصري ويستغرق إعدادها 24 ساعة.',
-      answerBoxEn: 'Death certificate translation costs 250 EGP and takes 24 hours to be processed.'
+      answerBoxAr: 'سعر ترجمة الصفحة الواحدة لشهادة الوفاة هو 200 جنيه مصري (عربي ↔ إنجليزي) و300 جنيه مصري للغات الأجنبية الأخرى، وتسلم معتمدة خلال 24 ساعة.',
+      answerBoxEn: 'Certified death certificate translation is 200 EGP per page (Arabic ↔ English) and 300 EGP per page for other languages, processed within 24 hours.'
     },
     {
       nameAr: 'فيش جنائي (صحيفة الحالة الجنائية)',
       nameEn: 'Certified Police Record (Criminal Record)',
       slug: 'police-record',
-      priceEGP: 250,
+      priceEGP: 200,
       deliveryHours: 24,
       descriptionAr: 'ترجمة معتمدة لصحيفة الحالة الجنائية (الفيش والتشبيه) المطلوبة للحصول على تأشيرات السفر والعمل بالخارج.',
       descriptionEn: 'Certified translation of the criminal record check (police record) required for travel visas and employment abroad.',
-      answerBoxAr: 'تكلفة ترجمة الفيش الجنائي مع الاعتماد هي 250 جنيه مصري ومدة التسليم 24 ساعة.',
-      answerBoxEn: 'The price for police record translation is 250 EGP, delivered certified in 24 hours.'
+      answerBoxAr: 'تكلفة ترجمة الصفحة الواحدة للفيش الجنائي هي 200 جنيه مصري (عربي ↔ إنجليزي) و300 جنيه مصري لأي لغة ثانية، والتسليم معتمد رسمياً في 24 ساعة.',
+      answerBoxEn: 'Police record certified translation is 200 EGP per page (Arabic ↔ English) and 300 EGP per page for other foreign languages, certified in 24 hours.'
     },
     {
       nameAr: 'شهادة تخرج',
       nameEn: 'Certified Graduation Certificate',
       slug: 'graduation-certificate',
-      priceEGP: 300,
+      priceEGP: 200,
       deliveryHours: 24,
       descriptionAr: 'ترجمة معتمدة لشهادات التخرج الصادرة من مختلف الجامعات المصرية للمنح الدراسية والتقديم للوظائف بالخارج.',
       descriptionEn: 'Certified translation of graduation certificates from Egyptian universities for academic admissions and employment abroad.',
-      answerBoxAr: 'سعر ترجمة شهادة التخرج هو 300 جنيه مصري ويتم إنجازها معتمدة رسمياً خلال 24 ساعة.',
-      answerBoxEn: 'Graduation certificate translation costs 300 EGP and is delivered certified in 24 hours.'
+      answerBoxAr: 'سعر ترجمة الصفحة لشهادة التخرج هو 200 جنيه مصري (عربي ↔ إنجليزي) و300 جنيه مصري لأي لغة ثانية، وتُحسب المستندات متعددة الصفحات بعدد صفحاتها.',
+      answerBoxEn: 'Graduation certificate translation is priced at 200 EGP per page (Arabic ↔ English) and 300 EGP per page for other languages, calculated per page.'
     },
     {
       nameAr: 'بيان درجات (سجل أكاديمي)',
       nameEn: 'Certified Academic Transcript',
       slug: 'academic-transcript',
-      priceEGP: 300,
+      priceEGP: 200,
       deliveryHours: 24,
       descriptionAr: 'ترجمة معتمدة لبيانات الدرجات والسجلات الأكاديمية المفصلة للطلاب والخريجين لأغراض استكمال الدراسة في الخارج.',
       descriptionEn: 'Certified translation of detailed academic transcripts for students and graduates for university admissions abroad.',
-      answerBoxAr: 'سعر ترجمة بيان الدرجات هو 300 جنيه مصري ويستغرق إعداده واعتماده 24 ساعة.',
-      answerBoxEn: 'The translation of an academic transcript is priced at 300 EGP and takes 24 hours.'
+      answerBoxAr: 'سعر ترجمة بيان الدرجات هو 200 جنيه مصري للصفحة الواحدة (عربي ↔ إنجليزي) و300 جنيه مصري للصفحة للغات الأجنبية الأخرى، ويُحتسب الإجمالي وفقاً لعدد صفحات البيان.',
+      answerBoxEn: 'Academic transcript translation is 200 EGP per page (Arabic ↔ English) and 300 EGP per page for other languages. Total fee is calculated based on transcript page count.'
     }
   ];
 

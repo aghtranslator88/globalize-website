@@ -143,8 +143,94 @@ const MOCK_SERVICES = (isAr: boolean): LocalizedService[] => [
 ];
 
 const MOCK_DOCS = (isAr: boolean): LocalizedDocument[] => [
-  { id: 'd1', name: isAr ? 'شهادة ميلاد مميكنة' : 'Certified Birth Certificate', slug: 'birth-certificate', priceEGP: 250, deliveryHours: 24, description: isAr ? 'ترجمة معتمدة لشهادة الميلاد.' : 'Certified birth record translation.', answerBox: isAr ? 'تكلفة ترجمة شهادة الميلاد هي 250 ج.م.' : 'Birth certificate fee is 250 EGP.', sampleImageUrl: null, indexable: true },
-  { id: 'd2', name: isAr ? 'عقد زواج مميكن' : 'Certified Marriage Contract', slug: 'marriage-contract', priceEGP: 300, deliveryHours: 24, description: isAr ? 'ترجمة معتمدة لعقد الزواج.' : 'Certified marriage contract translation.', answerBox: isAr ? 'سعر ترجمة عقد الزواج هو 300 ج.م.' : 'Marriage contract translation fee is 300 EGP.', sampleImageUrl: null, indexable: true },
+  {
+    id: 'd1',
+    name: isAr ? 'شهادة ميلاد مميكنة' : 'Certified Birth Certificate',
+    slug: 'birth-certificate',
+    priceEGP: 200,
+    deliveryHours: 24,
+    description: isAr ? 'ترجمة معتمدة لشهادة الميلاد المصرية المميكنة (الكمبيوتر) إلى مختلف اللغات لتقديمها للسفارات والجامعات.' : 'Certified translation of Egyptian computerized birth certificate into foreign languages for embassies.',
+    answerBox: isAr ? 'سعر ترجمة الصفحة الواحدة لشهادة الميلاد هو 200 جنيه مصري للترجمة بين العربية والإنجليزية، و300 جنيه مصري للصفحة لأي لغة أجنبية أخرى. وفي حال تعدد الصفحات يُحسب الإجمالي بعدد الصفحات مع تسليم معتمد خلال 24 ساعة.' : 'The certified translation rate for a birth certificate starts at 200 EGP per page (Arabic ↔ English) and 300 EGP per page for any other foreign language. Multi-page documents are charged per page with 24-hour turnaround.',
+    sampleImageUrl: null,
+    indexable: true
+  },
+  {
+    id: 'd2',
+    name: isAr ? 'عقد زواج مميكن' : 'Certified Marriage Contract',
+    slug: 'marriage-contract',
+    priceEGP: 200,
+    deliveryHours: 24,
+    description: isAr ? 'ترجمة معتمدة لعقود الزواج الرسمية المميكنة الصادرة عن وزارة الداخلية والسجل المدني لجميع الأغراض الرسمية والسفر.' : 'Certified translation of official marriage contracts issued by the Civil Registry for travel and visa procedures.',
+    answerBox: isAr ? 'سعر ترجمة الصفحة الواحدة لعقد الزواج هو 200 جنيه مصري للترجمة بين العربية والإنجليزية، و300 جنيه مصري للصفحة للغات الأجنبية الأخرى، ويُحسب الإجمالي بعدد الصفحات مع تسليم معتمد خلال 24 ساعة.' : 'The certified translation fee for marriage contracts is 200 EGP per page (Arabic ↔ English) and 300 EGP per page for other languages, calculated per page with 24-hour turnaround.',
+    sampleImageUrl: null,
+    indexable: true
+  },
+  {
+    id: 'd3',
+    name: isAr ? 'قيد عائلي مميكن' : 'Certified Family Record',
+    slug: 'family-record',
+    priceEGP: 200,
+    deliveryHours: 24,
+    description: isAr ? 'ترجمة معتمدة لوثيقة القيد العائلي المميكن المطلوبة للسفر والهجرة وإجراءات شؤون الأسرة بالخارج.' : 'Certified translation of computerized family record required for immigration and family reunion.',
+    answerBox: isAr ? 'تكلفة ترجمة الصفحة للقيد العائلي المميكن تبدأ من 200 جنيه مصري (عربي ↔ إنجليزي) و300 جنيه مصري للغات الأخرى للصفحة، ويُحسب الإجمالي بعدد الصفحات.' : 'Family record certified translation starts at 200 EGP per page (Arabic ↔ English) and 300 EGP per page for other languages, calculated based on total page count.',
+    sampleImageUrl: null,
+    indexable: true
+  },
+  {
+    id: 'd4',
+    name: isAr ? 'شهادة تحركات' : 'Movement Certificate',
+    slug: 'movement-certificate',
+    priceEGP: 200,
+    deliveryHours: 24,
+    description: isAr ? 'ترجمة معتمدة لشهادة التحركات الصادرة من مصلحة الجوازات والهجرة لتوضيح سجل السفر وتأشيرات الخروج والدخول.' : 'Certified translation of movement certificate issued by Passport Administration showing travel history.',
+    answerBox: isAr ? 'سعر ترجمة الصفحة لشهادة التحركات هو 200 جنيه مصري (عربي ↔ إنجليزي) و300 جنيه مصري للغات الأخرى، وتُحسب الشهادات المتعددة الصفحات بسعر الصفحة.' : 'Movement certificate translation rate is 200 EGP per page (Arabic ↔ English) and 300 EGP per page for other languages, charged per page with official certification.',
+    sampleImageUrl: null,
+    indexable: true
+  },
+  {
+    id: 'd5',
+    name: isAr ? 'شهادة وفاة مميكنة' : 'Certified Death Certificate',
+    slug: 'death-certificate',
+    priceEGP: 200,
+    deliveryHours: 24,
+    description: isAr ? 'ترجمة معتمدة لشهادة الوفاة الصادرة عن السجل المدني لإجراءات المواريث والمعاملات القانونية بالخارج.' : 'Certified translation of death certificates issued by the Civil Registry for inheritance procedures.',
+    answerBox: isAr ? 'سعر ترجمة الصفحة الواحدة لشهادة الوفاة هو 200 جنيه مصري (عربي ↔ إنجليزي) و300 جنيه مصري للغات الأجنبية الأخرى، وتسلم معتمدة خلال 24 ساعة.' : 'Certified death certificate translation is 200 EGP per page (Arabic ↔ English) and 300 EGP per page for other languages, processed within 24 hours.',
+    sampleImageUrl: null,
+    indexable: true
+  },
+  {
+    id: 'd6',
+    name: isAr ? 'فيش جنائي (صحيفة الحالة الجنائية)' : 'Certified Police Record',
+    slug: 'police-record',
+    priceEGP: 200,
+    deliveryHours: 24,
+    description: isAr ? 'ترجمة معتمدة لصحيفة الحالة الجنائية (الفيش والتشبيه) المطلوبة للحصول على تأشيرات السفر والعمل بالخارج.' : 'Certified translation of criminal record check (police record) required for travel and work visas.',
+    answerBox: isAr ? 'تكلفة ترجمة الصفحة الواحدة للفيش الجنائي هي 200 جنيه مصري (عربي ↔ إنجليزي) و300 جنيه مصري لأي لغة ثانية، والتسليم معتمد رسمياً في 24 ساعة.' : 'Police record certified translation is 200 EGP per page (Arabic ↔ English) and 300 EGP per page for other foreign languages, certified in 24 hours.',
+    sampleImageUrl: null,
+    indexable: true
+  },
+  {
+    id: 'd7',
+    name: isAr ? 'شهادة تخرج' : 'Certified Graduation Certificate',
+    slug: 'graduation-certificate',
+    priceEGP: 200,
+    deliveryHours: 24,
+    description: isAr ? 'ترجمة معتمدة لشهادات التخرج الصادرة من مختلف الجامعات المصرية للمنح الدراسية والتقديم للوظائف بالخارج.' : 'Certified translation of university graduation certificates for admissions and employment abroad.',
+    answerBox: isAr ? 'سعر ترجمة الصفحة لشهادة التخرج هو 200 جنيه مصري (عربي ↔ إنجليزي) و300 جنيه مصري لأي لغة ثانية، وتُحسب المستندات متعددة الصفحات بعدد صفحاتها.' : 'Graduation certificate translation is priced at 200 EGP per page (Arabic ↔ English) and 300 EGP per page for other languages, calculated per page.',
+    sampleImageUrl: null,
+    indexable: true
+  },
+  {
+    id: 'd8',
+    name: isAr ? 'بيان درجات (سجل أكاديمي)' : 'Certified Academic Transcript',
+    slug: 'academic-transcript',
+    priceEGP: 200,
+    deliveryHours: 24,
+    description: isAr ? 'ترجمة معتمدة لبيانات الدرجات والسجلات الأكاديمية المفصلة للطلاب والخريجين لأغراض استكمال الدراسة في الخارج.' : 'Certified translation of detailed academic transcripts for university admissions abroad.',
+    answerBox: isAr ? 'سعر ترجمة بيان الدرجات هو 200 جنيه مصري للصفحة الواحدة (عربي ↔ إنجليزي) و300 جنيه مصري للصفحة للغات الأجنبية الأخرى، ويُحتسب الإجمالي وفقاً لعدد صفحات البيان.' : 'Academic transcript translation is 200 EGP per page (Arabic ↔ English) and 300 EGP per page for other languages. Total fee is calculated based on transcript page count.',
+    sampleImageUrl: null,
+    indexable: true
+  }
 ];
 
 const MOCK_EMBASSIES = (isAr: boolean): LocalizedEmbassy[] => [
@@ -424,9 +510,9 @@ export async function getEmbassyBySlug(
       body: emb.body,
       faqs: emb.faqs,
       popularDocuments: [
-        { id: 'doc-1', name: 'شهادة ميلاد معتمدة', slug: 'certified-birth-certificate', priceEGP: 350, deliveryHours: 24, description: 'ترجمة معتمدة لشهادة الميلاد وموثقة', answerBox: 'ترجمة معتمدة مقبولة بالسفارة', sampleImageUrl: null, indexable: true },
-        { id: 'doc-2', name: 'صحيفة حالة جنائية (فيش وتشبيه)', slug: 'criminal-record-cert', priceEGP: 400, deliveryHours: 24, description: 'ترجمة معتمدة لفيش وتشبيه خالي من السوابق', answerBox: 'مقبول رسمياً بسفارات العالم', sampleImageUrl: null, indexable: true },
-        { id: 'doc-3', name: 'كشف حساب بنكي معتمد', slug: 'bank-statement', priceEGP: 450, deliveryHours: 24, description: 'ترجمة معتمدة للحركات البنكية والملاءة المالية', answerBox: 'مقبول لملفات الفيزا والتأشيرات', sampleImageUrl: null, indexable: true }
+        { id: 'doc-1', name: 'شهادة ميلاد معتمدة', slug: 'certified-birth-certificate', priceEGP: 200, deliveryHours: 24, description: 'ترجمة معتمدة لشهادة الميلاد وموثقة', answerBox: 'سعر ترجمة الصفحة 200 ج.م (عربي-إنجليزي) و300 ج.م للغات الأخرى', sampleImageUrl: null, indexable: true },
+        { id: 'doc-2', name: 'صحيفة حالة جنائية (فيش وتشبيه)', slug: 'criminal-record-cert', priceEGP: 200, deliveryHours: 24, description: 'ترجمة معتمدة لفيش وتشبيه خالي من السوابق', answerBox: 'سعر ترجمة الصفحة 200 ج.م (عربي-إنجليزي) و300 ج.م للغات الأخرى', sampleImageUrl: null, indexable: true },
+        { id: 'doc-3', name: 'كشف حساب بنكي معتمد', slug: 'bank-statement', priceEGP: 200, deliveryHours: 24, description: 'ترجمة معتمدة للحركات البنكية والملاءة المالية', answerBox: 'سعر ترجمة الصفحة 200 ج.م (عربي-إنجليزي) و300 ج.م للغات الأخرى', sampleImageUrl: null, indexable: true }
       ],
     };
   }

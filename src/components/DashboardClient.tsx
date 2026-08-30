@@ -229,7 +229,7 @@ export default function DashboardClient({
     // Initialize default fields
     let initialFields: any = {};
     if (activeTab === "documents") {
-      initialFields = { nameAr: "", nameEn: "", slug: "", priceEGP: 250, deliveryHours: 24, descriptionAr: "", descriptionEn: "", answerBoxAr: "", answerBoxEn: "", indexable: true };
+      initialFields = { nameAr: "", nameEn: "", slug: "", priceEGP: 200, deliveryHours: 24, descriptionAr: "", descriptionEn: "", answerBoxAr: "", answerBoxEn: "", indexable: true };
     } else if (activeTab === "embassies") {
       initialFields = { nameAr: "", nameEn: "", slug: "", countryCode: "DE", region: "EUROPE", requirementsAr: "", requirementsEn: "", useCasesAr: "", useCasesEn: "", indexable: false };
     } else if (activeTab === "government") {

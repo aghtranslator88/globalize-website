@@ -185,8 +185,8 @@ export default async function EmbassyDetailPage({
                   <table className="min-w-full divide-y divide-gray-200 text-right">
                     <thead className="bg-gray-50 text-dark-navy text-xs font-bold">
                       <tr>
-                        <th className="px-6 py-4">{isAr ? "اسم الوثيقة" : "Document Name"}</th>
-                        <th className="px-6 py-4">{isAr ? "سعر الترجمة والاعتماد" : "Certified Translation Price"}</th>
+                        <th className="px-6 py-4">{isAr ? "الوثيقة" : "Document"}</th>
+                        <th className="px-6 py-4">{isAr ? "سعر الصفحة" : "Price (Per Page)"}</th>
                         <th className="px-6 py-4">{isAr ? "مدة التسليم" : "Turnaround"}</th>
                       </tr>
                     </thead>
@@ -199,7 +199,7 @@ export default async function EmbassyDetailPage({
                             </Link>
                           </td>
                           <td className="px-6 py-4 font-semibold text-primary-blue">
-                            {doc.priceEGP} {isAr ? "ج.م" : "EGP"}
+                            {doc.priceEGP} {isAr ? "ج.م / صفحة" : "EGP / page"}
                           </td>
                           <td className="px-6 py-4 text-gray-500">
                             {doc.deliveryHours} {isAr ? "ساعة" : "hours"}

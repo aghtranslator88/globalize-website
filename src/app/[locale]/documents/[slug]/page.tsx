@@ -209,13 +209,28 @@ export default async function DocumentDetailPage({
             <div className="sticky top-28">
               {/* Big price card */}
               <div className="rounded-2xl bg-gradient-to-tr from-dark-navy to-primary-blue text-white p-6 text-center shadow-lg mb-6">
-                <h3 className="text-xs font-semibold text-gold tracking-wider uppercase mb-2">
-                  {isAr ? "تكلفة الترجمة المعتمدة" : "Certified Translation Fee"}
+                <h3 className="text-xs font-semibold text-gold tracking-wider uppercase mb-3">
+                  {isAr ? "تكلفة الترجمة المعتمدة (للوثيقة/الصفحة)" : "Certified Translation Rates (Per Page)"}
                 </h3>
-                <p className="text-3xl font-black mb-1">
-                  {doc.priceEGP} <span className="text-sm font-normal">{isAr ? "جنيه مصري" : "EGP"}</span>
+
+                <div className="bg-white/10 rounded-xl p-3.5 mb-3 border border-white/15 space-y-2">
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs text-gray-200">{isAr ? "عربي ↔ إنجليزي:" : "Arabic ↔ English:"}</span>
+                    <span className="text-lg font-black text-gold">200 <span className="text-[10px] font-normal text-white">{isAr ? "ج.م / صفحة" : "EGP / page"}</span></span>
+                  </div>
+                  <div className="flex items-center justify-between border-t border-white/10 pt-2">
+                    <span className="text-xs text-gray-200">{isAr ? "اللغات الأخرى (ألماني، فرنسي..):" : "Other Langs (DE, FR..):"}</span>
+                    <span className="text-sm font-bold text-white">300 <span className="text-[10px] font-normal text-gray-300">{isAr ? "ج.م / صفحة" : "EGP / page"}</span></span>
+                  </div>
+                </div>
+
+                <p className="text-[10px] text-gray-300 mb-4 leading-relaxed bg-black/20 rounded-lg p-2">
+                  {isAr 
+                    ? "📌 ملاحظة: في حال كانت الوثيقة مكونة من أكثر من صفحة يتم احتساب الإجمالي وفقاً لعدد الصفحات."
+                    : "📌 Note: For multi-page documents, the total fee is calculated based on page count."}
                 </p>
-                <div className="flex items-center justify-center gap-1 text-[10px] text-gray-200 mt-2 mb-6">
+
+                <div className="flex items-center justify-center gap-1 text-[10px] text-gray-200 mb-5">
                   <Clock className="h-3.5 w-3.5" />
                   <span>{isAr ? "مدة التجهيز:" : "Turnaround:"} {doc.deliveryHours} {isAr ? "ساعة" : "hours"}</span>
                 </div>
@@ -223,8 +238,8 @@ export default async function DocumentDetailPage({
                 <a
                   href={`https://wa.me/201062990808?text=${encodeURIComponent(
                     isAr 
-                      ? `أريد ترجمة شهادة: ${doc.name} بسعر ${doc.priceEGP} ج.م`
-                      : `I want to translate: ${doc.name} for ${doc.priceEGP} EGP`
+                      ? `أريد ترجمة شهادة: ${doc.name} (سعر الصفحة 200 ج.م عربي-إنجليزي أو 300 ج.م للغات الأخرى)`
+                      : `I want to translate: ${doc.name} (200 EGP/page AR-EN or 300 EGP/page other languages)`
                   )}`}
                   target="_blank"
                   rel="noopener noreferrer"
