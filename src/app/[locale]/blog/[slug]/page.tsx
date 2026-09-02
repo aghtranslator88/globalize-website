@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { setRequestLocale } from "next-intl/server";
 import { getBlogPostBySlug, getRawBlogPostBySlug, getFAQs } from "@/lib/data";
 import { getSEOHeaders, generateArticleJsonLd, generateFAQJsonLd, generateBreadcrumbJsonLd } from "@/lib/seo";
+import { getSiteUrl } from "@/lib/siteUrl";
 import { isGenuineEnglish } from "@/lib/translationDetection";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -33,7 +34,13 @@ function parseMarkdown(markdown: string) {
     return text
       .replace(/\*\*(.*?)\*\*/g, "<strong class='font-bold text-dark-navy'>$1</strong>")
       .replace(/\*(.*?)\*/g, "<em class='italic'>$1</em>")
-      .replace(/\[(.*?)\]\((.*?)\)/g, "<a href='$2' class='text-primary-blue hover:underline font-bold transition-colors' target='_blank' rel='noopener noreferrer'>$1</a>");
+      .replace(/\[(.*?)\]\((.*?)\)/g, (match, text, href) => {
+        const isInternal = href.startsWith("/") || href.startsWith("#") || href.includes("globalizetl.com");
+        if (isInternal) {
+          return `<a href='${href}' class='text-primary-blue hover:underline font-bold transition-colors'>${text}</a>`;
+        }
+        return `<a href='${href}' class='text-primary-blue hover:underline font-bold transition-colors' target='_blank' rel='noopener noreferrer'>${text}</a>`;
+      });
   }
 
   while (i < lines.length) {
@@ -42,6 +49,49 @@ function parseMarkdown(markdown: string) {
 
     if (!trimmed) {
       i++;
+      continue;
+    }
+
+    // 0. Fenced Code Blocks / Mermaid Process Flow Check (```)
+    if (trimmed.startsWith("```")) {
+      const codeLines: string[] = [];
+      i++;
+      while (i < lines.length && !lines[i].trim().startsWith("```")) {
+        codeLines.push(lines[i]);
+        i++;
+      }
+      if (i < lines.length) i++; // skip closing ```
+      
+      const fullBlock = codeLines.join("\n");
+      if (trimmed.includes("mermaid") || fullBlock.includes("graph TD") || fullBlock.includes("graph LR") || fullBlock.includes("-->")) {
+        const stepMatches = fullBlock.match(/["']([^"']+)["']/g);
+        const steps: string[] = [];
+        if (stepMatches) {
+          stepMatches.forEach(m => {
+            const clean = m.slice(1, -1).trim();
+            if (clean && !steps.includes(clean)) steps.push(clean);
+          });
+        }
+        if (steps.length > 0) {
+          const flowHtml = `
+<div class="my-8 p-6 rounded-2xl bg-gradient-to-br from-blue-50/80 via-slate-50 to-blue-50/40 border border-blue-100 shadow-xs font-arabic">
+  <div class="text-xs font-bold text-primary-blue mb-4 flex items-center gap-2">
+    <span class="h-2 w-2 rounded-full bg-primary-blue animate-pulse"></span>
+    <span>مخطط تسلسل الخطوات والإجراءات المعتمدة:</span>
+  </div>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5">
+    ${steps.map((step, sIdx) => `
+      <div class="flex items-start gap-3 bg-white p-4 rounded-xl border border-blue-100 shadow-xs">
+        <span class="flex-shrink-0 h-6 w-6 rounded-lg bg-primary-blue text-white flex items-center justify-center text-[10px] font-black">${sIdx + 1}</span>
+        <div class="text-xs font-semibold text-dark-navy leading-relaxed">${inlineFormat(step.replace(/^\d+\.\s*/, ''))}</div>
+      </div>
+    `).join('')}
+  </div>
+</div>`;
+          output.push(flowHtml);
+          continue;
+        }
+      }
       continue;
     }
 
@@ -263,6 +313,7 @@ export default async function BlogPostDetailPage({
     { name: post.title, url: `/blog/${post.slug}` },
   ];
 
+  const SITE_URL = getSiteUrl();
   const breadcrumbJsonLd = rawPost?.schemas?.breadcrumb || generateBreadcrumbJsonLd(breadcrumbs);
   const articleJsonLd = rawPost?.schemas?.article || generateArticleJsonLd({
     title: post.title,
@@ -270,7 +321,7 @@ export default async function BlogPostDetailPage({
     featuredImageUrl: post.featuredImageUrl,
     publishedAt: post.publishedAt,
     updatedAt: post.publishedAt,
-    url: `https://globalize-group.com/${locale}/blog/${slug}`,
+    url: `${SITE_URL}/${locale}/blog/${slug}`,
     authorName: post.author.name,
   });
 

@@ -22,6 +22,42 @@ export async function generateMetadata({
   return getSEOHeaders(doc.name, `${doc.name} translation price, speed, and legalization.`, `/documents/${slug}`, doc.indexable, locale, hasEnglishTranslation);
 }
 
+function getDocumentGuide(slug: string, isAr: boolean) {
+  if (slug.includes("graduation") || slug.includes("degree") || slug.includes("transcript") || slug.includes("school")) {
+    return {
+      title: isAr ? "الدليل الشامل لترجمة الشهادات الجامعية وبيان الدرجات لفيزا الدراسة والسفر" : "Comprehensive Guide to University Degree & Transcript Translation",
+      desc: isAr ? "معايير وشروط ترجمة المؤهلات الدراسية، معادلة WES وUni-Assist، ومتطلبات المنح الدولية." : "Standards for translating academic credentials, WES & Uni-Assist evaluation, and scholarship requirements.",
+      url: "/blog/university-degrees-bank-statements-translation-guide"
+    };
+  }
+  if (slug.includes("bank") || slug.includes("statement")) {
+    return {
+      title: isAr ? "دليل ترجمة كشوف الحسابات البنكية لتقديمات السفارات والتأشيرات" : "Bank Statement Translation Guide for Visa Applications",
+      desc: isAr ? "شروط ترجمة حركة الحساب البنكي لمدة 6 أشهر، ترجمة العملات والمصطلحات المصرفية." : "Rules for translating 6-month bank statements, banking terminology, and consular verification.",
+      url: "/blog/university-degrees-bank-statements-translation-guide"
+    };
+  }
+  if (slug.includes("criminal") || slug.includes("birth") || slug.includes("marriage") || slug.includes("death") || slug.includes("family") || slug.includes("divorce")) {
+    return {
+      title: isAr ? "الدليل المتكامل لترجمة الفيش الجنائي وشهادات الميلاد والزواج" : "Complete Guide to Translating Criminal Records & Vital Certificates",
+      desc: isAr ? "شروط قبول صحيفة الحالة الجنائية، وثائق الأحوال المدنية، ومدة الصلاحية المقبولة لدى السفارات." : "Acceptance criteria for police clearance records, civil registry certificates, and consular validity.",
+      url: "/blog/criminal-record-vital-certificates-translation-guide"
+    };
+  }
+  if (slug.includes("commercial") || slug.includes("tax") || slug.includes("contract") || slug.includes("power-of-attorney") || slug.includes("company")) {
+    return {
+      title: isAr ? "دليل تصديق وزارة الخارجية وترجمة مستندات الشركات والاستثمار للخليج" : "MOFA Attestation & Corporate Document Translation Guide for Gulf Countries",
+      desc: isAr ? "خطوات تصديق وترجمة السجلات التجارية، البطاقات الضريبية، وعقود التأسيس للسعودية والإمارات." : "Step-by-step legalization of commercial registers, tax cards, and articles of incorporation for KSA & UAE.",
+      url: "/blog/foreign-ministry-attestation-gulf-translation-guide"
+    };
+  }
+  return {
+    title: isAr ? "دليل أسعار وشروط الترجمة المعتمدة في مصر 2026" : "Certified Translation Prices & Requirements Guide 2026",
+    desc: isAr ? "المعايير القانونية الصارمة للترجمة المعتمدة، كيفية احتساب الأسعار، ومواعيد التسليم الفورية." : "Legal accreditation standards, price calculation mechanisms, and express delivery timelines.",
+    url: "/blog/certified-translation-prices-requirements-guide"
+  };
+}
+
 export default async function DocumentDetailPage({
   params,
 }: {
@@ -37,6 +73,7 @@ export default async function DocumentDetailPage({
 
   const faqs = await getFAQs("document", doc.id, locale);
   const isAr = locale === "ar";
+  const guide = getDocumentGuide(slug, isAr);
 
   const breadcrumbs = [
     { name: isAr ? "الرئيسية" : "Home", url: "/" },
@@ -98,6 +135,29 @@ export default async function DocumentDetailPage({
                 {doc.description}
               </p>
             </div>
+
+            {/* Featured Guide Banner (Internal Linking) */}
+            {guide && (
+              <div className="rounded-2xl bg-gradient-to-r from-blue-50/90 via-indigo-50/70 to-blue-50/90 border border-blue-200/80 p-6 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xs">
+                <div className="space-y-2 text-center sm:text-right flex-1">
+                  <span className="inline-block px-3 py-1 bg-primary-blue text-white text-[10px] font-bold rounded-full">
+                    {isAr ? "دليل إرشادي معتمد 2026" : "Official 2026 Guide"}
+                  </span>
+                  <h3 className="text-base sm:text-lg font-black text-dark-navy font-arabic">
+                    {guide.title}
+                  </h3>
+                  <p className="text-xs text-gray-600 font-arabic leading-relaxed">
+                    {guide.desc}
+                  </p>
+                </div>
+                <Link
+                  href={guide.url}
+                  className="flex-shrink-0 px-5 py-2.5 rounded-xl bg-primary-blue hover:bg-blue-800 text-white font-bold text-xs shadow-md transition-all whitespace-nowrap hover:scale-105"
+                >
+                  {isAr ? "قراءة الدليل الشامل ↗" : "Read Full Guide ↗"}
+                </Link>
+              </div>
+            )}
 
             {/* Answer box with price sentence */}
             <div className="answer-box p-6 sm:p-8">

@@ -22,6 +22,43 @@ export async function generateMetadata({
   return getSEOHeaders(embassy.name, `${embassy.name} requirements and certified translation details.`, `/embassies/${slug}`, embassy.indexable, locale, hasEnglishTranslation);
 }
 
+function getEmbassyGuide(slug: string, countryCode: string | undefined, isAr: boolean) {
+  const cc = countryCode?.toUpperCase() || "";
+  if (cc === "US" || slug.includes("us-embassy") || slug.includes("american")) {
+    return {
+      title: isAr ? "ترجمة معتمدة للسفارة الأمريكية بالقاهرة: كيف تجهز مستنداتك بدون تأخير؟" : "Certified Translation for U.S. Embassy Cairo: Complete Document Prep Guide",
+      desc: isAr ? "تفاصيل ترجمة شهادات الميلاد، عقود الزواج، صحيفة الحالة الجنائية، ورفع الملفات على CEAC." : "Check complete instructions on civil documents, marriage/birth certificates, and CEAC uploads.",
+      url: "/blog/certified-translation-us-embassy-cairo"
+    };
+  }
+  if (cc === "IT" || slug.includes("italian") || slug.includes("italy")) {
+    return {
+      title: isAr ? "كيفية التقديم على تأشيرة إيطاليا من مصر عبر ألمافيفا: الخطوات والمستندات" : "How to Apply for Italy Visa from Egypt via Almaviva: Requirements & Translation",
+      desc: isAr ? "قائمة المستندات الإلزامية، متطلبات الترجمة الإيطالية المحلفة، وتصديق وزارة الخارجية." : "Mandatory document checklist, Italian sworn translation criteria, and MOFA legalizations.",
+      url: "/blog/italy-visa-egypt-almaviva"
+    };
+  }
+  if (["DE", "FR", "ES", "GB", "NL", "AT", "GR", "CH", "SE", "NO"].includes(cc) || slug.includes("schengen") || slug.includes("german") || slug.includes("french") || slug.includes("spanish") || slug.includes("british")) {
+    return {
+      title: isAr ? "معايير وشروط الترجمة المعتمدة للسفارة الأمريكية ودول الشنغن" : "Certified Translation Standards for US & Schengen Embassies",
+      desc: isAr ? "متطلبات الترجمة المعتمدة للفيزا الأوروبية، شروط TLScontact وVFS Global وBLS، وتفادي الرفض." : "Accreditation guidelines for European visas, visa center compliance, and common translation pitfalls.",
+      url: "/blog/us-schengen-embassies-certified-translation-guide"
+    };
+  }
+  if (["SA", "AE", "KW", "QA", "OM", "BH"].includes(cc) || slug.includes("saudi") || slug.includes("uae") || slug.includes("gulf") || slug.includes("kuwait") || slug.includes("qatar")) {
+    return {
+      title: isAr ? "دليل تصديق وزارة الخارجية وترجمة مستندات الإقامة والاستثمار للخليج" : "MOFA Legalization & Translation Guide for GCC Visas & Residency",
+      desc: isAr ? "متطلبات توثيق الشهادات وعقود العمل والوكالات التجارية لسفارات السعودية والإمارات والخليج." : "Attestation and certified translation requirements for Saudi, UAE, and GCC work visas.",
+      url: "/blog/foreign-ministry-attestation-gulf-translation-guide"
+    };
+  }
+  return {
+    title: isAr ? "دليل أسعار وشروط الترجمة المعتمدة في مصر 2026" : "Certified Translation Prices & Requirements Guide 2026",
+    desc: isAr ? "شروط اعتماد المستندات، ختم المترجم المعتمد، ومتطلبات القبول الدبلوماسي الرسمي." : "Consular translation standards, certification seal guidelines, and express delivery options.",
+    url: "/blog/certified-translation-prices-requirements-guide"
+  };
+}
+
 export default async function EmbassyDetailPage({
   params,
 }: {
@@ -37,6 +74,7 @@ export default async function EmbassyDetailPage({
 
   const faqs = await getFAQs("embassy", embassy.id, locale);
   const isAr = locale === "ar";
+  const guide = getEmbassyGuide(slug, embassy.countryCode, isAr);
 
   const breadcrumbs = [
     { name: isAr ? "الرئيسية" : "Home", url: "/" },
@@ -78,19 +116,29 @@ export default async function EmbassyDetailPage({
           </ol>
         </nav>
 
-        {/* Page Title & Flags */}
-        <div className="flex flex-col md:flex-row items-center gap-6 mb-10 border-b border-gray-100 pb-8">
-          <div className="h-16 w-16 rounded-full overflow-hidden border border-gray-150 shadow-sm bg-gray-50 flex items-center justify-center">
-            <img
-              src={`https://flagcdn.com/w80/${embassy.countryCode.toLowerCase()}.png`}
-              alt={embassy.name}
-              className="h-full w-full object-cover"
-            />
+        {/* Hero title banner */}
+        <div className="bg-gradient-to-br from-blue-50/50 via-white to-gray-50 rounded-3xl p-8 sm:p-12 mb-12 border border-gray-150 flex flex-col md:flex-row items-center justify-between gap-8">
+          <div className="flex items-center gap-6">
+            {embassy.countryCode && (
+              <img
+                src={`https://flagcdn.com/w80/${embassy.countryCode.toLowerCase()}.png`}
+                alt={`${embassy.name} flag`}
+                className="h-16 w-24 object-cover rounded-xl shadow-md border border-gray-200"
+              />
+            )}
+            <div>
+              <span className="inline-block px-3 py-1 bg-primary-blue/10 text-primary-blue text-xs font-bold rounded-full mb-2">
+                {isAr ? "معتمد 100%" : "100% Certified"}
+              </span>
+              <h1 className="text-2xl sm:text-3xl font-black text-dark-navy font-arabic">
+                {embassy.name}
+              </h1>
+            </div>
           </div>
           <div className="text-center md:text-right">
-            <h1 className="text-2xl sm:text-4xl font-black text-dark-navy mb-2 font-arabic">
-              {embassy.name}
-            </h1>
+            <h2 className="text-sm font-bold text-dark-navy mb-1 font-arabic">
+              {isAr ? "الترجمة المعتمدة لتقديمات السفارة" : "Certified Translation for Embassy Submissions"}
+            </h2>
             <p className="text-xs text-gray-500 font-semibold uppercase tracking-wider">
               {isAr ? "خدمات الترجمة والاعتماد الرسمية" : "Official Translation & Certification Guidelines"}
             </p>
@@ -100,23 +148,23 @@ export default async function EmbassyDetailPage({
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
           {/* Main content body */}
           <div className="lg:col-span-2 space-y-12">
-            {/* Featured Guide Banner for US Embassy */}
-            {(embassy.countryCode?.toUpperCase() === 'US' || slug.includes('us-embassy')) && (
-              <div className="rounded-2xl bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 p-6 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-sm">
-                <div className="space-y-2 text-center sm:text-right">
+            {/* Dynamic Featured Guide Banner */}
+            {guide && (
+              <div className="rounded-2xl bg-gradient-to-r from-blue-50/90 via-indigo-50/70 to-blue-50/90 border border-blue-200/80 p-6 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xs">
+                <div className="space-y-2 text-center sm:text-right flex-1">
                   <span className="inline-block px-3 py-1 bg-primary-blue text-white text-[10px] font-bold rounded-full">
                     {isAr ? "دليل شامل ومحدث 2026" : "Comprehensive Guide 2026"}
                   </span>
                   <h3 className="text-base sm:text-lg font-black text-dark-navy font-arabic">
-                    {isAr ? "ترجمة معتمدة للسفارة الأمريكية في القاهرة: كيف تجهز مستنداتك بدون تأخير؟" : "Certified Translation for U.S. Embassy Cairo: How to Prepare Your Documents"}
+                    {guide.title}
                   </h3>
                   <p className="text-xs text-gray-600 font-arabic leading-relaxed">
-                    {isAr ? "اطلع على تفاصيل ترجمة شهادات الميلاد، عقود الزواج، صحيفة الحالة الجنائية، ورفع الملفات على CEAC." : "Check complete instructions on civil documents, marriage/birth certificates, and CEAC uploads."}
+                    {guide.desc}
                   </p>
                 </div>
                 <Link
-                  href="/blog/certified-translation-us-embassy-cairo"
-                  className="flex-shrink-0 px-5 py-2.5 rounded-xl bg-primary-blue hover:bg-blue-800 text-white font-bold text-xs shadow-md transition-all whitespace-nowrap"
+                  href={guide.url}
+                  className="flex-shrink-0 px-5 py-2.5 rounded-xl bg-primary-blue hover:bg-blue-800 text-white font-bold text-xs shadow-md transition-all whitespace-nowrap hover:scale-105"
                 >
                   {isAr ? "قراءة الدليل الكامل ↗" : "Read Full Guide ↗"}
                 </Link>

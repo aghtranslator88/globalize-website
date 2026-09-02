@@ -73,11 +73,12 @@ export function getSEOHeaders(
     },
     icons: {
       icon: [
-        { url: '/logo-icon.png', type: 'image/png' },
         { url: '/favicon.ico', sizes: 'any' },
+        { url: '/icon.png', type: 'image/png' },
+        { url: '/logo-icon.png', type: 'image/png' },
       ],
-      shortcut: '/logo-icon.png',
-      apple: '/logo-icon.png',
+      shortcut: '/favicon.ico',
+      apple: '/apple-icon.png',
     },
   };
 }
