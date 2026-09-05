@@ -19,8 +19,12 @@ export async function generateMetadata({
   const { locale, slug } = await params;
   const post = await getBlogPostBySlug(slug, locale);
   if (!post) return {};
+  const rawPost = getRawBlogPostBySlug(slug);
   const hasEnglishTranslation = isGenuineEnglish(post.title, post.body);
-  return getSEOHeaders(post.title, post.excerpt, `/blog/${slug}`, true, locale, hasEnglishTranslation);
+  const isAr = locale === "ar";
+  const metaTitle = (!isAr && rawPost?.seoTitleEn) ? rawPost.seoTitleEn : post.title;
+  const metaDesc = (!isAr && rawPost?.metaDescriptionEn) ? rawPost.metaDescriptionEn : post.excerpt;
+  return getSEOHeaders(metaTitle, metaDesc, `/blog/${slug}`, true, locale, hasEnglishTranslation);
 }
 
 // Enhanced Markdown Parser & TOC Generator with Table, Card Steps, and Full Justified Typography
@@ -303,9 +307,10 @@ export default async function BlogPostDetailPage({
   }
 
   const rawPost = getRawBlogPostBySlug(slug);
-  const faqs = await getFAQs("blogPost", post.id, locale);
-  const faqsList = faqs.length > 0 ? faqs : (rawPost?.faqs?.map((f, i) => ({ id: `faq-${i}`, question: f.question, answer: f.answer, sortOrder: i })) || []);
   const isAr = locale === "ar";
+  const faqs = await getFAQs("blogPost", post.id, locale);
+  const rawFaqs = isAr ? rawPost?.faqs : (rawPost?.faqsEn || rawPost?.faqs);
+  const faqsList = faqs.length > 0 ? faqs : (rawFaqs?.map((f, i) => ({ id: `faq-${i}`, question: f.question, answer: f.answer, sortOrder: i })) || []);
 
   const breadcrumbs = [
     { name: isAr ? "الرئيسية" : "Home", url: "/" },
@@ -314,8 +319,12 @@ export default async function BlogPostDetailPage({
   ];
 
   const SITE_URL = getSiteUrl();
-  const breadcrumbJsonLd = rawPost?.schemas?.breadcrumb || generateBreadcrumbJsonLd(breadcrumbs);
-  const articleJsonLd = rawPost?.schemas?.article || generateArticleJsonLd({
+  const rawBreadcrumb = isAr ? rawPost?.schemas?.breadcrumb : (rawPost?.schemas?.breadcrumbEn || rawPost?.schemas?.breadcrumb);
+  const rawArticle = isAr ? rawPost?.schemas?.article : (rawPost?.schemas?.articleEn || rawPost?.schemas?.article);
+  const rawFaqSchema = isAr ? rawPost?.schemas?.faq : (rawPost?.schemas?.faqEn || rawPost?.schemas?.faq);
+
+  const breadcrumbJsonLd = rawBreadcrumb || generateBreadcrumbJsonLd(breadcrumbs);
+  const articleJsonLd = rawArticle || generateArticleJsonLd({
     title: post.title,
     excerpt: post.excerpt,
     featuredImageUrl: post.featuredImageUrl,
@@ -340,7 +349,7 @@ export default async function BlogPostDetailPage({
       {faqsList.length > 0 && (
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(rawPost?.schemas?.faq || generateFAQJsonLd(faqsList)) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(rawFaqSchema || generateFAQJsonLd(faqsList)) }}
         />
       )}
       <Navbar />
@@ -419,11 +428,13 @@ export default async function BlogPostDetailPage({
             </header>
 
             {/* GEO Answer Box */}
-            {rawPost?.geoAnswer && (
+            {(rawPost?.geoAnswer || rawPost?.geoAnswerEn) && (
               <div className="bg-primary-blue/5 border border-primary-blue/10 rounded-2xl p-6 mb-8 font-arabic">
-                <h4 className="font-bold text-xs text-primary-blue mb-2">إجابة سريعة وموجزة (GEO Summary)</h4>
+                <h4 className="font-bold text-xs text-primary-blue mb-2">
+                  {isAr ? "إجابة سريعة وموجزة (GEO Summary)" : "Quick Answer (GEO Summary)"}
+                </h4>
                 <p className="text-xs sm:text-sm font-semibold text-dark-navy leading-relaxed">
-                  {rawPost.geoAnswer}
+                  {isAr ? rawPost.geoAnswer : (rawPost.geoAnswerEn || post.excerpt)}
                 </p>
               </div>
             )}
@@ -433,8 +444,8 @@ export default async function BlogPostDetailPage({
               <div className="relative w-full aspect-[16/9] rounded-2xl overflow-hidden mb-8 border border-gray-100 shadow-sm bg-gray-50">
                 <img
                   src={post.featuredImageUrl}
-                  alt={rawPost?.imageMeta?.altText || post.title}
-                  title={rawPost?.imageMeta?.titleText || post.title}
+                  alt={(!isAr && rawPost?.imageMeta?.altTextEn) ? rawPost.imageMeta.altTextEn : (rawPost?.imageMeta?.altText || post.title)}
+                  title={(!isAr && rawPost?.imageMeta?.titleTextEn) ? rawPost.imageMeta.titleTextEn : (rawPost?.imageMeta?.titleText || post.title)}
                   className="object-cover w-full h-full"
                   loading="lazy"
                 />
