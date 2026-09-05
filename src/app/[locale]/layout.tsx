@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 import { Cairo, Inter } from 'next/font/google';
 import AuthProvider from '@/components/SessionProvider';
+import { Analytics } from '@vercel/analytics/next';
 import '../globals.css';
 
 const cairo = Cairo({
@@ -64,6 +65,7 @@ export default async function LocaleLayout({
             {children}
           </AuthProvider>
         </NextIntlClientProvider>
+        <Analytics />
       </body>
     </html>
   );
