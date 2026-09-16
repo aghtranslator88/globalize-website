@@ -3,8 +3,10 @@ import { getDocuments } from "@/lib/data";
 import { getSEOHeaders, generateBreadcrumbJsonLd } from "@/lib/seo";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import TrackedWhatsAppLink from "@/components/TrackedWhatsAppLink";
 import { Link } from "@/i18n/routing";
 import { FileText, Clock, Phone, ArrowLeft, ArrowRight, MessageCircle } from "lucide-react";
+
 import type { Metadata } from "next";
 
 export async function generateMetadata({
@@ -158,22 +160,23 @@ export default async function DocumentsPage({
                     {isAr ? <ArrowLeft className="h-3 w-3" /> : <ArrowRight className="h-3 w-3" />}
                   </Link>
 
-                  <a
+                  <TrackedWhatsAppLink
                     href={`https://wa.me/201062990808?text=${encodeURIComponent(
                       isAr 
                         ? `أريد ترجمة وثيقة: ${doc.name} (سعر الصفحة 200 ج.م عربي-إنجليزي أو 300 ج.م للغات الأخرى)`
                         : `I want to translate document: ${doc.name} (200 EGP/page AR-EN or 300 EGP/page other languages)`
                     )}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex w-full items-center justify-center gap-1.5 rounded-xl bg-whatsapp-green hover:bg-emerald-600 text-white py-2.5 text-[10px] font-bold shadow-sm animate-pulse-glow"
+                    ctaLocation="documents_index_card"
+                    language={locale}
+                    className="flex w-full items-center justify-center gap-1.5 rounded-xl bg-whatsapp-green hover:bg-emerald-600 text-white py-2.5 text-[10px] font-bold shadow-sm animate-pulse-glow cursor-pointer"
                   >
                     <MessageCircle className="h-3 w-3" />
                     <span>{isAr ? "اطلب بالواتساب" : "Order WhatsApp"}</span>
-                  </a>
+                  </TrackedWhatsAppLink>
                 </div>
               </div>
             </div>
+
           ))}
         </div>
       </main>

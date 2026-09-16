@@ -139,6 +139,24 @@ const MOCK_SERVICES = (isAr: boolean): LocalizedService[] => [
     description: isAr ? 'ترجمة فورية وشفهية وتأجير كبائن الصوت والاجتماعات.' : 'Simultaneous interpretation and audio translation booths rentals.',
     definition: isAr ? 'الترجمة الشفهية تتيح نقل المحاضرات مباشرة للجمهور المتعدد اللغات.' : 'Consecutive and audio interpretation during international events.',
     indexable: true
+  },
+  {
+    id: 's4',
+    name: isAr ? 'الترجمة القانونية المعتمدة' : 'Certified Legal Translation',
+    slug: 'services/legal-translation',
+    type: 'CERTIFIED',
+    description: isAr ? 'ترجمة قانونية رسمية معتمدة للعقود التجارية، وثائق التقاضي، والتوكيلات والسجلات التجارية.' : 'Certified legal translation for corporate contracts, court pleadings, POAs, and commercial records.',
+    definition: isAr ? 'الترجمة القانونية هي نقل دقيق للمستندات القضائية والتعاقدية بختم الاعتماد الرسمي المقبول لدى المحاكم والسفارات.' : 'Certified legal translation is an exact legal rendering of contractual and judicial records bearing official accredited certification.',
+    indexable: true
+  },
+  {
+    id: 's5',
+    name: isAr ? 'الترجمة الطبية المعتمدة' : 'Certified Medical Translation',
+    slug: 'services/medical-translation',
+    type: 'CERTIFIED',
+    description: isAr ? 'ترجمة طبية رسمية معتمدة للتقارير والتحاليل والعمليات الجراحية وملفات السفر للعلاج بالخارج.' : 'Certified medical translation for clinical reports, lab analyses, surgical records, and medical travel dossiers.',
+    definition: isAr ? 'الترجمة الطبية هي النقل الدقيق للمصطلحات التشريحية والسريرية بختم الاعتماد المقبول لدى المستشفيات والسفارات.' : 'Certified medical translation is an exact clinical translation of health records bearing official accredited certification.',
+    indexable: true
   }
 ];
 

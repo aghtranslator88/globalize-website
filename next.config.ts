@@ -74,7 +74,7 @@ const nextConfig: NextConfig = {
       // Marketing, Localization & Media service details
       { source: '/service-details/2/:slug*', destination: '/ar/localization', permanent: true },
       { source: '/service-details/4/marketing-translation-project', destination: '/ar/localization', permanent: true },
-      { source: '/service-details/6/:slug*', destination: '/ar/localization', permanent: true },
+      { source: '/service-details/6/:slug*', destination: '/ar/services/medical-translation', permanent: true },
       { source: '/service-details/8/:slug*', destination: '/ar/localization', permanent: true },
       { source: '/service-details/10/:slug*', destination: '/ar/localization', permanent: true },
 
@@ -82,7 +82,7 @@ const nextConfig: NextConfig = {
       { source: '/service-details/1/:slug*', destination: '/ar/certified', permanent: true },
       { source: '/service-details/3/:slug*', destination: '/ar/certified', permanent: true },
       { source: '/service-details/4/:slug*', destination: '/ar/certified', permanent: true },
-      { source: '/service-details/5/:slug*', destination: '/ar/certified', permanent: true },
+      { source: '/service-details/5/:slug*', destination: '/ar/services/legal-translation', permanent: true },
       { source: '/service-details/7/:slug*', destination: '/ar/certified', permanent: true },
       { source: '/service-details/:path*', destination: '/ar/certified', permanent: true },
 
@@ -111,7 +111,7 @@ const nextConfig: NextConfig = {
 
       // Specialized Service & Project details
       { source: '/service-details/1/transcription-services', destination: '/ar/interpretation', permanent: true },
-      { source: '/service-details/2/medical-translation-project', destination: '/ar/certified', permanent: true },
+      { source: '/service-details/2/medical-translation-project', destination: '/ar/services/medical-translation', permanent: true },
       { source: '/service-details/8/it-translation-project', destination: '/ar/localization', permanent: true },
       { source: '/project-details/8/it-translation-project', destination: '/ar/localization', permanent: true },
       { source: '/project-details/6/e-commerce-translation-project', destination: '/ar/localization', permanent: true },
@@ -120,6 +120,31 @@ const nextConfig: NextConfig = {
       // Legacy locale prefixes
       { source: '/ja', destination: '/ar', permanent: true },
       { source: '/ja/:path*', destination: '/ar', permanent: true },
+    ];
+  },
+  async headers() {
+    return [
+      {
+        source: '/:path*',
+        headers: [
+          {
+            key: 'Strict-Transport-Security',
+            value: 'max-age=63072000; includeSubDomains; preload',
+          },
+          {
+            key: 'X-Content-Type-Options',
+            value: 'nosniff',
+          },
+          {
+            key: 'X-Frame-Options',
+            value: 'SAMEORIGIN',
+          },
+          {
+            key: 'Referrer-Policy',
+            value: 'strict-origin-when-cross-origin',
+          },
+        ],
+      },
     ];
   },
 };

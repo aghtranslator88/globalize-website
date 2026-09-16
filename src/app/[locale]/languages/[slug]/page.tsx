@@ -5,7 +5,9 @@ import { getSEOHeaders, generateBreadcrumbJsonLd } from "@/lib/seo";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import QuoteForm from "@/components/QuoteForm";
+import TrackedWhatsAppLink from "@/components/TrackedWhatsAppLink";
 import { Link } from "@/i18n/routing";
+
 import { Phone, CheckCircle, Globe, ArrowLeft, ArrowRight, MessageCircle } from "lucide-react";
 import type { Metadata } from "next";
 
@@ -142,20 +144,22 @@ export default async function LanguageDetailPage({
               
               <div className="mt-6 rounded-2xl bg-whatsapp-green/5 border border-whatsapp-green/20 p-6 text-center">
                 <h4 className="font-bold text-xs text-whatsapp-green mb-2">{isAr ? "طلب تسعير فوري عبر الواتساب" : "Instant Quote on WhatsApp"}</h4>
-                <a
+                <TrackedWhatsAppLink
                   href={`https://wa.me/201062990808?text=${encodeURIComponent(
                     isAr 
                       ? `أريد الاستفسار عن ترجمة للغة: ${lang.name}`
                       : `I want to inquire about translation into: ${lang.name}`
                   )}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 rounded-xl bg-whatsapp-green hover:bg-emerald-600 text-white py-3 text-xs font-bold shadow-md transition-all animate-pulse-glow"
+                  ctaLocation="language_detail_sidebar"
+                  service={`language-${lang.slug}`}
+                  language={locale}
+                  className="flex items-center justify-center gap-2 rounded-xl bg-whatsapp-green hover:bg-emerald-600 text-white py-3 text-xs font-bold shadow-md transition-all animate-pulse-glow cursor-pointer"
                 >
                   <MessageCircle className="h-4 w-4" />
                   <span>{isAr ? "تواصل واتساب" : "WhatsApp Chat"}</span>
-                </a>
+                </TrackedWhatsAppLink>
               </div>
+
             </div>
           </div>
         </div>

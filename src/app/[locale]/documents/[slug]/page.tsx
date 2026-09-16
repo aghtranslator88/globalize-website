@@ -6,7 +6,9 @@ import { isGenuineEnglish } from "@/lib/translationDetection";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import QuoteForm from "@/components/QuoteForm";
+import TrackedWhatsAppLink from "@/components/TrackedWhatsAppLink";
 import { Link } from "@/i18n/routing";
+
 import { Phone, CheckCircle, ChevronDown, Landmark, FileText, ArrowLeft, ArrowRight, ShieldCheck, Clock, MessageCircle } from "lucide-react";
 import type { Metadata } from "next";
 
@@ -297,20 +299,22 @@ export default async function DocumentDetailPage({
                   <span>{isAr ? "مدة التجهيز:" : "Turnaround:"} {doc.deliveryHours} {isAr ? "ساعة" : "hours"}</span>
                 </div>
                 
-                <a
+                <TrackedWhatsAppLink
                   href={`https://wa.me/201062990808?text=${encodeURIComponent(
                     isAr 
                       ? `أريد ترجمة شهادة: ${doc.name} (سعر الصفحة 200 ج.م عربي-إنجليزي أو 300 ج.م للغات الأخرى)`
                       : `I want to translate: ${doc.name} (200 EGP/page AR-EN or 300 EGP/page other languages)`
                   )}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 rounded-xl bg-whatsapp-green hover:bg-emerald-600 text-white py-3 text-xs font-bold shadow-md transition-all animate-pulse-glow"
+                  ctaLocation="document_detail_sidebar"
+                  service={`document-${doc.slug}`}
+                  language={locale}
+                  className="flex items-center justify-center gap-2 rounded-xl bg-whatsapp-green hover:bg-emerald-600 text-white py-3 text-xs font-bold shadow-md transition-all animate-pulse-glow cursor-pointer"
                 >
                   <MessageCircle className="h-4 w-4" />
                   <span>{isAr ? "ابعت الشهادة واتساب" : "Send Document on WhatsApp"}</span>
-                </a>
+                </TrackedWhatsAppLink>
               </div>
+
 
               <QuoteForm />
             </div>

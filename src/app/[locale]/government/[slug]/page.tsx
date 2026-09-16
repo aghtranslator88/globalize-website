@@ -6,7 +6,9 @@ import { isGenuineEnglish } from "@/lib/translationDetection";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import QuoteForm from "@/components/QuoteForm";
+import TrackedWhatsAppLink from "@/components/TrackedWhatsAppLink";
 import { Link } from "@/i18n/routing";
+
 import { Phone, CheckCircle, ChevronDown, Landmark, FileText, MessageCircle } from "lucide-react";
 import type { Metadata } from "next";
 
@@ -215,20 +217,22 @@ export default async function GovEntityDetailPage({
                     ? "راسلنا بالملفات الأصلية للحصول على إرشادات توثيق الخارجية وترجمتها وتوصيلها معتمدة."
                     : "Send us the originals to guide you through MOFA steps, translate them, and deliver certified."}
                 </p>
-                <a
+                <TrackedWhatsAppLink
                   href={`https://wa.me/201062990808?text=${encodeURIComponent(
                     isAr 
                       ? `أريد الاستفسار عن توثيقات: ${gov.name}`
                       : `I want to inquire about: ${gov.name} legalizations`
                   )}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 rounded-xl bg-whatsapp-green hover:bg-emerald-600 text-white py-3 text-xs font-bold shadow-md transition-all animate-pulse-glow"
+                  ctaLocation="government_detail_sidebar"
+                  service={`government-${gov.slug}`}
+                  language={locale}
+                  className="flex items-center justify-center gap-2 rounded-xl bg-whatsapp-green hover:bg-emerald-600 text-white py-3 text-xs font-bold shadow-md transition-all animate-pulse-glow cursor-pointer"
                 >
                   <MessageCircle className="h-4 w-4" />
                   <span>{isAr ? "تواصل معنا بالواتساب" : "WhatsApp Specialist"}</span>
-                </a>
+                </TrackedWhatsAppLink>
               </div>
+
             </div>
           </div>
         </div>

@@ -3,8 +3,11 @@ import { getBranches } from "@/lib/data";
 import { getSEOHeaders, generateLocalBusinessJsonLd, generateBreadcrumbJsonLd } from "@/lib/seo";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import TrackedWhatsAppLink from "@/components/TrackedWhatsAppLink";
+import TrackedPhoneLink from "@/components/TrackedPhoneLink";
 import { Link } from "@/i18n/routing";
 import { Phone, Clock, MapPin, Landmark } from "lucide-react";
+
 import type { Metadata } from "next";
 
 export async function generateMetadata({
@@ -135,22 +138,28 @@ export default async function BranchesPage({
                   </div>
                   <div className="flex items-center gap-3">
                     <Phone className="h-4.5 w-4.5 text-primary-blue flex-shrink-0" />
-                    <a href={`tel:${b.phone}`} className="hover:text-primary-blue hover:underline" dir="ltr">
+                    <TrackedPhoneLink
+                      href={`tel:${b.phone}`}
+                      ctaLocation="branches_phone"
+                      language={locale}
+                      className="hover:text-primary-blue hover:underline cursor-pointer"
+                      dir="ltr"
+                    >
                       {b.phone}
-                    </a>
+                    </TrackedPhoneLink>
                   </div>
                   <div className="flex items-center gap-3">
                     <Phone className="h-4.5 w-4.5 text-whatsapp-green flex-shrink-0" />
-                    <a
+                    <TrackedWhatsAppLink
                       href={`https://wa.me/${b.whatsapp.replace(/[^0-9]/g, "")}?text=${encodeURIComponent(
                         isAr ? `مرحباً، أود الاستفسار عن زيارة ${b.name}` : `Hello, I'd like to inquire about visiting ${b.name}`
                       )}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="hover:underline text-whatsapp-green font-bold"
+                      ctaLocation="branches_card_whatsapp"
+                      language={locale}
+                      className="hover:underline text-whatsapp-green font-bold cursor-pointer"
                     >
                       {b.whatsapp}
-                    </a>
+                    </TrackedWhatsAppLink>
                   </div>
                   <div className="flex items-start gap-3">
                     <Clock className="h-4.5 w-4.5 text-primary-blue mt-0.5 flex-shrink-0" />
@@ -185,17 +194,17 @@ export default async function BranchesPage({
                     <span>{isAr ? "فتح في خرائط Google ↗" : "Open in Google Maps ↗"}</span>
                   </a>
 
-                  <a
+                  <TrackedWhatsAppLink
                     href={`https://wa.me/${b.whatsapp.replace(/[^0-9]/g, "")}?text=${encodeURIComponent(
                       isAr ? `أريد الاستفسار عن ترجمة أوراق في ${b.name}` : `I want to translate documents at ${b.name}`
                     )}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center justify-center gap-2 rounded-xl bg-whatsapp-green hover:bg-emerald-600 text-white py-2.5 px-4 text-xs font-bold shadow-xs hover:shadow-md transition-all text-center"
+                    ctaLocation="branches_bottom_whatsapp"
+                    language={locale}
+                    className="flex items-center justify-center gap-2 rounded-xl bg-whatsapp-green hover:bg-emerald-600 text-white py-2.5 px-4 text-xs font-bold shadow-xs hover:shadow-md transition-all text-center cursor-pointer"
                   >
                     <Phone className="h-3.5 w-3.5" />
-                    <span>{isAr ? "تواصل مع الفرع واتساب" : "WhatsApp This Branch"}</span>
-                  </a>
+                    <span>{isAr ? "واتساب الفرع" : "Branch WhatsApp"}</span>
+                  </TrackedWhatsAppLink>
                 </div>
               </div>
             </div>

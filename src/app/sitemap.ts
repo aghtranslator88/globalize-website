@@ -26,6 +26,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const staticPaths = [
     '',
     '/certified',
+    '/services/legal-translation',
+    '/services/medical-translation',
     '/localization',
     '/interpretation',
     '/embassies',

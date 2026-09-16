@@ -1,7 +1,11 @@
+"use client";
+
 import { Link } from "@/i18n/routing";
 import { useLocale, useTranslations } from "next-intl";
+
 import { Phone, Mail, MapPin, MessageSquare } from "lucide-react";
 import Image from "next/image";
+import { trackWhatsAppClick, trackPhoneClick } from "@/lib/gtag";
 
 export default function Footer() {
   const t = useTranslations("Footer");
@@ -84,6 +88,16 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/services/legal-translation" className="hover:text-gold transition-colors">
+                  {locale === 'ar' ? 'الترجمة القانونية المعتمدة' : 'Certified Legal Translation'}
+                </Link>
+              </li>
+              <li>
+                <Link href="/services/medical-translation" className="hover:text-gold transition-colors">
+                  {locale === 'ar' ? 'الترجمة الطبية المعتمدة' : 'Certified Medical Translation'}
+                </Link>
+              </li>
+              <li>
                 <Link href="/localization" className="hover:text-gold transition-colors">
                   {locale === 'ar' ? 'توطين المواقع والتطبيقات' : 'Website & App Localization'}
                 </Link>
@@ -109,11 +123,25 @@ export default function Footer() {
             <ul className="flex flex-col gap-3 text-xs text-gray-300">
               <li className="flex items-center gap-2">
                 <Phone className="h-4 w-4 text-gold flex-shrink-0" />
-                <span dir="ltr">+20 106 299 0808</span>
+                <a
+                  href="tel:+201062990808"
+                  onClick={() => trackPhoneClick({ cta_location: 'footer_contact', language: locale })}
+                  className="hover:text-gold transition-colors cursor-pointer"
+                  dir="ltr"
+                >
+                  +20 106 299 0808
+                </a>
               </li>
               <li className="flex items-center gap-2">
                 <Phone className="h-4 w-4 text-gold flex-shrink-0" />
-                <span dir="ltr">01062990808</span>
+                <a
+                  href="tel:+201062990808"
+                  onClick={() => trackPhoneClick({ cta_location: 'footer_contact', language: locale })}
+                  className="hover:text-gold transition-colors cursor-pointer"
+                  dir="ltr"
+                >
+                  01062990808
+                </a>
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="h-4 w-4 text-gold flex-shrink-0" />
@@ -157,6 +185,7 @@ export default function Footer() {
         href={`https://wa.me/201062990808?text=${encodeURIComponent(locale === 'ar' ? 'أريد الاستفسار عن ترجمة معتمدة' : 'I would like to inquire about certified translation')}`}
         target="_blank"
         rel="noopener noreferrer"
+        onClick={() => trackWhatsAppClick({ cta_location: 'footer_floating_whatsapp', language: locale })}
         className="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-whatsapp-green text-white shadow-lg transition-transform duration-300 hover:scale-110 active:scale-95 animate-pulse-glow"
         aria-label="Contact WhatsApp"
       >

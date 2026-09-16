@@ -3,7 +3,9 @@ import { getMessages, setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 import { Cairo, Inter } from 'next/font/google';
+import Script from 'next/script';
 import AuthProvider from '@/components/SessionProvider';
+import { GOOGLE_ADS_ID } from '@/lib/gtag';
 import '../globals.css';
 
 const cairo = Cairo({
@@ -59,7 +61,21 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} dir={dir} className={`${cairo.variable} ${inter.variable}`} suppressHydrationWarning>
       <body className={locale === 'ar' ? 'font-arabic' : 'font-latin'} suppressHydrationWarning>
+        {/* Google tag (gtag.js) - Google Ads: AW-18001004291 */}
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ADS_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="google-ads-tag" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GOOGLE_ADS_ID}');
+          `}
+        </Script>
         <NextIntlClientProvider messages={messages}>
+
           <AuthProvider>
             {children}
           </AuthProvider>

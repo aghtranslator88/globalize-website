@@ -7,7 +7,9 @@ import { isGenuineEnglish } from "@/lib/translationDetection";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import QuoteForm from "@/components/QuoteForm";
+import TrackedWhatsAppLink from "@/components/TrackedWhatsAppLink";
 import { Link } from "@/i18n/routing";
+
 import { Calendar, User, Clock, ChevronDown, Award, HelpCircle, MessageCircle } from "lucide-react";
 import type { Metadata } from "next";
 
@@ -22,8 +24,13 @@ export async function generateMetadata({
   const rawPost = getRawBlogPostBySlug(slug);
   const hasEnglishTranslation = isGenuineEnglish(post.title, post.body);
   const isAr = locale === "ar";
-  const metaTitle = (!isAr && rawPost?.seoTitleEn) ? rawPost.seoTitleEn : post.title;
-  const metaDesc = (!isAr && rawPost?.metaDescriptionEn) ? rawPost.metaDescriptionEn : post.excerpt;
+  const metaTitle = (!isAr && rawPost?.seoTitleEn)
+    ? rawPost.seoTitleEn
+    : ((rawPost as any)?.seoTitleAr || rawPost?.seoTitle || post.title);
+  const metaDesc = (!isAr && rawPost?.metaDescriptionEn)
+    ? rawPost.metaDescriptionEn
+    : ((rawPost as any)?.metaDescriptionAr || rawPost?.metaDescription || post.excerpt);
+
   return getSEOHeaders(metaTitle, metaDesc, `/blog/${slug}`, true, locale, hasEnglishTranslation);
 }
 
@@ -470,16 +477,18 @@ export default async function BlogPostDetailPage({
                     : "Accurate, fast, and fully certified translation accepted at all embassies and government entities."}
                 </p>
                 <div className="pt-2">
-                  <a
+                  <TrackedWhatsAppLink
                     href={`https://wa.me/201062990808?text=${encodeURIComponent(isAr ? 'أريد الاستفسار عن ترجمة معتمدة' : 'I want to inquire about certified translation')}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 rounded-xl bg-whatsapp-green hover:bg-emerald-600 text-white px-6 py-3 text-xs font-bold shadow-md hover:scale-[1.03] transition-transform animate-pulse-glow"
+                    ctaLocation="blog_detail_cta"
+                    service={`blog-${post.slug}`}
+                    language={locale}
+                    className="inline-flex items-center gap-2 rounded-xl bg-whatsapp-green hover:bg-emerald-600 text-white px-6 py-3 text-xs font-bold shadow-md hover:scale-[1.03] transition-transform animate-pulse-glow cursor-pointer"
                   >
                     <MessageCircle className="h-4 w-4" />
                     <span>{isAr ? "تواصل معنا واتساب" : "Contact on WhatsApp"}</span>
-                  </a>
+                  </TrackedWhatsAppLink>
                 </div>
+
               </div>
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_-20%,rgba(240,217,122,0.15),transparent_70%)] pointer-events-none" />
             </div>

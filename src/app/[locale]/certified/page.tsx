@@ -4,8 +4,10 @@ import { getSEOHeaders, generateServiceJsonLd, generateFAQJsonLd } from "@/lib/s
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import QuoteForm from "@/components/QuoteForm";
+import TrackedWhatsAppLink from "@/components/TrackedWhatsAppLink";
 import { Phone, CheckCircle, ShieldCheck, Award, FileText, Landmark, Clock, ChevronDown, Globe, MessageCircle } from "lucide-react";
 import { Link } from "@/i18n/routing";
+
 import type { Metadata } from "next";
 
 export async function generateMetadata({
@@ -164,20 +166,21 @@ export default async function CertifiedPage({
                           {doc.deliveryHours} {isAr ? "ساعة" : "hours"}
                         </td>
                         <td className="px-6 py-4 text-center">
-                           <a
+                           <TrackedWhatsAppLink
                             href={`https://wa.me/201062990808?text=${encodeURIComponent(
                               isAr
                                 ? `أريد الاستفسار عن ترجمة: ${doc.name} (سعر الصفحة 200 ج.م عربي-إنجليزي أو 300 ج.م للغات الأخرى)`
                                 : `I want to inquire about translating: ${doc.name} (200 EGP/page AR-EN or 300 EGP/page other languages)`
                             )}`}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center gap-1 rounded-lg bg-whatsapp-green hover:bg-emerald-600 text-white px-3 py-1.5 text-[10px] font-bold shadow-sm animate-pulse-glow"
+                            ctaLocation="certified_table_row"
+                            language={locale}
+                            className="inline-flex items-center gap-1 rounded-lg bg-whatsapp-green hover:bg-emerald-600 text-white px-3 py-1.5 text-[10px] font-bold shadow-sm animate-pulse-glow cursor-pointer"
                           >
                             <MessageCircle className="h-3 w-3" />
                             <span>{isAr ? "واتساب" : "WhatsApp"}</span>
-                          </a>
+                          </TrackedWhatsAppLink>
                         </td>
+
                       </tr>
                     ))}
                   </tbody>

@@ -4,7 +4,9 @@ import { getServices, getDocuments, getReviews, getFAQs, getSiteSettings } from 
 import { getSEOHeaders, generateOrganizationJsonLd } from "@/lib/seo";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import TrackedWhatsAppLink from "@/components/TrackedWhatsAppLink";
 import { Phone, CheckCircle, ArrowRight, ArrowLeft, Star, ChevronDown, Check, Globe, MessageCircle } from "lucide-react";
+
 import type { Metadata } from "next";
 
 export async function generateMetadata({
@@ -85,16 +87,17 @@ export default async function HomePage({
               >
                 {isAr ? "اطلب عرض سعر" : "Request a Quote"}
               </Link>
-              <a
+              <TrackedWhatsAppLink
                 href="https://wa.me/201062990808?text=%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%AA%D8%B1%D8%AC%D9%85%D8%A9%20%D9%85%D8%B9%D8%AA%D9%85%D8%AF%D8%A9"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full sm:w-auto flex items-center justify-center gap-2 rounded-xl bg-whatsapp-green text-white px-8 py-4 text-sm font-bold shadow-md hover:shadow-xl transition-all animate-pulse-glow"
+                ctaLocation="homepage_hero_whatsapp"
+                language={locale}
+                className="w-full sm:w-auto flex items-center justify-center gap-2 rounded-xl bg-whatsapp-green text-white px-8 py-4 text-sm font-bold shadow-md hover:shadow-xl transition-all animate-pulse-glow cursor-pointer"
               >
                 <MessageCircle className="h-4 w-4" />
                 <span>{isAr ? "تواصل واتساب" : "Contact via WhatsApp"}</span>
-              </a>
+              </TrackedWhatsAppLink>
             </div>
+
 
             {/* Trust Bar */}
             <div className="mt-16 border-t border-b border-gray-200/60 py-6 bg-white/40 backdrop-blur-sm rounded-2xl max-w-5xl mx-auto shadow-sm">
@@ -207,22 +210,23 @@ export default async function HomePage({
               </div>
 
               {/* WhatsApp Quick Order button */}
-              <a
+              <TrackedWhatsAppLink
                 href={`https://wa.me/201062990808?text=${encodeURIComponent(
                   isAr
                     ? "أريد طلب ترجمة وثيقة رسمية"
                     : "I would like to order an official document translation"
                 )}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 rounded-xl bg-whatsapp-green hover:bg-emerald-600 text-white px-6 py-3 text-xs font-bold shadow-md hover:shadow-xl transition-all animate-pulse-glow"
+                ctaLocation="homepage_quick_order_whatsapp"
+                language={locale}
+                className="flex items-center gap-2 rounded-xl bg-whatsapp-green hover:bg-emerald-600 text-white px-6 py-3 text-xs font-bold shadow-md hover:shadow-xl transition-all animate-pulse-glow cursor-pointer"
               >
                 <MessageCircle className="h-4 w-4" />
                 <span>{isAr ? "اطلب عبر واتساب" : "Order via WhatsApp"}</span>
-              </a>
+              </TrackedWhatsAppLink>
             </div>
           </div>
         </section>
+
 
         {/* 4-Step "كيف نعمل" */}
         <section className="py-20 bg-white">

@@ -4,8 +4,11 @@ import { getSEOHeaders, generateBreadcrumbJsonLd } from "@/lib/seo";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import QuoteForm from "@/components/QuoteForm";
+import TrackedWhatsAppLink from "@/components/TrackedWhatsAppLink";
+import TrackedPhoneLink from "@/components/TrackedPhoneLink";
 import { Link } from "@/i18n/routing";
 import { Phone, Mail, MapPin, Clock, Landmark } from "lucide-react";
+
 import type { Metadata } from "next";
 
 export async function generateMetadata({
@@ -92,17 +95,17 @@ export default async function ContactPage({
                   ? "أرسل صور المستندات والشهادات مباشرة عبر الواتساب للحصول على تسعير فوري وموافقة الاعتماد."
                   : "Send your document pictures directly via WhatsApp for instant quoting and turnaround times."}
               </p>
-              <a
+              <TrackedWhatsAppLink
                 href={`https://wa.me/${settings.whatsapp?.replace("+", "")}?text=${encodeURIComponent(
                   isAr ? "أريد الاستفسار عن ترجمة معتمدة" : "I want to inquire about certified translation"
                 )}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 rounded-xl bg-whatsapp-green text-white py-3.5 text-xs font-bold shadow-md hover:scale-[1.02] transition-transform animate-pulse-glow"
+                ctaLocation="contact_page_card"
+                language={locale}
+                className="flex items-center justify-center gap-2 rounded-xl bg-whatsapp-green text-white py-3.5 text-xs font-bold shadow-md hover:scale-[1.02] transition-transform animate-pulse-glow cursor-pointer"
               >
                 <Phone className="h-4 w-4" />
                 <span>{isAr ? "راسل خبير الترجمة الآن" : "Chat on WhatsApp Now"}</span>
-              </a>
+              </TrackedWhatsAppLink>
             </div>
 
             {/* Email & Info Card */}
@@ -117,8 +120,16 @@ export default async function ContactPage({
                 </div>
                 <div className="flex items-center gap-3">
                   <Phone className="h-4 w-4 text-primary-blue flex-shrink-0" />
-                  <span dir="ltr">{settings.phone}</span>
+                  <TrackedPhoneLink
+                    href={`tel:${settings.phone?.replace(/\s+/g, "") || "+201062990808"}`}
+                    ctaLocation="contact_page_phone"
+                    language={locale}
+                    className="hover:text-primary-blue hover:underline cursor-pointer"
+                  >
+                    <span dir="ltr">{settings.phone}</span>
+                  </TrackedPhoneLink>
                 </div>
+
               </div>
             </div>
 

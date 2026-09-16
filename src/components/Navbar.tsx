@@ -5,8 +5,10 @@ import { Link, usePathname, useRouter } from "@/i18n/routing";
 import { useLocale, useTranslations } from "next-intl";
 import { Menu, X, Phone, Globe, MessageCircle } from "lucide-react";
 import Image from "next/image";
+import { trackWhatsAppClick, trackPhoneClick } from "@/lib/gtag";
 
 export default function Navbar() {
+
   const t = useTranslations("Navbar");
   const locale = useLocale();
   const router = useRouter();
@@ -57,10 +59,15 @@ export default function Navbar() {
             </button>
           </div>
           {/* Top Right: Call center */}
-          <div className="flex items-center gap-1 text-[10px] text-gray-500 font-bold">
+          <a
+            href="tel:+201062990808"
+            onClick={() => trackPhoneClick({ cta_location: 'navbar_top_bar', language: locale })}
+            className="flex items-center gap-1 text-[10px] text-gray-500 font-bold hover:text-primary-blue transition-colors cursor-pointer"
+            dir="ltr"
+          >
             <Phone className="h-3 w-3 text-primary-blue" />
             <span>+20 106 299 0808</span>
-          </div>
+          </a>
         </div>
       </div>
 
@@ -118,12 +125,14 @@ export default function Navbar() {
               href={`https://wa.me/201062990808?text=${encodeURIComponent(locale === 'ar' ? 'أريد الاستفسار عن ترجمة معتمدة' : 'I would like to inquire about certified translation')}`}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackWhatsAppClick({ cta_location: 'header_navbar_desktop', language: locale })}
               className="flex items-center gap-1.5 rounded-xl bg-whatsapp-green text-white px-4 py-2 text-xs font-bold shadow-sm transition-all duration-300 hover:shadow-md animate-pulse-glow"
             >
               <MessageCircle className="h-3.5 w-3.5" />
               <span>{locale === 'ar' ? 'واتساب' : 'WhatsApp'}</span>
             </a>
           </div>
+
 
           {/* Mobile Menu button */}
           <div className="flex lg:hidden items-center gap-3">
@@ -162,12 +171,14 @@ export default function Navbar() {
                 href={`https://wa.me/201062990808?text=${encodeURIComponent(locale === 'ar' ? 'أريد الاستفسار عن ترجمة معتمدة' : 'I would like to inquire about certified translation')}`}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackWhatsAppClick({ cta_location: 'header_navbar_mobile', language: locale })}
                 className="flex w-full items-center justify-center gap-2 rounded-xl bg-whatsapp-green py-3 text-sm font-bold text-white shadow-sm animate-pulse-glow"
               >
                 <MessageCircle className="h-4 w-4" />
                 <span>{locale === 'ar' ? 'تواصل معنا واتساب' : 'Contact on WhatsApp'}</span>
               </a>
             </div>
+
           </div>
         </div>
       )}

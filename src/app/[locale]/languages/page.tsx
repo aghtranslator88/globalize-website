@@ -4,6 +4,7 @@ import { getSEOHeaders, generateBreadcrumbJsonLd } from "@/lib/seo";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Link } from "@/i18n/routing";
+
 import { Globe, Star, ArrowLeft, ArrowRight } from "lucide-react";
 import type { Metadata } from "next";
 

@@ -16,7 +16,14 @@ export async function generateMetadata({
   const { locale } = await params;
   const service = await getServiceBySlug("interpretation", locale);
   if (!service) return {};
-  return getSEOHeaders(service.name, service.description, "/interpretation", service.indexable, locale);
+  const isAr = locale === "ar";
+  const title = isAr
+    ? "تأجير أجهزة وخدمات الترجمة الفورية للمؤتمرات في مصر 2026 | جلوبالايز"
+    : "Simultaneous Interpretation Services & Equipment Rental Egypt 2026 | Globalize";
+  const description = isAr
+    ? "أفضل خدمات الترجمة الفورية وتأجير أجهزة المؤتمرات في مصر لعام 2026. كبائن عازلة للصوت، سماعات استقبال رقمية، ومترجمون فوريون معتمدون لكافة اللغات والفعاليات."
+    : "Premier conference interpretation and audio equipment rental in Egypt 2026. Soundproof booths, wireless digital receivers, and certified simultaneous interpreters.";
+  return getSEOHeaders(title, description, "/interpretation", service.indexable, locale);
 }
 
 export default async function InterpretationPage({
@@ -122,6 +129,61 @@ export default async function InterpretationPage({
                   <Laptop className="h-7 w-7 text-primary-blue mb-4" />
                   <h3 className="font-bold text-sm text-dark-navy mb-2">{isAr ? "الترجمة الفورية عن بعد (RSI)" : "Remote Interpretation (RSI)"}</h3>
                   <p className="text-xs text-gray-500 leading-relaxed">{isAr ? "ترجمة فورية عبر زووم ومنصات البث الرقمي للاجتماعات والمؤتمرات الافتراضية بدقة وكفاءة." : "Providing remote interpretation services via Zoom and digital web platforms for virtual events."}</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Specialized Conference Equipment Section */}
+            <div className="bg-gradient-to-br from-blue-50/50 via-white to-amber-50/30 rounded-2xl border border-blue-150/60 p-6 sm:p-8 shadow-sm">
+              <h2 className="text-xl font-bold text-dark-navy mb-4 font-arabic flex items-center gap-2">
+                <Headphones className="h-6 w-6 text-primary-blue" />
+                <span>{isAr ? "تأجير وتجهيز أجهزة الترجمة الفورية للمؤتمرات في مصر" : "Conference Interpretation Equipment Rental in Egypt"}</span>
+              </h2>
+              <p className="text-xs text-gray-600 leading-relaxed mb-6 font-arabic">
+                {isAr
+                  ? "توفر جلوباليز جروب أحدث منظومات الترجمة الفورية المتكاملة للمؤتمرات والندوات والمعارض الدولية في القاهرة والجيزة وجميع محافظات مصر، شاملة النقل والتركيب والتشغيل الميداني بواسطة مهندسي صوت معتمدين:"
+                  : "Globalize Group supplies state-of-the-art simultaneous interpretation equipment for international summits, conferences, and corporate events across Egypt:"}
+              </p>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
+                <div className="p-4 rounded-xl bg-white border border-gray-100 shadow-xs">
+                  <h4 className="font-bold text-dark-navy mb-1.5 flex items-center gap-1.5">
+                    <CheckCircle className="h-4 w-4 text-primary-blue" />
+                    <span>{isAr ? "كبائن ترجمة عازلة للصوت (ISO 4043)" : "Soundproof Interpreter Booths (ISO 4043)"}</span>
+                  </h4>
+                  <p className="text-gray-500 text-[11px] leading-relaxed">
+                    {isAr ? "كبائن معيارية متنقلة عازلة للصوت بنسبة 100% مزودة بأنظمة تهوية هادئة وإضاءة متوافقة مع المعايير الدبلوماسية الدولية." : "Fully isolated modular booths with silent ventilation and high-clarity viewing panels."}
+                  </p>
+                </div>
+
+                <div className="p-4 rounded-xl bg-white border border-gray-100 shadow-xs">
+                  <h4 className="font-bold text-dark-navy mb-1.5 flex items-center gap-1.5">
+                    <CheckCircle className="h-4 w-4 text-primary-blue" />
+                    <span>{isAr ? "سماعات وأجهزة استقبال رقمية للحضور" : "Wireless Digital Receivers & Headsets"}</span>
+                  </h4>
+                  <p className="text-gray-500 text-[11px] leading-relaxed">
+                    {isAr ? "أجهزة استقبال متعددة القنوات تدعم حتى 16 لغة متزامنة بنقاء صوتي رقمي فائق وخالي من التشويش أو التداخل اللاسلكي." : "Multi-channel digital receivers supporting up to 16 languages with zero static or frequency drift."}
+                  </p>
+                </div>
+
+                <div className="p-4 rounded-xl bg-white border border-gray-100 shadow-xs">
+                  <h4 className="font-bold text-dark-navy mb-1.5 flex items-center gap-1.5">
+                    <CheckCircle className="h-4 w-4 text-primary-blue" />
+                    <span>{isAr ? "ميكروفونات المؤتمرات والمناقشة" : "Digital Conference Discussion Microphones"}</span>
+                  </h4>
+                  <p className="text-gray-500 text-[11px] leading-relaxed">
+                    {isAr ? "ميكروفونات عنقية (Gooseneck) وشاشات تحكم للمترجمين وموزعات صوت رقمية تناسب منصات كبار الشخصيات والوفود." : "Premium gooseneck delegate microphones with priority switching and DSP audio distribution."}
+                  </p>
+                </div>
+
+                <div className="p-4 rounded-xl bg-white border border-gray-100 shadow-xs">
+                  <h4 className="font-bold text-dark-navy mb-1.5 flex items-center gap-1.5">
+                    <CheckCircle className="h-4 w-4 text-primary-blue" />
+                    <span>{isAr ? "طاقم هندسي ودعم فني طوال الفعالية" : "Dedicated On-Site Sound Engineering"}</span>
+                  </h4>
+                  <p className="text-gray-500 text-[11px] leading-relaxed">
+                    {isAr ? "مهندسو وفنيو صوت متخصصون لإدارة الأجهزة وتوزيع واستلام السماعات ومراقبة بث الصوت المباشر من البداية للنهاية." : "Expert technical crew overseeing setup, live frequency balancing, and equipment management."}
+                  </p>
                 </div>
               </div>
             </div>
