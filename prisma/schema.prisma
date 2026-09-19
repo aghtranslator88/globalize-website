@@ -172,6 +172,8 @@ model Review {
   date        DateTime
   videoUrl    String?
   published   Boolean     @default(true)
+
+  @@index([published, date])
 }
 
 model BlogPost {
@@ -195,6 +197,8 @@ model BlogPost {
   readMinutes      Int
   published        Boolean    @default(true)
   faqs             FAQ[]
+
+  @@index([published, publishedAt])
 }
 
 model FAQ {
@@ -234,6 +238,9 @@ model QuoteRequest {
   fileUrl     String?
   notes       String?
   status      QuoteStatus @default(NEW)
+
+  @@index([createdAt])
+  @@index([status])
 }
 
 model SiteSetting {

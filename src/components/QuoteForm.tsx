@@ -238,7 +238,17 @@ export default function QuoteForm({ services = [] }: { services?: ServiceOption[
           <div className="relative flex items-center justify-center border-2 border-dashed border-gray-200 rounded-xl py-4 px-6 hover:bg-gray-50/50 transition-colors cursor-pointer">
             <input
               type="file"
-              onChange={(e) => setFile(e.target.files?.[0] || null)}
+              accept=".pdf,.doc,.docx,.jpg,.jpeg,.png"
+              onChange={(e) => {
+                const selectedFile = e.target.files?.[0] || null;
+                if (selectedFile && selectedFile.size > 25 * 1024 * 1024) {
+                  alert(locale === "ar" ? "حجم الملف كبير جداً (الحد الأقصى 25 ميجابايت). يرجى إرساله مباشرة عبر واتساب." : "File too large (max 25MB). Please send it directly via WhatsApp.");
+                  e.target.value = "";
+                  setFile(null);
+                  return;
+                }
+                setFile(selectedFile);
+              }}
               className="absolute inset-0 opacity-0 cursor-pointer"
             />
             <div className="flex flex-col items-center gap-1.5 text-center">

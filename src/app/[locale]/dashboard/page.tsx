@@ -33,15 +33,15 @@ export default async function DashboardPage({
   let settings: any[] = [];
 
   try {
-    quotes = await prisma.quoteRequest.findMany({ orderBy: { createdAt: "desc" } });
+    quotes = await prisma.quoteRequest.findMany({ orderBy: { createdAt: "desc" }, take: 100 });
     docs = await prisma.document.findMany({ orderBy: { priceEGP: "asc" } });
     embassies = await prisma.embassy.findMany({ orderBy: { nameAr: "asc" } });
     govs = await prisma.govEntity.findMany({ orderBy: { nameAr: "asc" } });
     langs = await prisma.language.findMany({ orderBy: [{ popular: "desc" }, { nameAr: "asc" }] });
     branches = await prisma.branch.findMany({ orderBy: { nameAr: "asc" } });
     team = await prisma.teamMember.findMany({ orderBy: [{ isLeadership: "desc" }, { nameAr: "asc" }] });
-    reviews = await prisma.review.findMany({ orderBy: { date: "desc" } });
-    posts = await prisma.blogPost.findMany({ orderBy: { publishedAt: "desc" } });
+    reviews = await prisma.review.findMany({ orderBy: { date: "desc" }, take: 100 });
+    posts = await prisma.blogPost.findMany({ orderBy: { publishedAt: "desc" }, take: 100 });
     faqs = await prisma.fAQ.findMany({ orderBy: { sortOrder: "asc" } });
     settings = await prisma.siteSetting.findMany({ orderBy: { key: "asc" } });
   } catch (err) {

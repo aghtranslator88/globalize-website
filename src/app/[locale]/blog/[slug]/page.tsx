@@ -34,7 +34,16 @@ export async function generateMetadata({
   return getSEOHeaders(metaTitle, metaDesc, `/blog/${slug}`, true, locale, hasEnglishTranslation);
 }
 
-// Enhanced Markdown Parser & TOC Generator with Table, Card Steps, and Full Justified Typography
+// Enhanced Markdown Parser & TOC Generator with Table, Card Steps, and Safe XSS Sanitization
+function escapeHtml(str: string): string {
+  return str
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
 function parseMarkdown(markdown: string) {
   const headings: { id: string; text: string; level: number }[] = [];
   const lines = markdown.split("\n");
@@ -42,15 +51,25 @@ function parseMarkdown(markdown: string) {
   let i = 0;
 
   function inlineFormat(text: string): string {
-    return text
+    // 1. Sanitize raw HTML characters first to prevent XSS
+    const sanitized = escapeHtml(text);
+
+    // 2. Format legitimate Markdown tokens (bold, italics, safe links)
+    return sanitized
       .replace(/\*\*(.*?)\*\*/g, "<strong class='font-bold text-dark-navy'>$1</strong>")
       .replace(/\*(.*?)\*/g, "<em class='italic'>$1</em>")
-      .replace(/\[(.*?)\]\((.*?)\)/g, (match, text, href) => {
-        const isInternal = href.startsWith("/") || href.startsWith("#") || href.includes("globalizetl.com");
-        if (isInternal) {
-          return `<a href='${href}' class='text-primary-blue hover:underline font-bold transition-colors'>${text}</a>`;
+      .replace(/\[([^\]]+)\]\(((?:[^()]+|\([^()]*\))*)\)/g, (match, linkText, href) => {
+        const cleanHref = href.trim();
+        // Prevent javascript:, data:, vbscript: pseudo-protocols
+        const isSafeProtocol = /^(https?:\/\/|\/|#|mailto:)/i.test(cleanHref);
+        if (!isSafeProtocol) {
+          return linkText;
         }
-        return `<a href='${href}' class='text-primary-blue hover:underline font-bold transition-colors' target='_blank' rel='noopener noreferrer'>${text}</a>`;
+        const isInternal = cleanHref.startsWith("/") || cleanHref.startsWith("#") || cleanHref.includes("globalizetl.com");
+        if (isInternal) {
+          return `<a href='${cleanHref}' class='text-primary-blue hover:underline font-bold transition-colors'>${linkText}</a>`;
+        }
+        return `<a href='${cleanHref}' class='text-primary-blue hover:underline font-bold transition-colors' target='_blank' rel='noopener noreferrer'>${linkText}</a>`;
       });
   }
 

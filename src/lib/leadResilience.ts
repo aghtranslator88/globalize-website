@@ -1,6 +1,7 @@
 import { prisma } from '@/lib/prisma';
 import * as Sentry from '@sentry/nextjs';
 import crypto from 'crypto';
+import path from 'path';
 
 // ============================================================================
 // Types & Contracts
@@ -231,6 +232,7 @@ export async function saveToPersistentFallback(lead: LeadRecord, maxRetries = 2)
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(pipelineBody),
+        signal: AbortSignal.timeout(8000),
       });
 
       if (response.ok) {
@@ -257,7 +259,10 @@ export async function saveToPersistentFallback(lead: LeadRecord, maxRetries = 2)
 // ============================================================================
 export async function storeLeadPermanently(input: LeadInput): Promise<StoreLeadResult> {
   const rawAttachment = input.attachmentName || input.fileUrl || null;
-  const attachmentName = rawAttachment ? rawAttachment.trim() : null;
+  const cleanBaseName = rawAttachment 
+    ? path.basename(rawAttachment.trim()).replace(/[^\w\s\u0600-\u06FF\.\-\_]/g, '_') 
+    : null;
+  const attachmentName = cleanBaseName && cleanBaseName.length > 0 ? cleanBaseName : null;
   const attachmentStatus: AttachmentStatus = attachmentName 
     ? 'MANUAL_WHATSAPP_UPLOAD_REQUIRED' 
     : 'NONE';
@@ -386,6 +391,7 @@ export async function sendTelegramNotification(lead: LeadRecord, maxRetries = 2)
           text: message,
           parse_mode: 'Markdown',
         }),
+        signal: AbortSignal.timeout(8000),
       });
 
       if (res.ok) {
@@ -442,6 +448,7 @@ export async function sendEmailNotification(lead: LeadRecord, maxRetries = 2): P
           subject: `طلب تسعير جديد: ${lead.name} (${lead.serviceType})`,
           html: emailHtml,
         }),
+        signal: AbortSignal.timeout(8000),
       });
 
       if (res.ok) {
@@ -497,6 +504,7 @@ export async function dispatchNotifications(lead: LeadRecord): Promise<{ telegra
           notes: lead.notes,
           createdAt: lead.createdAt,
         }),
+        signal: AbortSignal.timeout(8000),
       });
     } catch (hookErr) {
       console.warn('[Webhook] Custom webhook dispatch failed:', String(hookErr));

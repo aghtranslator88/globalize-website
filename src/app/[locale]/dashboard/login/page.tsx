@@ -29,11 +29,19 @@ export default function LoginPage() {
       });
 
       if (res?.error) {
-        setError(
-          isAr
-            ? "البريد الإلكتروني أو كلمة المرور غير صحيحة"
-            : "Invalid email or password"
-        );
+        if (res.error === "TOO_MANY_REQUESTS") {
+          setError(
+            isAr
+              ? "تم تجاوز الحد الأقصى للمحاولات (5 محاولات). تم قفل الدخول مؤقتاً لمدة 15 دقيقة."
+              : "Too many login attempts. Access is locked for 15 minutes."
+          );
+        } else {
+          setError(
+            isAr
+              ? "البريد الإلكتروني أو كلمة المرور غير صحيحة"
+              : "Invalid email or password"
+          );
+        }
       } else {
         router.push(`/${locale}/dashboard`);
         router.refresh();
