@@ -17,8 +17,10 @@ export default function QuoteForm({ services = [] }: { services?: ServiceOption[
   const [serviceType, setServiceType] = useState("");
   const [file, setFile] = useState<File | null>(null);
   const [notes, setNotes] = useState("");
+  const [gotcha, setGotcha] = useState("");
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
+  const [errorMessage, setErrorMessage] = useState<string>("");
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [lastSubmittedWaUrl, setLastSubmittedWaUrl] = useState<string>("");
 
@@ -27,7 +29,7 @@ export default function QuoteForm({ services = [] }: { services?: ServiceOption[
     if (!name.trim()) errs.name = locale === "ar" ? "الاسم مطلوب" : "Name is required";
     if (!phone.trim()) {
       errs.phone = locale === "ar" ? "رقم الهاتف مطلوب" : "Phone number is required";
-    } else if (!/^\+?[0-9\s-]{8,15}$/.test(phone)) {
+    } else if (!/^\+?[0-9\s\-()]{8,20}$/.test(phone)) {
       errs.phone = locale === "ar" ? "رقم هاتف غير صالح" : "Invalid phone number";
     }
     if (!serviceType) errs.serviceType = locale === "ar" ? "يرجى اختيار نوع الخدمة" : "Please select a service";
@@ -50,21 +52,20 @@ export default function QuoteForm({ services = [] }: { services?: ServiceOption[
 
     setLoading(true);
     setStatus("idle");
+    setErrorMessage("");
 
     // Prepare direct WhatsApp message with all submitted details
     const selectedServiceObj = activeServices.find(s => s.slug === serviceType);
     const serviceName = selectedServiceObj ? selectedServiceObj.name : serviceType;
     
     const waMessage = locale === "ar"
-      ? `مرحباً جلوبالايز جروب، أود طلب تسعير لخدمة:\n• *الخدمة:* ${serviceName}\n• *الاسم:* ${name}\n• *رقم الهاتف:* ${phone}${notes ? `\n• *ملاحظات:* ${notes}` : ""}`
-      : `Hello Globalize Group, I would like to request a quote:\n• *Service:* ${serviceName}\n• *Name:* ${name}\n• *Phone:* ${phone}${notes ? `\n• *Notes:* ${notes}` : ""}`;
+      ? `مرحباً جلوبالايز جروب، أود طلب تسعير لخدمة:\n• *الخدمة:* ${serviceName}\n• *الاسم:* ${name}\n• *رقم الهاتف:* ${phone}${notes ? `\n• *ملاحظات:* ${notes}` : ""}${file ? `\n• *مستند مرفق:* ${file.name}` : ""}`
+      : `Hello Globalize Group, I would like to request a quote:\n• *Service:* ${serviceName}\n• *Name:* ${name}\n• *Phone:* ${phone}${notes ? `\n• *Notes:* ${notes}` : ""}${file ? `\n• *Attached Doc:* ${file.name}` : ""}`;
     
     const waUrl = `https://wa.me/201062990808?text=${encodeURIComponent(waMessage)}`;
     setLastSubmittedWaUrl(waUrl);
 
     try {
-      const mockFileUrl = file ? `/uploads/${Date.now()}_${file.name}` : null;
-
       const response = await fetch("/api/quote", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -72,12 +73,16 @@ export default function QuoteForm({ services = [] }: { services?: ServiceOption[
           name,
           phone,
           serviceType,
-          fileUrl: mockFileUrl,
+          attachmentName: file ? file.name : null,
+          fileUrl: file ? file.name : null,
           notes,
+          _gotcha: gotcha,
         }),
       });
 
-      if (response.ok) {
+      const resData = await response.json().catch(() => null);
+
+      if (response.ok && resData?.success) {
         setStatus("success");
         // Automatically open WhatsApp in new tab for instant communication
         if (typeof window !== "undefined") {
@@ -88,12 +93,15 @@ export default function QuoteForm({ services = [] }: { services?: ServiceOption[
         setServiceType("");
         setFile(null);
         setNotes("");
+        setGotcha("");
       } else {
         setStatus("error");
+        setErrorMessage(resData?.error || (locale === "ar" ? "تعذر إرسال الطلب، يرجى المحاولة أو استخدام واتساب" : "Failed to submit request"));
       }
     } catch (err) {
-      console.error(err);
+      console.error("Quote submission error:", err);
       setStatus("error");
+      setErrorMessage(locale === "ar" ? "حدث خطأ في الاتصال، يرجى التواصل عبر واتساب" : "Network error, please reach out via WhatsApp");
     } finally {
       setLoading(false);
     }
@@ -119,7 +127,7 @@ export default function QuoteForm({ services = [] }: { services?: ServiceOption[
               <p className="text-base font-bold">{locale === "ar" ? "تم استلام وحفظ طلبك بنجاح!" : "Request Received & Saved!"}</p>
               <p className="text-xs mt-1 text-green-700 leading-relaxed">
                 {locale === "ar" 
-                  ? "شكراً لتواصلك مع جلوبالايز جروب. تم إرسال الطلب، ويمكنك الآن متابعته أو إرسال المستندات عبر واتساب فوراً."
+                  ? "شكراً لتواصلك مع جلوبالايز جروب. تم تسجيل طلبك بنجاح، ويمكنك الآن متابعته فوراً عبر واتساب."
                   : "Thank you for contacting Globalize Group. Your request has been recorded. You can follow up or attach documents via WhatsApp."}
               </p>
             </div>
@@ -139,16 +147,41 @@ export default function QuoteForm({ services = [] }: { services?: ServiceOption[
       )}
 
       {status === "error" && (
-        <div className="mb-6 flex items-start gap-3 rounded-xl bg-red-50 p-4 text-red-800 border border-red-200">
-          <AlertCircle className="h-5 w-5 text-red-600 mt-0.5 flex-shrink-0" />
-          <div>
-            <p className="text-sm font-bold">{locale === "ar" ? "خطأ!" : "Error!"}</p>
-            <p className="text-xs mt-1 text-red-700">{t("error")}</p>
+        <div className="mb-6 rounded-xl bg-red-50 p-4 text-red-800 border border-red-200 shadow-sm">
+          <div className="flex items-start gap-3">
+            <AlertCircle className="h-5 w-5 text-red-600 mt-0.5 flex-shrink-0" />
+            <div>
+              <p className="text-sm font-bold">{locale === "ar" ? "تنبيه" : "Notice"}</p>
+              <p className="text-xs mt-1 text-red-700">{errorMessage || t("error")}</p>
+            </div>
+          </div>
+          <div className="mt-3 pt-3 border-t border-red-200">
+            <a
+              href={lastSubmittedWaUrl || "https://wa.me/201062990808"}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-xl bg-whatsapp-green text-white text-xs font-bold shadow hover:bg-green-600 transition-all w-full sm:w-auto"
+            >
+              <span>📲</span>
+              <span>{locale === "ar" ? "إرسال تفاصيل الطلب عبر واتساب مباشرة" : "Send details directly via WhatsApp"}</span>
+            </a>
           </div>
         </div>
       )}
 
       <form onSubmit={handleSubmit} className="space-y-4">
+        {/* Anti-bot honeypot field (hidden from real users) */}
+        <input
+          type="text"
+          name="_gotcha"
+          value={gotcha}
+          onChange={(e) => setGotcha(e.target.value)}
+          tabIndex={-1}
+          autoComplete="off"
+          className="hidden absolute -left-[9999px]"
+          aria-hidden="true"
+        />
+
         {/* Name Input */}
         <div>
           <label className="block text-xs font-bold text-dark-navy mb-1.5">{t("name")} *</label>
@@ -213,7 +246,11 @@ export default function QuoteForm({ services = [] }: { services?: ServiceOption[
               <span className="text-xs text-gray-500 font-semibold">
                 {file ? file.name : locale === "ar" ? "اختر ملفاً أو اسحبه هنا" : "Choose file or drag & drop"}
               </span>
-              <span className="text-[9px] text-gray-400">PDF, JPG, PNG (Max 10MB)</span>
+              <span className="text-[10px] text-gray-500 font-medium">
+                {locale === "ar" 
+                  ? "مطلوب إرفاق المستند عبر واتساب: سيتم تسجيل اسم الملف فقط هنا، ويرجى إرسال المستند مباشرة عبر محادثة واتساب" 
+                  : "Manual WhatsApp upload required: File name is recorded; please attach the document directly in WhatsApp"}
+              </span>
             </div>
           </div>
         </div>
