@@ -9,7 +9,7 @@ export const dynamic = "force-dynamic";
 const updateQuoteSchema = z.object({
   id: z.string().min(1, "Quote ID is required"),
   status: z.enum(["NEW", "CONTACTED", "QUOTED", "WON", "LOST"], {
-    errorMap: () => ({ message: "Invalid quote status value" }),
+    message: "Invalid quote status value",
   }),
 });
 

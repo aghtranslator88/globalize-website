@@ -1,6 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
-import { ALL_BLOG_POSTS } from "../src/lib/blog-data.ts";
+import { ALL_BLOG_POSTS } from "../src/lib/blog-data";
 
 const blogDataPath = path.resolve(process.cwd(), "src/lib/blog-data.ts");
 const rawFileContent = fs.readFileSync(blogDataPath, "utf-8");

@@ -1,9 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, usePathname, useRouter } from "@/i18n/routing";
 import { useLocale, useTranslations } from "next-intl";
-import { Menu, X, Phone, Globe, MessageCircle } from "lucide-react";
+import { Menu, X, Phone, MessageCircle } from "lucide-react";
 import Image from "next/image";
 import { trackWhatsAppClick, trackPhoneClick } from "@/lib/gtag";
 
@@ -14,6 +14,17 @@ export default function Navbar() {
   const router = useRouter();
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isOpen]);
 
   const switchLocale = (newLocale: string) => {
     router.replace(pathname, { locale: newLocale });
@@ -33,7 +44,7 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="sticky top-0 z-50 w-full bg-white/95 shadow-md backdrop-blur-md transition-all duration-300">
+    <nav className="sticky top-0 z-50 w-full bg-white lg:bg-white/95 shadow-md lg:backdrop-blur-md transition-all duration-300">
       {/* Top Bar for Language Switcher (always left aligned using dir="ltr") */}
       <div className="w-full bg-gray-50 border-b border-gray-100 py-1 px-4 sm:px-6 lg:px-8" dir="ltr">
         <div className="mx-auto max-w-7xl flex justify-between items-center">
@@ -72,10 +83,13 @@ export default function Navbar() {
       </div>
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-20 items-center justify-between">
+        <div className="relative flex h-16 lg:h-20 items-center justify-between">
           {/* Logo and Brand Name */}
-          <div className="flex items-center gap-3">
-            <Link href="/" className="flex items-center group">
+          <div className="flex items-center">
+            <Link 
+              href="/" 
+              className="flex items-center group lg:static absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10"
+            >
               {/* Desktop Wide Logo */}
               <div className="relative hidden lg:flex h-11 w-36 items-center justify-start transition-transform duration-300 group-hover:scale-[1.02]">
                 <Image
@@ -87,14 +101,14 @@ export default function Navbar() {
                   priority
                 />
               </div>
-              {/* Mobile Square Icon Logo */}
-              <div className="relative flex lg:hidden h-9 w-9 items-center justify-center transition-transform duration-300 group-hover:scale-[1.05]">
+              {/* Mobile Full Logo */}
+              <div className="relative flex lg:hidden h-9 sm:h-10 items-center justify-center transition-transform duration-300 group-hover:scale-[1.02]">
                 <Image
-                  src="/logo-icon.png"
-                  alt="Globalize Group Icon"
-                  width={32}
-                  height={32}
-                  className="object-contain"
+                  src="/logo.png"
+                  alt="Globalize Group Logo"
+                  width={130}
+                  height={62}
+                  className="h-8.5 sm:h-9 w-auto object-contain"
                   priority
                 />
               </div>
@@ -135,10 +149,11 @@ export default function Navbar() {
 
 
           {/* Mobile Menu button */}
-          <div className="flex lg:hidden items-center gap-3">
+          <div className="flex lg:hidden items-center ms-auto lg:ms-0">
             <button
+              id="mobile-menu-toggle-btn"
               onClick={() => setIsOpen(!isOpen)}
-              className="rounded-lg p-2 text-gray-600 hover:bg-gray-100 hover:text-gray-900 focus:outline-none"
+              className="rounded-lg p-2 text-gray-600 hover:bg-gray-100 hover:text-gray-900 focus:outline-none min-h-[44px] min-w-[44px] flex items-center justify-center cursor-pointer"
               aria-label={isOpen ? (locale === 'ar' ? 'إغلاق القائمة الرئيسية' : 'Close navigation menu') : (locale === 'ar' ? 'فتح القائمة الرئيسية' : 'Open navigation menu')}
             >
               {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -147,41 +162,90 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Menu Panel */}
-      {isOpen && (
-        <div className="lg:hidden border-t border-gray-100 bg-white/95 px-4 pb-6 pt-4 shadow-inner backdrop-blur-md">
-          <div className="flex flex-col gap-2">
-            {navItems.map((item) => (
-              <Link
-                key={item.key}
-                href={item.path}
-                onClick={() => setIsOpen(false)}
-                className={`block rounded-lg px-4 py-2.5 text-sm font-semibold transition-all ${
-                  pathname === item.path || (item.path !== "/" && pathname.startsWith(item.path))
-                    ? "bg-primary-blue/10 text-primary-blue"
-                    : "text-gray-600 hover:bg-gray-50"
-                }`}
-              >
-                {t(item.key)}
-              </Link>
-            ))}
+      {/* Mobile Drawer Navigation (Side-sliding) */}
+      {/* 1. Backdrop Overlay */}
+      <div
+        id="mobile-drawer-backdrop"
+        className={`fixed inset-0 z-50 bg-black/50 transition-opacity duration-300 lg:hidden ${
+          isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+        }`}
+        onClick={() => setIsOpen(false)}
+        aria-hidden="true"
+      />
 
-            <div className="mt-4 pt-4 border-t border-gray-100">
-              <a
-                href={`https://wa.me/201062990808?text=${encodeURIComponent(locale === 'ar' ? 'أريد الاستفسار عن ترجمة معتمدة' : 'I would like to inquire about certified translation')}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => trackWhatsAppClick({ cta_location: 'header_navbar_mobile', language: locale })}
-                className="flex w-full items-center justify-center gap-2 rounded-xl bg-whatsapp-green py-3 text-sm font-bold text-white shadow-sm animate-pulse-glow"
-              >
-                <MessageCircle className="h-4 w-4" />
-                <span>{locale === 'ar' ? 'تواصل معنا واتساب' : 'Contact on WhatsApp'}</span>
-              </a>
-            </div>
-
+      {/* 2. Slide-over Drawer */}
+      <div
+        id="mobile-nav-drawer"
+        dir={locale === "ar" ? "rtl" : "ltr"}
+        className={`fixed inset-y-0 z-50 w-[290px] sm:w-[320px] max-w-[85vw] h-screen h-[100dvh] bg-white shadow-2xl flex flex-col transition-transform duration-300 ease-in-out lg:hidden ${
+          locale === "ar" ? "right-0" : "left-0"
+        } ${
+          isOpen
+            ? "translate-x-0"
+            : locale === "ar"
+            ? "translate-x-full"
+            : "-translate-x-full"
+        }`}
+        role="dialog"
+        aria-modal="true"
+        aria-label={locale === "ar" ? "قائمة التنقل" : "Navigation menu"}
+      >
+        {/* Drawer Header */}
+        <div className="flex items-center justify-between p-4 border-b border-gray-100">
+          <button
+            id="mobile-drawer-close-btn"
+            onClick={() => setIsOpen(false)}
+            className="rounded-lg p-2 text-gray-600 hover:bg-gray-100 hover:text-gray-900 focus:outline-none min-h-[44px] min-w-[44px] flex items-center justify-center cursor-pointer"
+            aria-label={locale === "ar" ? "إغلاق القائمة" : "Close navigation menu"}
+          >
+            <X className="h-6 w-6" />
+          </button>
+          <div className="relative h-8 w-24 flex items-center justify-end rtl:justify-start">
+            <Image
+              src="/logo.png"
+              alt="Globalize Group"
+              width={100}
+              height={48}
+              className="h-7 w-auto object-contain"
+            />
           </div>
         </div>
-      )}
+
+        {/* Drawer Navigation Links */}
+        <div className="flex-1 overflow-y-auto p-4 flex flex-col gap-1.5">
+          {navItems.map((item) => (
+            <Link
+              key={item.key}
+              href={item.path}
+              onClick={() => setIsOpen(false)}
+              className={`text-start block rounded-lg px-4 py-2.5 text-sm font-semibold transition-all ${
+                pathname === item.path || (item.path !== "/" && pathname.startsWith(item.path))
+                  ? "bg-primary-blue/10 text-primary-blue font-bold"
+                  : "text-gray-700 hover:bg-gray-50 hover:text-primary-blue"
+              }`}
+            >
+              {t(item.key)}
+            </Link>
+          ))}
+        </div>
+
+        {/* Drawer Footer (WhatsApp CTA) */}
+        <div className="p-4 border-t border-gray-100 bg-gray-50/50">
+          <a
+            href={`https://wa.me/201062990808?text=${encodeURIComponent(locale === 'ar' ? 'أريد الاستفسار عن ترجمة معتمدة' : 'I would like to inquire about certified translation')}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => {
+              trackWhatsAppClick({ cta_location: 'header_navbar_mobile', language: locale });
+              setIsOpen(false);
+            }}
+            className="flex w-full items-center justify-center gap-2 rounded-xl bg-whatsapp-green py-3 text-sm font-bold text-white shadow-sm transition-all hover:bg-whatsapp-green/90 animate-pulse-glow"
+          >
+            <MessageCircle className="h-4 w-4" />
+            <span>{locale === 'ar' ? 'تواصل معنا واتساب' : 'Contact on WhatsApp'}</span>
+          </a>
+        </div>
+      </div>
     </nav>
   );
 }
