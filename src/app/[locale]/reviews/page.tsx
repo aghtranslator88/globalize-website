@@ -1,9 +1,8 @@
 import { setRequestLocale } from "next-intl/server";
-import { getReviews } from "@/lib/data";
 import { getSEOHeaders, generateAggregateRatingJsonLd, generateBreadcrumbJsonLd } from "@/lib/seo";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import ReviewsList from "@/components/ReviewsList";
+import GoogleReviewsGallery from "@/components/GoogleReviewsGallery";
 import { Link } from "@/i18n/routing";
 import type { Metadata } from "next";
 
@@ -13,10 +12,10 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  const title = locale === "ar" ? "تقييمات وآراء عملائنا في خدمات الترجمة" : "Client Reviews & Testimonials";
+  const title = locale === "ar" ? "تقييمات وآراء عملائنا الموثقة على خرائط جوجل" : "Verified Client Reviews on Google Maps";
   const description = locale === "ar"
-    ? "آراء حقيقية وتوثيقات لعملاء تعاملوا معنا في خدمات الترجمة المعتمدة وتوطين البرمجيات."
-    : "Genuine reviews and ratings from clients who used our certified translation and software localization services.";
+    ? "آراء وتوثيقات حقيقية لعملاء جلوباليز جروب للترجمة المعتمدة على Google Maps، بمعدل تقييم 4.9 من 5."
+    : "Genuine, verified reviews and ratings from clients of Globalize Group for certified translation on Google Maps, rated 4.9 out of 5.";
   return getSEOHeaders(title, description, "/reviews", true, locale);
 }
 
@@ -28,7 +27,6 @@ export default async function ReviewsPage({
   const { locale } = await params;
   setRequestLocale(locale);
 
-  const reviews = await getReviews(locale);
   const isAr = locale === "ar";
 
   const breadcrumbs = [
@@ -38,22 +36,8 @@ export default async function ReviewsPage({
 
   const breadcrumbJsonLd = generateBreadcrumbJsonLd(breadcrumbs);
   
-  // Aggregate rating calculations for JSON-LD
-  const averageRating = reviews.length > 0
-    ? reviews.reduce((sum, r) => sum + r.rating, 0) / reviews.length
-    : 5;
-  const aggregateRatingJsonLd = generateAggregateRatingJsonLd(averageRating, reviews.length > 0 ? reviews.length : 1);
-
-  // Convert dates to string format for next-intl Client components serialization safety
-  const serializedReviews = reviews.map((r) => ({
-    id: r.id,
-    authorName: r.authorName,
-    rating: r.rating,
-    text: r.text,
-    serviceType: r.serviceType,
-    date: r.date.toISOString(),
-    videoUrl: r.videoUrl,
-  }));
+  // Real Google Business Profile verified stats
+  const aggregateRatingJsonLd = generateAggregateRatingJsonLd(4.9, 100);
 
   return (
     <>
@@ -81,19 +65,19 @@ export default async function ReviewsPage({
           </ol>
         </nav>
 
-        <div className="text-center mb-12">
+        <div className="text-center mb-8">
           <h1 className="text-2xl sm:text-4xl font-black text-dark-navy mb-4 font-arabic">
-            {isAr ? "آراء وتقييمات عملائنا الكرام" : "Client Reviews & Testimonials"}
+            {isAr ? "آراء وتقييمات عملائنا الموثقة" : "Verified Client Reviews & Testimonials"}
           </h1>
           <p className="text-gray-500 text-xs sm:text-sm max-w-2xl mx-auto leading-relaxed">
             {isAr
-              ? "نعتز بثقتكم ونفخر بتقديم أفضل جودة لترجماتكم القانونية والشخصية. اقرأ تجارب عملائنا الحقيقية."
-              : "We value your trust and take pride in delivering the highest quality certified translations. Read real client experiences."}
+              ? "نعتز بثقتكم ونفخر بتقديم أفضل جودة لترجماتكم المعتمدة لدى جميع السفارات والجهات الحكومية. طالع تجارب وتقييمات عملائنا الحقيقية الموثقة على خرائط Google."
+              : "We take pride in delivering top-quality certified translations accepted by all embassies and authorities. Read authentic client reviews verified on Google Maps."}
           </p>
         </div>
 
-        {/* Reviews List Component */}
-        <ReviewsList reviews={serializedReviews} />
+        {/* 100% Genuine Google Maps Reviews & Screenshots Gallery */}
+        <GoogleReviewsGallery locale={locale} />
       </main>
 
       <Footer />

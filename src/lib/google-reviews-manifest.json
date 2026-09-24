@@ -1,0 +1,134 @@
+[
+  {
+    "id": "review-1",
+    "authorName": "Ahmed Hosny",
+    "avatarUrl": "https://lh3.googleusercontent.com/a/ACg8ocLOFZWFm6MJ6zGC_Uzbca7SQBy3-As1y3-qJOq7K14iX14jfQ=s120-c-rp-mo-br100",
+    "date": "٣٠ يونيو ٢٠٢٦",
+    "rating": 5,
+    "comment": "محترمين جدا و الشغل مظبوط و في الوقت المحدد بدون تأخير",
+    "reply": "شكراً جزيلاً لحضرتك على هذا التقييم الرائع! نلتزم دائماً في جلوباليز جروب بتسليم الترجمة المعتمدة بأعلى درجات الدقة والسرعة التي يحتاجها عملاؤنا الكرام. يشرفنا ويسعدنا دائماً خدمتك!",
+    "imagePath": "/images/reviews/google-review-1.png",
+    "googleReviewUrl": "https://business.google.com/n/1445898811162006878/reviews/Ci9DQUlRQUNvZENodHljRjlvT2tGMlVFRlVja3AwYjB0b1RXMHhXbFJMUTNCbmRHYxAB"
+  },
+  {
+    "id": "review-2",
+    "authorName": "Abdallah Elleithy",
+    "avatarUrl": "https://lh3.googleusercontent.com/a-/ALV-UjUTSdO8Jw3fxxgBRwU9VdFwd9LnYLgoQvQZ2p43ro4zFemDIY9nuQ=s120-c-rp-mo-ba12-br100",
+    "date": "٣٠ يونيو ٢٠٢٦",
+    "rating": 5,
+    "comment": "ناس محترمة و خدمة مميزة",
+    "reply": "أهلاً بحضرتك يا فندم، خالص الشكر والتقدير لتقييمك الكريم وثقتك في جلوباليز جروب للترجمة المعتمدة. نسعى دائماً لتقديم خدمة احترافية ومميزة تليق بكم. يسعدنا ويشرفنا التعامل معكم دائماً!",
+    "imagePath": "/images/reviews/google-review-2.png",
+    "googleReviewUrl": "https://business.google.com/n/1445898811162006878/reviews/Ci9DQUlRQUNvZENodHljRjlvT25GcFluRjBRMk5wWmw5ZlVuSm1TMDloVGtGVk5GRRAB"
+  },
+  {
+    "id": "review-3",
+    "authorName": "Salma rabei",
+    "avatarUrl": "https://lh3.googleusercontent.com/a-/ALV-UjUiGc0dWxklXuj7EKYd1h8B9oHym9_85XhUEZxLGA75Jajia_E=s120-c-rp-mo-ba12-br100",
+    "date": "٢٨ يونيو ٢٠٢٦",
+    "rating": 5,
+    "comment": "من اجمل واحسن واسرع الاماكن اللي ترجمت فيها بجد شابوه ليكم وبتمنالكم من كل قلبي تفضلو دايما باب مساعده كبير لكل حد محتاج",
+    "reply": "ألف شكر لحضرتك على هذا الكلام الراقي والدعوات الجميلة التي تسعد فريق جلوباليز جروب بالكامل! شهادتك وسام لنا، ونسعد دائماً بأن نكون وجهتكم الأولى والموثوقة في كل أعمال الترجمة المعتمدة. كل التوفيق والنجاح لحضرتك! 🌟",
+    "imagePath": "/images/reviews/google-review-3.png",
+    "googleReviewUrl": "https://business.google.com/n/1445898811162006878/reviews/Ci9DQUlRQUNvZENodHljRjlvT2tJMGFIWkRUVkJyU0doUVNETTBXbGxUUTFJd1gyYxAB"
+  },
+  {
+    "id": "review-4",
+    "authorName": "Gamal Mohamed",
+    "avatarUrl": "https://lh3.googleusercontent.com/a/ACg8ocKJSEkvwRId5DhftLlrfxsAYyFrOD2z0X8IbvSAkZgONmxMyA=s120-c-rp-mo-br100",
+    "date": "٢١ يونيو ٢٠٢٦",
+    "rating": 5,
+    "comment": "Absolutely amazing 😍",
+    "reply": "أهلاً بحضرتك يا فندم، خالص الشكر والتقدير لتقييمك الكريم وثقتك في جلوباليز جروب للترجمة المعتمدة. نسعى دائماً لتقديم خدمة احترافية ومميزة تليق بكم. يسعدنا ويشرفنا التعامل معكم دائماً!",
+    "imagePath": "/images/reviews/google-review-4.png",
+    "googleReviewUrl": "https://business.google.com/n/1445898811162006878/reviews/Ci9DQUlRQUNvZENodHljRjlvT25GcmJESnZTM3B4ZVhWTVNGRmxObWxOVDNocmExRRAB"
+  },
+  {
+    "id": "review-5",
+    "authorName": "Qais Aldanani",
+    "avatarUrl": "https://lh3.googleusercontent.com/a-/ALV-UjWNVOtXgzLMa7hijlE-Qyi3rv8RiGC-JzLButud-7yqZUfFBtg=s120-c-rp-mo-ba12-br100",
+    "date": "١٧ مايو ٢٠٢٦",
+    "rating": 5,
+    "comment": "My first choice always whenever I need to translate any document. Reachable, friendly and trusty.\n\nKeep it up.",
+    "reply": "Thank you very much, Qais Aldanani, for your kind words and trust in Globalize Group for Certified Translation. Delivering fast, accurate, and reliable translations is always our top priority. Best wishes!",
+    "imagePath": "/images/reviews/google-review-5.png",
+    "googleReviewUrl": "https://business.google.com/n/1445898811162006878/reviews/Ci9DQUlRQUNvZENodHljRjlvT2tOQ2ExOU9OakJaV25vMldIUlJObVJFWTA4elRYYxAB"
+  },
+  {
+    "id": "review-6",
+    "authorName": "Mohamed Takeshy",
+    "avatarUrl": "https://lh3.googleusercontent.com/a-/ALV-UjWkMHCxi8W85_w5Wt6QFtjl4TAs_U8N5YnVtf7mXDjN2VshrYv1=s120-c-rp-mo-br100",
+    "date": "٥ مايو ٢٠٢٦",
+    "rating": 5,
+    "comment": "They are so professional and friendly as the same time specially for sara khafagy the manager she is so helpful!",
+    "reply": "Thank you very much, Mohamed Takeshy, for your kind words and trust in Globalize Group for Certified Translation. Delivering fast, accurate, and reliable translations is always our top priority. Best wishes!",
+    "imagePath": "/images/reviews/google-review-6.png",
+    "googleReviewUrl": "https://business.google.com/n/1445898811162006878/reviews/Ci9DQUlRQUNvZENodHljRjlvT2w5eFIzWlJPQzFCZW5sbmNGVXRlWHBSZDFsVGNVRRAB"
+  },
+  {
+    "id": "review-7",
+    "authorName": "Hamza Nazar",
+    "avatarUrl": "https://lh3.googleusercontent.com/a/ACg8ocIF4TCuEkFcFqyElPPiU--MzuPeib9CSwqCdL5AWFCoXhi_Cw=s120-c-rp-mo-br100",
+    "date": "٣٠ أبريل ٢٠٢٦",
+    "rating": 5,
+    "comment": "خدمة مميزة جدا وممتازة",
+    "reply": "أهلاً بحضرتك يا فندم، خالص الشكر والتقدير لتقييمك الكريم وثقتك في جلوباليز جروب للترجمة المعتمدة. نسعى دائماً لتقديم خدمة احترافية ومميزة تليق بكم. يسعدنا ويشرفنا التعامل معكم دائماً!",
+    "imagePath": "/images/reviews/google-review-7.png",
+    "googleReviewUrl": "https://business.google.com/n/1445898811162006878/reviews/Ci9DQUlRQUNvZENodHljRjlvT2poMFNtaEVla05KUW5SelZGaFRSMGhUVlU1T09VRRAB"
+  },
+  {
+    "id": "review-8",
+    "authorName": "senior fadl",
+    "avatarUrl": "https://lh3.googleusercontent.com/a/ACg8ocLEXOKNfFXAg3lEKNltnB8lF5qw7YlIVYNTFgVl4HUTKbvVAw=s120-c-rp-mo-br100",
+    "date": "٢١ أبريل ٢٠٢٦",
+    "rating": 5,
+    "comment": "افضل تعامل وأحسن خدمة بجد وبيساعدوك قبل ماتشتغل معاهم عشان ماتدفعش علي الفاضي وناس امينة جدا ❤️❤️🙏",
+    "reply": "ألف شكر لحضرتك على هذا الكلام الراقي والدعوات الجميلة التي تسعد فريق جلوباليز جروب بالكامل! شهادتك وسام لنا، ونسعد دائماً بأن نكون وجهتكم الأولى والموثوقة في كل أعمال الترجمة المعتمدة. كل التوفيق والنجاح لحضرتك! 🌟",
+    "imagePath": "/images/reviews/google-review-8.png",
+    "googleReviewUrl": "https://business.google.com/n/1445898811162006878/reviews/Ci9DQUlRQUNvZENodHljRjlvT2w5MlZUWjBSWFZuUTA4d09FOUxia2czT0VSdlltYxAB"
+  },
+  {
+    "id": "review-9",
+    "authorName": "Mostafa Shrawy",
+    "avatarUrl": "https://lh3.googleusercontent.com/a/ACg8ocL57HPTCHb_8KRqnvWblH7t-VAncl3NLrflGOgJAermukw3Uw=s120-c-rp-mo-br100",
+    "date": "٤ أبريل ٢٠٢٦",
+    "rating": 5,
+    "comment": "مكتب ممتاز ومعامله محترمه",
+    "reply": "أهلاً بحضرتك يا فندم، خالص الشكر والتقدير لتقييمك الكريم وثقتك في جلوباليز جروب للترجمة المعتمدة. نسعى دائماً لتقديم خدمة احترافية ومميزة تليق بكم. يسعدنا ويشرفنا التعامل معكم دائماً!",
+    "imagePath": "/images/reviews/google-review-9.png",
+    "googleReviewUrl": "https://business.google.com/n/1445898811162006878/reviews/Ci9DQUlRQUNvZENodHljRjlvT21sVWQxZENTVVJHUjBWWGNHOTFUWHAwVGpSMk4wRRAB"
+  },
+  {
+    "id": "review-10",
+    "authorName": "Luxury Tours Egypt",
+    "avatarUrl": "https://lh3.googleusercontent.com/a-/ALV-UjVdZDxRgNHg70SR84Zqq_0l6P_gWAB4FvVkKbONuAvGlJM9E7V5=s120-c-rp-mo-ba12-br100",
+    "date": "٢٥ مارس ٢٠٢٦",
+    "rating": 5,
+    "comment": "I cannot recommend Globalize for Certified Translation highly enough. They handled the translation of all my official documents with impeccable accuracy and precision. Every detail was meticulously translated, ensuring that the legal and technical terminology was spot on.\n​What truly sets them apart is their transparency and credibility. In a field where accuracy is non-negotiable, they delivered flawless results within a very tight timeframe. Their service is remarkably fast, yet they maintain the highest standards of quality.\n​A special and heartfelt thanks to Ms. Sara for her incredible assistance. She managed my requests with extreme professionalism and made sure every document was perfect before delivery. Her dedication and prompt responses made the entire experience seamless and worry-free.\n​If you need a reliable partner for certified translation, Globalize is undoubtedly the best choice!\"\n\nMo Tolba\nCEO\nLUXURY TOURS EGYPT",
+    "reply": "Thank you very much, Luxury Tours Egypt, for your kind words and trust in Globalize Group for Certified Translation. Delivering fast, accurate, and reliable translations is always our top priority. Best wishes!",
+    "imagePath": "/images/reviews/google-review-10.png",
+    "googleReviewUrl": "https://business.google.com/n/1445898811162006878/reviews/Ci9DQUlRQUNvZENodHljRjlvT2poVGRFOXVURmt0WVdKRVpGcGljWEozWjFSUGNtYxAB"
+  },
+  {
+    "id": "review-11",
+    "authorName": "Ashraf Hassan",
+    "avatarUrl": "https://lh3.googleusercontent.com/a/ACg8ocJOtAAhweq3xTCXtfFc9SCKCsMH-b6SajZHWPau3h25KPBU1g=s120-c-rp-mo-br100",
+    "date": "١٤ مارس ٢٠٢٦",
+    "rating": 5,
+    "comment": "Excellent experience with Globaliz Group for Translation. The service was fast, the staff were very cooperative, and the translation was completed with great accuracy and professionalism.\nI highly recommend them to anyone who needs reliable translation services. Thank you for the excellent service and kind support.",
+    "reply": "Thank you very much, Ashraf Hassan, for your kind words and trust in Globalize Group for Certified Translation. Delivering fast, accurate, and reliable translations is always our top priority. Best wishes!",
+    "imagePath": "/images/reviews/google-review-11.png",
+    "googleReviewUrl": "https://business.google.com/n/1445898811162006878/reviews/Ci9DQUlRQUNvZENodHljRjlvT25CRlJUWXRUVU10WkRCdWVDMW1hbU4wVkhab01rRRAB"
+  },
+  {
+    "id": "review-12",
+    "authorName": "Abdel Salam Ben Souleyman",
+    "avatarUrl": "https://lh3.googleusercontent.com/a-/ALV-UjV1f60PKHYCESQCKW3_JF__w7OmzL_hdUfzv1pKGChQySOt3xY=s120-c-rp-mo-br100",
+    "date": "٣ مارس ٢٠٢٦",
+    "rating": 5,
+    "comment": "(Translated by Google) The best translation center in Cairo. Fast and well-done work.\n\n(Original)\nLe meilleur centre pour la traduction au Caire. Travail rapide et bien fait.",
+    "reply": "أهلاً بحضرتك يا فندم، خالص الشكر والتقدير لتقييمك الكريم وثقتك في جلوباليز جروب للترجمة المعتمدة. نسعى دائماً لتقديم خدمة احترافية ومميزة تليق بكم. يسعدنا ويشرفنا التعامل معكم دائماً!",
+    "imagePath": "/images/reviews/google-review-12.png",
+    "googleReviewUrl": "https://business.google.com/n/1445898811162006878/reviews/Ci9DQUlRQUNvZENodHljRjlvT2pWYVJWVXpWRGhXTlZGWVIzZFpTbUZaTW1GTmJWRRAB"
+  }
+]
