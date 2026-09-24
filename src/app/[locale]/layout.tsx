@@ -5,7 +5,7 @@ import { routing } from '@/i18n/routing';
 import { Cairo, Inter } from 'next/font/google';
 import Script from 'next/script';
 import AuthProvider from '@/components/SessionProvider';
-import { GOOGLE_ADS_ID, GA_MEASUREMENT_ID } from '@/lib/gtag';
+import { GOOGLE_ADS_ID, GA_MEASUREMENT_ID, GA_SECONDARY_ID } from '@/lib/gtag';
 import '../globals.css';
 
 const cairo = Cairo({
@@ -72,6 +72,7 @@ export default async function LocaleLayout({
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', '${GA_MEASUREMENT_ID}');
+            gtag('config', '${GA_SECONDARY_ID}');
             gtag('config', '${GOOGLE_ADS_ID}');
           `}
         </Script>
