@@ -5,7 +5,7 @@ import { routing } from '@/i18n/routing';
 import { Cairo, Inter } from 'next/font/google';
 import Script from 'next/script';
 import AuthProvider from '@/components/SessionProvider';
-import { GOOGLE_ADS_ID } from '@/lib/gtag';
+import { GOOGLE_ADS_ID, GA_MEASUREMENT_ID } from '@/lib/gtag';
 import '../globals.css';
 
 const cairo = Cairo({
@@ -61,16 +61,17 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} dir={dir} className={`${cairo.variable} ${inter.variable}`} suppressHydrationWarning>
       <body className={locale === 'ar' ? 'font-arabic' : 'font-latin'} suppressHydrationWarning>
-        {/* Google tag (gtag.js) - Google Ads: AW-18001004291 */}
+        {/* Google tag (gtag.js) - Google Analytics 4 & Google Ads */}
         <Script
-          src={`https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ADS_ID}`}
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
           strategy="afterInteractive"
         />
-        <Script id="google-ads-tag" strategy="afterInteractive">
+        <Script id="google-tags" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
+            gtag('config', '${GA_MEASUREMENT_ID}');
             gtag('config', '${GOOGLE_ADS_ID}');
           `}
         </Script>

@@ -2,6 +2,7 @@
 // Single, clean, direct Google Tag integration (AW-18001004291)
 
 export const GOOGLE_ADS_ID = 'AW-18001004291';
+export const GA_MEASUREMENT_ID = 'G-549YEXN01F';
 export const WHATSAPP_CONVERSION_LABEL = 'AW-18001004291/k8NtCKOM-oUcEIOOxodD';
 export const PHONE_CONVERSION_LABEL = 'AW-18001004291/Uv5LCNClu_EcEIOOxodD';
 
