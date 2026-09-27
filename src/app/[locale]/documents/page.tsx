@@ -9,6 +9,8 @@ import { FileText, Clock, Phone, ArrowLeft, ArrowRight, MessageCircle } from "lu
 
 import type { Metadata } from "next";
 
+export const revalidate = 3600;
+
 export async function generateMetadata({
   params,
 }: {

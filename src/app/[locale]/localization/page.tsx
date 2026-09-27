@@ -8,6 +8,8 @@ import { Link } from "@/i18n/routing";
 import { Globe, Code, FileCode, CheckCircle, Smartphone } from "lucide-react";
 import type { Metadata } from "next";
 
+export const revalidate = 3600;
+
 export async function generateMetadata({
   params,
 }: {

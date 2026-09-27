@@ -9,6 +9,8 @@ import { Phone, CheckCircle, ArrowRight, ArrowLeft, Star, ChevronDown, Check, Gl
 
 import type { Metadata } from "next";
 
+export const revalidate = 3600;
+
 export async function generateMetadata({
   params,
 }: {

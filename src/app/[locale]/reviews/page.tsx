@@ -6,6 +6,8 @@ import GoogleReviewsGallery from "@/components/GoogleReviewsGallery";
 import { Link } from "@/i18n/routing";
 import type { Metadata } from "next";
 
+export const revalidate = 3600;
+
 export async function generateMetadata({
   params,
 }: {

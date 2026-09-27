@@ -8,6 +8,8 @@ import { Link } from "@/i18n/routing";
 import { Headphones, Users, Mic, Laptop, HelpCircle, CheckCircle } from "lucide-react";
 import type { Metadata } from "next";
 
+export const revalidate = 3600;
+
 export async function generateMetadata({
   params,
 }: {

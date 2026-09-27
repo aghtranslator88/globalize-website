@@ -12,6 +12,8 @@ import { Link } from "@/i18n/routing";
 import { Phone, CheckCircle, ChevronDown, Landmark, FileText, ArrowLeft, ArrowRight, ShieldCheck, Clock, MessageCircle } from "lucide-react";
 import type { Metadata } from "next";
 
+export const revalidate = 3600;
+
 export async function generateMetadata({
   params,
 }: {

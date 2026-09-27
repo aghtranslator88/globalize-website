@@ -30,6 +30,8 @@ import {
 } from "lucide-react";
 import type { Metadata } from "next";
 
+export const revalidate = 3600;
+
 export async function generateMetadata({
   params,
 }: {

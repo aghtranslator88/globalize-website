@@ -11,6 +11,19 @@ import { Link } from "@/i18n/routing";
 
 import { Phone, CheckCircle, ChevronDown, Flag, FileText, Landmark, MessageCircle } from "lucide-react";
 import type { Metadata } from "next";
+import { ALL_EMBASSY_POSTS } from "@/lib/embassies-data";
+import { routing } from "@/i18n/routing";
+
+export const revalidate = 3600;
+
+export async function generateStaticParams() {
+  return routing.locales.flatMap((locale) =>
+    ALL_EMBASSY_POSTS.map((embassy) => ({
+      locale,
+      slug: embassy.slug,
+    }))
+  );
+}
 
 export async function generateMetadata({
   params,

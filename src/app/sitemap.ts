@@ -5,6 +5,8 @@ import { ALL_EMBASSY_POSTS } from '@/lib/embassies-data';
 import { getSiteUrl } from '@/lib/siteUrl';
 import { isGenuineEnglish } from '@/lib/translationDetection';
 
+export const revalidate = 86400; // 24 hours CDN cache for sitemap.xml
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const SITE_URL = getSiteUrl();
   let services: any[] = [];

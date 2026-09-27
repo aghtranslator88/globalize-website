@@ -12,6 +12,19 @@ import { Link } from "@/i18n/routing";
 
 import { Calendar, User, Clock, ChevronDown, Award, HelpCircle, MessageCircle } from "lucide-react";
 import type { Metadata } from "next";
+import { ALL_BLOG_POSTS } from "@/lib/blog-data";
+import { routing } from "@/i18n/routing";
+
+export const revalidate = 3600;
+
+export async function generateStaticParams() {
+  return routing.locales.flatMap((locale) =>
+    ALL_BLOG_POSTS.map((post) => ({
+      locale,
+      slug: post.slug,
+    }))
+  );
+}
 
 export async function generateMetadata({
   params,
