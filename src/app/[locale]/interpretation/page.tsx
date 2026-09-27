@@ -1,6 +1,7 @@
 import { setRequestLocale } from "next-intl/server";
 import { getServiceBySlug, getFAQs } from "@/lib/data";
 import { getSEOHeaders, generateServiceJsonLd, generateFAQJsonLd } from "@/lib/seo";
+import { serializeJsonLd } from "@/lib/jsonLd";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import QuoteForm from "@/components/QuoteForm";
@@ -57,12 +58,12 @@ export default async function InterpretationPage({
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(serviceJsonLd) }}
       />
       {faqs.length > 0 && (
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(generateFAQJsonLd(faqs)) }}
+          dangerouslySetInnerHTML={{ __html: serializeJsonLd(generateFAQJsonLd(faqs)) }}
         />
       )}
       <Navbar />

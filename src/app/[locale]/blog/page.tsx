@@ -1,6 +1,7 @@
 import { setRequestLocale } from "next-intl/server";
 import { getBlogPosts } from "@/lib/data";
 import { getSEOHeaders, generateBreadcrumbJsonLd } from "@/lib/seo";
+import { serializeJsonLd } from "@/lib/jsonLd";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import BlogList from "@/components/BlogList";
@@ -60,7 +61,7 @@ export default async function BlogPage({
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(breadcrumbJsonLd) }}
       />
       <Navbar />
 

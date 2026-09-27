@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { setRequestLocale } from "next-intl/server";
 import { getBlogPostBySlug, getRawBlogPostBySlug, getFAQs } from "@/lib/data";
 import { getSEOHeaders, generateArticleJsonLd, generateFAQJsonLd, generateBreadcrumbJsonLd } from "@/lib/seo";
+import { serializeJsonLd } from "@/lib/jsonLd";
 import { getSiteUrl } from "@/lib/siteUrl";
 import { isGenuineEnglish } from "@/lib/translationDetection";
 import Navbar from "@/components/Navbar";
@@ -388,16 +389,16 @@ export default async function BlogPostDetailPage({
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(breadcrumbJsonLd) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(articleJsonLd) }}
       />
       {faqsList.length > 0 && (
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+          dangerouslySetInnerHTML={{ __html: serializeJsonLd(faqJsonLd) }}
         />
       )}
       <Navbar />

@@ -1,5 +1,6 @@
 import { setRequestLocale } from "next-intl/server";
 import { getSEOHeaders, generateAggregateRatingJsonLd, generateBreadcrumbJsonLd } from "@/lib/seo";
+import { serializeJsonLd } from "@/lib/jsonLd";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import GoogleReviewsGallery from "@/components/GoogleReviewsGallery";
@@ -45,11 +46,11 @@ export default async function ReviewsPage({
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(breadcrumbJsonLd) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(aggregateRatingJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(aggregateRatingJsonLd) }}
       />
       <Navbar />
 

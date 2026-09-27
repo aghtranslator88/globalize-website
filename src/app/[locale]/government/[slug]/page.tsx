@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { setRequestLocale } from "next-intl/server";
 import { getGovEntityBySlug, getFAQs } from "@/lib/data";
 import { getSEOHeaders, generateFAQJsonLd, generateBreadcrumbJsonLd } from "@/lib/seo";
+import { serializeJsonLd } from "@/lib/jsonLd";
 import { isGenuineEnglish } from "@/lib/translationDetection";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -54,12 +55,12 @@ export default async function GovEntityDetailPage({
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(breadcrumbJsonLd) }}
       />
       {faqs.length > 0 && (
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(generateFAQJsonLd(faqs)) }}
+          dangerouslySetInnerHTML={{ __html: serializeJsonLd(generateFAQJsonLd(faqs)) }}
         />
       )}
       <Navbar />

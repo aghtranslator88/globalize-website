@@ -1,6 +1,7 @@
 import { setRequestLocale } from "next-intl/server";
 import { getBranches } from "@/lib/data";
 import { getSEOHeaders, generateLocalBusinessJsonLd, generateBreadcrumbJsonLd } from "@/lib/seo";
+import { serializeJsonLd } from "@/lib/jsonLd";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import TrackedWhatsAppLink from "@/components/TrackedWhatsAppLink";
@@ -47,14 +48,14 @@ export default async function BranchesPage({
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(breadcrumbJsonLd) }}
       />
       {branches.map((b) => (
         <script
           key={b.id}
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(
+            __html: serializeJsonLd(
               generateLocalBusinessJsonLd({
                 name: b.name,
                 address: b.address,

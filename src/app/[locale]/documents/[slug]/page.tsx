@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { setRequestLocale } from "next-intl/server";
 import { getDocumentBySlug, getFAQs } from "@/lib/data";
 import { getSEOHeaders, generateOfferJsonLd, generateFAQJsonLd, generateBreadcrumbJsonLd } from "@/lib/seo";
+import { serializeJsonLd } from "@/lib/jsonLd";
 import { isGenuineEnglish } from "@/lib/translationDetection";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -96,16 +97,16 @@ export default async function DocumentDetailPage({
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(breadcrumbJsonLd) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(offerJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(offerJsonLd) }}
       />
       {faqs.length > 0 && (
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(generateFAQJsonLd(faqs)) }}
+          dangerouslySetInnerHTML={{ __html: serializeJsonLd(generateFAQJsonLd(faqs)) }}
         />
       )}
       <Navbar />

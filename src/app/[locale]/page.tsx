@@ -2,6 +2,7 @@ import { Link } from "@/i18n/routing";
 import { getMessages, setRequestLocale } from "next-intl/server";
 import { getServices, getDocuments, getReviews, getFAQs, getSiteSettings } from "@/lib/data";
 import { getSEOHeaders, generateOrganizationJsonLd } from "@/lib/seo";
+import { serializeJsonLd } from "@/lib/jsonLd";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import TrackedWhatsAppLink from "@/components/TrackedWhatsAppLink";
@@ -51,7 +52,7 @@ export default async function HomePage({
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(orgJsonLd) }}
       />
       <Navbar />
 

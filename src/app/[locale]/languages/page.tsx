@@ -1,6 +1,7 @@
 import { setRequestLocale } from "next-intl/server";
 import { getLanguages } from "@/lib/data";
 import { getSEOHeaders, generateBreadcrumbJsonLd } from "@/lib/seo";
+import { serializeJsonLd } from "@/lib/jsonLd";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Link } from "@/i18n/routing";
@@ -49,7 +50,7 @@ export default async function LanguagesPage({
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(breadcrumbJsonLd) }}
       />
       <Navbar />
 
