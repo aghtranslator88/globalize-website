@@ -114,6 +114,44 @@ export function checkRateLimit(ip: string): { allowed: boolean; remaining: numbe
   return { allowed: true, remaining: MAX_REQUESTS_PER_WINDOW - record.timestamps.length };
 }
 
+export async function checkDistributedRateLimit(ip: string): Promise<{ allowed: boolean; remaining: number }> {
+  const upstashUrl = process.env.UPSTASH_REDIS_REST_URL?.replace(/\/+$/, '');
+  const upstashToken = process.env.UPSTASH_REDIS_REST_TOKEN;
+
+  if (upstashUrl && upstashToken) {
+    try {
+      const key = `ratelimit:quote:${ip}`;
+      const response = await fetch(`${upstashUrl}/pipeline`, {
+        method: 'POST',
+        headers: {
+          Authorization: `Bearer ${upstashToken}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify([
+          ['INCR', key],
+          ['EXPIRE', key, 60],
+        ]),
+        signal: AbortSignal.timeout(1500),
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        const incrResult = Array.isArray(data) ? data[0]?.result : null;
+        const count = typeof incrResult === 'number' ? incrResult : parseInt(String(incrResult || '0'), 10);
+        if (count > MAX_REQUESTS_PER_WINDOW) {
+          return { allowed: false, remaining: 0 };
+        }
+        return { allowed: true, remaining: Math.max(0, MAX_REQUESTS_PER_WINDOW - count) };
+      }
+    } catch {
+      // Fall through to in-memory fallback on network/timeout error
+    }
+  }
+
+  // Fallback to in-memory sliding window limiter
+  return checkRateLimit(ip);
+}
+
 // ============================================================================
 // 3. Deduplication Cache (Prevents double-click duplicate leads & duplicate alerts)
 // ============================================================================

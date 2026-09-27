@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
 import {
-  checkRateLimit,
+  checkDistributedRateLimit,
   storeLeadPermanently,
   dispatchNotifications,
   LeadInput,
@@ -36,13 +36,13 @@ const quoteRequestSchema = z.object({
 
 export async function POST(request: Request) {
   try {
-    // 1. Rate Limiting Check (per IP)
+    // 1. Rate Limiting Check (per IP - distributed with in-memory fallback)
     const clientIp =
       request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ||
       request.headers.get("x-real-ip") ||
       "unknown";
 
-    const rateLimit = checkRateLimit(clientIp);
+    const rateLimit = await checkDistributedRateLimit(clientIp);
     if (!rateLimit.allowed) {
       return NextResponse.json(
         { error: "Too many requests. Please wait a minute before submitting again." },
