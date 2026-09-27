@@ -64,6 +64,16 @@ export function maskEmail(email: string | null | undefined): string {
   return `${maskedName}@${domain}`;
 }
 
+export function escapeHtml(str: string | null | undefined): string {
+  if (!str) return '';
+  return str
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
 // ============================================================================
 // 2. In-Memory Sliding Window Rate Limiter (Serverless Friendly)
 // ============================================================================
@@ -315,7 +325,7 @@ export async function storeLeadPermanently(input: LeadInput): Promise<StoreLeadR
     registerDuplicateLead(lead);
 
     try {
-      Sentry.captureMessage(`Lead saved to Fallback Store: ${lead.name} (${maskPhone(lead.phone)})`, {
+      Sentry.captureMessage(`Lead saved to Fallback Store: [${lead.id}] (${maskPhone(lead.phone)})`, {
         level: 'warning',
         tags: { leadId: lead.id, storageStatus: 'FALLBACK_STORE' },
         extra: { serviceType: lead.serviceType, lastError: lead.lastError },
@@ -352,6 +362,71 @@ export async function storeLeadPermanently(input: LeadInput): Promise<StoreLeadR
 // ============================================================================
 // 7. Reliable Notification System (Runs ONLY after storage succeeds)
 // ============================================================================
+export function formatTelegramMessage(lead: LeadRecord): string {
+  const storageTag = lead.storageStatus === 'PRIMARY_DB' 
+    ? '✅ قاعدة البيانات الرئيسية' 
+    : '⚠️ مخزن الطوارئ السحابي (Upstash Redis)';
+
+  const safeId = escapeHtml(lead.id);
+  const safeName = escapeHtml(lead.name);
+  const safePhone = escapeHtml(lead.phone);
+  const safeEmail = escapeHtml(lead.email);
+  const safeServiceType = escapeHtml(lead.serviceType);
+  const safeAttachmentName = escapeHtml(lead.attachmentName);
+  const safeNotes = escapeHtml(lead.notes);
+  const safeCreatedAt = escapeHtml(lead.createdAt);
+
+  const attachmentText = lead.attachmentName
+    ? `📎 <b>المستند المطلوب:</b> ${safeAttachmentName}\n<b>(مطلوب الإرفاق اليدوي عبر واتساب)</b>\n`
+    : '';
+
+  const emailText = lead.email ? `📧 <b>البريد الإلكتروني:</b> <code>${safeEmail}</code>\n` : '';
+
+  return `🔔 <b>طلب تسعير جديد — جلوبالايز</b>\n\n` +
+    `🆔 <b>المعرف:</b> <code>${safeId}</code>\n` +
+    `👤 <b>الاسم:</b> ${safeName}\n` +
+    `📱 <b>الهاتف:</b> <code>${safePhone}</code>\n` +
+    emailText +
+    `💼 <b>الخدمة:</b> ${safeServiceType}\n` +
+    attachmentText +
+    (lead.notes ? `📝 <b>ملاحظات:</b> ${safeNotes}\n` : '') +
+    `💾 <b>حالة الحفظ:</b> ${storageTag}\n` +
+    `⏱ <b>التوقيت:</b> ${safeCreatedAt}`;
+}
+
+export function formatEmailSubject(lead: LeadRecord): string {
+  const cleanName = (lead.name || '').replace(/[\r\n]+/g, ' ').trim();
+  const cleanService = (lead.serviceType || '').replace(/[\r\n]+/g, ' ').trim();
+  return `طلب تسعير جديد: ${cleanName} (${cleanService})`;
+}
+
+export function formatEmailHtml(lead: LeadRecord): string {
+  const safeId = escapeHtml(lead.id);
+  const safeName = escapeHtml(lead.name);
+  const safePhone = escapeHtml(lead.phone);
+  const safeEmail = escapeHtml(lead.email);
+  const safeServiceType = escapeHtml(lead.serviceType);
+  const safeAttachmentName = escapeHtml(lead.attachmentName);
+  const safeNotes = escapeHtml(lead.notes);
+  const safeStorageStatus = escapeHtml(lead.storageStatus);
+  const safeCreatedAt = escapeHtml(lead.createdAt);
+
+  return `
+    <div style="font-family: Arial, sans-serif; direction: rtl; text-align: right; max-width: 600px; margin: 0 auto; border: 1px solid #eaeaea; border-radius: 8px; padding: 20px;">
+      <h2 style="color: #1e3a8a; border-bottom: 2px solid #eab308; padding-bottom: 10px;">طلب تسعير جديد (جلوبالايز)</h2>
+      <p><strong>المعرف:</strong> ${safeId}</p>
+      <p><strong>الاسم:</strong> ${safeName}</p>
+      <p><strong>الهاتف:</strong> ${safePhone}</p>
+      ${lead.email ? `<p><strong>البريد الإلكتروني:</strong> ${safeEmail}</p>` : ''}
+      <p><strong>نوع الخدمة:</strong> ${safeServiceType}</p>
+      ${lead.attachmentName ? `<p><strong>المستند المطلوب:</strong> ${safeAttachmentName} <em>(يرجى المتابعة على واتساب لاستلام الملف)</em></p>` : ''}
+      ${lead.notes ? `<p><strong>الملاحظات:</strong> ${safeNotes}</p>` : ''}
+      <p><strong>حالة التخزين:</strong> ${safeStorageStatus}</p>
+      <p><strong>تاريخ الطلب:</strong> ${safeCreatedAt}</p>
+    </div>
+  `;
+}
+
 export async function sendTelegramNotification(lead: LeadRecord, maxRetries = 2): Promise<NotificationStatus> {
   const token = process.env.TELEGRAM_BOT_TOKEN;
   const chatId = process.env.TELEGRAM_CHAT_ID;
@@ -360,26 +435,7 @@ export async function sendTelegramNotification(lead: LeadRecord, maxRetries = 2)
     return 'NOT_CONFIGURED';
   }
 
-  const storageTag = lead.storageStatus === 'PRIMARY_DB' 
-    ? '✅ قاعدة البيانات الرئيسية' 
-    : '⚠️ مخزن الطوارئ السحابي (Upstash Redis)';
-
-  const attachmentText = lead.attachmentName
-    ? `📎 *المستند المطلوب:* ${lead.attachmentName}\n*(مطلوب الإرفاق اليدوي عبر واتساب)*\n`
-    : '';
-
-  const emailText = lead.email ? `📧 *البريد الإلكتروني:* \`${lead.email}\`\n` : '';
-
-  const message = `🔔 *طلب تسعير جديد — جلوبالايز*\n\n` +
-    `🆔 *المعرف:* \`${lead.id}\`\n` +
-    `👤 *الاسم:* ${lead.name}\n` +
-    `📱 *الهاتف:* \`${lead.phone}\`\n` +
-    emailText +
-    `💼 *الخدمة:* ${lead.serviceType}\n` +
-    attachmentText +
-    (lead.notes ? `📝 *ملاحظات:* ${lead.notes}\n` : '') +
-    `💾 *حالة الحفظ:* ${storageTag}\n` +
-    `⏱ *التوقيت:* ${lead.createdAt}`;
+  const message = formatTelegramMessage(lead);
 
   for (let attempt = 1; attempt <= maxRetries; attempt++) {
     try {
@@ -389,7 +445,7 @@ export async function sendTelegramNotification(lead: LeadRecord, maxRetries = 2)
         body: JSON.stringify({
           chat_id: chatId,
           text: message,
-          parse_mode: 'Markdown',
+          parse_mode: 'HTML',
         }),
         signal: AbortSignal.timeout(8000),
       });
@@ -419,20 +475,8 @@ export async function sendEmailNotification(lead: LeadRecord, maxRetries = 2): P
     return 'NOT_CONFIGURED';
   }
 
-  const emailHtml = `
-    <div style="font-family: Arial, sans-serif; direction: rtl; text-align: right; max-width: 600px; margin: 0 auto; border: 1px solid #eaeaea; border-radius: 8px; padding: 20px;">
-      <h2 style="color: #1e3a8a; border-bottom: 2px solid #eab308; padding-bottom: 10px;">طلب تسعير جديد (جلوبالايز)</h2>
-      <p><strong>المعرف:</strong> ${lead.id}</p>
-      <p><strong>الاسم:</strong> ${lead.name}</p>
-      <p><strong>الهاتف:</strong> ${lead.phone}</p>
-      ${lead.email ? `<p><strong>البريد الإلكتروني:</strong> ${lead.email}</p>` : ''}
-      <p><strong>نوع الخدمة:</strong> ${lead.serviceType}</p>
-      ${lead.attachmentName ? `<p><strong>المستند المطلوب:</strong> ${lead.attachmentName} <em>(يرجى المتابعة على واتساب لاستلام الملف)</em></p>` : ''}
-      ${lead.notes ? `<p><strong>الملاحظات:</strong> ${lead.notes}</p>` : ''}
-      <p><strong>حالة التخزين:</strong> ${lead.storageStatus}</p>
-      <p><strong>تاريخ الطلب:</strong> ${lead.createdAt}</p>
-    </div>
-  `;
+  const emailSubject = formatEmailSubject(lead);
+  const emailHtml = formatEmailHtml(lead);
 
   for (let attempt = 1; attempt <= maxRetries; attempt++) {
     try {
@@ -445,7 +489,7 @@ export async function sendEmailNotification(lead: LeadRecord, maxRetries = 2): P
         body: JSON.stringify({
           from: leadEmailFrom,
           to: leadEmailTo,
-          subject: `طلب تسعير جديد: ${lead.name} (${lead.serviceType})`,
+          subject: emailSubject,
           html: emailHtml,
         }),
         signal: AbortSignal.timeout(8000),
