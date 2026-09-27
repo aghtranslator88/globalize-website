@@ -144,6 +144,13 @@ export default function DashboardClient({
         cleanData.certifications = cleanData.certifications.split('\n').filter((l: string) => l.trim() !== '');
       }
 
+      delete cleanData.id;
+      delete cleanData.createdAt;
+      delete cleanData.updatedAt;
+      if (action === "update") {
+        delete cleanData.slug;
+      }
+
       const res = await fetch("/api/dashboard/crud", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -809,7 +816,7 @@ export default function DashboardClient({
                   <div className="grid grid-cols-2 gap-4">
                     <div>
                       <label className="block font-bold mb-1.5">الرابط الفريد (Slug)</label>
-                      <input type="text" required value={formData.slug || ""} onChange={(e) => setFormData({...formData, slug: e.target.value})} className="w-full rounded-xl border border-gray-200 p-2.5 outline-none" />
+                      <input type="text" required disabled={editItem !== null} value={formData.slug || ""} onChange={(e) => setFormData({...formData, slug: e.target.value})} className="w-full rounded-xl border border-gray-200 p-2.5 outline-none disabled:bg-gray-100 disabled:cursor-not-allowed" />
                     </div>
                     <div>
                       <label className="block font-bold mb-1.5">مفهرس (Indexable)؟</label>
@@ -882,7 +889,7 @@ export default function DashboardClient({
 
                   <div>
                     <label className="block font-bold mb-1.5">الرابط الفريد (Slug)</label>
-                    <input type="text" required value={formData.slug || ""} onChange={(e) => setFormData({...formData, slug: e.target.value})} className="w-full rounded-xl border border-gray-200 p-2.5 outline-none" />
+                    <input type="text" required disabled={editItem !== null} value={formData.slug || ""} onChange={(e) => setFormData({...formData, slug: e.target.value})} className="w-full rounded-xl border border-gray-200 p-2.5 outline-none disabled:bg-gray-100 disabled:cursor-not-allowed" />
                   </div>
                 </div>
               )}
@@ -925,7 +932,7 @@ export default function DashboardClient({
                   <div className="grid grid-cols-2 gap-4">
                     <div>
                       <label className="block font-bold mb-1.5">الرابط الفريد (Slug)</label>
-                      <input type="text" required value={formData.slug || ""} onChange={(e) => setFormData({...formData, slug: e.target.value})} className="w-full rounded-xl border border-gray-200 p-2.5 outline-none" />
+                      <input type="text" required disabled={editItem !== null} value={formData.slug || ""} onChange={(e) => setFormData({...formData, slug: e.target.value})} className="w-full rounded-xl border border-gray-200 p-2.5 outline-none disabled:bg-gray-100 disabled:cursor-not-allowed" />
                     </div>
                     <div>
                       <label className="block font-bold mb-1.5">مفهرس (Indexable)؟</label>
@@ -979,7 +986,7 @@ export default function DashboardClient({
                     </div>
                     <div>
                       <label className="block font-bold mb-1.5">الرابط الفريد (Slug)</label>
-                      <input type="text" required value={formData.slug || ""} onChange={(e) => setFormData({...formData, slug: e.target.value})} className="w-full rounded-xl border border-gray-200 p-2.5 outline-none" />
+                      <input type="text" required disabled={editItem !== null} value={formData.slug || ""} onChange={(e) => setFormData({...formData, slug: e.target.value})} className="w-full rounded-xl border border-gray-200 p-2.5 outline-none disabled:bg-gray-100 disabled:cursor-not-allowed" />
                     </div>
                   </div>
                 </div>
@@ -1050,7 +1057,7 @@ export default function DashboardClient({
                   <div className="grid grid-cols-2 gap-4">
                     <div>
                       <label className="block font-bold mb-1.5">الرابط الفريد (Slug)</label>
-                      <input type="text" required value={formData.slug || ""} onChange={(e) => setFormData({...formData, slug: e.target.value})} className="w-full rounded-xl border border-gray-200 p-2.5 outline-none" />
+                      <input type="text" required disabled={editItem !== null} value={formData.slug || ""} onChange={(e) => setFormData({...formData, slug: e.target.value})} className="w-full rounded-xl border border-gray-200 p-2.5 outline-none disabled:bg-gray-100 disabled:cursor-not-allowed" />
                     </div>
                   </div>
                 </div>
@@ -1213,7 +1220,7 @@ export default function DashboardClient({
                   <div className="grid grid-cols-2 gap-4">
                     <div>
                       <label className="block font-bold mb-1.5">الرابط الفريد (Slug)</label>
-                      <input type="text" required value={formData.slug || ""} onChange={(e) => setFormData({...formData, slug: e.target.value})} className="w-full rounded-xl border border-gray-200 p-2.5 outline-none" />
+                      <input type="text" required disabled={editItem !== null} value={formData.slug || ""} onChange={(e) => setFormData({...formData, slug: e.target.value})} className="w-full rounded-xl border border-gray-200 p-2.5 outline-none disabled:bg-gray-100 disabled:cursor-not-allowed" />
                     </div>
                     <div>
                       <label className="block font-bold mb-1.5">الكاتب (عضو فريق العمل)</label>
