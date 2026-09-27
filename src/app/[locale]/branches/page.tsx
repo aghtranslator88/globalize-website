@@ -174,14 +174,14 @@ export default async function BranchesPage({
               <div className="bg-gray-50 border-t border-gray-150 p-4 space-y-3">
                 <div className="w-full h-44 rounded-xl overflow-hidden border border-gray-200 shadow-inner relative bg-gray-100">
                   <iframe
-                    title={`Google Map - ${b.name}`}
+                    title={`Map - ${b.name}`}
                     width="100%"
                     height="100%"
                     style={{ border: 0 }}
                     loading="lazy"
                     allowFullScreen
                     referrerPolicy="no-referrer-when-downgrade"
-                    src={`https://maps.google.com/maps?q=${b.lat},${b.lng}&hl=${locale}&z=15&output=embed`}
+                    src={`https://www.openstreetmap.org/export/embed.html?bbox=${b.lng - 0.007}%2C${b.lat - 0.004}%2C${b.lng + 0.007}%2C${b.lat + 0.004}&layer=mapnik&marker=${b.lat}%2C${b.lng}`}
                   />
                 </div>
 

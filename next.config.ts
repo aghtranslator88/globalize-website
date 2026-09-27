@@ -130,7 +130,7 @@ const nextConfig: NextConfig = {
       "font-src 'self' data: https://fonts.gstatic.com",
       "img-src 'self' data: blob: https: https://www.google-analytics.com https://www.googletagmanager.com https://googleads.g.doubleclick.net https://pagead2.googlesyndication.com https://tpc.googlesyndication.com",
       "connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com https://googleads.g.doubleclick.net https://pagead2.googlesyndication.com https://wa.me https://api.whatsapp.com https://*.sentry.io https://*.upstash.io",
-      "frame-src 'self' https://googleads.g.doubleclick.net https://pagead2.googlesyndication.com https://tpc.googlesyndication.com https://www.google.com https://wa.me",
+      "frame-src 'self' https://googleads.g.doubleclick.net https://pagead2.googlesyndication.com https://tpc.googlesyndication.com https://www.google.com https://maps.google.com https://*.google.com https://www.openstreetmap.org https://*.openstreetmap.org https://wa.me",
       "object-src 'none'",
       "base-uri 'self'",
       "form-action 'self' https://wa.me",
