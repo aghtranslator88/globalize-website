@@ -496,7 +496,9 @@ export default async function BlogPostDetailPage({
                   alt={(!isAr && rawPost?.imageMeta?.altTextEn) ? rawPost.imageMeta.altTextEn : (rawPost?.imageMeta?.altText || post.title)}
                   title={(!isAr && rawPost?.imageMeta?.titleTextEn) ? rawPost.imageMeta.titleTextEn : (rawPost?.imageMeta?.titleText || post.title)}
                   className="object-cover w-full h-full"
-                  loading="lazy"
+                  loading="eager"
+                  fetchPriority="high"
+                  decoding="async"
                 />
               </div>
             )}
