@@ -344,36 +344,38 @@ export default async function HomePage({
         </section>
 
         {/* FAQ Accordion */}
-        <section className="py-20 bg-white">
-          <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 className="text-2xl sm:text-3xl font-black text-dark-navy mb-4 font-arabic">
-                {isAr ? "الأسئلة الشائعة حول خدمات الترجمة" : "Frequently Asked Questions"}
-              </h2>
-              <p className="text-gray-500 text-xs sm:text-sm">
-                {isAr
-                  ? "إجابات شافية حول شروط وتكلفة الترجمة المعتمدة وإجراءات توثيق الأوراق."
-                  : "Find answers about certified translation requirements, fees, and legalization processes."}
-              </p>
-            </div>
+        {faqs.length > 0 && (
+          <section className="py-20 bg-white">
+            <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+              <div className="text-center mb-12">
+                <h2 className="text-2xl sm:text-3xl font-black text-dark-navy mb-4 font-arabic">
+                  {isAr ? "الأسئلة الشائعة حول خدمات الترجمة" : "Frequently Asked Questions"}
+                </h2>
+                <p className="text-gray-500 text-xs sm:text-sm">
+                  {isAr
+                    ? "إجابات شافية حول شروط وتكلفة الترجمة المعتمدة وإجراءات توثيق الأوراق."
+                    : "Find answers about certified translation requirements, fees, and legalization processes."}
+                </p>
+              </div>
 
-            <div className="space-y-4">
-              {faqs.map((faq) => (
-                <div key={faq.id} className="border border-gray-100 rounded-xl overflow-hidden shadow-sm">
-                  <details className="group">
-                    <summary className="flex items-center justify-between px-6 py-4 font-bold text-sm text-dark-navy cursor-pointer select-none bg-gray-50/50 list-none [&::-webkit-details-marker]:hidden">
-                      <span>{faq.question}</span>
-                      <ChevronDown className="h-4 w-4 text-gray-500 transition-transform group-open:rotate-180" />
-                    </summary>
-                    <div className="px-6 py-4 text-xs text-gray-600 leading-relaxed border-t border-gray-100">
-                      {faq.answer}
-                    </div>
-                  </details>
-                </div>
-              ))}
+              <div className="space-y-4">
+                {faqs.map((faq) => (
+                  <div key={faq.id} className="border border-gray-100 rounded-xl overflow-hidden shadow-sm">
+                    <details className="group">
+                      <summary className="flex items-center justify-between px-6 py-4 font-bold text-sm text-dark-navy cursor-pointer select-none bg-gray-50/50 list-none [&::-webkit-details-marker]:hidden">
+                        <span>{faq.question}</span>
+                        <ChevronDown className="h-4 w-4 text-gray-500 transition-transform group-open:rotate-180" />
+                      </summary>
+                      <div className="px-6 py-4 text-xs text-gray-600 leading-relaxed border-t border-gray-100">
+                        {faq.answer}
+                      </div>
+                    </details>
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
+        )}
 
         {/* Navy CTA banner */}
         <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mb-20">

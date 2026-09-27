@@ -87,7 +87,9 @@ export default async function EmbassyDetailPage({
     notFound();
   }
 
-  const faqs = await getFAQs("embassy", embassy.id, locale);
+  const dbFaqs = await getFAQs("embassy", embassy.id, locale);
+  const staticFaqs = embassy.faqs?.map((f, i) => ({ id: `emb-faq-${i}`, question: f.question, answer: f.answer, sortOrder: i })) || [];
+  const faqs = dbFaqs.length > 0 ? dbFaqs : staticFaqs;
   const isAr = locale === "ar";
   const guide = getEmbassyGuide(slug, embassy.countryCode, isAr);
 

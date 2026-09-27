@@ -375,6 +375,15 @@ export default async function BlogPostDetailPage({
 
   const { html: bodyHtml, headings } = parseMarkdown(post.body);
 
+  const isFaqSchemaMatchingList = (schema: any, list: typeof faqsList) => {
+    if (!schema?.mainEntity || !Array.isArray(schema.mainEntity)) return false;
+    if (schema.mainEntity.length !== list.length) return false;
+    return list.every((item, idx) => schema.mainEntity[idx]?.name === item.question);
+  };
+  const faqJsonLd = (rawFaqSchema && isFaqSchemaMatchingList(rawFaqSchema, faqsList))
+    ? rawFaqSchema
+    : generateFAQJsonLd(faqsList);
+
   return (
     <>
       <script
@@ -388,7 +397,7 @@ export default async function BlogPostDetailPage({
       {faqsList.length > 0 && (
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(rawFaqSchema || generateFAQJsonLd(faqsList)) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
         />
       )}
       <Navbar />

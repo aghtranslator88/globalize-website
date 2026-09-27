@@ -362,10 +362,6 @@ const MOCK_POSTS = (isAr: boolean): LocalizedBlogPost[] => [
   }
 ];
 
-const MOCK_FAQS = (isAr: boolean): LocalizedFAQ[] => [
-  { id: 'f1', question: isAr ? 'هل الترجمة معتمدة؟' : 'Is it certified?', answer: isAr ? 'نعم معتمدة رسمياً.' : 'Yes, officially certified.', sortOrder: 1 }
-];
-
 export function isDatabaseAvailable(): boolean {
   const url = process.env.DATABASE_URL;
   if (!url) return false;
@@ -1061,7 +1057,7 @@ export async function getFAQs(
   locale?: string
 ): Promise<LocalizedFAQ[]> {
   const isAr = !locale || locale === 'ar';
-  if (!isDatabaseAvailable()) return MOCK_FAQS(isAr);
+  if (!isDatabaseAvailable()) return [];
   try {
     const whereClause: any = {};
     
@@ -1085,7 +1081,7 @@ export async function getFAQs(
       where: whereClause,
       orderBy: { sortOrder: 'asc' },
     });
-    if (faqs.length === 0) return MOCK_FAQS(isAr);
+    if (faqs.length === 0) return [];
     return faqs.map((f) => ({
       id: f.id,
       question: isAr ? f.questionAr : f.questionEn,
@@ -1093,6 +1089,6 @@ export async function getFAQs(
       sortOrder: f.sortOrder,
     }));
   } catch (err) {
-    return MOCK_FAQS(isAr);
+    return [];
   }
 }
