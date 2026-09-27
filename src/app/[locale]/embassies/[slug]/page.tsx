@@ -33,7 +33,7 @@ export async function generateMetadata({
   const { locale, slug } = await params;
   const embassy = await getEmbassyBySlug(slug, locale);
   if (!embassy) return {};
-  const hasEnglishTranslation = isGenuineEnglish(embassy.name, embassy.requirements?.join(" "));
+  const hasEnglishTranslation = embassy.hasEnglish;
   return getSEOHeaders(embassy.name, `${embassy.name} requirements and certified translation details.`, `/embassies/${slug}`, embassy.indexable, locale, hasEnglishTranslation);
 }
 

@@ -22,7 +22,7 @@ export async function generateMetadata({
   const { locale, slug } = await params;
   const doc = await getDocumentBySlug(slug, locale);
   if (!doc) return {};
-  const hasEnglishTranslation = isGenuineEnglish(doc.name, doc.description);
+  const hasEnglishTranslation = doc.hasEnglish;
   return getSEOHeaders(doc.name, `${doc.name} translation price, speed, and legalization.`, `/documents/${slug}`, doc.indexable, locale, hasEnglishTranslation);
 }
 

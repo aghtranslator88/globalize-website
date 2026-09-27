@@ -3,7 +3,13 @@ import { prisma } from '@/lib/prisma';
 import { ALL_BLOG_POSTS } from '@/lib/blog-data';
 import { ALL_EMBASSY_POSTS } from '@/lib/embassies-data';
 import { getSiteUrl } from '@/lib/siteUrl';
-import { isGenuineEnglish } from '@/lib/translationDetection';
+import {
+  isGenuineEnglish,
+  documentHasEnglish,
+  embassyHasEnglish,
+  govHasEnglish,
+  blogPostHasEnglish,
+} from '@/lib/translationDetection';
 
 export const revalidate = 86400; // 24 hours CDN cache for sitemap.xml
 
@@ -103,7 +109,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   // Add documents
   documents.forEach((d) => {
-    const hasEn = isGenuineEnglish(d.nameEn, d.descriptionEn);
+    const hasEn = documentHasEnglish(d);
     addPath(`/documents/${d.slug}`, d.updatedAt, hasEn);
   });
 
@@ -111,20 +117,20 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const embassySlugs = new Set<string>();
   embassies.forEach((e) => {
     embassySlugs.add(e.slug);
-    const hasEn = isGenuineEnglish(e.nameEn, e.requirementsEn);
+    const hasEn = embassyHasEnglish(e);
     addPath(`/embassies/${e.slug}`, e.updatedAt, hasEn);
   });
   ALL_EMBASSY_POSTS.forEach((e) => {
     if (!embassySlugs.has(e.slug)) {
       embassySlugs.add(e.slug);
-      const hasEn = isGenuineEnglish(e.title, e.requirements?.join(' '));
+      const hasEn = embassyHasEnglish(e);
       addPath(`/embassies/${e.slug}`, undefined, hasEn);
     }
   });
 
   // Add gov entities
   govEntities.forEach((g) => {
-    const hasEn = isGenuineEnglish(g.nameEn, g.requirementsEn);
+    const hasEn = govHasEnglish(g);
     addPath(`/government/${g.slug}`, g.updatedAt, hasEn);
   });
 
@@ -132,13 +138,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const blogSlugs = new Set<string>();
   blogPosts.forEach((bp) => {
     blogSlugs.add(bp.slug);
-    const hasEn = isGenuineEnglish(bp.titleEn, bp.bodyEn);
+    const hasEn = blogPostHasEnglish(bp);
     addPath(`/blog/${bp.slug}`, bp.updatedAt, hasEn);
   });
   ALL_BLOG_POSTS.forEach((bp) => {
     if (!blogSlugs.has(bp.slug)) {
       blogSlugs.add(bp.slug);
-      const hasEn = isGenuineEnglish(bp.title, bp.body);
+      const hasEn = blogPostHasEnglish(bp);
       addPath(`/blog/${bp.slug}`, bp.publishedAt ? new Date(bp.publishedAt) : undefined, hasEn);
     }
   });

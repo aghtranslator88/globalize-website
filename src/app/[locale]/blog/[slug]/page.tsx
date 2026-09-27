@@ -35,7 +35,7 @@ export async function generateMetadata({
   const post = await getBlogPostBySlug(slug, locale);
   if (!post) return {};
   const rawPost = getRawBlogPostBySlug(slug);
-  const hasEnglishTranslation = isGenuineEnglish(post.title, post.body);
+  const hasEnglishTranslation = post.hasEnglish;
   const isAr = locale === "ar";
   const metaTitle = (!isAr && rawPost?.seoTitleEn)
     ? rawPost.seoTitleEn

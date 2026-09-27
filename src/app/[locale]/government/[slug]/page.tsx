@@ -22,7 +22,7 @@ export async function generateMetadata({
   const { locale, slug } = await params;
   const gov = await getGovEntityBySlug(slug, locale);
   if (!gov) return {};
-  const hasEnglishTranslation = isGenuineEnglish(gov.name, gov.requirements?.join(" "));
+  const hasEnglishTranslation = gov.hasEnglish;
   return getSEOHeaders(gov.name, `${gov.name} requirements and certified translation details.`, `/government/${slug}`, gov.indexable, locale, hasEnglishTranslation);
 }
 

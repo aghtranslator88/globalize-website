@@ -1,6 +1,12 @@
 import { prisma } from './prisma';
 import { ALL_BLOG_POSTS, BlogPostItem } from './blog-data';
 import { ALL_EMBASSY_POSTS, EmbassyPostItem } from './embassies-data';
+import {
+  documentHasEnglish,
+  embassyHasEnglish,
+  govHasEnglish,
+  blogPostHasEnglish,
+} from './translationDetection';
 
 // Types for localized models
 export interface LocalizedService {
@@ -23,6 +29,7 @@ export interface LocalizedDocument {
   answerBox: string;
   sampleImageUrl: string | null;
   indexable: boolean;
+  hasEnglish: boolean;
 }
 
 export interface LocalizedEmbassy {
@@ -34,6 +41,7 @@ export interface LocalizedEmbassy {
   requirements: string[];
   useCases: string[];
   indexable: boolean;
+  hasEnglish: boolean;
 }
 
 export interface LocalizedGovEntity {
@@ -43,6 +51,7 @@ export interface LocalizedGovEntity {
   requirements: string[];
   useCases: string[];
   indexable: boolean;
+  hasEnglish: boolean;
 }
 
 export interface LocalizedLanguage {
@@ -102,6 +111,7 @@ export interface LocalizedBlogPost {
   publishedAt: Date;
   readMinutes: number;
   author: LocalizedTeamMember;
+  hasEnglish: boolean;
 }
 
 export interface LocalizedFAQ {
@@ -170,7 +180,8 @@ const MOCK_DOCS = (isAr: boolean): LocalizedDocument[] => [
     description: isAr ? 'ترجمة معتمدة لشهادة الميلاد المصرية المميكنة (الكمبيوتر) إلى مختلف اللغات لتقديمها للسفارات والجامعات.' : 'Certified translation of Egyptian computerized birth certificate into foreign languages for embassies.',
     answerBox: isAr ? 'سعر ترجمة الصفحة الواحدة لشهادة الميلاد هو 200 جنيه مصري للترجمة بين العربية والإنجليزية، و300 جنيه مصري للصفحة لأي لغة أجنبية أخرى. وفي حال تعدد الصفحات يُحسب الإجمالي بعدد الصفحات مع تسليم معتمد خلال 24 ساعة.' : 'The certified translation rate for a birth certificate starts at 200 EGP per page (Arabic ↔ English) and 300 EGP per page for any other foreign language. Multi-page documents are charged per page with 24-hour turnaround.',
     sampleImageUrl: null,
-    indexable: true
+    indexable: true,
+    hasEnglish: true
   },
   {
     id: 'd2',
@@ -181,7 +192,8 @@ const MOCK_DOCS = (isAr: boolean): LocalizedDocument[] => [
     description: isAr ? 'ترجمة معتمدة لعقود الزواج الرسمية المميكنة الصادرة عن وزارة الداخلية والسجل المدني لجميع الأغراض الرسمية والسفر.' : 'Certified translation of official marriage contracts issued by the Civil Registry for travel and visa procedures.',
     answerBox: isAr ? 'سعر ترجمة الصفحة الواحدة لعقد الزواج هو 200 جنيه مصري للترجمة بين العربية والإنجليزية، و300 جنيه مصري للصفحة للغات الأجنبية الأخرى، ويُحسب الإجمالي بعدد الصفحات مع تسليم معتمد خلال 24 ساعة.' : 'The certified translation fee for marriage contracts is 200 EGP per page (Arabic ↔ English) and 300 EGP per page for other languages, calculated per page with 24-hour turnaround.',
     sampleImageUrl: null,
-    indexable: true
+    indexable: true,
+    hasEnglish: true
   },
   {
     id: 'd3',
@@ -192,7 +204,8 @@ const MOCK_DOCS = (isAr: boolean): LocalizedDocument[] => [
     description: isAr ? 'ترجمة معتمدة لوثيقة القيد العائلي المميكن المطلوبة للسفر والهجرة وإجراءات شؤون الأسرة بالخارج.' : 'Certified translation of computerized family record required for immigration and family reunion.',
     answerBox: isAr ? 'تكلفة ترجمة الصفحة للقيد العائلي المميكن تبدأ من 200 جنيه مصري (عربي ↔ إنجليزي) و300 جنيه مصري للغات الأخرى للصفحة، ويُحسب الإجمالي بعدد الصفحات.' : 'Family record certified translation starts at 200 EGP per page (Arabic ↔ English) and 300 EGP per page for other languages, calculated based on total page count.',
     sampleImageUrl: null,
-    indexable: true
+    indexable: true,
+    hasEnglish: true
   },
   {
     id: 'd4',
@@ -203,7 +216,8 @@ const MOCK_DOCS = (isAr: boolean): LocalizedDocument[] => [
     description: isAr ? 'ترجمة معتمدة لشهادة التحركات الصادرة من مصلحة الجوازات والهجرة لتوضيح سجل السفر وتأشيرات الخروج والدخول.' : 'Certified translation of movement certificate issued by Passport Administration showing travel history.',
     answerBox: isAr ? 'سعر ترجمة الصفحة لشهادة التحركات هو 200 جنيه مصري (عربي ↔ إنجليزي) و300 جنيه مصري للغات الأخرى، وتُحسب الشهادات المتعددة الصفحات بسعر الصفحة.' : 'Movement certificate translation rate is 200 EGP per page (Arabic ↔ English) and 300 EGP per page for other languages, charged per page with official certification.',
     sampleImageUrl: null,
-    indexable: true
+    indexable: true,
+    hasEnglish: true
   },
   {
     id: 'd5',
@@ -214,7 +228,8 @@ const MOCK_DOCS = (isAr: boolean): LocalizedDocument[] => [
     description: isAr ? 'ترجمة معتمدة لشهادة الوفاة الصادرة عن السجل المدني لإجراءات المواريث والمعاملات القانونية بالخارج.' : 'Certified translation of death certificates issued by the Civil Registry for inheritance procedures.',
     answerBox: isAr ? 'سعر ترجمة الصفحة الواحدة لشهادة الوفاة هو 200 جنيه مصري (عربي ↔ إنجليزي) و300 جنيه مصري للغات الأجنبية الأخرى، وتسلم معتمدة خلال 24 ساعة.' : 'Certified death certificate translation is 200 EGP per page (Arabic ↔ English) and 300 EGP per page for other languages, processed within 24 hours.',
     sampleImageUrl: null,
-    indexable: true
+    indexable: true,
+    hasEnglish: true
   },
   {
     id: 'd6',
@@ -225,7 +240,8 @@ const MOCK_DOCS = (isAr: boolean): LocalizedDocument[] => [
     description: isAr ? 'ترجمة معتمدة لصحيفة الحالة الجنائية (الفيش والتشبيه) المطلوبة للحصول على تأشيرات السفر والعمل بالخارج.' : 'Certified translation of criminal record check (police record) required for travel and work visas.',
     answerBox: isAr ? 'تكلفة ترجمة الصفحة الواحدة للفيش الجنائي هي 200 جنيه مصري (عربي ↔ إنجليزي) و300 جنيه مصري لأي لغة ثانية، والتسليم معتمد رسمياً في 24 ساعة.' : 'Police record certified translation is 200 EGP per page (Arabic ↔ English) and 300 EGP per page for other foreign languages, certified in 24 hours.',
     sampleImageUrl: null,
-    indexable: true
+    indexable: true,
+    hasEnglish: true
   },
   {
     id: 'd7',
@@ -236,7 +252,8 @@ const MOCK_DOCS = (isAr: boolean): LocalizedDocument[] => [
     description: isAr ? 'ترجمة معتمدة لشهادات التخرج الصادرة من مختلف الجامعات المصرية للمنح الدراسية والتقديم للوظائف بالخارج.' : 'Certified translation of university graduation certificates for admissions and employment abroad.',
     answerBox: isAr ? 'سعر ترجمة الصفحة لشهادة التخرج هو 200 جنيه مصري (عربي ↔ إنجليزي) و300 جنيه مصري لأي لغة ثانية، وتُحسب المستندات متعددة الصفحات بعدد صفحاتها.' : 'Graduation certificate translation is priced at 200 EGP per page (Arabic ↔ English) and 300 EGP per page for other languages, calculated per page.',
     sampleImageUrl: null,
-    indexable: true
+    indexable: true,
+    hasEnglish: true
   },
   {
     id: 'd8',
@@ -247,16 +264,17 @@ const MOCK_DOCS = (isAr: boolean): LocalizedDocument[] => [
     description: isAr ? 'ترجمة معتمدة لبيانات الدرجات والسجلات الأكاديمية المفصلة للطلاب والخريجين لأغراض استكمال الدراسة في الخارج.' : 'Certified translation of detailed academic transcripts for university admissions abroad.',
     answerBox: isAr ? 'سعر ترجمة بيان الدرجات هو 200 جنيه مصري للصفحة الواحدة (عربي ↔ إنجليزي) و300 جنيه مصري للصفحة للغات الأجنبية الأخرى، ويُحتسب الإجمالي وفقاً لعدد صفحات البيان.' : 'Academic transcript translation is 200 EGP per page (Arabic ↔ English) and 300 EGP per page for other languages. Total fee is calculated based on transcript page count.',
     sampleImageUrl: null,
-    indexable: true
+    indexable: true,
+    hasEnglish: true
   }
 ];
 
 const MOCK_EMBASSIES = (isAr: boolean): LocalizedEmbassy[] => [
-  { id: 'e1', name: isAr ? 'سفارة ألمانيا بالقاهرة' : 'Embassy of Germany in Cairo', slug: 'germany-embassy', countryCode: 'DE', region: 'EUROPE', requirements: isAr ? ['ترجمة المستندات للألمانية'] : ['German certified translations'], useCases: isAr ? ['تأشيرات العمل والدراسة'] : ['Study and Work visas'], indexable: true },
+  { id: 'e1', name: isAr ? 'سفارة ألمانيا بالقاهرة' : 'Embassy of Germany in Cairo', slug: 'germany-embassy', countryCode: 'DE', region: 'EUROPE', requirements: isAr ? ['ترجمة المستندات للألمانية'] : ['German certified translations'], useCases: isAr ? ['تأشيرات العمل والدراسة'] : ['Study and Work visas'], indexable: true, hasEnglish: true },
 ];
 
 const MOCK_GOVS = (isAr: boolean): LocalizedGovEntity[] => [
-  { id: 'g1', name: isAr ? 'وزارة الخارجية المصرية' : 'Egyptian Ministry of Foreign Affairs', slug: 'mofa-egypt', requirements: isAr ? ['ختم الجهة الأصلية'] : ['Original issuing stamp'], useCases: isAr ? ['تصديق الشهادات للسفر'] : ['Travel certificate legalizations'], indexable: true }
+  { id: 'g1', name: isAr ? 'وزارة الخارجية المصرية' : 'Egyptian Ministry of Foreign Affairs', slug: 'mofa-egypt', requirements: isAr ? ['ختم الجهة الأصلية'] : ['Original issuing stamp'], useCases: isAr ? ['تصديق الشهادات للسفر'] : ['Travel certificate legalizations'], indexable: true, hasEnglish: true }
 ];
 
 const MOCK_LANGS = (isAr: boolean): LocalizedLanguage[] => [
@@ -339,7 +357,8 @@ const MOCK_POSTS = (isAr: boolean): LocalizedBlogPost[] => [
     videoUrl: null,
     publishedAt: new Date(),
     readMinutes: 5,
-    author: { id: 't1', name: isAr ? 'أحمد منصور' : 'Ahmed Mansour', title: isAr ? 'مدير' : 'Manager', languagePair: 'EN-AR', yearsExperience: 18, certifications: [], photoUrl: null, isLeadership: true, bio: '' }
+    author: { id: 't1', name: isAr ? 'أحمد منصور' : 'Ahmed Mansour', title: isAr ? 'مدير' : 'Manager', languagePair: 'EN-AR', yearsExperience: 18, certifications: [], photoUrl: null, isLeadership: true, bio: '' },
+    hasEnglish: true
   }
 ];
 
@@ -454,6 +473,7 @@ export async function getDocuments(locale: string): Promise<LocalizedDocument[]>
       answerBox: isAr ? d.answerBoxAr : d.answerBoxEn,
       sampleImageUrl: d.sampleImageUrl,
       indexable: d.indexable,
+      hasEnglish: documentHasEnglish(d),
     }));
   } catch (err) {
     return MOCK_DOCS(isAr);
@@ -487,6 +507,7 @@ export async function getDocumentBySlug(slug: string, locale: string): Promise<L
       answerBox: isAr ? d.answerBoxAr : d.answerBoxEn,
       sampleImageUrl: d.sampleImageUrl,
       indexable: d.indexable,
+      hasEnglish: documentHasEnglish(d),
       relatedDocuments: d.relatedTo.map((r) => ({
         id: r.id,
         name: isAr ? r.nameAr : r.nameEn,
@@ -497,6 +518,7 @@ export async function getDocumentBySlug(slug: string, locale: string): Promise<L
         answerBox: isAr ? r.answerBoxAr : r.answerBoxEn,
         sampleImageUrl: r.sampleImageUrl,
         indexable: r.indexable,
+        hasEnglish: documentHasEnglish(r),
       })),
     };
   } catch (err) {
@@ -517,6 +539,7 @@ export async function getEmbassies(locale: string): Promise<LocalizedEmbassy[]> 
       requirements: e.requirements,
       useCases: e.useCases,
       indexable: e.indexable,
+      hasEnglish: embassyHasEnglish(e),
     }));
   }
   try {
@@ -533,6 +556,7 @@ export async function getEmbassies(locale: string): Promise<LocalizedEmbassy[]> 
         requirements: (isAr ? e.requirementsAr : e.requirementsEn) as string[],
         useCases: (isAr ? e.useCasesAr : e.useCasesEn) as string[],
         indexable: e.indexable,
+        hasEnglish: embassyHasEnglish(e),
       }));
     }
   } catch (err) {
@@ -548,6 +572,7 @@ export async function getEmbassies(locale: string): Promise<LocalizedEmbassy[]> 
     requirements: e.requirements,
     useCases: e.useCases,
     indexable: e.indexable,
+    hasEnglish: embassyHasEnglish(e),
   }));
 }
 
@@ -576,12 +601,13 @@ export async function getEmbassyBySlug(
       requirements: emb.requirements,
       useCases: emb.useCases,
       indexable: emb.indexable,
+      hasEnglish: embassyHasEnglish(emb),
       body: emb.body,
       faqs: emb.faqs,
       popularDocuments: [
-        { id: 'doc-1', name: 'شهادة ميلاد معتمدة', slug: 'certified-birth-certificate', priceEGP: 200, deliveryHours: 24, description: 'ترجمة معتمدة لشهادة الميلاد وموثقة', answerBox: 'سعر ترجمة الصفحة 200 ج.م (عربي-إنجليزي) و300 ج.م للغات الأخرى', sampleImageUrl: null, indexable: true },
-        { id: 'doc-2', name: 'صحيفة حالة جنائية (فيش وتشبيه)', slug: 'criminal-record-cert', priceEGP: 200, deliveryHours: 24, description: 'ترجمة معتمدة لفيش وتشبيه خالي من السوابق', answerBox: 'سعر ترجمة الصفحة 200 ج.م (عربي-إنجليزي) و300 ج.م للغات الأخرى', sampleImageUrl: null, indexable: true },
-        { id: 'doc-3', name: 'كشف حساب بنكي معتمد', slug: 'bank-statement', priceEGP: 200, deliveryHours: 24, description: 'ترجمة معتمدة للحركات البنكية والملاءة المالية', answerBox: 'سعر ترجمة الصفحة 200 ج.م (عربي-إنجليزي) و300 ج.م للغات الأخرى', sampleImageUrl: null, indexable: true }
+        { id: 'doc-1', name: 'شهادة ميلاد معتمدة', slug: 'certified-birth-certificate', priceEGP: 200, deliveryHours: 24, description: 'ترجمة معتمدة لشهادة الميلاد وموثقة', answerBox: 'سعر ترجمة الصفحة 200 ج.م (عربي-إنجليزي) و300 ج.م للغات الأخرى', sampleImageUrl: null, indexable: true, hasEnglish: true },
+        { id: 'doc-2', name: 'صحيفة حالة جنائية (فيش وتشبيه)', slug: 'criminal-record-cert', priceEGP: 200, deliveryHours: 24, description: 'ترجمة معتمدة لفيش وتشبيه خالي من السوابق', answerBox: 'سعر ترجمة الصفحة 200 ج.م (عربي-إنجليزي) و300 ج.م للغات الأخرى', sampleImageUrl: null, indexable: true, hasEnglish: true },
+        { id: 'doc-3', name: 'كشف حساب بنكي معتمد', slug: 'bank-statement', priceEGP: 200, deliveryHours: 24, description: 'ترجمة معتمدة للحركات البنكية والملاءة المالية', answerBox: 'سعر ترجمة الصفحة 200 ج.م (عربي-إنجليزي) و300 ج.م للغات الأخرى', sampleImageUrl: null, indexable: true, hasEnglish: true }
       ],
     };
   }
@@ -603,6 +629,7 @@ export async function getEmbassyBySlug(
         requirements: (isAr ? e.requirementsAr : e.requirementsEn) as string[],
         useCases: (isAr ? e.useCasesAr : e.useCasesEn) as string[],
         indexable: e.indexable,
+        hasEnglish: embassyHasEnglish(e),
         popularDocuments: e.popularDocuments.map((d) => ({
           id: d.id,
           name: isAr ? d.nameAr : d.nameEn,
@@ -613,6 +640,7 @@ export async function getEmbassyBySlug(
           answerBox: isAr ? d.answerBoxAr : d.answerBoxEn,
           sampleImageUrl: d.sampleImageUrl,
           indexable: d.indexable,
+          hasEnglish: documentHasEnglish(d),
         })),
       };
     }
@@ -632,12 +660,13 @@ export async function getEmbassyBySlug(
     requirements: emb.requirements,
     useCases: emb.useCases,
     indexable: emb.indexable,
+    hasEnglish: embassyHasEnglish(emb),
     body: emb.body,
     faqs: emb.faqs,
     popularDocuments: [
-      { id: 'doc-1', name: 'شهادة ميلاد معتمدة', slug: 'certified-birth-certificate', priceEGP: 350, deliveryHours: 24, description: 'ترجمة معتمدة لشهادة الميلاد وموثقة', answerBox: 'ترجمة معتمدة مقبولة بالسفارة', sampleImageUrl: null, indexable: true },
-      { id: 'doc-2', name: 'صحيفة حالة جنائية (فيش وتشبيه)', slug: 'criminal-record-cert', priceEGP: 400, deliveryHours: 24, description: 'ترجمة معتمدة لفيش وتشبيه خالي من السوابق', answerBox: 'مقبول رسمياً بسفارات العالم', sampleImageUrl: null, indexable: true },
-      { id: 'doc-3', name: 'كشف حساب بنكي معتمد', slug: 'bank-statement', priceEGP: 450, deliveryHours: 24, description: 'ترجمة معتمدة للحركات البنكية والملاءة المالية', answerBox: 'مقبول لملفات الفيزا والتأشيرات', sampleImageUrl: null, indexable: true }
+      { id: 'doc-1', name: 'شهادة ميلاد معتمدة', slug: 'certified-birth-certificate', priceEGP: 350, deliveryHours: 24, description: 'ترجمة معتمدة لشهادة الميلاد وموثقة', answerBox: 'ترجمة معتمدة مقبولة بالسفارة', sampleImageUrl: null, indexable: true, hasEnglish: true },
+      { id: 'doc-2', name: 'صحيفة حالة جنائية (فيش وتشبيه)', slug: 'criminal-record-cert', priceEGP: 400, deliveryHours: 24, description: 'ترجمة معتمدة لفيش وتشبيه خالي من السوابق', answerBox: 'مقبول رسمياً بسفارات العالم', sampleImageUrl: null, indexable: true, hasEnglish: true },
+      { id: 'doc-3', name: 'كشف حساب بنكي معتمد', slug: 'bank-statement', priceEGP: 450, deliveryHours: 24, description: 'ترجمة معتمدة للحركات البنكية والملاءة المالية', answerBox: 'مقبول لملفات الفيزا والتأشيرات', sampleImageUrl: null, indexable: true, hasEnglish: true }
     ],
   };
 }
@@ -657,6 +686,7 @@ export async function getGovEntities(locale: string): Promise<LocalizedGovEntity
       requirements: (isAr ? g.requirementsAr : g.requirementsEn) as string[],
       useCases: (isAr ? g.useCasesAr : g.useCasesEn) as string[],
       indexable: g.indexable,
+      hasEnglish: govHasEnglish(g),
     }));
   } catch (err) {
     return MOCK_GOVS(isAr);
@@ -687,6 +717,7 @@ export async function getGovEntityBySlug(slug: string, locale: string): Promise<
       requirements: (isAr ? g.requirementsAr : g.requirementsEn) as string[],
       useCases: (isAr ? g.useCasesAr : g.useCasesEn) as string[],
       indexable: g.indexable,
+      hasEnglish: govHasEnglish(g),
       acceptedDocuments: g.acceptedDocuments.map((d) => ({
         id: d.id,
         name: isAr ? d.nameAr : d.nameEn,
@@ -697,6 +728,7 @@ export async function getGovEntityBySlug(slug: string, locale: string): Promise<
         answerBox: isAr ? d.answerBoxAr : d.answerBoxEn,
         sampleImageUrl: d.sampleImageUrl,
         indexable: d.indexable,
+        hasEnglish: documentHasEnglish(d),
       })),
     };
   } catch (err) {
@@ -845,6 +877,7 @@ export async function getBlogPosts(locale: string): Promise<LocalizedBlogPost[]>
         isLeadership: true,
         bio: isAr ? p.author.bio : (p.author.bioEn || p.author.bio),
       },
+      hasEnglish: blogPostHasEnglish(p),
     }));
   }
   try {
@@ -876,6 +909,7 @@ export async function getBlogPosts(locale: string): Promise<LocalizedBlogPost[]>
           isLeadership: p.author.isLeadership,
           bio: isAr ? p.author.bioAr : (p.author.bioEn || p.author.bioAr),
         },
+        hasEnglish: blogPostHasEnglish(p),
       }));
     }
   } catch (err) {
@@ -904,6 +938,7 @@ export async function getBlogPosts(locale: string): Promise<LocalizedBlogPost[]>
       isLeadership: true,
       bio: isAr ? p.author.bio : (p.author.bioEn || p.author.bio),
     },
+    hasEnglish: blogPostHasEnglish(p),
   }));
 }
 
@@ -942,6 +977,7 @@ export async function getBlogPostBySlug(slug: string, locale: string): Promise<L
         isLeadership: true,
         bio: isAr ? p.author.bio : (p.author.bioEn || p.author.bio),
       },
+      hasEnglish: blogPostHasEnglish(p),
     };
   }
 
@@ -973,6 +1009,7 @@ export async function getBlogPostBySlug(slug: string, locale: string): Promise<L
           isLeadership: p.author.isLeadership,
           bio: isAr ? p.author.bioAr : (p.author.bioEn || p.author.bioAr),
         },
+        hasEnglish: blogPostHasEnglish(p),
       };
     }
   } catch (err) {
@@ -1004,6 +1041,7 @@ export async function getBlogPostBySlug(slug: string, locale: string): Promise<L
       isLeadership: true,
       bio: isAr ? p.author.bio : (p.author.bioEn || p.author.bio),
     },
+    hasEnglish: blogPostHasEnglish(p),
   };
 }
 
