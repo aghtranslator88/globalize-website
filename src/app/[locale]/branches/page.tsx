@@ -1,6 +1,7 @@
 import { setRequestLocale } from "next-intl/server";
 import { getBranches } from "@/lib/data";
 import { getSEOHeaders, generateLocalBusinessJsonLd, generateBreadcrumbJsonLd } from "@/lib/seo";
+import { getSiteUrl } from "@/lib/siteUrl";
 import { serializeJsonLd } from "@/lib/jsonLd";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -64,7 +65,7 @@ export default async function BranchesPage({
                 workingHours: b.workingHours,
                 lat: b.lat,
                 lng: b.lng,
-                url: `https://globalizetl.com/${locale}/branches#${b.slug}`,
+                url: `${getSiteUrl()}/${locale}/branches#${b.slug}`,
               })
             ),
           }}

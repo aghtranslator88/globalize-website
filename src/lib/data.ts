@@ -111,6 +111,7 @@ export interface LocalizedBlogPost {
   featuredImageUrl: string | null;
   videoUrl: string | null;
   publishedAt: Date;
+  updatedAt: Date;
   readMinutes: number;
   author: LocalizedTeamMember;
   hasEnglish: boolean;
@@ -358,6 +359,7 @@ const MOCK_POSTS = (isAr: boolean): LocalizedBlogPost[] => [
     featuredImageUrl: null,
     videoUrl: null,
     publishedAt: new Date(),
+    updatedAt: new Date(),
     readMinutes: 5,
     author: { id: 't1', name: isAr ? 'أحمد منصور' : 'Ahmed Mansour', title: isAr ? 'مدير' : 'Manager', languagePair: 'EN-AR', yearsExperience: 18, certifications: [], photoUrl: null, isLeadership: true, bio: '' },
     hasEnglish: true
@@ -865,6 +867,7 @@ export async function getBlogPosts(locale: string): Promise<LocalizedBlogPost[]>
       featuredImageUrl: p.featuredImageUrl,
       videoUrl: null,
       publishedAt: new Date(p.publishedAt),
+      updatedAt: p.updatedAt ? new Date(p.updatedAt) : new Date(p.publishedAt),
       readMinutes: p.readMinutes,
       author: {
         id: p.author.id,
@@ -897,6 +900,7 @@ export async function getBlogPosts(locale: string): Promise<LocalizedBlogPost[]>
         featuredImageUrl: p.featuredImageUrl,
         videoUrl: p.videoUrl,
         publishedAt: p.publishedAt,
+        updatedAt: p.updatedAt,
         readMinutes: p.readMinutes,
         author: {
           id: p.author.id,
@@ -926,6 +930,7 @@ export async function getBlogPosts(locale: string): Promise<LocalizedBlogPost[]>
     featuredImageUrl: p.featuredImageUrl,
     videoUrl: null,
     publishedAt: new Date(p.publishedAt),
+    updatedAt: p.updatedAt ? new Date(p.updatedAt) : new Date(p.publishedAt),
     readMinutes: p.readMinutes,
     author: {
       id: p.author.id,
@@ -965,6 +970,7 @@ export async function getBlogPostBySlug(slug: string, locale: string): Promise<L
       featuredImageUrl: p.featuredImageUrl,
       videoUrl: null,
       publishedAt: new Date(p.publishedAt),
+      updatedAt: p.updatedAt ? new Date(p.updatedAt) : new Date(p.publishedAt),
       readMinutes: p.readMinutes,
       author: {
         id: p.author.id,
@@ -997,6 +1003,7 @@ export async function getBlogPostBySlug(slug: string, locale: string): Promise<L
         featuredImageUrl: p.featuredImageUrl,
         videoUrl: p.videoUrl,
         publishedAt: p.publishedAt,
+        updatedAt: p.updatedAt,
         readMinutes: p.readMinutes,
         author: {
           id: p.author.id,
@@ -1029,6 +1036,7 @@ export async function getBlogPostBySlug(slug: string, locale: string): Promise<L
     featuredImageUrl: p.featuredImageUrl,
     videoUrl: null,
     publishedAt: new Date(p.publishedAt),
+    updatedAt: p.updatedAt ? new Date(p.updatedAt) : new Date(p.publishedAt),
     readMinutes: p.readMinutes,
     author: {
       id: p.author.id,

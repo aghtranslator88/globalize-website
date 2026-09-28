@@ -6,6 +6,7 @@ import { Cairo, Inter } from 'next/font/google';
 import Script from 'next/script';
 import AuthProvider from '@/components/SessionProvider';
 import { GOOGLE_ADS_ID, GA_MEASUREMENT_ID, GA_SECONDARY_ID } from '@/lib/gtag';
+import { getSiteUrl } from '@/lib/siteUrl';
 import '../globals.css';
 
 const cairo = Cairo({
@@ -21,7 +22,7 @@ const inter = Inter({
 });
 
 export const metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://www.globalizetl.com'),
+  metadataBase: new URL(getSiteUrl()),
   icons: {
     icon: [
       { url: '/favicon.ico', sizes: 'any' },

@@ -31,6 +31,7 @@ export interface BlogPostItem {
     relatedArticleSlug: string;
   };
   publishedAt: string;
+  updatedAt?: string;
   readMinutes: number;
   geoAnswer: string;
   geoAnswerEn?: string;

@@ -369,7 +369,7 @@ export default async function BlogPostDetailPage({
     excerpt: post.excerpt,
     featuredImageUrl: post.featuredImageUrl,
     publishedAt: post.publishedAt,
-    updatedAt: post.publishedAt,
+    updatedAt: post.updatedAt || post.publishedAt,
     url: `${SITE_URL}/${locale}/blog/${slug}`,
     authorName: post.author.name,
   });

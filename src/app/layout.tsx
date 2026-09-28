@@ -1,8 +1,9 @@
 import { Metadata } from "next";
 import { ReactNode } from "react";
+import { getSiteUrl } from "@/lib/siteUrl";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://www.globalizetl.com'),
+  metadataBase: new URL(getSiteUrl()),
   icons: {
     icon: [
       { url: '/favicon.ico', sizes: 'any' },
