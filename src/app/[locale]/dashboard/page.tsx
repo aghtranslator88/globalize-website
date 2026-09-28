@@ -33,17 +33,43 @@ export default async function DashboardPage({
   let settings: any[] = [];
 
   try {
-    quotes = await prisma.quoteRequest.findMany({ orderBy: { createdAt: "desc" }, take: 100 });
-    docs = await prisma.document.findMany({ orderBy: { priceEGP: "asc" } });
-    embassies = await prisma.embassy.findMany({ orderBy: { nameAr: "asc" } });
-    govs = await prisma.govEntity.findMany({ orderBy: { nameAr: "asc" } });
-    langs = await prisma.language.findMany({ orderBy: [{ popular: "desc" }, { nameAr: "asc" }] });
-    branches = await prisma.branch.findMany({ orderBy: { nameAr: "asc" } });
-    team = await prisma.teamMember.findMany({ orderBy: [{ isLeadership: "desc" }, { nameAr: "asc" }] });
-    reviews = await prisma.review.findMany({ orderBy: { date: "desc" }, take: 100 });
-    posts = await prisma.blogPost.findMany({ orderBy: { publishedAt: "desc" }, take: 100 });
-    faqs = await prisma.fAQ.findMany({ orderBy: { sortOrder: "asc" } });
-    settings = await prisma.siteSetting.findMany({ orderBy: { key: "asc" } });
+    const [
+      quotesRes,
+      docsRes,
+      embassiesRes,
+      govsRes,
+      langsRes,
+      branchesRes,
+      teamRes,
+      reviewsRes,
+      postsRes,
+      faqsRes,
+      settingsRes,
+    ] = await Promise.all([
+      prisma.quoteRequest.findMany({ orderBy: { createdAt: "desc" }, take: 100 }),
+      prisma.document.findMany({ orderBy: { priceEGP: "asc" } }),
+      prisma.embassy.findMany({ orderBy: { nameAr: "asc" } }),
+      prisma.govEntity.findMany({ orderBy: { nameAr: "asc" } }),
+      prisma.language.findMany({ orderBy: [{ popular: "desc" }, { nameAr: "asc" }] }),
+      prisma.branch.findMany({ orderBy: { nameAr: "asc" } }),
+      prisma.teamMember.findMany({ orderBy: [{ isLeadership: "desc" }, { nameAr: "asc" }] }),
+      prisma.review.findMany({ orderBy: { date: "desc" }, take: 100 }),
+      prisma.blogPost.findMany({ orderBy: { publishedAt: "desc" }, take: 100 }),
+      prisma.fAQ.findMany({ orderBy: { sortOrder: "asc" } }),
+      prisma.siteSetting.findMany({ orderBy: { key: "asc" } }),
+    ]);
+
+    quotes = quotesRes;
+    docs = docsRes;
+    embassies = embassiesRes;
+    govs = govsRes;
+    langs = langsRes;
+    branches = branchesRes;
+    team = teamRes;
+    reviews = reviewsRes;
+    posts = postsRes;
+    faqs = faqsRes;
+    settings = settingsRes;
   } catch (err) {
     console.warn("Database offline during dashboard load, using fallback data structures");
   }
