@@ -9,6 +9,7 @@ import {
   embassyHasEnglish,
   govHasEnglish,
   blogPostHasEnglish,
+  languageHasEnglish,
 } from '@/lib/translationDetection';
 
 export const revalidate = 86400; // 24 hours CDN cache for sitemap.xml
@@ -20,6 +21,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   let embassies: any[] = [];
   let govEntities: any[] = [];
   let blogPosts: any[] = [];
+  let languages: any[] = [];
 
   try {
     services = await prisma.service.findMany({ where: { indexable: true } });
@@ -27,6 +29,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     embassies = await prisma.embassy.findMany({ where: { indexable: true } });
     govEntities = await prisma.govEntity.findMany({ where: { indexable: true } });
     blogPosts = await prisma.blogPost.findMany({ where: { published: true } });
+    languages = await prisma.language.findMany();
   } catch (err) {
     console.error('Database offline during sitemap generation. Falling back to static entries.');
   }
@@ -132,6 +135,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   govEntities.forEach((g) => {
     const hasEn = govHasEnglish(g);
     addPath(`/government/${g.slug}`, g.updatedAt, hasEn);
+  });
+
+  // Add languages
+  languages.forEach((l) => {
+    const hasEn = languageHasEnglish(l);
+    addPath(`/languages/${l.slug}`, l.updatedAt, hasEn);
   });
 
   // Add blog posts (combining DB and static fallback)

@@ -22,7 +22,15 @@ export async function generateMetadata({
   const { locale, slug } = await params;
   const lang = await getLanguageBySlug(slug, locale);
   if (!lang) return {};
-  return getSEOHeaders(lang.name, `${lang.name} certified translation services and languages.`, `/languages/${slug}`, true, locale);
+  const hasEnglishTranslation = lang.hasEnglish;
+  return getSEOHeaders(
+    lang.name,
+    `${lang.name} certified translation services and languages.`,
+    `/languages/${slug}`,
+    true,
+    locale,
+    hasEnglishTranslation
+  );
 }
 
 export default async function LanguageDetailPage({

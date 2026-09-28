@@ -6,6 +6,7 @@ import {
   embassyHasEnglish,
   govHasEnglish,
   blogPostHasEnglish,
+  languageHasEnglish,
 } from './translationDetection';
 
 // Types for localized models
@@ -61,6 +62,7 @@ export interface LocalizedLanguage {
   code: string;
   popular: boolean;
   description: string;
+  hasEnglish: boolean;
 }
 
 export interface LocalizedBranch {
@@ -278,8 +280,8 @@ const MOCK_GOVS = (isAr: boolean): LocalizedGovEntity[] => [
 ];
 
 const MOCK_LANGS = (isAr: boolean): LocalizedLanguage[] => [
-  { id: 'l1', name: isAr ? 'اللغة العربية' : 'Arabic Language', slug: 'arabic', code: 'ar', popular: true, description: isAr ? 'اللغة الأم.' : 'Native tongue.' },
-  { id: 'l2', name: isAr ? 'اللغة الإنجليزية' : 'English Language', slug: 'english', code: 'en', popular: true, description: isAr ? 'اللغة الدولية.' : 'International tongue.' }
+  { id: 'l1', name: isAr ? 'اللغة العربية' : 'Arabic Language', slug: 'arabic', code: 'ar', popular: true, description: isAr ? 'اللغة الأم.' : 'Native tongue.', hasEnglish: true },
+  { id: 'l2', name: isAr ? 'اللغة الإنجليزية' : 'English Language', slug: 'english', code: 'en', popular: true, description: isAr ? 'اللغة الدولية.' : 'International tongue.', hasEnglish: true }
 ];
 
 const MOCK_BRANCHES = (isAr: boolean): LocalizedBranch[] => [
@@ -748,6 +750,7 @@ export async function getLanguages(locale: string): Promise<LocalizedLanguage[]>
       code: l.code,
       popular: l.popular,
       description: isAr ? l.descriptionAr : l.descriptionEn,
+      hasEnglish: languageHasEnglish(l),
     }));
   } catch (err) {
     return MOCK_LANGS(isAr);
@@ -769,6 +772,7 @@ export async function getLanguageBySlug(slug: string, locale: string): Promise<L
       code: l.code,
       popular: l.popular,
       description: isAr ? l.descriptionAr : l.descriptionEn,
+      hasEnglish: languageHasEnglish(l),
     };
   } catch (err) {
     return MOCK_LANGS(isAr).find(lang => lang.slug === slug) || null;

@@ -54,3 +54,10 @@ export function blogPostHasEnglish(raw: any): boolean {
   const body = raw.bodyEn || raw.bodyAr || raw.body;
   return isGenuineEnglish(title, body);
 }
+
+export function languageHasEnglish(raw: any): boolean {
+  if (!raw) return false;
+  const name = raw.nameEn || raw.nameAr || raw.name;
+  const desc = raw.descriptionEn || raw.descriptionAr || raw.description;
+  return isGenuineEnglish(name, desc);
+}
