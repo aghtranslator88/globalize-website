@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useId } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { Paperclip, Loader2, CheckCircle, AlertCircle } from "lucide-react";
 
@@ -12,6 +12,11 @@ interface ServiceOption {
 export default function QuoteForm({ services = [] }: { services?: ServiceOption[] }) {
   const t = useTranslations("Contact");
   const locale = useLocale();
+  const nameId = useId();
+  const phoneId = useId();
+  const serviceId = useId();
+  const fileId = useId();
+  const notesId = useId();
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [serviceType, setServiceType] = useState("");
@@ -184,8 +189,9 @@ export default function QuoteForm({ services = [] }: { services?: ServiceOption[
 
         {/* Name Input */}
         <div>
-          <label className="block text-xs font-bold text-dark-navy mb-1.5">{t("name")} *</label>
+          <label htmlFor={nameId} className="block text-xs font-bold text-dark-navy mb-1.5">{t("name")} *</label>
           <input
+            id={nameId}
             type="text"
             value={name}
             onChange={(e) => setName(e.target.value)}
@@ -199,8 +205,9 @@ export default function QuoteForm({ services = [] }: { services?: ServiceOption[
 
         {/* Phone Input */}
         <div>
-          <label className="block text-xs font-bold text-dark-navy mb-1.5">{t("phone")} *</label>
+          <label htmlFor={phoneId} className="block text-xs font-bold text-dark-navy mb-1.5">{t("phone")} *</label>
           <input
+            id={phoneId}
             type="text"
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
@@ -214,8 +221,9 @@ export default function QuoteForm({ services = [] }: { services?: ServiceOption[
 
         {/* Service Dropdown */}
         <div>
-          <label className="block text-xs font-bold text-dark-navy mb-1.5">{t("serviceType")} *</label>
+          <label htmlFor={serviceId} className="block text-xs font-bold text-dark-navy mb-1.5">{t("serviceType")} *</label>
           <select
+            id={serviceId}
             value={serviceType}
             onChange={(e) => setServiceType(e.target.value)}
             className={`w-full rounded-xl border ${
@@ -234,9 +242,10 @@ export default function QuoteForm({ services = [] }: { services?: ServiceOption[
 
         {/* File Attachment */}
         <div>
-          <label className="block text-xs font-bold text-dark-navy mb-1.5">{t("file")}</label>
+          <label htmlFor={fileId} className="block text-xs font-bold text-dark-navy mb-1.5">{t("file")}</label>
           <div className="relative flex items-center justify-center border-2 border-dashed border-gray-200 rounded-xl py-4 px-6 hover:bg-gray-50/50 transition-colors cursor-pointer">
             <input
+              id={fileId}
               type="file"
               accept=".pdf,.doc,.docx,.jpg,.jpeg,.png"
               onChange={(e) => {
@@ -267,8 +276,9 @@ export default function QuoteForm({ services = [] }: { services?: ServiceOption[
 
         {/* Notes */}
         <div>
-          <label className="block text-xs font-bold text-dark-navy mb-1.5">{t("notes")}</label>
+          <label htmlFor={notesId} className="block text-xs font-bold text-dark-navy mb-1.5">{t("notes")}</label>
           <textarea
+            id={notesId}
             value={notes}
             onChange={(e) => setNotes(e.target.value)}
             rows={3}
