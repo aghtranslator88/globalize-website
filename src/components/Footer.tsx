@@ -3,9 +3,10 @@
 import { Link } from "@/i18n/routing";
 import { useLocale, useTranslations } from "next-intl";
 
-import { Phone, Mail, MapPin, MessageSquare } from "lucide-react";
+import { Phone, Mail, MapPin } from "lucide-react";
 import Image from "next/image";
-import { trackWhatsAppClick, trackPhoneClick } from "@/lib/gtag";
+import { trackPhoneClick } from "@/lib/gtag";
+import FloatingWhatsAppSupport from "./FloatingWhatsAppSupport";
 
 export default function Footer() {
   const t = useTranslations("Footer");
@@ -180,17 +181,8 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Floating WhatsApp button at lower right */}
-      <a
-        href={`https://wa.me/201062990808?text=${encodeURIComponent(locale === 'ar' ? 'أريد الاستفسار عن ترجمة معتمدة' : 'I would like to inquire about certified translation')}`}
-        target="_blank"
-        rel="noopener noreferrer"
-        onClick={() => trackWhatsAppClick({ cta_location: 'footer_floating_whatsapp', language: locale })}
-        className="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-whatsapp-green text-white shadow-lg transition-transform duration-300 hover:scale-110 active:scale-95 animate-pulse-glow"
-        aria-label="Contact WhatsApp"
-      >
-        <MessageSquare className="h-7 w-7" />
-      </a>
+      {/* Floating live WhatsApp support card & avatar */}
+      <FloatingWhatsAppSupport />
     </footer>
   );
 }
