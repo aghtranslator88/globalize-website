@@ -111,7 +111,7 @@ export default async function HomePage({
                 </div>
                 <div className="flex items-center justify-center gap-2 text-dark-navy text-xs font-bold">
                   <Check className="h-4 w-4 text-primary-blue flex-shrink-0" />
-                  <span>{isAr ? "خبرة +15 عاماً" : "+15 Years Experience"}</span>
+                  <span>{isAr ? "خبرة +15 عاماً" : "+15 Years of Experience"}</span>
                 </div>
                 <div className="flex items-center justify-center gap-2 text-dark-navy text-xs font-bold">
                   <Check className="h-4 w-4 text-primary-blue flex-shrink-0" />
@@ -119,7 +119,7 @@ export default async function HomePage({
                 </div>
                 <div className="flex items-center justify-center gap-2 text-dark-navy text-xs font-bold">
                   <Check className="h-4 w-4 text-primary-blue flex-shrink-0" />
-                  <span>{isAr ? "اعتماد الجهات الحكومية" : "Gov Accepted"}</span>
+                  <span>{isAr ? "اعتماد الجهات الحكومية" : "Accepted by Gov Entities"}</span>
                 </div>
               </div>
             </div>
@@ -255,7 +255,7 @@ export default async function HomePage({
                 </h3>
                 <p className="text-gray-500 text-xs leading-relaxed">
                   {isAr
-                    ? "أرسل وثائقك إلينا من خلال نموذج الموقع أو عبر الواتساب مباشرة."
+                    ? "أرسل وثائقك إلينا من خلال نموذج الموقع أو عبر واتساب مباشرة."
                     : "Send us your files via our online quote request form or directly through WhatsApp."}
                 </p>
               </div>
@@ -269,7 +269,7 @@ export default async function HomePage({
                 </h3>
                 <p className="text-gray-500 text-xs leading-relaxed">
                   {isAr
-                    ? "نراجع المستند ونرسل لك عرض سعر مفصل والمدة المطلوبة خلال دقائق."
+                    ? "نراجع المستند ونرسل لك عرض أسعار مفصلاً والمدة المطلوبة خلال دقائق."
                     : "We review the documents and send you a detailed quote and delivery timeline within minutes."}
                 </p>
               </div>
@@ -279,7 +279,7 @@ export default async function HomePage({
                   3
                 </div>
                 <h3 className="font-bold text-sm text-dark-navy mb-2">
-                  {isAr ? "3. الترجمة والتدقيق" : "3. Translation & Audit"}
+                  {isAr ? "3. الترجمة والتدقيق" : "3. Translation & Proofreading"}
                 </h3>
                 <p className="text-gray-500 text-xs leading-relaxed">
                   {isAr
@@ -310,7 +310,7 @@ export default async function HomePage({
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="text-2xl sm:text-3xl font-black text-dark-navy mb-4 font-arabic">
-                {isAr ? "ماذا يقول عملؤنا" : "What Our Clients Say"}
+                {isAr ? "ماذا يقول عملاؤنا" : "What Our Clients Say"}
               </h2>
               <p className="text-gray-500 text-xs sm:text-sm max-w-md mx-auto">
                 {isAr

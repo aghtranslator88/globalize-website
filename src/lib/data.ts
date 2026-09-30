@@ -149,7 +149,7 @@ const MOCK_SERVICES = (isAr: boolean): LocalizedService[] => [
     name: isAr ? 'الترجمة الفورية للمؤتمرات' : 'Interpretation Services',
     slug: 'interpretation',
     type: 'INTERPRETATION',
-    description: isAr ? 'ترجمة فورية وشفهية وتأجير كبائن الصوت والاجتماعات.' : 'Simultaneous interpretation and audio translation booths rentals.',
+    description: isAr ? 'ترجمة فورية وشفهية وتأجير كبائن الصوت والاجتماعات.' : 'Simultaneous interpretation and audio translation booth rentals.',
     definition: isAr ? 'الترجمة الشفهية تتيح نقل المحاضرات مباشرة للجمهور المتعدد اللغات.' : 'Consecutive and audio interpretation during international events.',
     indexable: true
   },
@@ -241,7 +241,7 @@ const MOCK_DOCS = (isAr: boolean): LocalizedDocument[] => [
     priceEGP: 200,
     deliveryHours: 24,
     description: isAr ? 'ترجمة معتمدة لصحيفة الحالة الجنائية (الفيش والتشبيه) المطلوبة للحصول على تأشيرات السفر والعمل بالخارج.' : 'Certified translation of criminal record check (police record) required for travel and work visas.',
-    answerBox: isAr ? 'تكلفة ترجمة الصفحة الواحدة للفيش الجنائي هي 200 جنيه مصري (عربي ↔ إنجليزي) و300 جنيه مصري لأي لغة ثانية، والتسليم معتمد رسمياً في 24 ساعة.' : 'Police record certified translation is 200 EGP per page (Arabic ↔ English) and 300 EGP per page for other foreign languages, certified in 24 hours.',
+    answerBox: isAr ? 'تكلفة ترجمة الصفحة الواحدة للفيش الجنائي هي 200 جنيه مصري (عربي ↔ إنجليزي) و300 جنيه مصري لأي لغة أجنبية أخرى، والتسليم معتمد رسمياً في 24 ساعة.' : 'Police record certified translation is 200 EGP per page (Arabic ↔ English) and 300 EGP per page for other foreign languages, certified in 24 hours.',
     sampleImageUrl: null,
     indexable: true,
     hasEnglish: true
@@ -253,7 +253,7 @@ const MOCK_DOCS = (isAr: boolean): LocalizedDocument[] => [
     priceEGP: 200,
     deliveryHours: 24,
     description: isAr ? 'ترجمة معتمدة لشهادات التخرج الصادرة من مختلف الجامعات المصرية للمنح الدراسية والتقديم للوظائف بالخارج.' : 'Certified translation of university graduation certificates for admissions and employment abroad.',
-    answerBox: isAr ? 'سعر ترجمة الصفحة لشهادة التخرج هو 200 جنيه مصري (عربي ↔ إنجليزي) و300 جنيه مصري لأي لغة ثانية، وتُحسب المستندات متعددة الصفحات بعدد صفحاتها.' : 'Graduation certificate translation is priced at 200 EGP per page (Arabic ↔ English) and 300 EGP per page for other languages, calculated per page.',
+    answerBox: isAr ? 'سعر ترجمة الصفحة لشهادة التخرج هو 200 جنيه مصري (عربي ↔ إنجليزي) و300 جنيه مصري لأي لغة أجنبية أخرى، وتُحسب المستندات متعددة الصفحات بعدد صفحاتها.' : 'Graduation certificate translation is priced at 200 EGP per page (Arabic ↔ English) and 300 EGP per page for other languages, calculated per page.',
     sampleImageUrl: null,
     indexable: true,
     hasEnglish: true

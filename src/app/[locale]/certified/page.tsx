@@ -191,7 +191,7 @@ export default async function CertifiedPage({
               </div>
               <p className="text-[11px] text-gray-500 bg-gray-50 p-3 rounded-lg border border-gray-200 leading-relaxed">
                 {isAr
-                  ? "📌 ملاحظة هامة: الأسعار أعلاه تُحسب لكل صفحة (200 جنيه للترجمة بين العربية والإنجليزية، و 300 جنيه لأي لغة ثانية كالفرنسية والألمانية والإيطالية). إذا كانت الوثيقة تحتوي على أكثر من صفحة يُحسب الإجمالي وفقاً لعدد الصفحات."
+                  ? "📌 ملاحظة مهمة: تُحسب الأسعار أعلاه لكل صفحة (200 جنيه للترجمة بين العربية والإنجليزية، و300 جنيه لأي لغة أجنبية أخرى كالفرنسية والألمانية والإيطالية). وفي حال كانت الوثيقة تحتوي على أكثر من صفحة، يُحسب الإجمالي وفقاً لإجمالي عدد الصفحات."
                   : "📌 Important Note: Rates above are calculated per page (200 EGP for Arabic ↔ English, 300 EGP for other foreign languages such as German, French, Italian). For multi-page documents, the total is calculated per page."}
               </p>
             </div>
@@ -238,7 +238,7 @@ export default async function CertifiedPage({
                   </div>
                   <div>
                     <h4 className="font-bold text-xs text-dark-navy mb-1">{isAr ? "دعم متواصل على مدار الساعة" : "24/7 Support"}</h4>
-                    <p className="text-[11px] text-gray-500 leading-relaxed">{isAr ? "فريق عملنا متواجد للرد على استفساراتكم وتلقي الطلبات عبر الواتساب على مدار اليوم." : "Our staff is online to quote and process document requests via WhatsApp all day."}</p>
+                    <p className="text-[11px] text-gray-500 leading-relaxed">{isAr ? "فريق عملنا متواجد للرد على استفساراتكم وتلقي الطلبات عبر واتساب على مدار اليوم." : "Our staff is online to quote and process document requests via WhatsApp all day."}</p>
                   </div>
                 </div>
               </div>

@@ -37,7 +37,7 @@ export default async function EmbassiesPage({
   const regions: Record<string, string> = {
     EUROPE: isAr ? "دول أوروبا والاتحاد الأوروبي" : "Europe & EU",
     GULF_ARAB: isAr ? "دول الخليج العربي والوطن العربي" : "Gulf & Arab Countries",
-    AMERICAS: isAr ? "الأمريكتين (أمريكا وكندا)" : "The Americas",
+    AMERICAS: isAr ? "الأمريكتان (أمريكا وكندا)" : "The Americas",
     ASIA_AUSTRALIA: isAr ? "آسيا وأستراليا" : "Asia & Australia",
   };
 
@@ -49,7 +49,7 @@ export default async function EmbassiesPage({
 
   const breadcrumbs = [
     { name: isAr ? "الرئيسية" : "Home", url: "/" },
-    { name: isAr ? "السفارات معتمدة لدينا" : "Accepted Embassies", url: "/embassies" },
+    { name: isAr ? "السفارات المعتمدة" : "Accepted Embassies", url: "/embassies" },
   ];
 
   const breadcrumbJsonLd = generateBreadcrumbJsonLd(breadcrumbs);

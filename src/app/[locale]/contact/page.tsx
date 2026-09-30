@@ -77,8 +77,8 @@ export default async function ContactPage({
               </h1>
               <p className="text-gray-600 text-sm leading-relaxed">
                 {isAr
-                  ? "يسعدنا تلقي طلباتكم واستفساراتكم على مدار اليوم. تواصل معنا بالنموذج التالي أو عبر الواتساب والفرع."
-                  : "We are pleased to receive your requests. Reach out via the form, WhatsApp, or visit our branches."}
+                  ? "يسعدنا تلقي طلباتكم واستفساراتكم على مدار اليوم. تواصل معنا عبر النموذج أدناه أو من خلال واتساب وزيارة أقرب فرع."
+                  : "We are pleased to assist you with your inquiries. Reach out via the form below, WhatsApp, or visit our branches."}
               </p>
             </div>
 
@@ -91,12 +91,12 @@ export default async function ContactPage({
             <div className="rounded-2xl bg-whatsapp-green/5 border border-whatsapp-green/20 p-6 text-center">
               <h3 className="font-bold text-sm text-whatsapp-green mb-2 flex items-center justify-center gap-1">
                 <Phone className="h-4.5 w-4.5" />
-                <span>{isAr ? "التواصل الفوري بالواتساب" : "WhatsApp Quick Chat"}</span>
+                <span>{isAr ? "التواصل الفوري عبر واتساب" : "Instant WhatsApp Chat"}</span>
               </h3>
               <p className="text-[11px] text-gray-500 leading-relaxed mb-6">
                 {isAr 
-                  ? "أرسل صور المستندات والشهادات مباشرة عبر الواتساب للحصول على تسعير فوري وموافقة الاعتماد."
-                  : "Send your document pictures directly via WhatsApp for instant quoting and turnaround times."}
+                  ? "أرسل صور المستندات والشهادات مباشرة عبر واتساب للحصول على تسعير فوري وإفادة بالمدة والاعتماد."
+                  : "Send your document photos directly via WhatsApp for an instant quote and turnaround timeline."}
               </p>
               <TrackedWhatsAppLink
                 href={`https://wa.me/${settings.whatsapp?.replace("+", "")}?text=${encodeURIComponent(

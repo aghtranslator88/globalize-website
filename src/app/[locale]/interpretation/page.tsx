@@ -165,7 +165,7 @@ export default async function InterpretationPage({
                     <span>{isAr ? "سماعات وأجهزة استقبال رقمية للحضور" : "Wireless Digital Receivers & Headsets"}</span>
                   </h4>
                   <p className="text-gray-500 text-[11px] leading-relaxed">
-                    {isAr ? "أجهزة استقبال متعددة القنوات تدعم حتى 16 لغة متزامنة بنقاء صوتي رقمي فائق وخالي من التشويش أو التداخل اللاسلكي." : "Multi-channel digital receivers supporting up to 16 languages with zero static or frequency drift."}
+                    {isAr ? "أجهزة استقبال متعددة القنوات تدعم حتى 16 لغة متزامنة بنقاء صوتي رقمي فائق وخالٍ من التشويش أو التداخل اللاسلكي." : "Multi-channel digital receivers supporting up to 16 languages with zero static or frequency drift."}
                   </p>
                 </div>
 
