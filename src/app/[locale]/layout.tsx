@@ -32,6 +32,9 @@ export const metadata = {
     shortcut: '/favicon.ico',
     apple: '/apple-icon.png',
   },
+  verification: {
+    google: 'googlef3d88f36aa7abe65',
+  },
 };
 
 export function generateStaticParams() {

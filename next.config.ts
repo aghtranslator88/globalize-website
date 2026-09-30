@@ -12,7 +12,7 @@ const nextConfig: NextConfig = {
       { source: '/:locale(ar|en)/embassies/translation-certified-by-the-turkish-embassy.html', destination: '/:locale/embassies/translation-certified-by-the-turkish-embassy', permanent: true },
       { source: '/:locale(ar|en)/embassies/translation-italian-embassy.html', destination: '/:locale/embassies/translation-italian-embassy', permanent: true },
       { source: '/:locale(ar|en)/:path*.html', destination: '/:locale/:path*', permanent: true },
-      { source: '/:path*.html', destination: '/ar/:path*', permanent: true },
+      { source: '/:path((?!google[a-z0-9]+|ad-previews)[^/]+).html', destination: '/ar/:path', permanent: true },
 
       // Phase 3 & 4: Truncated, Mangled, Competitor Brand & Duplicate Slugs Redirects
       { source: '/:locale(ar|en)/embassies/افضل-مترجم-ايطالي-معتمد-من-السفارة-الا', destination: '/:locale/embassies/افضل-مترجم-ايطالي-معتمد-من-السفارة-الايطالية', permanent: true },
