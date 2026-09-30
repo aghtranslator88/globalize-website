@@ -22,7 +22,7 @@ export async function generateMetadata({
   const { locale } = await params;
   const title = locale === "ar" ? "اتصل بنا واطلب عرض سعر مجاني" : "Contact Us & Request a Free Quote";
   const description = locale === "ar"
-    ? "تواصل مع جلوبالايز جروب للترجمة المعتمدة. عناوين مكاتبنا وأرقام الهواتف ونموذج طلب التسعير السريع."
+    ? "تواصل مع جلوباليز جروب للترجمة المعتمدة. عناوين مكاتبنا وأرقام الهواتف ونموذج طلب التسعير السريع."
     : "Get in touch with Globalize Group. Office addresses, phone numbers, and fast online quote request form.";
   return getSEOHeaders(title, description, "/contact", true, locale);
 }

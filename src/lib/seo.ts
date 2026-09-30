@@ -55,13 +55,13 @@ export function getSEOHeaders(
       description,
       url: canonicalUrl,
       type: 'website',
-      siteName: locale === 'ar' ? 'جلوبالايز جروب' : 'Globalize Group',
+      siteName: locale === 'ar' ? 'جلوباليز جروب' : 'Globalize Group',
       images: [
         {
           url: `${SITE_URL}/globalize-og.jpg`,
           width: 1200,
           height: 630,
-          alt: locale === 'ar' ? 'شعار جلوبالايز جروب' : 'Globalize Group Logo',
+          alt: locale === 'ar' ? 'شعار جلوباليز جروب' : 'Globalize Group Logo',
         },
       ],
     },
@@ -90,7 +90,7 @@ export function generateOrganizationJsonLd() {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     '@id': `${SITE_URL}/#organization`,
-    'name': 'جلوبالايز جروب لأعمال الترجمة المعتمدة',
+    'name': 'جلوباليز جروب لأعمال الترجمة المعتمدة',
     'alternateName': 'Globalize Group for Certified Translation',
     'url': SITE_URL,
     'logo': `${SITE_URL}/logo.png`,
@@ -132,7 +132,7 @@ export function generateServiceJsonLd(service: { name: string; description: stri
     'description': service.description,
     'provider': {
       '@type': 'LocalBusiness',
-      'name': 'جلوبالايز جروب لأعمال الترجمة المعتمدة',
+      'name': 'جلوباليز جروب لأعمال الترجمة المعتمدة',
       'image': `${SITE_URL}/logo.png`,
       'telephone': '+20 106 299 0808',
       'url': SITE_URL,
@@ -234,7 +234,7 @@ export function generateArticleJsonLd(post: {
     },
     'publisher': {
       '@type': 'Organization',
-      'name': 'جلوبالايز جروب',
+      'name': 'جلوباليز جروب',
       'logo': {
         '@type': 'ImageObject',
         'url': `${SITE_URL}/logo.png`,
@@ -251,7 +251,7 @@ export function generateAggregateRatingJsonLd(rating: number, count: number) {
   return {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
-    'name': 'جلوبالايز جروب لأعمال الترجمة المعتمدة',
+    'name': 'جلوباليز جروب لأعمال الترجمة المعتمدة',
     'image': `${SITE_URL}/logo.png`,
     'telephone': '+201062990808',
     'url': SITE_URL,

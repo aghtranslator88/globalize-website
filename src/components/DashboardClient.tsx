@@ -289,7 +289,7 @@ export default function DashboardClient({
           <div className="h-9 w-9 bg-gold text-dark-navy font-bold flex items-center justify-center rounded-xl text-lg">G</div>
           <div className="flex flex-col">
             <span className="font-bold text-sm">لوحة تحكم الإدارة</span>
-            <span className="text-[10px] text-gray-300">جلوبالايز جروب</span>
+            <span className="text-[10px] text-gray-300">جلوباليز جروب</span>
           </div>
         </div>
 
@@ -1343,7 +1343,7 @@ export default function DashboardClient({
                   <div className="bg-white border border-gray-200 rounded-xl p-4 space-y-1 shadow-inner">
                     <div className="text-blue-800 font-medium text-sm hover:underline cursor-pointer truncate">
                       {formTab === "ar"
-                        ? `${formData.nameAr || formData.titleAr || "عنوان الصفحة"} | جلوبالايز جروب`
+                        ? `${formData.nameAr || formData.titleAr || "عنوان الصفحة"} | جلوباليز جروب`
                         : `${formData.nameEn || formData.titleEn || "Page Title"} | Globalize Group`}
                     </div>
                     <div className="text-green-700 text-[10px] truncate" dir="ltr">

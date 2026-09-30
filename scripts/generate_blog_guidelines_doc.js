@@ -60,7 +60,7 @@ async function createGuidelinesDoc() {
             spacing: { after: 200 },
             children: [
               new TextRun({
-                text: "دليل ومعايير صياغة مقالات المدونة لموقع جلوبالايز جروب",
+                text: "دليل ومعايير صياغة مقالات المدونة لموقع جلوباليز جروب",
                 bold: true,
                 size: 36, // 18pt
                 color: primaryColor,
@@ -294,7 +294,7 @@ async function createGuidelinesDoc() {
             bullet: { level: 0 },
             children: [
               new TextRun({ text: "الخاتمة والدعوة لاتخاذ إجراء CTA (حوالي 100 كلمة - H2): ", bold: true }),
-              new TextRun({ text: "ملخص سريع + حث القارئ على طلب عرض سعر أو التواصل الفوري عبر واتساب أو زيارة أقرب فرع لجلوبالايز جروب." }),
+              new TextRun({ text: "ملخص سريع + حث القارئ على طلب عرض سعر أو التواصل الفوري عبر واتساب أو زيارة أقرب فرع لجلوباليز جروب." }),
             ],
           }),
 
@@ -460,7 +460,7 @@ async function createGuidelinesDoc() {
             alignment: AlignmentType.CENTER,
             children: [
               new TextRun({
-                text: "شركة جلوبالايز جروب للترجمة المعتمدة © — دليل كتابة المحتوى الرقمي",
+                text: "شركة جلوباليز جروب للترجمة المعتمدة © — دليل كتابة المحتوى الرقمي",
                 size: 20,
                 color: "6B7280",
                 italics: true,

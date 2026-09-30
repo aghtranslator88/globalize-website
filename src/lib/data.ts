@@ -377,12 +377,12 @@ export function isDatabaseAvailable(): boolean {
 }
 
 const DEFAULT_SITE_SETTINGS = {
-  company_name_ar: 'جلوبالايز جروب لأعمال الترجمة المعتمدة',
+  company_name_ar: 'جلوباليز جروب لأعمال الترجمة المعتمدة',
   company_name_en: 'Globalize Group for Certified Translation',
   phone: '01062990808',
   whatsapp: '+20 106 299 0808',
   email: 'info@globalizetl.com',
-  meta_default_title_ar: 'جلوبالايز جروب — ترجمة معتمدة لدى جميع السفارات والهيئات الحكومية',
+  meta_default_title_ar: 'جلوباليز جروب — ترجمة معتمدة لدى جميع السفارات والهيئات الحكومية',
   meta_default_title_en: 'Globalize Group — Certified Translation for All Embassies & Gov Entities',
   meta_description_ar: 'مكتب ترجمة معتمد رائد في مصر والخليج.',
   meta_description_en: 'Leading certified translation firm in Egypt and GCC.'
@@ -400,7 +400,7 @@ export async function getSiteSettings() {
       settings[s.key] = s.value;
     });
     // Ensure critical fallbacks exist
-    if (!settings.company_name_ar) settings.company_name_ar = 'جلوبالايز جروب';
+    if (!settings.company_name_ar) settings.company_name_ar = 'جلوباليز جروب';
     if (!settings.company_name_en) settings.company_name_en = 'Globalize Group';
     if (!settings.whatsapp) settings.whatsapp = '+20 106 299 0808';
     if (!settings.phone) settings.phone = '01062990808';

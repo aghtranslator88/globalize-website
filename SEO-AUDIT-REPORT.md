@@ -264,7 +264,7 @@ graph TD
    * Inject a dedicated, high-converting banner at the start of `italy-visa-egypt-almaviva`:
      * Headline: *"حجزت موعدك في ألمافيفا؟ احصل على ترجمة معتمدة لملف التأشيرة بالكامل معتمدة لدى السفارة الإيطالية في 24 ساعة."*
      * Interactive Checklist: (شهادة الميلاد، الفيش الجنائي، كشف الحساب البنكي، قيد عائلي).
-     * WhatsApp CTA with pre-filled message: *"مرحباً جلوبالايز، أرغب في عرض سعر فوري لترجمة أوراق تأشيرة إيطاليا لألمافيفا"*.
+     * WhatsApp CTA with pre-filled message: *"مرحباً جلوباليز، أرغب في عرض سعر فوري لترجمة أوراق تأشيرة إيطاليا لألمافيفا"*.
 2. **Almaviva FAQ Schema Injection:**
    * Inject `FAQPage` structured data into the article template covering top query concerns (appointment booking fees, required translations, Italian Embassy validity).
 

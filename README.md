@@ -1,6 +1,6 @@
 # Globalize Group - Certified Translation Website
 
-A full-stack production multilingual website for **Globalize Group** (جلوبالايز جروب لأعمال الترجمة), a certified translation company in Egypt serving Egypt and GCC countries.
+A full-stack production multilingual website for **Globalize Group** (جلوباليز جروب لأعمال الترجمة), a certified translation company in Egypt serving Egypt and GCC countries.
 
 ## Technology Stack
 

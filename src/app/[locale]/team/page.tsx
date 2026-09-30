@@ -16,9 +16,9 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  const title = locale === "ar" ? "فريق عمل ومترجمي جلوبالايز جروب" : "Globalize Group Translation Team";
+  const title = locale === "ar" ? "فريق عمل ومترجمي جلوباليز جروب" : "Globalize Group Translation Team";
   const description = locale === "ar"
-    ? "تعرف على خبراء اللغة والمترجمين القانونيين المعتمدين والمترجمين الفوريين بجلوبالايز جروب."
+    ? "تعرف على خبراء اللغة والمترجمين القانونيين المعتمدين والمترجمين الفوريين بجلوباليز جروب."
     : "Meet our language experts, certified legal translators, and conference interpreters at Globalize Group.";
   return getSEOHeaders(title, description, "/team", true, locale);
 }
@@ -69,7 +69,7 @@ export default async function TeamPage({
 
         <div className="text-center mb-12">
           <h1 className="text-2xl sm:text-4xl font-black text-dark-navy mb-4 font-arabic">
-            {isAr ? "فريق عمل وخبراء جلوبالايز جروب" : "Globalize Group Translation Team"}
+            {isAr ? "فريق عمل وخبراء جلوباليز جروب" : "Globalize Group Translation Team"}
           </h1>
           <p className="text-gray-500 text-xs sm:text-sm max-w-2xl mx-auto leading-relaxed">
             {isAr

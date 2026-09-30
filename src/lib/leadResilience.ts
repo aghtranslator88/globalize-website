@@ -420,7 +420,7 @@ export function formatTelegramMessage(lead: LeadRecord): string {
 
   const emailText = lead.email ? `📧 <b>البريد الإلكتروني:</b> <code>${safeEmail}</code>\n` : '';
 
-  return `🔔 <b>طلب تسعير جديد — جلوبالايز</b>\n\n` +
+  return `🔔 <b>طلب تسعير جديد — جلوباليز</b>\n\n` +
     `🆔 <b>المعرف:</b> <code>${safeId}</code>\n` +
     `👤 <b>الاسم:</b> ${safeName}\n` +
     `📱 <b>الهاتف:</b> <code>${safePhone}</code>\n` +
@@ -451,7 +451,7 @@ export function formatEmailHtml(lead: LeadRecord): string {
 
   return `
     <div style="font-family: Arial, sans-serif; direction: rtl; text-align: right; max-width: 600px; margin: 0 auto; border: 1px solid #eaeaea; border-radius: 8px; padding: 20px;">
-      <h2 style="color: #1e3a8a; border-bottom: 2px solid #eab308; padding-bottom: 10px;">طلب تسعير جديد (جلوبالايز)</h2>
+      <h2 style="color: #1e3a8a; border-bottom: 2px solid #eab308; padding-bottom: 10px;">طلب تسعير جديد (جلوباليز)</h2>
       <p><strong>المعرف:</strong> ${safeId}</p>
       <p><strong>الاسم:</strong> ${safeName}</p>
       <p><strong>الهاتف:</strong> ${safePhone}</p>

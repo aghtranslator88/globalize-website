@@ -125,7 +125,7 @@ export default function FloatingWhatsAppSupport() {
         <div className="p-4 bg-gray-50/70">
           <div className="bg-white rounded-2xl p-3 shadow-sm border border-gray-100 text-xs text-gray-800 leading-relaxed relative">
             <p className="font-medium text-gray-900 mb-1">
-              {isArabic ? "أهلاً بك في جلوبالايز للترجمة المعتمدة! 👋" : "Welcome to Globalize Translation! 👋"}
+              {isArabic ? "أهلاً بك في جلوباليز للترجمة المعتمدة! 👋" : "Welcome to Globalize Translation! 👋"}
             </p>
             <p className="text-gray-600">
               {isArabic
@@ -169,7 +169,7 @@ export default function FloatingWhatsAppSupport() {
         <div className="relative h-15 w-15 sm:h-16 sm:w-16 rounded-full overflow-hidden border-[3px] border-white shadow-xl bg-white">
           <Image
             src="/images/support-agent.jpg"
-            alt={isArabic ? "مستشارة خدمة العملاء جلوبالايز" : "Globalize Support Representative"}
+            alt={isArabic ? "مستشارة خدمة العملاء جلوباليز" : "Globalize Support Representative"}
             fill
             sizes="64px"
             className="object-cover object-top"

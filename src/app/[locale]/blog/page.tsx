@@ -81,7 +81,7 @@ export default async function BlogPage({
 
         <div className="text-center mb-12">
           <h1 className="text-2xl sm:text-4xl font-black text-dark-navy mb-4 font-arabic">
-            {isAr ? "مدونة جلوبالايز جروب اللغوية" : "Globalize Group Translation Blog"}
+            {isAr ? "مدونة جلوباليز جروب اللغوية" : "Globalize Group Translation Blog"}
           </h1>
           <p className="text-gray-500 text-xs sm:text-sm max-w-2xl mx-auto leading-relaxed">
             {isAr

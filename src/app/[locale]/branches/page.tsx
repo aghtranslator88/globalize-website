@@ -20,7 +20,7 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  const title = locale === "ar" ? "فروع ومكاتب جلوبالايز جروب للترجمة" : "Globalize Group Branches & Offices";
+  const title = locale === "ar" ? "فروع ومكاتب جلوباليز جروب للترجمة" : "Globalize Group Branches & Offices";
   const description = locale === "ar"
     ? "عناوين فروعنا وأرقام الهواتف ومواعيد العمل لفرع الهرم وفروعنا الأخرى بمصر."
     : "Addresses, phone numbers, and working hours for our Haram and other branches in Egypt.";
@@ -89,7 +89,7 @@ export default async function BranchesPage({
 
         <div className="text-center mb-12">
           <h1 className="text-2xl sm:text-4xl font-black text-dark-navy mb-4 font-arabic">
-            {isAr ? "فروع ومكاتب جلوبالايز جروب" : "Globalize Group Branches & Offices"}
+            {isAr ? "فروع ومكاتب جلوباليز جروب" : "Globalize Group Branches & Offices"}
           </h1>
           <p className="text-gray-500 text-xs sm:text-sm max-w-2xl mx-auto leading-relaxed">
             {isAr

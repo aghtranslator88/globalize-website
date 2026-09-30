@@ -79,7 +79,7 @@ Based on the Google Search Console (GSC) query audit for `sc-domain:globalizetl.
 
 ### Arabic Version (`/ar/blog/italy-visa-egypt-almaviva`)
 - **URL:** `https://www.globalizetl.com/ar/blog/italy-visa-egypt-almaviva`
-- **SEO Title:** `تأشيرة إيطاليا من مصر عبر ألمافيفا 2026 | حجز الموعد وشروط الترجمة المعتمدة - جلوبالايز`
+- **SEO Title:** `تأشيرة إيطاليا من مصر عبر ألمافيفا 2026 | حجز الموعد وشروط الترجمة المعتمدة - جلوباليز`
 - **Meta Description:** `دليل التقديم على تأشيرة إيطاليا من مصر عبر ألمافيفا (Almaviva) لعام 2026: خطوات حجز الموعد والمراكز والرسوم، وشروط الترجمة الإيطالية المعتمدة لملف التأشيرة.`
 - **Primary Keyword:** `تأشيرة إيطاليا من مصر ألمافيفا`
 - **Canonical:** `https://www.globalizetl.com/ar/blog/italy-visa-egypt-almaviva`

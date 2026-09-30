@@ -42,7 +42,7 @@ export async function generateMetadata({
   const isAr = locale === "ar";
 
   const title = isAr
-    ? "مكتب ترجمة قانونية معتمد بالقاهرة والجيزة | عقود وقضايا وشركات | جلوبالايز جروب"
+    ? "مكتب ترجمة قانونية معتمد بالقاهرة والجيزة | عقود وقضايا وشركات | جلوباليز جروب"
     : "Certified Legal Translation Services Cairo | Contracts & Court Records | Globalize Group";
 
   const description = isAr
@@ -81,7 +81,7 @@ export default async function LegalTranslationPage({
     {
       id: "lf-1",
       question: isAr
-        ? "هل الترجمة القانونية المقدمة من جلوبالايز جروب معتمدة رسمياً أمام المحاكم والجهات الحكومية؟"
+        ? "هل الترجمة القانونية المقدمة من جلوباليز جروب معتمدة رسمياً أمام المحاكم والجهات الحكومية؟"
         : "Is your legal translation officially accepted by courts and government bodies?",
       answer: isAr
         ? "نعم. تصدر جميع الترجمات القانونية ممهورة بختم مكتبنا المعتمد وتوقيع المترجم المسؤول، وتتضمن إقرار مطابقة رسمي يربط النص المترجم بالأصل. هذه الصيغة معتمدة ومقبولة لدى المحاكم المصرية بمختلف درجاتها (المحاكم الابتدائية، محاكم الاستئناف، المحكمة الاقتصادية، ومحكمة النقض)، وهيئات التحكيم، ومكاتب الشهر العقاري والتوثيق، ووزارة العدل، بالإضافة إلى السفارات والقنصليات الأجنبية داخل جمهورية مصر العربية وخارجها."
@@ -218,7 +218,7 @@ export default async function LegalTranslationPage({
               </h1>
               <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
                 {isAr
-                  ? "يقدم مكتب جلوبالايز جروب خدمات الترجمة القانونية المعتمدة للشركات متعددة الجنسيات، مكاتب المحاماة والاستشارات القانونية، والمستثمرين، والأفراد. نترجم العقود التجارية، صحف الدعاوى، الأحكام القضائية، مذكرات التحكيم الدولي، والتوكيلات الرسمية بدقة اصطلاحية تامة تتوافق مع القوانين السارية ومصطلحات المحاكم والهيئات الحكومية والسفارات الأجنبية."
+                  ? "يقدم مكتب جلوباليز جروب خدمات الترجمة القانونية المعتمدة للشركات متعددة الجنسيات، مكاتب المحاماة والاستشارات القانونية، والمستثمرين، والأفراد. نترجم العقود التجارية، صحف الدعاوى، الأحكام القضائية، مذكرات التحكيم الدولي، والتوكيلات الرسمية بدقة اصطلاحية تامة تتوافق مع القوانين السارية ومصطلحات المحاكم والهيئات الحكومية والسفارات الأجنبية."
                   : "Globalize Group delivers certified legal translation services tailored for multinational corporations, corporate legal departments, independent law practices, and private clients. We translate commercial agreements, court filings, judicial awards, powers of attorney, and statutory filings with terminological fidelity reflecting the nuances of domestic and international jurisprudence."}
               </p>
 
@@ -227,7 +227,7 @@ export default async function LegalTranslationPage({
                 <TrackedWhatsAppLink
                   href={`https://wa.me/201062990808?text=${encodeURIComponent(
                     isAr
-                      ? "مرحباً جلوبالايز جروب، أود إرسال وثائق قانونية للحصول على عرض سعر وموعد تسليم معتمد."
+                      ? "مرحباً جلوباليز جروب، أود إرسال وثائق قانونية للحصول على عرض سعر وموعد تسليم معتمد."
                       : "Hello Globalize Group, I would like to submit legal records for a certified translation quote and schedule."
                   )}`}
                   ctaLocation="legal_translation_hero"
@@ -308,7 +308,7 @@ export default async function LegalTranslationPage({
 
               <p>
                 {isAr
-                  ? "في جلوبالايز جروب، يقوم فريقنا القانوني بمطابقة المصطلحات بدقة، مع مراعاة المفاهيم الدقيقة مثل 'Indemnity' (التعويض الاتفاقي عن الخسارة) مقابل 'Damages' (التعويض القضائي عن الضرر)، وشروط إنهاء العقود 'Termination for Cause' مقابل 'Termination for Convenience'، والتفرقة الإجرائية الدقيقة في المحاكم بين 'Summons' (إعلان صحيفة الدعوى) و'Pleading' (المذكرة القضائية الموضوعية)."
+                  ? "في جلوباليز جروب، يقوم فريقنا القانوني بمطابقة المصطلحات بدقة، مع مراعاة المفاهيم الدقيقة مثل 'Indemnity' (التعويض الاتفاقي عن الخسارة) مقابل 'Damages' (التعويض القضائي عن الضرر)، وشروط إنهاء العقود 'Termination for Cause' مقابل 'Termination for Convenience'، والتفرقة الإجرائية الدقيقة في المحاكم بين 'Summons' (إعلان صحيفة الدعوى) و'Pleading' (المذكرة القضائية الموضوعية)."
                   : "At Globalize Group, our legal linguists differentiate rigorously between closely related yet distinct legal concepts. For instance, we distinguish between contractual indemnity and statutory damages, delineate 'termination for cause' from 'termination for convenience', and maintain strict procedural clarity between initial service of summons, interlocutory motions, and substantive defense pleadings."}
               </p>
             </article>
@@ -478,7 +478,7 @@ export default async function LegalTranslationPage({
                   </div>
                   <p className="text-gray-600 leading-relaxed">
                     {isAr
-                      ? "يتولى مترجمونا القانونيون في جلوبالايز جروب صياغة النص باللغة الأجنبية المطلوبة مع ترجمة كافة الأختام والتوقيعات وتواريخ التصديق بدقة تامة، وإرفاق إقرار مطابقة رسمي (Certificate of Accuracy) معتمد بخاتم مكتبنا وتوقيع المترجم المسؤول وكود التحقق."
+                      ? "يتولى مترجمونا القانونيون في جلوباليز جروب صياغة النص باللغة الأجنبية المطلوبة مع ترجمة كافة الأختام والتوقيعات وتواريخ التصديق بدقة تامة، وإرفاق إقرار مطابقة رسمي (Certificate of Accuracy) معتمد بخاتم مكتبنا وتوقيع المترجم المسؤول وكود التحقق."
                       : "Our legal linguists at Globalize Group translate the complete text into the target language, including exact transcriptions of all marginal stamps, notary seals, and verification notations. We affix our certified office seal, authorized signature, and an official Certificate of Accuracy."}
                   </p>
                 </div>
@@ -514,7 +514,7 @@ export default async function LegalTranslationPage({
 
               <p className="leading-relaxed">
                 {isAr
-                  ? "تتطلب صياغة العقود التجارية والاتفاقيات الدولية موازنة قانونية بين مصطلحات القانون المدني المصري المستمد من القانون الفرنسي ومصطلحات القانون العام الإنجليزي والأمريكي. يحرص فريقنا في جلوبالايز جروب على التعامل مع البنود الحساسة وفق القواعد الآتية:"
+                  ? "تتطلب صياغة العقود التجارية والاتفاقيات الدولية موازنة قانونية بين مصطلحات القانون المدني المصري المستمد من القانون الفرنسي ومصطلحات القانون العام الإنجليزي والأمريكي. يحرص فريقنا في جلوباليز جروب على التعامل مع البنود الحساسة وفق القواعد الآتية:"
                   : "Drafting cross-border commercial agreements requires harmonizing concepts from the Egyptian Civil Code with Anglo-American common law practice. Our senior legal team handles sensitive provisions according to established comparative legal benchmarks:"}
               </p>
 
@@ -572,7 +572,7 @@ export default async function LegalTranslationPage({
 
               <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
                 {isAr
-                  ? "تتعامل جلوبالايز جروب مع ملفات العملاء باعتبارها معلومات سرية بطبيعتها. نطبق ضوابط إدارية وفنية لحماية البيانات تشمل:"
+                  ? "تتعامل جلوباليز جروب مع ملفات العملاء باعتبارها معلومات سرية بطبيعتها. نطبق ضوابط إدارية وفنية لحماية البيانات تشمل:"
                   : "Globalize Group treats client files as strictly privileged and confidential. We implement physical and digital safeguards:"}
               </p>
 
@@ -793,7 +793,7 @@ export default async function LegalTranslationPage({
               {/* BRANCH ACCESS CARD */}
               <div className="rounded-2xl border border-gray-200 bg-white p-5 space-y-3 shadow-xs">
                 <h4 className="font-bold text-xs text-dark-navy uppercase tracking-wider">
-                  {isAr ? "فروع جلوبالايز جروب في القاهرة والجيزة" : "Globalize Group Cairo & Giza Branches"}
+                  {isAr ? "فروع جلوباليز جروب في القاهرة والجيزة" : "Globalize Group Cairo & Giza Branches"}
                 </h4>
                 <div className="space-y-2 text-xs text-gray-600">
                   <div className="flex items-start gap-2">

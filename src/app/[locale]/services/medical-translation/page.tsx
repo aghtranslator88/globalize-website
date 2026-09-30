@@ -43,7 +43,7 @@ export async function generateMetadata({
   const isAr = locale === "ar";
 
   const title = isAr
-    ? "مكتب ترجمة تقارير طبية معتمدة بالقاهرة والجيزة | علاج بالخارج وتحاليل | جلوبالايز جروب"
+    ? "مكتب ترجمة تقارير طبية معتمدة بالقاهرة والجيزة | علاج بالخارج وتحاليل | جلوباليز جروب"
     : "Certified Medical Translation Services Cairo | Clinical Reports & Lab Tests | Globalize Group";
 
   const description = isAr
@@ -82,7 +82,7 @@ export default async function MedicalTranslationPage({
     {
       id: "mf-1",
       question: isAr
-        ? "هل الترجمة الطبية الصادرة من جلوبالايز جروب معتمدة لدى المستشفيات في الخارج وسفارات السفر للعلاج؟"
+        ? "هل الترجمة الطبية الصادرة من جلوباليز جروب معتمدة لدى المستشفيات في الخارج وسفارات السفر للعلاج؟"
         : "Is your medical translation accepted by international hospitals and visa authorities for medical travel?",
       answer: isAr
         ? "نعم. تصدر جميع ترجماتنا الطبية ممهورة بختم مكتبنا المعتمد وتوقيع المترجم الطبي المسؤول، وتتضمن إقرار مطابقة رسمي يربط الترجمة بالتقرير الأصلي. هذه الصيغة معتمدة ومقبولة رسمياً لدى أقسام المرضى الدوليين (International Patient Departments) في مستشفيات ألمانيا، إنجلترا، فرنسا، الولايات المتحدة، وتركيا، وكذلك لدى السفارات الأجنبية وقنصلياتها في مصر (مثل السفارة الألمانية والإيطالية والأمريكية والبريطانية) لاستخراج تأشيرات العلاج الطبي وتنسيق الإخلاء الصحي."
@@ -219,7 +219,7 @@ export default async function MedicalTranslationPage({
               </h1>
               <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
                 {isAr
-                  ? "يقدم مكتب جلوبالايز جروب خدمات الترجمة الطبية المعتمدة للمرضى المسافرين للعلاج بالخارج، المستشفيات، المراكز الطبية، وشركات الأدوية. نترجم التقارير الطبية، نتائج التحاليل المخبرية، مذكرات العمليات الجراحية، وفحوصات الأشعة بدقة متناهية تخضع لمراجعة متخصصين في العلوم الطبية والصيدلانية، ومقبولة لدى كبرى المستشفيات الدولية والسفارات في مصر والخارج."
+                  ? "يقدم مكتب جلوباليز جروب خدمات الترجمة الطبية المعتمدة للمرضى المسافرين للعلاج بالخارج، المستشفيات، المراكز الطبية، وشركات الأدوية. نترجم التقارير الطبية، نتائج التحاليل المخبرية، مذكرات العمليات الجراحية، وفحوصات الأشعة بدقة متناهية تخضع لمراجعة متخصصين في العلوم الطبية والصيدلانية، ومقبولة لدى كبرى المستشفيات الدولية والسفارات في مصر والخارج."
                   : "Globalize Group provides certified medical translation services tailored for patients seeking treatment abroad, international healthcare providers, research hospitals, and pharmaceutical enterprises. We translate diagnostic summaries, laboratory panels, operative summaries, and diagnostic imaging studies with clinical accuracy verified by biomedical linguists, fully accredited for hospital admissions and medical visa processing."}
               </p>
 
@@ -228,7 +228,7 @@ export default async function MedicalTranslationPage({
                 <TrackedWhatsAppLink
                   href={`https://wa.me/201062990808?text=${encodeURIComponent(
                     isAr
-                      ? "مرحباً جلوبالايز جروب، أود إرسال تقرير طبي لترجمته ترجمة معتمدة للسفر والعلاج بالخارج."
+                      ? "مرحباً جلوباليز جروب، أود إرسال تقرير طبي لترجمته ترجمة معتمدة للسفر والعلاج بالخارج."
                       : "Hello Globalize Group, I would like to submit a medical report for certified translation for overseas healthcare."
                   )}`}
                   ctaLocation="medical_translation_hero"
@@ -309,7 +309,7 @@ export default async function MedicalTranslationPage({
 
               <p>
                 {isAr
-                  ? "في جلوبالايز جروب، نعتمد على قواميس المصطلحات الطبية المعتمدة من منظمة الصحة العالمية (WHO) والتصنيف الدولي للأمراض (ICD-10)، بالإضافة إلى قواميس دورلاند وميدرا (MedDRA) الخاصة بالصناعات الدوائية، مع إخضاع كل تقرير لتدقيق متقاطع يشمل فحص الأرقام ونسب التحاليل والجرعات الدوائية بدقة مجهرية."
+                  ? "في جلوباليز جروب، نعتمد على قواميس المصطلحات الطبية المعتمدة من منظمة الصحة العالمية (WHO) والتصنيف الدولي للأمراض (ICD-10)، بالإضافة إلى قواميس دورلاند وميدرا (MedDRA) الخاصة بالصناعات الدوائية، مع إخضاع كل تقرير لتدقيق متقاطع يشمل فحص الأرقام ونسب التحاليل والجرعات الدوائية بدقة مجهرية."
                   : "At Globalize Group, our medical linguists reference validated clinical terminologies from the World Health Organization (WHO), ICD-10 coding dictionaries, Dorland's Illustrated Medical Dictionary, and MedDRA standards for pharmacovigilance. Every document undergoes dual-layer verification to protect clinical values, laboratory thresholds, and medical history."}
               </p>
             </article>
@@ -794,7 +794,7 @@ export default async function MedicalTranslationPage({
               {/* BRANCH ACCESS CARD */}
               <div className="rounded-2xl border border-gray-200 bg-white p-5 space-y-3 shadow-xs">
                 <h4 className="font-bold text-xs text-dark-navy uppercase tracking-wider">
-                  {isAr ? "فروع جلوبالايز جروب في القاهرة والجيزة" : "Globalize Group Cairo & Giza Branches"}
+                  {isAr ? "فروع جلوباليز جروب في القاهرة والجيزة" : "Globalize Group Cairo & Giza Branches"}
                 </h4>
                 <div className="space-y-2 text-xs text-gray-600">
                   <div className="flex items-start gap-2">

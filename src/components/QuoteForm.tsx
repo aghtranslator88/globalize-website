@@ -64,7 +64,7 @@ export default function QuoteForm({ services = [] }: { services?: ServiceOption[
     const serviceName = selectedServiceObj ? selectedServiceObj.name : serviceType;
     
     const waMessage = locale === "ar"
-      ? `مرحباً جلوبالايز جروب، أود طلب تسعير لخدمة:\n• *الخدمة:* ${serviceName}\n• *الاسم:* ${name}\n• *رقم الهاتف:* ${phone}${notes ? `\n• *ملاحظات:* ${notes}` : ""}${file ? `\n• *مستند مرفق:* ${file.name}` : ""}`
+      ? `مرحباً جلوباليز جروب، أود طلب تسعير لخدمة:\n• *الخدمة:* ${serviceName}\n• *الاسم:* ${name}\n• *رقم الهاتف:* ${phone}${notes ? `\n• *ملاحظات:* ${notes}` : ""}${file ? `\n• *مستند مرفق:* ${file.name}` : ""}`
       : `Hello Globalize Group, I would like to request a quote:\n• *Service:* ${serviceName}\n• *Name:* ${name}\n• *Phone:* ${phone}${notes ? `\n• *Notes:* ${notes}` : ""}${file ? `\n• *Attached Doc:* ${file.name}` : ""}`;
     
     const waUrl = `https://wa.me/201062990808?text=${encodeURIComponent(waMessage)}`;
@@ -132,7 +132,7 @@ export default function QuoteForm({ services = [] }: { services?: ServiceOption[
               <p className="text-base font-bold">{locale === "ar" ? "تم استلام وحفظ طلبك بنجاح!" : "Request Received & Saved!"}</p>
               <p className="text-xs mt-1 text-green-700 leading-relaxed">
                 {locale === "ar" 
-                  ? "شكراً لتواصلك مع جلوبالايز جروب. تم تسجيل طلبك بنجاح، ويمكنك الآن متابعته فوراً عبر واتساب."
+                  ? "شكراً لتواصلك مع جلوباليز جروب. تم تسجيل طلبك بنجاح، ويمكنك الآن متابعته فوراً عبر واتساب."
                   : "Thank you for contacting Globalize Group. Your request has been recorded. You can follow up or attach documents via WhatsApp."}
               </p>
             </div>

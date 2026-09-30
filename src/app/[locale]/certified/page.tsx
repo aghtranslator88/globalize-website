@@ -199,7 +199,7 @@ export default async function CertifiedPage({
             {/* Why Us / Quality Bar */}
             <div>
               <h2 className="text-xl font-bold text-dark-navy mb-6 border-b border-gray-100 pb-3 font-arabic">
-                {isAr ? "لماذا تختار جلوبالايز جروب للترجمة المعتمدة؟" : "Why Choose Globalize Group?"}
+                {isAr ? "لماذا تختار جلوباليز جروب للترجمة المعتمدة؟" : "Why Choose Globalize Group?"}
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div className="flex gap-4">

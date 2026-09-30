@@ -166,7 +166,7 @@ function processArticles() {
     let rawTitle = item.title || '';
 
     // Clean competitor brand names
-    let title = rawTitle.replace(/جلوباليز\s+جروب/g, BRAND_NAME).replace(/جلوبالايز\s+جروب/g, BRAND_NAME);
+    let title = rawTitle.replace(/جلوباليز\s+جروب/g, BRAND_NAME).replace(/جلوباليز\s+جروب/g, BRAND_NAME);
     COMPETITOR_KEYWORDS.forEach(regex => {
       title = title.replace(regex, BRAND_NAME);
     });

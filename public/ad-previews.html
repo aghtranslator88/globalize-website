@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>معاينة إعلانات جلوباليز على بحث جوجل | Google Ads Preview</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --border: #e2e8f0;
+      --google-blue: #1a0dab;
+      --google-green: #006621;
+      --google-url: #202124;
+      --google-desc: #4d5156;
+      --tag-bg: #e8f0fe;
+      --tag-color: #1967d2;
+      --ad-badge: #202124;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Cairo', 'Segoe UI', Tahoma, sans-serif;
+      background: var(--bg);
+      color: #1e293b;
+      padding: 30px 20px;
+      line-height: 1.6;
+    }
+    .container { max-width: 1100px; margin: 0 auto; }
+    .header {
+      background: #0f172a;
+      color: white;
+      padding: 24px;
+      border-radius: 16px;
+      margin-bottom: 30px;
+      box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1);
+    }
+    .header h1 { font-size: 26px; font-weight: 800; margin-bottom: 8px; }
+    .header p { color: #94a3b8; font-size: 15px; }
+    .status-banner {
+      background: #fef2f2;
+      border: 1px solid #fecaca;
+      color: #991b1b;
+      padding: 14px 20px;
+      border-radius: 12px;
+      margin-bottom: 24px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .status-banner .dot {
+      width: 12px;
+      height: 12px;
+      background: #dc2626;
+      border-radius: 50%;
+    }
+    .grid { display: grid; grid-template-columns: 1fr; gap: 24px; margin-bottom: 40px; }
+    @media (min-width: 850px) {
+      .grid { grid-template-columns: 1fr; }
+    }
+    .ad-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+    }
+    .ad-meta {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px dashed var(--border);
+      gap: 10px;
+    }
+    .campaign-tag {
+      background: #ede9fe;
+      color: #6d28d9;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 13px;
+    }
+    .adgroup-tag {
+      background: #e0f2fe;
+      color: #0369a1;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 13px;
+    }
+    .score-badge {
+      background: #f0fdf4;
+      color: #15803d;
+      border: 1px solid #bbf7d0;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 13px;
+    }
+
+    /* Google Search SERP Mockup */
+    .google-mockup {
+      background: #ffffff;
+      border: 1px solid #dadce0;
+      border-radius: 12px;
+      padding: 20px;
+      margin-top: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .serp-url-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 6px;
+      font-size: 13px;
+    }
+    .serp-favicon {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #0f172a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 10px;
+      font-weight: bold;
+    }
+    .serp-site-name {
+      font-weight: 600;
+      color: #202124;
+    }
+    .serp-url {
+      color: #5f6368;
+      direction: ltr;
+      display: inline-block;
+    }
+    .serp-badge {
+      font-size: 12px;
+      font-weight: 700;
+      color: #202124;
+      margin-left: 6px;
+    }
+    .serp-title {
+      color: #1a0dab;
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 1.3;
+      margin-bottom: 8px;
+      text-decoration: none;
+      display: block;
+      cursor: pointer;
+    }
+    .serp-title:hover { text-decoration: underline; }
+    .serp-desc {
+      color: #4d5156;
+      font-size: 14px;
+      line-height: 1.5;
+      margin-bottom: 14px;
+    }
+    .serp-assets-call {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #f1f3f4;
+      padding: 6px 14px;
+      border-radius: 18px;
+      font-size: 13px;
+      color: #1a73e8;
+      font-weight: 700;
+      margin-bottom: 12px;
+      cursor: pointer;
+    }
+    .serp-sitelinks {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px solid #f1f3f4;
+    }
+    .sitelink-item {
+      padding: 6px 0;
+    }
+    .sitelink-title {
+      color: #1a0dab;
+      font-weight: 600;
+      font-size: 14px;
+      display: block;
+      margin-bottom: 2px;
+      text-decoration: none;
+    }
+    .sitelink-title:hover { text-decoration: underline; }
+    .sitelink-desc {
+      color: #4d5156;
+      font-size: 12px;
+      line-height: 1.4;
+    }
+    .en-dir { direction: ltr; font-family: 'Inter', sans-serif; text-align: left; }
+    .en-dir .serp-badge { margin-right: 6px; margin-left: 0; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>معاينة إعلانات Google Ads الحية — جلوباليز جروب</h1>
+      <p>معاينة دقيقة لشكل الإعلانات كما تظهر للعميل في نتائج بحث جوجل (Google SERP) مع أزرار الاتصال وروابط الأقسام (Sitelinks)</p>
+    </div>
+
+    <div class="status-banner">
+      <div class="dot"></div>
+      <div>
+        <strong>حالة جميع الحملات والإعلانات الآن: متوقفة مؤقتاً بالكامل (PAUSED)</strong> — لا يوجد أي إعلان ينفق أو يجلب زيارات حالياً حتى تراجع كل شيء بنفسك.
+      </div>
+    </div>
+
+    <div class="grid">
+
+      <!-- AD 1: Certified Offices -->
+      <div class="ad-card">
+        <div class="ad-meta">
+          <span class="campaign-tag">حملة الترجمة المعتمدة: GLB_SEARCH_EGY_AR_CERTIFIED</span>
+          <span class="adgroup-tag">المجموعة: AG_AR_Certified_Offices</span>
+          <span class="score-badge">Ad Strength: ممتاز (15 عنوان + 4 أوصاف)</span>
+        </div>
+        <div class="google-mockup">
+          <div class="serp-url-row">
+            <span class="serp-badge">إعلان · Sponsored</span>
+            <div class="serp-favicon">G</div>
+            <span class="serp-site-name">جلوباليز جروب للترجمة المعتمدة</span>
+            <span class="serp-url">https://www.globalizetl.com/ar/certified</span>
+          </div>
+          <a class="serp-title">مكتب ترجمة معتمد بمصر | جلوباليز جروب للترجمة | ترجمة معتمدة للسفر والفيزا</a>
+          <div class="serp-desc">
+            مكتب ترجمة معتمد لمستندات السفر والجهات الرسمية. فروعنا بالجيزة والدقي وصلاح سالم. تواصل معنا واتساب لتقييم أوراقك واستلام ترجمتك الرسمية المعتمدة فوراً.
+          </div>
+          <div class="serp-assets-call">
+            📞 اتصل الآن: 010 62990808
+          </div>
+          <div class="serp-sitelinks">
+            <div class="sitelink-item">
+              <a class="sitelink-title">فروعنا ومواعيد العمل</a>
+              <div class="sitelink-desc">فروع الجيزة والدقي والهرم وصلاح سالم من 9 ص حتى 9 م.</div>
+            </div>
+            <div class="sitelink-item">
+              <a class="sitelink-title">أسعار الترجمة</a>
+              <div class="sitelink-desc">احسب تكلفة ترجمة أوراقك بالجنيه المصري وبشفافية تامة.</div>
+            </div>
+            <div class="sitelink-item">
+              <a class="sitelink-title">أوراق وشهادات رسمية</a>
+              <div class="sitelink-desc">شهادات ميلاد وفيش وبيان درجات وتسليم سريع معتمد.</div>
+            </div>
+            <div class="sitelink-item">
+              <a class="sitelink-title">تواصل واتساب المباشر</a>
+              <div class="sitelink-desc">استفسار فوري وتحديد موعد مع خدمة عملاء طوال اليوم.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- AD 2: Certified Embassies -->
+      <div class="ad-card">
+        <div class="ad-meta">
+          <span class="campaign-tag">حملة الترجمة المعتمدة: GLB_SEARCH_EGY_AR_CERTIFIED</span>
+          <span class="adgroup-tag">المجموعة: AG_AR_Certified_Embassies</span>
+          <span class="score-badge">Ad Strength: ممتاز (15 عنوان + 4 أوصاف)</span>
+        </div>
+        <div class="google-mockup">
+          <div class="serp-url-row">
+            <span class="serp-badge">إعلان · Sponsored</span>
+            <div class="serp-favicon">G</div>
+            <span class="serp-site-name">جلوباليز جروب للترجمة</span>
+            <span class="serp-url">https://www.globalizetl.com/ar/certified</span>
+          </div>
+          <a class="serp-title">ترجمة معتمدة للسفارات والفيزا | سفارات إيطاليا وألمانيا | ترجمة معتمدة لأوراق السفر</a>
+          <div class="serp-desc">
+            ترجمة معتمدة ومطابقة لاشتراطات السفارات والقنصليات بمصر. تسليم سريع وأختام رسمية موثقة لملفات السفر وتأشيرات العمل والدراسة بالخارج. تواصل عبر واتساب.
+          </div>
+          <div class="serp-assets-call">
+            📞 اتصل الآن: 010 62990808
+          </div>
+          <div class="serp-sitelinks">
+            <div class="sitelink-item">
+              <a class="sitelink-title">أوراق وشهادات رسمية</a>
+              <div class="sitelink-desc">توثيق وترجمة شهادات التخرج والميلاد والقيد العائلي.</div>
+            </div>
+            <div class="sitelink-item">
+              <a class="sitelink-title">فروعنا بالقاهرة والجيزة</a>
+              <div class="sitelink-desc">مقرات رسمية بالدقي والجيزة والهرم بالقرب منك.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- AD 3: Legal Corporate -->
+      <div class="ad-card">
+        <div class="ad-meta">
+          <span class="campaign-tag">حملة الترجمة التخصصية: GLB_SEARCH_EGY_AR_SPECIALIZED</span>
+          <span class="adgroup-tag">المجموعة: AG_AR_Legal_Corporate</span>
+          <span class="score-badge">Ad Strength: ممتاز (15 عنوان + 4 أوصاف)</span>
+        </div>
+        <div class="google-mockup">
+          <div class="serp-url-row">
+            <span class="serp-badge">إعلان · Sponsored</span>
+            <div class="serp-favicon">G</div>
+            <span class="serp-site-name">جلوباليز للترجمة القانونية</span>
+            <span class="serp-url">https://www.globalizetl.com/ar/services/legal-translation</span>
+          </div>
+          <a class="serp-title">مكتب ترجمة قانونية معتمدة | ترجمة عقود واتفاقيات شركات | صياغة قانونية دقيقة وموثقة</a>
+          <div class="serp-desc">
+            ترجمة قانونية معتمدة للعقود ومستندات الشركات والاتفاقيات. صياغة قضائية وتحكيمية دقيقة للشركات والمكاتب القانونية مع سرية تامة وتوقيع اتفاقية NDA.
+          </div>
+          <div class="serp-assets-call">
+            📞 اتصل الآن: 010 62990808
+          </div>
+          <div class="serp-sitelinks">
+            <div class="sitelink-item">
+              <a class="sitelink-title">ترجمة أحكام وقضايا</a>
+              <div class="sitelink-desc">مذكرات دفاع ومستندات تحكيم دولي للمحاكم.</div>
+            </div>
+            <div class="sitelink-item">
+              <a class="sitelink-title">مكتب الدقي وجامعة القاهرة</a>
+              <div class="sitelink-desc">تفضل بزيارة المقر الرئيسي للترجمة القانونية.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- AD 4: Medical Reports -->
+      <div class="ad-card">
+        <div class="ad-meta">
+          <span class="campaign-tag">حملة الترجمة التخصصية: GLB_SEARCH_EGY_AR_SPECIALIZED</span>
+          <span class="adgroup-tag">المجموعة: AG_AR_Medical_Reports</span>
+          <span class="score-badge">Ad Strength: ممتاز (15 عنوان + 4 أوصاف)</span>
+        </div>
+        <div class="google-mockup">
+          <div class="serp-url-row">
+            <span class="serp-badge">إعلان · Sponsored</span>
+            <div class="serp-favicon">G</div>
+            <span class="serp-site-name">جلوباليز للترجمة الطبية</span>
+            <span class="serp-url">https://www.globalizetl.com/ar/services/medical-translation</span>
+          </div>
+          <a class="serp-title">مكتب ترجمة تقارير طبية | ترجمة تحاليل وفحوصات معتمدة | ترجمة ملفات العلاج بالخارج</a>
+          <div class="serp-desc">
+            ترجمة تقارير طبية وفحوصات معتمدة للسفر والعلاج بالخارج بواسطة مترجمين متخصصين بالعلوم الطبية. دقة تامة في المصطلحات وسرية كاملة للملف الطبي.
+          </div>
+          <div class="serp-assets-call">
+            📞 اتصل الآن: 010 62990808
+          </div>
+        </div>
+      </div>
+
+      <!-- AD 5: English Expats & Corp -->
+      <div class="ad-card en-dir">
+        <div class="ad-meta">
+          <span class="campaign-tag">English Campaign: GLB_SEARCH_EGY_EN_EXPATS_CORP</span>
+          <span class="adgroup-tag">Ad Group: AG_EN_Certified_Cairo</span>
+          <span class="score-badge">Ad Strength: Excellent (14 Headlines + 4 Descriptions)</span>
+        </div>
+        <div class="google-mockup">
+          <div class="serp-url-row">
+            <span class="serp-badge">Sponsored · Ad</span>
+            <div class="serp-favicon">G</div>
+            <span class="serp-site-name">Globalize Group Translation</span>
+            <span class="serp-url">https://www.globalizetl.com/en/certified</span>
+          </div>
+          <a class="serp-title">Certified Translation Cairo | Embassy & Visa Translation | Offices in Dokki & Giza</a>
+          <div class="serp-desc">
+            Official certified translation in Cairo & Giza. Formatted for visa and consular files. Leading certified translation office trusted by expats and multinational companies.
+          </div>
+          <div class="serp-assets-call">
+            📞 Call Now: 010 62990808
+          </div>
+          <div class="serp-sitelinks">
+            <div class="sitelink-item">
+              <a class="sitelink-title">Legal Translation</a>
+              <div class="sitelink-desc">Contracts, agreements, and corporate legal translation.</div>
+            </div>
+            <div class="sitelink-item">
+              <a class="sitelink-title">Our Cairo Branches</a>
+              <div class="sitelink-desc">Offices in Dokki, Haram & Giza for walk-ins.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

@@ -18,7 +18,7 @@ async function main() {
 
   console.log('Seeding site settings...');
   const settings = [
-    { key: 'company_name_ar', value: 'جلوبالايز جروب لأعمال الترجمة المعتمدة' },
+    { key: 'company_name_ar', value: 'جلوباليز جروب لأعمال الترجمة المعتمدة' },
     { key: 'company_name_en', value: 'Globalize Group for Certified Translation' },
     { key: 'phone', value: '01062990808' },
     { key: 'whatsapp', value: '+20 106 299 0808' },
@@ -28,11 +28,11 @@ async function main() {
     { key: 'facebook', value: 'https://facebook.com/globalizegroup' },
     { key: 'twitter', value: 'https://twitter.com/globalizegroup' },
     { key: 'linkedin', value: 'https://linkedin.com/company/globalizegroup' },
-    { key: 'meta_title_template_ar', value: '%s | جلوبالايز جروب' },
+    { key: 'meta_title_template_ar', value: '%s | جلوباليز جروب' },
     { key: 'meta_title_template_en', value: '%s | Globalize Group' },
-    { key: 'meta_default_title_ar', value: 'جلوبالايز جروب — ترجمة معتمدة لدى جميع السفارات والهيئات الحكومية' },
+    { key: 'meta_default_title_ar', value: 'جلوباليز جروب — ترجمة معتمدة لدى جميع السفارات والهيئات الحكومية' },
     { key: 'meta_default_title_en', value: 'Globalize Group — Certified Translation for All Embassies & Gov Entities' },
-    { key: 'meta_description_ar', value: 'جلوبالايز جروب هي شركة ترجمة معتمدة رائدة في مصر والوطن العربي، نقدم خدمات الترجمة القانونية والفورية وتوطين المواقع بدقة واحترافية متناهية.' },
+    { key: 'meta_description_ar', value: 'جلوباليز جروب هي شركة ترجمة معتمدة رائدة في مصر والوطن العربي، نقدم خدمات الترجمة القانونية والفورية وتوطين المواقع بدقة واحترافية متناهية.' },
     { key: 'meta_description_en', value: 'Globalize Group is a leading certified translation company in Egypt and the Middle East, offering legal translation, interpretation, and website localization services.' }
   ];
 
@@ -635,8 +635,8 @@ async function main() {
   console.log('Seeding reviews...');
   const reviewsData = [
     { authorName: 'محمد عبد الله', rating: 5, textAr: 'ترجمت شهادة ميلادي وعقد زواجي لتقديمها للسفارة الألمانية للتأشيرة الدراسية. تم قبول الأوراق بدون أي استفسارات أو تعديلات. الخدمة سريعة ومحترفة جداً.', textEn: 'I translated my birth and marriage certificates for the German Embassy visa. The documents were accepted without any questions. Very fast and professional.', serviceType: 'CERTIFIED', date: new Date('2026-06-15') },
-    { authorName: 'ياسر الشمري', rating: 5, textAr: 'تعاملنا مع جلوبالايز جروب لترجمة وتوطين موقع شركتنا إلى ثلاث لغات. دقة في الصياغة وفهم عميق للمصطلحات التقنية. نوصي بهم بشدة.', textEn: 'We worked with Globalize Group to localize our company website into three languages. Great accuracy and deep understanding of technical terms. Highly recommended.', serviceType: 'LOCALIZATION', date: new Date('2026-07-01') },
-    { authorName: 'أ. داليا مصطفى (شركة الخليج للخدمات)', rating: 5, textAr: 'قمنا باستئجار كبائن الترجمة الفورية والتقينا بمترجمين فوريين متميزين جداً لمؤتمرنا الطبي السنوي. شكرًا جلوبالايز على التنظيم الرائع.', textEn: 'We rented interpretation booths and hired outstanding interpreters for our annual medical conference. Thank you Globalize for the excellent organization.', serviceType: 'INTERPRETATION', date: new Date('2026-05-20') },
+    { authorName: 'ياسر الشمري', rating: 5, textAr: 'تعاملنا مع جلوباليز جروب لترجمة وتوطين موقع شركتنا إلى ثلاث لغات. دقة في الصياغة وفهم عميق للمصطلحات التقنية. نوصي بهم بشدة.', textEn: 'We worked with Globalize Group to localize our company website into three languages. Great accuracy and deep understanding of technical terms. Highly recommended.', serviceType: 'LOCALIZATION', date: new Date('2026-07-01') },
+    { authorName: 'أ. داليا مصطفى (شركة الخليج للخدمات)', rating: 5, textAr: 'قمنا باستئجار كبائن الترجمة الفورية والتقينا بمترجمين فوريين متميزين جداً لمؤتمرنا الطبي السنوي. شكرًا جلوباليز على التنظيم الرائع.', textEn: 'We rented interpretation booths and hired outstanding interpreters for our annual medical conference. Thank you Globalize for the excellent organization.', serviceType: 'INTERPRETATION', date: new Date('2026-05-20') },
     { authorName: 'أحمد فوزي', rating: 5, textAr: 'خدمة سريعة في ترجمة فيش جنائي وبيان درجات خلال نفس اليوم وتوصيل المستندات للمنزل. شكراً لفريق العمل بالهرم.', textEn: 'Fast service translating my police record and academic transcript in the same day and home delivering. Thanks to the Haram branch team.', serviceType: 'CERTIFIED', date: new Date('2026-07-10') },
     { authorName: 'سارة التميمي', rating: 4, textAr: 'ترجمة دقيقة لشهادات التخرج لجامعة الملك سعود بالرياض، تم قبول الملف بدون مشاكل. الالتزام بالوقت كان ممتازا.', textEn: 'Accurate translation of graduation certificates for King Saud University in Riyadh, the file was accepted with no issues. Turnaround time commitment was excellent.', serviceType: 'CERTIFIED', date: new Date('2026-07-12') },
     { authorName: 'م. شريف جلال', rating: 5, textAr: 'شركة محترفة جداً، تعاملنا معهم في ترجمة وتوطين عقود وعروض التقديم التقنية لشركتنا. جودة ممتازة وسعر مناسب.', textEn: 'A very professional company. We worked with them on translating and localizing contracts and tech proposals for our company. Excellent quality and fair price.', serviceType: 'LOCALIZATION', date: new Date('2026-06-25') },
@@ -668,7 +668,7 @@ async function main() {
 توجه بأصل الشهادة المميكنة إلى أقرب مكتب تصديقات لوزارة الخارجية المصرية للحصول على تصديق الخارجية (اللاصقة الرسمية والختم). تذكر أن السفارة الألمانية تتطلب ألا يزيد عمر تصديق الخارجية عن 6 أشهر.
 
 ### 3. الترجمة المعتمدة للغة الألمانية
-بعد تصديق الأصل من الخارجية، خذ الوثيقة المصَدقة وتوجه بها إلى مكتب **جلوبالايز جروب للترجمة المعتمدة**. سيقوم المترجمون المتخصصون لدينا بنقل محتويات الشهادة بما فيها أختام الخارجية والصياغات القانونية بدقة متناهية إلى اللغة الألمانية، وختمها بالختم الرسمي المعترف به.
+بعد تصديق الأصل من الخارجية، خذ الوثيقة المصَدقة وتوجه بها إلى مكتب **جلوباليز جروب للترجمة المعتمدة**. سيقوم المترجمون المتخصصون لدينا بنقل محتويات الشهادة بما فيها أختام الخارجية والصياغات القانونية بدقة متناهية إلى اللغة الألمانية، وختمها بالختم الرسمي المعترف به.
 
 ### 4. تقديم الأوراق للسفارة
 يتم تسليمك المستند مترجمًا ومرفقًا بصورة من الأصل ومختومًا بالاعتماد الرسمي، لتقديمه للسفارة أو مكتب التأشيرات (VFS Global).`,
@@ -710,7 +710,7 @@ You will receive the certified translated document attached to a copy of the leg
 - **تطابق الشكل والمضمون**: في الترجمة المعتمدة، يجب نقل كل تفاصيل المستند بما فيها الأختام، التواقيع، الهوامش، وحتى الكتابات غير الواضحة.
 - **جهة التقديم**: تُطلب الترجمة المعتمدة دائماً من قبل الجهات الرسمية، السفارات، الجامعات، مصلحة الهجرة، والمحاكم. بينما الترجمة العادية تُستخدم لأغراض المعرفة الشخصية أو المقالات العامة والكتب.
 
-نحن في **جلوبالايز جروب** نقدم ترجمات معتمدة متوافقة بالكامل مع أعلى المعايير المهنية ومعترف بها رسمياً لدى جميع السفارات والهيئات الحكومية داخل مصر وخارجها.`,
+نحن في **جلوباليز جروب** نقدم ترجمات معتمدة متوافقة بالكامل مع أعلى المعايير المهنية ومعترف بها رسمياً لدى جميع السفارات والهيئات الحكومية داخل مصر وخارجها.`,
       bodyEn: `## Understanding Certified Translation and Its Requirements
 
 Many people wonder what certified translation means and when it is required instead of regular translation.
@@ -748,7 +748,7 @@ At **Globalize Group**, we provide certified translations fully compliant with p
 3. **تخصيص طرق الدفع والعملات**: توفير بوابات الدفع المحلية الأكثر شعبية في الخليج مثل (مدى mada، تمارا، Apple Pay) وعرض الأسعار بالريال والدرهم والدينار.
 4. **التوافق مع القوانين المحلية**: تعديل الشروط والأحكام وسياسات الخصوصية لتتوافق مع قوانين حماية البيانات والتجارة الإلكترونية في كل دولة خليجية.
 
-تقدم **جلوبالايز جروب** خدمات توطين برمجية ولغوية متكاملة بأيدي مترجمين ومهندسين خبراء لضمان نجاح توسع علامتك التجارية في الخليج.`,
+تقدم **جلوباليز جروب** خدمات توطين برمجية ولغوية متكاملة بأيدي مترجمين ومهندسين خبراء لضمان نجاح توسع علامتك التجارية في الخليج.`,
       bodyEn: `## The Role of Localization in Business Success in the GCC
 
 When planning to expand your digital business or e-commerce store into the GCC countries (Saudi Arabia, UAE, Kuwait, Qatar, Bahrain, Oman), simple translation of content into standard Arabic is not always enough. This is where **Localization** becomes crucial.
@@ -790,7 +790,7 @@ Localization is the process of fully adapting your website or application lingui
 ### 4. التجهيزات والكبائن الصوتية الاحترافية
 الترجمة الفورية الناجحة تتطلب كبائن ترجمة عازلة للصوت ومعدات بث لاسلكي وسماعات رأس ذات جودة عالية للحضور.
 
-في قسم الترجمة الفورية بـ **جلوبالايز جروب**، نوفر النخبة من المترجمين الفوريين للمؤتمرات الدولية مع أحدث التجهيزات الصوتية والكبائن لضمان إخراج فعاليتك بأفضل صورة ممكنة.`,
+في قسم الترجمة الفورية بـ **جلوباليز جروب**، نوفر النخبة من المترجمين الفوريين للمؤتمرات الدولية مع أحدث التجهيزات الصوتية والكبائن لضمان إخراج فعاليتك بأفضل صورة ممكنة.`,
       bodyEn: `## Criteria for Choosing Conference Interpreters
 
 Simultaneous interpretation is one of the most challenging and sensitive fields of translation. The success of your international conference depends entirely on the interpreter's ability to convey ideas and terminologies quickly and accurately. Here is how to choose:
@@ -825,7 +825,7 @@ At **Globalize Group**, we provide elite conference interpreters along with stat
   const faqs = [
     // Homepage FAQs
     {
-      questionAr: 'ما هي مواعيد العمل الرسمية لجلوبالايز جروب؟',
+      questionAr: 'ما هي مواعيد العمل الرسمية لجلوباليز جروب؟',
       questionEn: 'What are the official working hours of Globalize Group?',
       answerAr: 'نستقبلكم في فروعنا من السبت إلى الخميس من الساعة 9:00 صباحاً وحتى الساعة 9:00 مساءً. ويوم الجمعة هو يوم العطلة الأسبوعية الرسمي، ولكن يمكنكم طلب عروض الأسعار عبر موقعنا وعلى الواتساب طوال 24 ساعة.',
       answerEn: 'We welcome you at our branches Saturday through Thursday from 9:00 AM to 9:00 PM. Friday is our official weekend, but you can request quotes via website or WhatsApp 24/7.',
@@ -833,7 +833,7 @@ At **Globalize Group**, we provide elite conference interpreters along with stat
       homepage: true
     },
     {
-      questionAr: 'هل ترجمة جلوبالايز جروب معتمدة رسمياً لدى السفارات؟',
+      questionAr: 'هل ترجمة جلوباليز جروب معتمدة رسمياً لدى السفارات؟',
       questionEn: 'Is Globalize Group translation officially accepted by embassies?',
       answerAr: 'نعم، نحن مكتب ترجمة معتمد بشكل رسمي ومقبول لدى جميع السفارات والقنصليات بمصر وخارجها (بما في ذلك سفارات دول الاتحاد الأوروبي، الولايات المتحدة، المملكة المتحدة، ودول الخليج العربي)، وكذلك جميع الهيئات الحكومية والمحاكم والجامعات.',
       answerEn: 'Yes, we are officially certified and accepted by all embassies and consulates in Egypt and abroad (including EU, US, UK, and GCC embassies), as well as government bodies, courts, and universities.',
@@ -888,7 +888,7 @@ At **Globalize Group**, we provide elite conference interpreters along with stat
     {
       questionAr: 'كيف أتأكد أن مكتب الترجمة معتمد لدى السفارة الألمانية؟',
       questionEn: 'How can I make sure a translation office is certified by the German Embassy?',
-      answerAr: 'السفارة الألمانية لا تصدر قائمة رسمية للمكاتب، ولكنها تشترط أن تكون الترجمة مطابقة للمعايير القانونية الألمانية ومختومة وموقعة من مترجم معترف به وعضو نقابي، وهو ما توفره جلوبالايز جروب بالكامل.',
+      answerAr: 'السفارة الألمانية لا تصدر قائمة رسمية للمكاتب، ولكنها تشترط أن تكون الترجمة مطابقة للمعايير القانونية الألمانية ومختومة وموقعة من مترجم معترف به وعضو نقابي، وهو ما توفره جلوباليز جروب بالكامل.',
       answerEn: 'The German Embassy does not issue an official list of offices, but requires the translation to comply with German legal standards, stamped and signed by a recognized, qualified translator, which Globalize Group guarantees.',
       sortOrder: 1,
       blogPostId: blogRecords[0].id

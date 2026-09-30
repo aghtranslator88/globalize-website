@@ -21,7 +21,7 @@ export async function generateMetadata({
   if (!service) return {};
   const isAr = locale === "ar";
   const title = isAr
-    ? "تأجير أجهزة وخدمات الترجمة الفورية للمؤتمرات في مصر 2026 | جلوبالايز"
+    ? "تأجير أجهزة وخدمات الترجمة الفورية للمؤتمرات في مصر 2026 | جلوباليز"
     : "Simultaneous Interpretation Services & Equipment Rental Egypt 2026 | Globalize";
   const description = isAr
     ? "أفضل خدمات الترجمة الفورية وتأجير أجهزة المؤتمرات في مصر لعام 2026. كبائن عازلة للصوت، سماعات استقبال رقمية، ومترجمون فوريون معتمدون لكافة اللغات والفعاليات."

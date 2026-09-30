@@ -73,7 +73,7 @@ export default async function HomePage({
 
             <h1 className="text-3xl sm:text-5xl font-black text-dark-navy tracking-tight max-w-4xl mx-auto leading-tight mb-6 font-arabic">
               {isAr
-                ? "جلوبالايز جروب — ترجمة معتمدة لدى جميع السفارات والهيئات الحكومية"
+                ? "جلوباليز جروب — ترجمة معتمدة لدى جميع السفارات والهيئات الحكومية"
                 : "Globalize Group — Certified Translation for All Embassies & Gov Entities"}
             </h1>
 
@@ -314,7 +314,7 @@ export default async function HomePage({
               </h2>
               <p className="text-gray-500 text-xs sm:text-sm max-w-md mx-auto">
                 {isAr
-                  ? "آراء حقيقية لعملاء وثقوا بجلوبالايز جروب لترجمة أوراق السفر والهجرة وأعمالهم التجارية."
+                  ? "آراء حقيقية لعملاء وثقوا بجلوباليز جروب لترجمة أوراق السفر والهجرة وأعمالهم التجارية."
                   : "Real reviews from clients who trusted us with travel, immigration, and business files."}
               </p>
             </div>
