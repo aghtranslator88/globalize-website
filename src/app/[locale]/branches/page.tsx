@@ -1,6 +1,8 @@
 import { setRequestLocale } from "next-intl/server";
 import { getBranches } from "@/lib/data";
 import { getSEOHeaders, generateLocalBusinessJsonLd, generateBreadcrumbJsonLd } from "@/lib/seo";
+import { getPageContent } from "@/lib/pageContent";
+import { PageContentIntro, PageContentBody, PageContentFaqs, PageContentFaqJsonLd } from "@/components/PageContent";
 import { getSiteUrl } from "@/lib/siteUrl";
 import { serializeJsonLd } from "@/lib/jsonLd";
 import Navbar from "@/components/Navbar";
@@ -20,11 +22,8 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  const title = locale === "ar" ? "فروع ومكاتب جلوباليز جروب للترجمة" : "Globalize Group Branches & Offices";
-  const description = locale === "ar"
-    ? "عناوين فروعنا وأرقام الهواتف ومواعيد العمل لفرع الهرم وفروعنا الأخرى بمصر."
-    : "Addresses, phone numbers, and working hours for our Haram and other branches in Egypt.";
-  return getSEOHeaders(title, description, "/branches", true, locale);
+  const content = getPageContent("branches", locale);
+  return getSEOHeaders(content.seoTitle, content.metaDescription, "/branches", true, locale);
 }
 
 export default async function BranchesPage({
@@ -37,6 +36,7 @@ export default async function BranchesPage({
 
   const branches = await getBranches(locale);
   const isAr = locale === "ar";
+  const content = getPageContent("branches", locale);
 
   const breadcrumbs = [
     { name: isAr ? "الرئيسية" : "Home", url: "/" },
@@ -51,6 +51,7 @@ export default async function BranchesPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: serializeJsonLd(breadcrumbJsonLd) }}
       />
+      <PageContentFaqJsonLd unit={content} />
       {branches.map((b) => (
         <script
           key={b.id}
@@ -87,15 +88,8 @@ export default async function BranchesPage({
           </ol>
         </nav>
 
-        <div className="text-center mb-12">
-          <h1 className="text-2xl sm:text-4xl font-black text-dark-navy mb-4 font-arabic">
-            {isAr ? "فروع ومكاتب جلوباليز جروب" : "Globalize Group Branches & Offices"}
-          </h1>
-          <p className="text-gray-500 text-xs sm:text-sm max-w-2xl mx-auto leading-relaxed">
-            {isAr
-              ? "تفضل بزيارتنا في أقرب فرع إليك لاستلام وتوثيق مستنداتك المترجمة. نوفر تغطية كاملة لمحافظات القاهرة الكبرى والجيزة."
-              : "Visit us at our nearest office to pick up and legalize your translations. We fully cover Cairo and Giza."}
-          </p>
+        <div className="mb-12 max-w-4xl">
+          <PageContentIntro unit={content} isAr={isAr} />
         </div>
 
         {/* Branches Grid */}
@@ -213,6 +207,11 @@ export default async function BranchesPage({
               </div>
             </div>
           ))}
+        </div>
+
+        <div className="mt-14 max-w-4xl space-y-12">
+          <PageContentBody unit={content} />
+          <PageContentFaqs unit={content} />
         </div>
       </main>
 

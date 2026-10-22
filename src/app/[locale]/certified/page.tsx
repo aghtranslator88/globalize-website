@@ -1,12 +1,15 @@
 import { setRequestLocale } from "next-intl/server";
-import { getServiceBySlug, getDocuments, getFAQs } from "@/lib/data";
-import { getSEOHeaders, generateServiceJsonLd, generateFAQJsonLd } from "@/lib/seo";
+import { getServiceBySlug, getDocuments } from "@/lib/data";
+import { getSEOHeaders, generateServiceJsonLd } from "@/lib/seo";
+import { getPageContent } from "@/lib/pageContent";
+import { GUIDE_BLOG_POSTS } from "@/lib/guide-posts";
+import { PageContentIntro, PageContentBody, PageContentFaqs, PageContentFaqJsonLd } from "@/components/PageContent";
 import { serializeJsonLd } from "@/lib/jsonLd";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import QuoteForm from "@/components/QuoteForm";
 import TrackedWhatsAppLink from "@/components/TrackedWhatsAppLink";
-import { Phone, CheckCircle, ShieldCheck, Award, FileText, Landmark, Clock, ChevronDown, Globe, MessageCircle } from "lucide-react";
+import { ShieldCheck, FileText, Landmark, Globe, MessageCircle } from "lucide-react";
 import { Link } from "@/i18n/routing";
 
 import type { Metadata } from "next";
@@ -21,7 +24,8 @@ export async function generateMetadata({
   const { locale } = await params;
   const service = await getServiceBySlug("certified", locale);
   if (!service) return {};
-  return getSEOHeaders(service.name, service.description, "/certified", service.indexable, locale);
+  const content = getPageContent("certified", locale);
+  return getSEOHeaders(content.seoTitle, content.metaDescription, "/certified", service.indexable, locale);
 }
 
 export default async function CertifiedPage({
@@ -36,18 +40,18 @@ export default async function CertifiedPage({
   if (!service) return null;
 
   const docs = await getDocuments(locale);
-  const faqs = await getFAQs("service", service.id, locale);
+  const content = getPageContent("certified", locale);
   const isAr = locale === "ar";
 
   // Breadcrumbs data
   const breadcrumbs = [
     { name: isAr ? "الرئيسية" : "Home", url: "/" },
-    { name: service.name, url: "/certified" },
+    { name: isAr ? "الترجمة المعتمدة" : "Certified Translation", url: "/certified" },
   ];
 
   const serviceJsonLd = generateServiceJsonLd({
-    name: service.name,
-    description: service.description,
+    name: content.h1,
+    description: content.metaDescription,
     url: `/${locale}/certified`,
   });
 
@@ -57,12 +61,7 @@ export default async function CertifiedPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: serializeJsonLd(serviceJsonLd) }}
       />
-      {faqs.length > 0 && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: serializeJsonLd(generateFAQJsonLd(faqs)) }}
-        />
-      )}
+      <PageContentFaqJsonLd unit={content} />
       <Navbar />
 
       <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
@@ -83,25 +82,7 @@ export default async function CertifiedPage({
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
           {/* Main Content Area */}
           <div className="lg:col-span-2 space-y-12">
-            {/* H1 & Header */}
-            <div>
-              <h1 className="text-2xl sm:text-4xl font-black text-dark-navy mb-4 font-arabic">
-                {service.name}
-              </h1>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                {service.description}
-              </p>
-            </div>
-
-            {/* Answer Box Definition */}
-            <div className="answer-box p-6 sm:p-8">
-              <h3 className="font-bold text-xs text-primary-blue uppercase tracking-wide mb-2">
-                {isAr ? "تعريف الترجمة المعتمدة" : "Certified Translation Defined"}
-              </h3>
-              <p className="text-sm font-semibold text-dark-navy leading-relaxed font-arabic">
-                {service.definition}
-              </p>
-            </div>
+            <PageContentIntro unit={content} isAr={isAr} />
 
             {/* 4 Sub-Hub Cards */}
             <div>
@@ -196,77 +177,26 @@ export default async function CertifiedPage({
               </p>
             </div>
 
-            {/* Why Us / Quality Bar */}
-            <div>
-              <h2 className="text-xl font-bold text-dark-navy mb-6 border-b border-gray-100 pb-3 font-arabic">
-                {isAr ? "لماذا تختار جلوباليز جروب للترجمة المعتمدة؟" : "Why Choose Globalize Group?"}
+            <PageContentBody unit={content} />
+
+            <section className="rounded-xl border border-gray-200 bg-white p-6 space-y-4">
+              <h2 className="font-bold text-base text-dark-navy font-arabic">
+                {isAr ? "خدمات وأدلة ذات صلة" : "Related services and guides"}
               </h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <div className="flex gap-4">
-                  <div className="h-10 w-10 rounded-lg bg-green-50 text-green-600 flex items-center justify-center flex-shrink-0">
-                    <Award className="h-5 w-5" />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-xs text-dark-navy mb-1">{isAr ? "دقة ومطابقة قانونية كاملة" : "Full Legal Accuracy"}</h4>
-                    <p className="text-[11px] text-gray-500 leading-relaxed">{isAr ? "نلتزم بأعلى معايير الصياغة القانونية واللغوية ومطابقة الشكل لتفادي أي رفض." : "We adhere to strict legal styling and terminology formats to ensure document acceptance."}</p>
-                  </div>
-                </div>
-
-                <div className="flex gap-4">
-                  <div className="h-10 w-10 rounded-lg bg-green-50 text-green-600 flex items-center justify-center flex-shrink-0">
-                    <ShieldCheck className="h-5 w-5" />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-xs text-dark-navy mb-1">{isAr ? "اعتماد رسمي 100%" : "100% Officially Accepted"}</h4>
-                    <p className="text-[11px] text-gray-500 leading-relaxed">{isAr ? "ترجمتنا مختومة بختم مكتبنا المعتمد المقبول لدى جميع الهيئات والسفارات بالجمهورية والخليج." : "Our stamp is recognized by all consulates, government entities, and international bodies."}</p>
-                  </div>
-                </div>
-
-                <div className="flex gap-4">
-                  <div className="h-10 w-10 rounded-lg bg-green-50 text-green-600 flex items-center justify-center flex-shrink-0">
-                    <Clock className="h-5 w-5" />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-xs text-dark-navy mb-1">{isAr ? "سرعة قصوى للتسليم" : "Fast Turnaround"}</h4>
-                    <p className="text-[11px] text-gray-500 leading-relaxed">{isAr ? "نلتزم بتسليم الوثائق والشهادات خلال 24 ساعة فقط مع توفير خدمات الترجمة الفورية المستعجلة." : "Turnaround within 24 hours for standard certificates, with express options for urgent files."}</p>
-                  </div>
-                </div>
-
-                <div className="flex gap-4">
-                  <div className="h-10 w-10 rounded-lg bg-green-50 text-green-600 flex items-center justify-center flex-shrink-0">
-                    <Phone className="h-5 w-5" />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-xs text-dark-navy mb-1">{isAr ? "دعم متواصل على مدار الساعة" : "24/7 Support"}</h4>
-                    <p className="text-[11px] text-gray-500 leading-relaxed">{isAr ? "فريق عملنا متواجد للرد على استفساراتكم وتلقي الطلبات عبر واتساب على مدار اليوم." : "Our staff is online to quote and process document requests via WhatsApp all day."}</p>
-                  </div>
-                </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+                {GUIDE_BLOG_POSTS.map((post) => (
+                  <Link
+                    key={post.slug}
+                    href={`/blog/${post.slug}`}
+                    className="p-3 rounded-lg border border-gray-100 hover:border-primary-blue hover:bg-blue-50/30 transition-colors block font-bold text-dark-navy"
+                  >
+                    {isAr ? post.title : post.titleEn}
+                  </Link>
+                ))}
               </div>
-            </div>
+            </section>
 
-            {/* FAQs Accordion */}
-            {faqs.length > 0 && (
-              <div>
-                <h2 className="text-xl font-bold text-dark-navy mb-6 border-b border-gray-100 pb-3 font-arabic">
-                  {isAr ? "الأسئلة الشائعة حول الخدمة" : "Frequently Asked Questions"}
-                </h2>
-                <div className="space-y-4">
-                  {faqs.map((faq) => (
-                    <div key={faq.id} className="border border-gray-100 rounded-xl overflow-hidden shadow-sm">
-                      <details className="group">
-                        <summary className="flex items-center justify-between px-6 py-4 font-bold text-sm text-dark-navy cursor-pointer select-none bg-gray-50/50 list-none">
-                          <span>{faq.question}</span>
-                          <ChevronDown className="h-4 w-4 text-gray-500 transition-transform group-open:rotate-180" />
-                        </summary>
-                        <div className="px-6 py-4 text-xs text-gray-600 leading-relaxed border-t border-gray-100">
-                          {faq.answer}
-                        </div>
-                      </details>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
+            <PageContentFaqs unit={content} />
           </div>
 
           {/* Sidebar Area: Quote Form */}

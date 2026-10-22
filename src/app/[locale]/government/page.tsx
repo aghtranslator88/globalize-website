@@ -1,6 +1,8 @@
 import { setRequestLocale } from "next-intl/server";
 import { getGovEntities } from "@/lib/data";
 import { getSEOHeaders, generateBreadcrumbJsonLd } from "@/lib/seo";
+import { getPageContent } from "@/lib/pageContent";
+import { PageContentIntro, PageContentBody, PageContentFaqs, PageContentFaqJsonLd } from "@/components/PageContent";
 import { serializeJsonLd } from "@/lib/jsonLd";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -16,11 +18,8 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  const title = locale === "ar" ? "الترجمة المعتمدة للهيئات والمؤسسات الحكومية" : "Certified Translation for Gov Entities";
-  const description = locale === "ar"
-    ? "قائمة بالجهات والمؤسسات الحكومية بمصر والوطن العربي المعتمد لديها خدماتنا من وثائق وترجمات رسمية."
-    : "List of government entities and institutions accepting our certified translations in Egypt and the region.";
-  return getSEOHeaders(title, description, "/government", true, locale);
+  const content = getPageContent("government", locale);
+  return getSEOHeaders(content.seoTitle, content.metaDescription, "/government", true, locale);
 }
 
 export default async function GovernmentPage({
@@ -33,6 +32,7 @@ export default async function GovernmentPage({
 
   const govEntities = await getGovEntities(locale);
   const isAr = locale === "ar";
+  const content = getPageContent("government", locale);
 
   const breadcrumbs = [
     { name: isAr ? "الرئيسية" : "Home", url: "/" },
@@ -47,6 +47,7 @@ export default async function GovernmentPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: serializeJsonLd(breadcrumbJsonLd) }}
       />
+      <PageContentFaqJsonLd unit={content} />
       <Navbar />
 
       <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
@@ -63,15 +64,8 @@ export default async function GovernmentPage({
           </ol>
         </nav>
 
-        <div className="text-center mb-12">
-          <h1 className="text-2xl sm:text-4xl font-black text-dark-navy mb-4 font-arabic">
-            {isAr ? "الترجمة المعتمدة للهيئات والمؤسسات الحكومية" : "Certified Translation for Gov Entities"}
-          </h1>
-          <p className="text-gray-500 text-xs sm:text-sm max-w-2xl mx-auto leading-relaxed">
-            {isAr
-              ? "نقدم ترجمات معتمدة ورسمية ومطابقة تماماً للأصل، مقبولة أمام الوزارات والجهات الحكومية والنيابات والمحاكم ومصلحة الشهر العقاري بمصر والخليج."
-              : "We provide certified translation officially accepted by ministries, state authorities, courts, and notary public offices in Egypt and GCC."}
-          </p>
+        <div className="mb-12 max-w-4xl">
+          <PageContentIntro unit={content} isAr={isAr} />
         </div>
 
         {/* Gov Entities Grid */}
@@ -99,6 +93,11 @@ export default async function GovernmentPage({
               </div>
             </Link>
           ))}
+        </div>
+
+        <div className="mt-14 max-w-4xl space-y-12">
+          <PageContentBody unit={content} />
+          <PageContentFaqs unit={content} />
         </div>
       </main>
 

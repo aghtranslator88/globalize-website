@@ -1,6 +1,8 @@
 import { setRequestLocale } from "next-intl/server";
 import { getLanguages } from "@/lib/data";
 import { getSEOHeaders, generateBreadcrumbJsonLd } from "@/lib/seo";
+import { getPageContent } from "@/lib/pageContent";
+import { PageContentIntro, PageContentBody, PageContentFaqs, PageContentFaqJsonLd } from "@/components/PageContent";
 import { serializeJsonLd } from "@/lib/jsonLd";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -17,11 +19,8 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  const title = locale === "ar" ? "اللغات التي نترجمها — أكثر من 50 لغة معتمدة" : "Languages We Translate — Over 50 Certified Languages";
-  const description = locale === "ar"
-    ? "نقدم خدمات الترجمة الرسمية المعتمدة إلى أكثر من 50 لغة عالمية، بما في ذلك الإنجليزية والألمانية والفرنسية والإيطالية وغيرها."
-    : "We offer certified official translation services into over 50 global languages, including English, German, French, and Italian.";
-  return getSEOHeaders(title, description, "/languages", true, locale);
+  const content = getPageContent("languages", locale);
+  return getSEOHeaders(content.seoTitle, content.metaDescription, "/languages", true, locale);
 }
 
 export default async function LanguagesPage({
@@ -34,6 +33,7 @@ export default async function LanguagesPage({
 
   const languages = await getLanguages(locale);
   const isAr = locale === "ar";
+  const content = getPageContent("languages", locale);
 
   const breadcrumbs = [
     { name: isAr ? "الرئيسية" : "Home", url: "/" },
@@ -52,6 +52,7 @@ export default async function LanguagesPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: serializeJsonLd(breadcrumbJsonLd) }}
       />
+      <PageContentFaqJsonLd unit={content} />
       <Navbar />
 
       <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
@@ -68,15 +69,8 @@ export default async function LanguagesPage({
           </ol>
         </nav>
 
-        <div className="text-center mb-12">
-          <h1 className="text-2xl sm:text-4xl font-black text-dark-navy mb-4 font-arabic">
-            {isAr ? "اللغات المعتمدة التي نترجمها" : "Certified Languages We Translate"}
-          </h1>
-          <p className="text-gray-500 text-xs sm:text-sm max-w-2xl mx-auto leading-relaxed">
-            {isAr
-              ? "نغطي أكثر من 50 لغة عالمية بترجمات معتمدة ورسمية تناسب متطلبات السفارات والهيئات الأكاديمية والتجارية."
-              : "We support over 50 global languages with certified official translations compliant with all embassies and academic boards."}
-          </p>
+        <div className="mb-12 max-w-4xl">
+          <PageContentIntro unit={content} isAr={isAr} />
         </div>
 
         {/* Popular Languages Section */}
@@ -139,6 +133,11 @@ export default async function LanguagesPage({
             </div>
           </div>
         )}
+
+        <div className="mt-14 max-w-4xl space-y-12">
+          <PageContentBody unit={content} />
+          <PageContentFaqs unit={content} />
+        </div>
       </main>
 
       <Footer />

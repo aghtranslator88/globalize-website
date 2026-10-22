@@ -894,7 +894,8 @@ export async function getBlogPosts(locale: string): Promise<LocalizedBlogPost[]>
       include: { author: true },
     });
     if (posts.length > 0) {
-      return posts.map((p) => ({
+      const dbSlugs = new Set(posts.map((p) => p.slug));
+      const fromDb: LocalizedBlogPost[] = posts.map((p) => ({
         id: p.id,
         title: isAr ? p.titleAr : (p.titleEn || p.titleAr),
         slug: p.slug,
@@ -919,11 +920,18 @@ export async function getBlogPosts(locale: string): Promise<LocalizedBlogPost[]>
         },
         hasEnglish: blogPostHasEnglish(p),
       }));
+      // Posts that exist only in code (e.g. guides added after the DB import) are listed too.
+      const staticOnly = staticBlogPosts(isAr).filter((p) => !dbSlugs.has(p.slug));
+      return [...fromDb, ...staticOnly].sort((a, b) => b.publishedAt.getTime() - a.publishedAt.getTime());
     }
   } catch (err) {
     // Fallback to static audited blog dataset
   }
 
+  return staticBlogPosts(isAr);
+}
+
+function staticBlogPosts(isAr: boolean): LocalizedBlogPost[] {
   return ALL_BLOG_POSTS.map((p) => ({
     id: p.id,
     title: isAr ? p.title : (p.titleEn || p.title),

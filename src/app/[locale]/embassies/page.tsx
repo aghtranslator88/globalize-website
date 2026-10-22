@@ -1,6 +1,8 @@
 import { setRequestLocale } from "next-intl/server";
 import { getEmbassies } from "@/lib/data";
 import { getSEOHeaders, generateBreadcrumbJsonLd } from "@/lib/seo";
+import { getPageContent } from "@/lib/pageContent";
+import { PageContentIntro, PageContentBody, PageContentFaqs, PageContentFaqJsonLd } from "@/components/PageContent";
 import { serializeJsonLd } from "@/lib/jsonLd";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -15,11 +17,8 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  const title = locale === "ar" ? "الترجمة المعتمدة للسفارات والقنصليات" : "Certified Translation for Embassies";
-  const description = locale === "ar"
-    ? "قائمة متكاملة بمتطلبات الترجمة والاعتماد لجميع السفارات والقنصليات في مصر ودول الخليج."
-    : "Comprehensive list of translation and certification requirements for all embassies and consulates.";
-  return getSEOHeaders(title, description, "/embassies", true, locale);
+  const content = getPageContent("embassies", locale);
+  return getSEOHeaders(content.seoTitle, content.metaDescription, "/embassies", true, locale);
 }
 
 export default async function EmbassiesPage({
@@ -32,6 +31,7 @@ export default async function EmbassiesPage({
 
   const embassies = await getEmbassies(locale);
   const isAr = locale === "ar";
+  const content = getPageContent("embassies", locale);
 
   // Group by region
   const regions: Record<string, string> = {
@@ -49,7 +49,7 @@ export default async function EmbassiesPage({
 
   const breadcrumbs = [
     { name: isAr ? "الرئيسية" : "Home", url: "/" },
-    { name: isAr ? "السفارات المعتمدة" : "Accepted Embassies", url: "/embassies" },
+    { name: isAr ? "السفارات" : "Embassies", url: "/embassies" },
   ];
 
   const breadcrumbJsonLd = generateBreadcrumbJsonLd(breadcrumbs, locale);
@@ -60,6 +60,7 @@ export default async function EmbassiesPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: serializeJsonLd(breadcrumbJsonLd) }}
       />
+      <PageContentFaqJsonLd unit={content} />
       <Navbar />
 
       <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
@@ -76,15 +77,8 @@ export default async function EmbassiesPage({
           </ol>
         </nav>
 
-        <div className="text-center mb-12">
-          <h1 className="text-2xl sm:text-4xl font-black text-dark-navy mb-4 font-arabic">
-            {isAr ? "الترجمة المعتمدة للسفارات والقنصليات" : "Certified Translation for Embassies"}
-          </h1>
-          <p className="text-gray-500 text-xs sm:text-sm max-w-2xl mx-auto leading-relaxed">
-            {isAr
-              ? "نوفر خدمات الترجمة المعتمدة لجميع الوثائق المطلوبة للسفر والعمل والتعليم لدى القنصليات والسفارات الأجنبية بمصر والخليج، وفق شروط كل جهة."
-              : "We provide certified translation for all travel, work, and study files requested by foreign consulates and embassies, matching their criteria."}
-          </p>
+        <div className="mb-12 max-w-4xl">
+          <PageContentIntro unit={content} isAr={isAr} />
         </div>
 
         {/* Embassies Grid grouped by region */}
@@ -133,6 +127,11 @@ export default async function EmbassiesPage({
               </div>
             );
           })}
+        </div>
+
+        <div className="mt-14 max-w-4xl space-y-12">
+          <PageContentBody unit={content} />
+          <PageContentFaqs unit={content} />
         </div>
       </main>
 

@@ -3,17 +3,26 @@ import { setRequestLocale } from "next-intl/server";
 import { getDocumentBySlug, getFAQs } from "@/lib/data";
 import { getSEOHeaders, generateOfferJsonLd, generateFAQJsonLd, generateBreadcrumbJsonLd } from "@/lib/seo";
 import { serializeJsonLd } from "@/lib/jsonLd";
-import { isGenuineEnglish } from "@/lib/translationDetection";
+import { getPageContent } from "@/lib/pageContent";
+import { PageContentIntro, PageContentBody, PageContentFaqs, PageContentFaqJsonLd } from "@/components/PageContent";
+import type { PageContentKey } from "@/content/pageContent";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import QuoteForm from "@/components/QuoteForm";
 import TrackedWhatsAppLink from "@/components/TrackedWhatsAppLink";
 import { Link } from "@/i18n/routing";
 
-import { Phone, CheckCircle, ChevronDown, Landmark, FileText, ArrowLeft, ArrowRight, ShieldCheck, Clock, MessageCircle } from "lucide-react";
+import { ChevronDown, Clock, MessageCircle } from "lucide-react";
 import type { Metadata } from "next";
 
 export const revalidate = 3600;
+
+// Documents whose page body comes from the editorial content in content/pages.
+const DOCUMENT_CONTENT_KEYS: Record<string, PageContentKey> = {
+  "birth-certificate": "birth-certificate",
+  "movement-certificate": "movement-certificate",
+  "police-record": "police-record",
+};
 
 export async function generateMetadata({
   params,
@@ -85,7 +94,9 @@ export default async function DocumentDetailPage({
     notFound();
   }
 
-  const faqs = await getFAQs("document", doc.id, locale);
+  const contentKey = DOCUMENT_CONTENT_KEYS[slug];
+  const content = contentKey ? getPageContent(contentKey, locale) : null;
+  const faqs = content ? [] : await getFAQs("document", doc.id, locale);
   const isAr = locale === "ar";
   const guide = getDocumentGuide(slug, isAr);
 
@@ -112,6 +123,7 @@ export default async function DocumentDetailPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: serializeJsonLd(offerJsonLd) }}
       />
+      {content && <PageContentFaqJsonLd unit={content} />}
       {faqs.length > 0 && (
         <script
           type="application/ld+json"
@@ -141,14 +153,18 @@ export default async function DocumentDetailPage({
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
           {/* Main content body */}
           <div className="lg:col-span-2 space-y-12">
-            <div>
-              <h1 className="text-2xl sm:text-4xl font-black text-dark-navy mb-4 font-arabic">
-                {isAr ? `ترجمة معتمدة لـ ${doc.name}` : `Certified Translation of ${doc.name}`}
-              </h1>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                {doc.description}
-              </p>
-            </div>
+            {content ? (
+              <PageContentIntro unit={content} isAr={isAr} />
+            ) : (
+              <div>
+                <h1 className="text-2xl sm:text-4xl font-black text-dark-navy mb-4 font-arabic">
+                  {isAr ? `ترجمة معتمدة لـ ${doc.name}` : `Certified Translation of ${doc.name}`}
+                </h1>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  {doc.description}
+                </p>
+              </div>
+            )}
 
             {/* Featured Guide Banner (Internal Linking) */}
             {guide && (
@@ -183,6 +199,10 @@ export default async function DocumentDetailPage({
               </p>
             </div>
 
+            {content ? (
+              <PageContentBody unit={content} />
+            ) : (
+              <>
             {/* Accepted-by flags grid */}
             <div className="bg-gray-50 rounded-2xl p-6 border border-gray-150">
               <h3 className="font-bold text-xs text-dark-navy uppercase tracking-wide mb-4">
@@ -225,6 +245,8 @@ export default async function DocumentDetailPage({
                 </div>
               </div>
             </div>
+              </>
+            )}
 
             {/* Related documents */}
             {doc.relatedDocuments && doc.relatedDocuments.length > 0 && (
@@ -254,6 +276,8 @@ export default async function DocumentDetailPage({
                 </div>
               </div>
             )}
+
+            {content && <PageContentFaqs unit={content} />}
 
             {/* FAQs */}
             {faqs.length > 0 && (

@@ -1,3 +1,4 @@
+import { GUIDE_BLOG_POSTS } from "@/lib/guide-posts";
 // Auto-generated blog dataset containing 102 fully audited & SEO/GEO/AEO optimized Arabic and English articles
 export interface BlogPostItem {
   id: string;
@@ -55,7 +56,7 @@ export interface BlogPostItem {
 
 
 
-export const ALL_BLOG_POSTS: BlogPostItem[] = [
+const LEGACY_BLOG_POSTS: BlogPostItem[] = [
   {
     "id": "blog-bank-statement-certified-translation-visa",
     "title": "ترجمة كشف الحساب البنكي المعتمد للسفارات والتأشيرات: الشروط، الأسعار، وسرية البيانات",
@@ -14682,3 +14683,5 @@ export const ALL_BLOG_POSTS: BlogPostItem[] = [
     }
   }
 ];
+
+export const ALL_BLOG_POSTS: BlogPostItem[] = [...GUIDE_BLOG_POSTS, ...LEGACY_BLOG_POSTS];
