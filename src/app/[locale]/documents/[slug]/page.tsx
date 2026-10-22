@@ -60,7 +60,7 @@ function getDocumentGuide(slug: string, isAr: boolean) {
       url: "/blog/university-degrees-bank-statements-translation-guide"
     };
   }
-  if (slug.includes("criminal") || slug.includes("birth") || slug.includes("marriage") || slug.includes("death") || slug.includes("family") || slug.includes("divorce")) {
+  if (slug.includes("criminal") || slug.includes("police") || slug.includes("movement") || slug.includes("birth") || slug.includes("marriage") || slug.includes("death") || slug.includes("family") || slug.includes("divorce")) {
     return {
       title: isAr ? "الدليل المتكامل لترجمة الفيش الجنائي وشهادات الميلاد والزواج" : "Complete Guide to Translating Criminal Records & Vital Certificates",
       desc: isAr ? "شروط قبول صحيفة الحالة الجنائية، وثائق الأحوال المدنية، ومدة الصلاحية المقبولة لدى السفارات." : "Acceptance criteria for police clearance records, civil registry certificates, and consular validity.",
