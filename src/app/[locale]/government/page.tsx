@@ -39,7 +39,7 @@ export default async function GovernmentPage({
     { name: isAr ? "الهيئات الحكومية المعتمدة" : "Accepted Gov Entities", url: "/government" },
   ];
 
-  const breadcrumbJsonLd = generateBreadcrumbJsonLd(breadcrumbs);
+  const breadcrumbJsonLd = generateBreadcrumbJsonLd(breadcrumbs, locale);
 
   return (
     <>

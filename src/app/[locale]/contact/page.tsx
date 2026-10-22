@@ -44,7 +44,7 @@ export default async function ContactPage({
     { name: isAr ? "اتصل بنا" : "Contact Us", url: "/contact" },
   ];
 
-  const breadcrumbJsonLd = generateBreadcrumbJsonLd(breadcrumbs);
+  const breadcrumbJsonLd = generateBreadcrumbJsonLd(breadcrumbs, locale);
 
   return (
     <>

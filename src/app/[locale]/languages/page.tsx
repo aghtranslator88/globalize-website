@@ -40,7 +40,7 @@ export default async function LanguagesPage({
     { name: isAr ? "اللغات المعتمدة" : "Supported Languages", url: "/languages" },
   ];
 
-  const breadcrumbJsonLd = generateBreadcrumbJsonLd(breadcrumbs);
+  const breadcrumbJsonLd = generateBreadcrumbJsonLd(breadcrumbs, locale);
 
   // Group languages into popular and other languages
   const popularLanguages = languages.filter((l) => l.popular);

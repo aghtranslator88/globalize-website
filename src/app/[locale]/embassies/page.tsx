@@ -52,7 +52,7 @@ export default async function EmbassiesPage({
     { name: isAr ? "السفارات المعتمدة" : "Accepted Embassies", url: "/embassies" },
   ];
 
-  const breadcrumbJsonLd = generateBreadcrumbJsonLd(breadcrumbs);
+  const breadcrumbJsonLd = generateBreadcrumbJsonLd(breadcrumbs, locale);
 
   return (
     <>

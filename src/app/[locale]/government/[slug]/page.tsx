@@ -24,7 +24,14 @@ export async function generateMetadata({
   const gov = await getGovEntityBySlug(slug, locale);
   if (!gov) return {};
   const hasEnglishTranslation = gov.hasEnglish;
-  return getSEOHeaders(gov.name, `${gov.name} requirements and certified translation details.`, `/government/${slug}`, gov.indexable, locale, hasEnglishTranslation);
+  const isAr = locale === "ar";
+  const title = isAr
+    ? `ترجمة معتمدة مقبولة لدى ${gov.name} | الشروط والمستندات | جلوباليز جروب`
+    : `Certified Translation for ${gov.name} | Requirements | Globalize Group`;
+  const description = isAr
+    ? `ترجمة معتمدة بختم رسمي للتقديم إلى ${gov.name}: المستندات المقبولة وشروط الاعتماد ومدة التسليم. اطلب عرض سعر فوري عبر واتساب من جلوباليز جروب.`
+    : `Certified translation with an official seal for submission to ${gov.name}: accepted documents, certification requirements, and turnaround. Get an instant WhatsApp quote from Globalize Group.`;
+  return getSEOHeaders(title, description, `/government/${slug}`, gov.indexable, locale, hasEnglishTranslation);
 }
 
 export default async function GovEntityDetailPage({
@@ -49,7 +56,7 @@ export default async function GovEntityDetailPage({
     { name: gov.name, url: `/government/${slug}` },
   ];
 
-  const breadcrumbJsonLd = generateBreadcrumbJsonLd(breadcrumbs);
+  const breadcrumbJsonLd = generateBreadcrumbJsonLd(breadcrumbs, locale);
 
   return (
     <>

@@ -23,9 +23,16 @@ export async function generateMetadata({
   const lang = await getLanguageBySlug(slug, locale);
   if (!lang) return {};
   const hasEnglishTranslation = lang.hasEnglish;
+  const isAr = locale === "ar";
+  const title = isAr
+    ? `ترجمة معتمدة من وإلى ${lang.name} | جلوباليز جروب`
+    : `Certified ${lang.name.replace(/\s*Language$/i, "")} Translation Services | Globalize Group`;
+  const description = isAr
+    ? `خدمات ترجمة معتمدة من وإلى ${lang.name} بختم رسمي مقبول لدى السفارات والجهات الحكومية، مع تسليم سريع. اطلب عرض سعر فوري عبر واتساب من جلوباليز جروب.`
+    : `Certified ${lang.name.replace(/\s*Language$/i, "")} translation services with an official seal accepted by embassies and government bodies, with fast turnaround. Get an instant WhatsApp quote from Globalize Group.`;
   return getSEOHeaders(
-    lang.name,
-    `${lang.name} certified translation services and languages.`,
+    title,
+    description,
     `/languages/${slug}`,
     true,
     locale,
@@ -55,7 +62,7 @@ export default async function LanguageDetailPage({
     { name: lang.name, url: `/languages/${slug}` },
   ];
 
-  const breadcrumbJsonLd = generateBreadcrumbJsonLd(breadcrumbs);
+  const breadcrumbJsonLd = generateBreadcrumbJsonLd(breadcrumbs, locale);
 
   return (
     <>

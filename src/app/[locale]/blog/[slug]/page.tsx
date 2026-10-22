@@ -58,6 +58,29 @@ function escapeHtml(str: string): string {
     .replace(/'/g, "&#39;");
 }
 
+// Legacy document slugs referenced inside older article bodies that have no live page.
+// Rewriting them at render time keeps internal links pointing at real, indexable URLs
+// (no redirects or DB edits needed).
+const LEGACY_DOCUMENT_LINKS: Record<string, string> = {
+  "certified-birth-certificate": "/documents/birth-certificate",
+  "criminal-record-cert": "/documents/police-record",
+  "certified-marriage-contract": "/documents/marriage-contract",
+  "marriage-certificate": "/documents/marriage-contract",
+  "bank-statement": "/blog/bank-statement-certified-translation-visa",
+  "commercial-register": "/blog/commercial-register-tax-card-translation",
+  "commercial-register-certificate": "/blog/commercial-register-tax-card-translation",
+  "tax-card": "/blog/commercial-register-tax-card-translation",
+  "power-of-attorney": "/services/legal-translation",
+  "single-status-certificate": "/documents",
+};
+
+function normalizeInternalHref(href: string): string {
+  const match = href.match(/^((?:https?:\/\/(?:www\.)?globalizetl\.com)?\/(ar|en))\/documents\/([a-z0-9-]+)\/?((?:[?#].*)?)$/i);
+  if (!match) return href;
+  const target = LEGACY_DOCUMENT_LINKS[match[3].toLowerCase()];
+  return target ? `/${match[2]}${target}${match[4] || ""}` : href;
+}
+
 function parseMarkdown(markdown: string) {
   const headings: { id: string; text: string; level: number }[] = [];
   const lines = markdown.split("\n");
@@ -73,7 +96,7 @@ function parseMarkdown(markdown: string) {
       .replace(/\*\*(.*?)\*\*/g, "<strong class='font-bold text-dark-navy'>$1</strong>")
       .replace(/\*(.*?)\*/g, "<em class='italic'>$1</em>")
       .replace(/\[([^\]]+)\]\(((?:[^()]+|\([^()]*\))*)\)/g, (match, linkText, href) => {
-        const cleanHref = href.trim();
+        const cleanHref = normalizeInternalHref(href.trim());
         // Prevent javascript:, data:, vbscript: pseudo-protocols
         const isSafeProtocol = /^(https?:\/\/|\/|#|mailto:)/i.test(cleanHref);
         if (!isSafeProtocol) {
@@ -225,7 +248,9 @@ function parseMarkdown(markdown: string) {
     // 3. Headings: #, ##, ###
     const headingMatch = trimmed.match(/^(#{1,6})\s+(.+)$/);
     if (headingMatch) {
-      const level = headingMatch[1].length;
+      // The page template already renders the post title as the single <h1>;
+      // demote any "# " heading inside the body to <h2> to avoid duplicate H1s.
+      const level = Math.max(2, headingMatch[1].length);
       const rawText = headingMatch[2].trim();
       const text = rawText.replace(/\*\*|__/g, "");
       const id = text
@@ -363,7 +388,7 @@ export default async function BlogPostDetailPage({
   const rawArticle = isAr ? rawPost?.schemas?.article : (rawPost?.schemas?.articleEn || rawPost?.schemas?.article);
   const rawFaqSchema = isAr ? rawPost?.schemas?.faq : (rawPost?.schemas?.faqEn || rawPost?.schemas?.faq);
 
-  const breadcrumbJsonLd = rawBreadcrumb || generateBreadcrumbJsonLd(breadcrumbs);
+  const breadcrumbJsonLd = rawBreadcrumb || generateBreadcrumbJsonLd(breadcrumbs, locale);
   const articleJsonLd = rawArticle || generateArticleJsonLd({
     title: post.title,
     excerpt: post.excerpt,

@@ -39,7 +39,7 @@ export default async function TeamPage({
     { name: isAr ? "فريق المترجمين" : "Our Team", url: "/team" },
   ];
 
-  const breadcrumbJsonLd = generateBreadcrumbJsonLd(breadcrumbs);
+  const breadcrumbJsonLd = generateBreadcrumbJsonLd(breadcrumbs, locale);
 
   // Split into leadership and translators
   const leadership = team.filter((t) => t.isLeadership);

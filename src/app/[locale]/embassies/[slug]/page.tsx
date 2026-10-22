@@ -35,7 +35,19 @@ export async function generateMetadata({
   const embassy = await getEmbassyBySlug(slug, locale);
   if (!embassy) return {};
   const hasEnglishTranslation = embassy.hasEnglish;
-  return getSEOHeaders(embassy.name, `${embassy.name} requirements and certified translation details.`, `/embassies/${slug}`, embassy.indexable, locale, hasEnglishTranslation);
+  const isAr = locale === "ar";
+  const hasBrand = /globalize|جلوباليز/i.test(embassy.name);
+  const hasIntent = /ترجمة|translat/i.test(embassy.name);
+  // Static embassy guides already carry a full SEO title; plain entity names get a localized, intent-led title.
+  const title = hasBrand
+    ? embassy.name
+    : isAr
+      ? `${hasIntent ? embassy.name : `ترجمة معتمدة لـ${embassy.name}`} | الشروط والأوراق المطلوبة | جلوباليز جروب`
+      : `${hasIntent ? embassy.name : `Certified Translation for ${embassy.name}`} | Requirements | Globalize Group`;
+  const description = isAr
+    ? `ترجمة معتمدة بختم رسمي لمستندات ${embassy.name.split("|")[0].trim()}: الأوراق المطلوبة، شروط القبول، ومدة التسليم. اطلب عرض سعر فوري عبر واتساب من جلوباليز جروب.`
+    : `Certified translation with an official seal for ${embassy.name.split("|")[0].trim()}: required documents, acceptance requirements, and turnaround. Get an instant WhatsApp quote from Globalize Group.`;
+  return getSEOHeaders(title, description, `/embassies/${slug}`, embassy.indexable, locale, hasEnglishTranslation);
 }
 
 function getEmbassyGuide(slug: string, countryCode: string | undefined, isAr: boolean) {
@@ -100,7 +112,7 @@ export default async function EmbassyDetailPage({
     { name: embassy.name, url: `/embassies/${slug}` },
   ];
 
-  const breadcrumbJsonLd = generateBreadcrumbJsonLd(breadcrumbs);
+  const breadcrumbJsonLd = generateBreadcrumbJsonLd(breadcrumbs, locale);
 
   return (
     <>

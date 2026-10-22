@@ -37,7 +37,7 @@ export default async function ReviewsPage({
     { name: isAr ? "آراء وتقييمات العملاء" : "Client Reviews", url: "/reviews" },
   ];
 
-  const breadcrumbJsonLd = generateBreadcrumbJsonLd(breadcrumbs);
+  const breadcrumbJsonLd = generateBreadcrumbJsonLd(breadcrumbs, locale);
   
   // Real Google Business Profile verified stats
   const aggregateRatingJsonLd = generateAggregateRatingJsonLd(4.9, 100);

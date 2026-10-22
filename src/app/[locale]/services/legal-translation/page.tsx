@@ -72,10 +72,10 @@ export default async function LegalTranslationPage({
     description: isAr
       ? "ترجمة قانونية رسمية معتمدة للعقود والاتفاقيات التجارية ووثائق المحاكم والتوكيلات، مقبولة لدى وزارة العدل والمحاكم والسفارات."
       : "Official certified legal translation for commercial contracts, litigation documents, and corporate records accepted by courts and ministries.",
-    url: `https://globalizetl.com/${locale}/services/legal-translation`,
+    url: `/${locale}/services/legal-translation`,
   });
 
-  const breadcrumbJsonLd = generateBreadcrumbJsonLd(breadcrumbs);
+  const breadcrumbJsonLd = generateBreadcrumbJsonLd(breadcrumbs, locale);
 
   const legalFaqs = [
     {

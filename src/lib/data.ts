@@ -576,6 +576,18 @@ export async function getEmbassies(locale: string): Promise<LocalizedEmbassy[]> 
   }));
 }
 
+// Fallback "popular documents" for embassy pages that are not in the database.
+// Uses the real document records (same source as /documents) so links resolve to live
+// pages and prices match the document pages, instead of hardcoded placeholder entries.
+const FALLBACK_POPULAR_DOCUMENT_SLUGS = ['birth-certificate', 'police-record', 'marriage-contract'];
+
+async function getFallbackPopularDocuments(locale: string): Promise<LocalizedDocument[]> {
+  const docs = await getDocuments(locale);
+  return FALLBACK_POPULAR_DOCUMENT_SLUGS
+    .map((slug) => docs.find((d) => d.slug === slug))
+    .filter((d): d is LocalizedDocument => Boolean(d));
+}
+
 export async function getEmbassyBySlug(
   slug: string,
   locale: string
@@ -604,11 +616,7 @@ export async function getEmbassyBySlug(
       hasEnglish: embassyHasEnglish(emb),
       body: emb.body,
       faqs: emb.faqs,
-      popularDocuments: [
-        { id: 'doc-1', name: 'شهادة ميلاد معتمدة', slug: 'certified-birth-certificate', priceEGP: 200, deliveryHours: 24, description: 'ترجمة معتمدة لشهادة الميلاد وموثقة', answerBox: 'سعر ترجمة الصفحة 200 ج.م (عربي-إنجليزي) و300 ج.م للغات الأخرى', sampleImageUrl: null, indexable: true, hasEnglish: true },
-        { id: 'doc-2', name: 'صحيفة حالة جنائية (فيش وتشبيه)', slug: 'criminal-record-cert', priceEGP: 200, deliveryHours: 24, description: 'ترجمة معتمدة لفيش وتشبيه خالي من السوابق', answerBox: 'سعر ترجمة الصفحة 200 ج.م (عربي-إنجليزي) و300 ج.م للغات الأخرى', sampleImageUrl: null, indexable: true, hasEnglish: true },
-        { id: 'doc-3', name: 'كشف حساب بنكي معتمد', slug: 'bank-statement', priceEGP: 200, deliveryHours: 24, description: 'ترجمة معتمدة للحركات البنكية والملاءة المالية', answerBox: 'سعر ترجمة الصفحة 200 ج.م (عربي-إنجليزي) و300 ج.م للغات الأخرى', sampleImageUrl: null, indexable: true, hasEnglish: true }
-      ],
+      popularDocuments: await getFallbackPopularDocuments(locale),
     };
   }
 
@@ -663,11 +671,7 @@ export async function getEmbassyBySlug(
     hasEnglish: embassyHasEnglish(emb),
     body: emb.body,
     faqs: emb.faqs,
-    popularDocuments: [
-      { id: 'doc-1', name: 'شهادة ميلاد معتمدة', slug: 'certified-birth-certificate', priceEGP: 350, deliveryHours: 24, description: 'ترجمة معتمدة لشهادة الميلاد وموثقة', answerBox: 'ترجمة معتمدة مقبولة بالسفارة', sampleImageUrl: null, indexable: true, hasEnglish: true },
-      { id: 'doc-2', name: 'صحيفة حالة جنائية (فيش وتشبيه)', slug: 'criminal-record-cert', priceEGP: 400, deliveryHours: 24, description: 'ترجمة معتمدة لفيش وتشبيه خالي من السوابق', answerBox: 'مقبول رسمياً بسفارات العالم', sampleImageUrl: null, indexable: true, hasEnglish: true },
-      { id: 'doc-3', name: 'كشف حساب بنكي معتمد', slug: 'bank-statement', priceEGP: 450, deliveryHours: 24, description: 'ترجمة معتمدة للحركات البنكية والملاءة المالية', answerBox: 'مقبول لملفات الفيزا والتأشيرات', sampleImageUrl: null, indexable: true, hasEnglish: true }
-    ],
+    popularDocuments: await getFallbackPopularDocuments(locale),
   };
 }
 

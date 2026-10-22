@@ -111,7 +111,28 @@ export function generateOrganizationJsonLd() {
   };
 }
 
-export function generateBreadcrumbJsonLd(items: { name: string; url: string }[]) {
+// Resolve a path or URL to an absolute, canonical-host URL.
+// When a locale is given, locale-less paths ("/documents") are prefixed ("/ar/documents")
+// so structured data points at the real, indexable URL instead of a redirecting one.
+export function toAbsoluteSiteUrl(urlOrPath: string, locale?: string): string {
+  let path = urlOrPath.trim();
+  if (/^https?:\/\//i.test(path)) {
+    try {
+      const parsed = new URL(path);
+      if (!/(^|\.)globalizetl\.com$/i.test(parsed.hostname)) return path;
+      path = `${parsed.pathname}${parsed.search}${parsed.hash}`;
+    } catch {
+      return path;
+    }
+  }
+  if (!path.startsWith('/')) path = `/${path}`;
+  if (locale && !/^\/(ar|en)(\/|$)/.test(path)) {
+    path = path === '/' ? `/${locale}` : `/${locale}${path}`;
+  }
+  return `${SITE_URL}${path}`;
+}
+
+export function generateBreadcrumbJsonLd(items: { name: string; url: string }[], locale?: string) {
   return {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
@@ -119,19 +140,25 @@ export function generateBreadcrumbJsonLd(items: { name: string; url: string }[])
       '@type': 'ListItem',
       'position': index + 1,
       'name': item.name,
-      'item': `${SITE_URL}${item.url}`,
+      'item': toAbsoluteSiteUrl(item.url, locale),
     })),
   };
 }
 
 export function generateServiceJsonLd(service: { name: string; description: string; url: string }) {
+  const serviceUrl = toAbsoluteSiteUrl(service.url);
   return {
     '@context': 'https://schema.org',
     '@type': 'Service',
+    '@id': `${serviceUrl}#service`,
     'name': service.name,
     'description': service.description,
+    'url': serviceUrl,
+    'serviceType': service.name,
+    'areaServed': { '@type': 'Country', 'name': 'Egypt' },
     'provider': {
       '@type': 'LocalBusiness',
+      '@id': `${SITE_URL}/#organization`,
       'name': 'جلوباليز جروب لأعمال الترجمة المعتمدة',
       'image': `${SITE_URL}/logo.png`,
       'telephone': '+20 106 299 0808',
@@ -203,7 +230,7 @@ export function generateOfferJsonLd(doc: { name: string; priceEGP: number; url: 
     'description': doc.name,
     'offers': {
       '@type': 'Offer',
-      'url': doc.url,
+      'url': toAbsoluteSiteUrl(doc.url),
       'priceCurrency': 'EGP',
       'price': doc.priceEGP,
       'availability': 'https://schema.org/InStock',

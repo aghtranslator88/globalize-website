@@ -41,7 +41,7 @@ export default async function DocumentsPage({
     { name: isAr ? "الوثائق والأسعار" : "Documents & Pricing", url: "/documents" },
   ];
 
-  const breadcrumbJsonLd = generateBreadcrumbJsonLd(breadcrumbs);
+  const breadcrumbJsonLd = generateBreadcrumbJsonLd(breadcrumbs, locale);
 
   return (
     <>

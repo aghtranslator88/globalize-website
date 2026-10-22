@@ -39,7 +39,7 @@ export default async function BlogPage({
     { name: isAr ? "المدونة والتقارير" : "Our Blog", url: "/blog" },
   ];
 
-  const breadcrumbJsonLd = generateBreadcrumbJsonLd(breadcrumbs);
+  const breadcrumbJsonLd = generateBreadcrumbJsonLd(breadcrumbs, locale);
 
   // Serialize posts for safe React 19 / client-component injection
   const serializedPosts = posts.map((p) => ({

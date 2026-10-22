@@ -24,7 +24,16 @@ export async function generateMetadata({
   const doc = await getDocumentBySlug(slug, locale);
   if (!doc) return {};
   const hasEnglishTranslation = doc.hasEnglish;
-  return getSEOHeaders(doc.name, `${doc.name} translation price, speed, and legalization.`, `/documents/${slug}`, doc.indexable, locale, hasEnglishTranslation);
+  const isAr = locale === "ar";
+  const enName = /certified/i.test(doc.name) ? doc.name : `Certified ${doc.name}`;
+  // Localized, intent-matching title/description (price + turnaround come from the document record).
+  const title = isAr
+    ? `ترجمة ${doc.name} معتمدة | ${doc.priceEGP} ج.م للصفحة - تسليم ${doc.deliveryHours} ساعة | جلوباليز جروب`
+    : `${enName} Translation | From ${doc.priceEGP} EGP/Page, ${doc.deliveryHours}h | Globalize Group`;
+  const description = isAr
+    ? `ترجمة معتمدة لـ${doc.name} بختم رسمي للسفارات والجهات الحكومية. السعر يبدأ من ${doc.priceEGP} ج.م للصفحة والتسليم خلال ${doc.deliveryHours} ساعة. اطلب عرض سعر فوري عبر واتساب من جلوباليز جروب.`
+    : `${enName} translation with an official certification seal for embassies and government bodies. From ${doc.priceEGP} EGP per page, delivered within ${doc.deliveryHours} hours. Get an instant WhatsApp quote from Globalize Group.`;
+  return getSEOHeaders(title, description, `/documents/${slug}`, doc.indexable, locale, hasEnglishTranslation);
 }
 
 function getDocumentGuide(slug: string, isAr: boolean) {
@@ -86,11 +95,11 @@ export default async function DocumentDetailPage({
     { name: doc.name, url: `/documents/${slug}` },
   ];
 
-  const breadcrumbJsonLd = generateBreadcrumbJsonLd(breadcrumbs);
+  const breadcrumbJsonLd = generateBreadcrumbJsonLd(breadcrumbs, locale);
   const offerJsonLd = generateOfferJsonLd({
     name: doc.name,
     priceEGP: doc.priceEGP,
-    url: `/documents/${slug}`,
+    url: `/${locale}/documents/${slug}`,
   });
 
   return (

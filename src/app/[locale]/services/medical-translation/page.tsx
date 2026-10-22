@@ -73,10 +73,10 @@ export default async function MedicalTranslationPage({
     description: isAr
       ? "ترجمة طبية رسمية معتمدة للتقارير الطبية ونتائج التحاليل وفحوصات الأشعة وملفات العلاج بالخارج، مقبولة لدى المستشفيات العالمية والسفارات."
       : "Official certified medical translation for clinical reports, lab analyses, surgical records, and overseas treatment dossiers.",
-    url: `https://globalizetl.com/${locale}/services/medical-translation`,
+    url: `/${locale}/services/medical-translation`,
   });
 
-  const breadcrumbJsonLd = generateBreadcrumbJsonLd(breadcrumbs);
+  const breadcrumbJsonLd = generateBreadcrumbJsonLd(breadcrumbs, locale);
 
   const medicalFaqs = [
     {

@@ -43,7 +43,7 @@ export default async function BranchesPage({
     { name: isAr ? "فروعنا" : "Our Branches", url: "/branches" },
   ];
 
-  const breadcrumbJsonLd = generateBreadcrumbJsonLd(breadcrumbs);
+  const breadcrumbJsonLd = generateBreadcrumbJsonLd(breadcrumbs, locale);
 
   return (
     <>
