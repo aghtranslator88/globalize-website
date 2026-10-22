@@ -3,9 +3,28 @@ import createNextIntlPlugin from 'next-intl/plugin';
 
 const withNextIntl = createNextIntlPlugin();
 
+// Requests reach the router with non-ASCII path segments percent-encoded
+// (e.g. /ar/blog/%D9%85...), so a source written with raw Arabic characters
+// never matches. Encode only the non-ASCII segments, leaving param syntax
+// such as :locale(ar|en) and :path* untouched.
+const encodeNonAsciiSegments = (path: string) =>
+  path
+    .split('/')
+    .map((segment) => (/[^\x00-\x7F]/.test(segment) ? encodeURIComponent(segment) : segment))
+    .join('/');
+
+type RedirectRule = { source: string; destination: string; permanent: boolean };
+
+const withEncodedPaths = (rules: RedirectRule[]): RedirectRule[] =>
+  rules.map((rule) => ({
+    ...rule,
+    source: encodeNonAsciiSegments(rule.source),
+    destination: encodeNonAsciiSegments(rule.destination),
+  }));
+
 const nextConfig: NextConfig = {
   async redirects() {
-    return [
+    return withEncodedPaths([
       // .html duplicate & extension catch-all redirects (Phase 2)
       { source: '/:locale(ar|en)/embassies/accredited-office-embassy-cyprus.html', destination: '/:locale/embassies/accredited-office-embassy-cyprus', permanent: true },
       { source: '/:locale(ar|en)/embassies/greek-translation-office-accredited-embassy.html', destination: '/:locale/embassies/greek-translation-office-accredited-embassy', permanent: true },
@@ -114,10 +133,23 @@ const nextConfig: NextConfig = {
       { source: '/project-details/6/e-commerce-translation-project', destination: '/ar/localization', permanent: true },
       { source: '/project-details/5/financial-translation-project', destination: '/ar/certified', permanent: true },
 
+      // 404s reported in Search Console (Oct 2026)
+      { source: '/apply', destination: '/ar/contact', permanent: true },
+      { source: '/:locale(ar|en)/apply', destination: '/:locale/contact', permanent: true },
+      { source: '/blog-details/:path*', destination: '/ar/blog', permanent: true },
+      { source: '/:locale(ar|en)/documents/criminal-record-cert', destination: '/:locale/documents/police-record', permanent: true },
+      { source: '/:locale(ar|en)/documents/certified-marriage-contract', destination: '/:locale/documents/marriage-contract', permanent: true },
+      { source: '/:locale(ar|en)/documents/commercial-register', destination: '/:locale/blog/commercial-register-tax-card-translation', permanent: true },
+      { source: '/:locale(ar|en)/embassies/british-embassy-translation', destination: '/:locale/embassies/british-embassy', permanent: true },
+      { source: '/:locale(ar|en)/embassies/italian-embassy-translation', destination: '/:locale/embassies/the-italian-embassy-in-cairo', permanent: true },
+      { source: '/:locale(ar|en)/embassies/spanish-embassy-translation', destination: '/:locale/embassies/via-translation-office-for-translation-accredited-by-the-spanish-embassy', permanent: true },
+      { source: '/:locale(ar|en)/embassies/german-embassy-translation', destination: '/:locale/embassies/german-embassy-in-cairo', permanent: true },
+      { source: '/:locale(ar|en)/embassies/french-embassy-translation', destination: '/:locale/embassies/مكتب-ترجمة-معتمد-من-السفارة-الفرنسية', permanent: true },
+
       // Legacy locale prefixes
       { source: '/ja', destination: '/ar', permanent: true },
       { source: '/ja/:path*', destination: '/ar', permanent: true },
-    ];
+    ]);
   },
   async headers() {
     const csp = [
