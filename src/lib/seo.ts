@@ -94,6 +94,15 @@ export function generateOrganizationJsonLd() {
     'alternateName': 'Globalize Group for Certified Translation',
     'url': SITE_URL,
     'logo': `${SITE_URL}/logo.png`,
+    'image': `${SITE_URL}/globalize-og.jpg`,
+    'email': 'info@globalizetl.com',
+    'telephone': '+20 106 299 0808',
+    'address': {
+      '@type': 'PostalAddress',
+      'streetAddress': '1 Cairo University St., Office 29, 8th Floor, Above Omar Effendi',
+      'addressLocality': 'Giza',
+      'addressCountry': 'EG',
+    },
     'contactPoint': [
       {
         '@type': 'ContactPoint',
@@ -167,6 +176,20 @@ export function generateServiceJsonLd(service: { name: string; description: stri
   };
 }
 
+// Egyptian local mobile numbers (01xxxxxxxxx) -> E.164-style international format for structured data.
+function toInternationalPhone(phone: string): string {
+  const digits = phone.replace(/[^\d+]/g, '');
+  if (/^01\d{9}$/.test(digits)) return `+20${digits.slice(1)}`;
+  return phone;
+}
+
+// Best-effort city for a branch address (the branches are in Giza or Cairo).
+function branchLocality(address: string): string {
+  if (/cairo|heliopolis|القاهرة|مصر الجديدة/i.test(address)) return 'Cairo';
+  if (/giza|الجيزة/i.test(address)) return 'Giza';
+  return 'Giza/Cairo';
+}
+
 export function generateLocalBusinessJsonLd(branch: {
   name: string;
   address: string;
@@ -181,14 +204,16 @@ export function generateLocalBusinessJsonLd(branch: {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
     'name': branch.name,
-    'image': `${SITE_URL}/branch.jpg`,
+    'image': `${SITE_URL}/logo.png`,
     '@id': branch.url,
     'url': branch.url,
-    'telephone': branch.phone,
+    'telephone': toInternationalPhone(branch.phone),
+    'email': 'info@globalizetl.com',
+    'parentOrganization': { '@id': `${SITE_URL}/#organization` },
     'address': {
       '@type': 'PostalAddress',
       'streetAddress': branch.address,
-      'addressLocality': 'Giza/Cairo',
+      'addressLocality': branchLocality(branch.address),
       'addressCountry': 'EG',
     },
     'geo': {
@@ -222,18 +247,32 @@ export function generateFAQJsonLd(faqs: { question: string; answer: string }[]) 
   };
 }
 
-export function generateOfferJsonLd(doc: { name: string; priceEGP: number; url: string }) {
+// Certified translation of a document is a service, not a physical product:
+// emit Service + Offer (price per page) instead of Product.
+export function generateOfferJsonLd(doc: { name: string; priceEGP: number; url: string; description?: string }) {
+  const url = toAbsoluteSiteUrl(doc.url);
   return {
     '@context': 'https://schema.org',
-    '@type': 'Product',
+    '@type': 'Service',
+    '@id': `${url}#service`,
     'name': doc.name,
-    'description': doc.name,
+    'description': doc.description || doc.name,
+    'url': url,
+    'serviceType': 'Certified translation',
+    'areaServed': { '@type': 'Country', 'name': 'Egypt' },
+    'provider': { '@id': `${SITE_URL}/#organization` },
     'offers': {
       '@type': 'Offer',
-      'url': toAbsoluteSiteUrl(doc.url),
+      'url': url,
       'priceCurrency': 'EGP',
       'price': doc.priceEGP,
       'availability': 'https://schema.org/InStock',
+      'priceSpecification': {
+        '@type': 'UnitPriceSpecification',
+        'price': doc.priceEGP,
+        'priceCurrency': 'EGP',
+        'unitText': 'page',
+      },
     },
   };
 }
@@ -246,21 +285,26 @@ export function generateArticleJsonLd(post: {
   updatedAt: Date;
   url: string;
   authorName: string;
+  locale?: string;
 }) {
+  // Team bylines ("Globalize Group Translation Team") are organizations, not people.
+  const isTeamAuthor = /globalize|جلوباليز|فريق|team/i.test(post.authorName);
   return {
     '@context': 'https://schema.org',
     '@type': 'Article',
     'headline': post.title,
     'description': post.excerpt,
-    'image': post.featuredImageUrl || `${SITE_URL}/blog-default.jpg`,
+    'image': toAbsoluteSiteUrl(post.featuredImageUrl || '/globalize-og.jpg'),
+    'url': post.url,
+    ...(post.locale ? { 'inLanguage': post.locale } : {}),
     'datePublished': post.publishedAt.toISOString(),
     'dateModified': post.updatedAt.toISOString(),
-    'author': {
-      '@type': 'Person',
-      'name': post.authorName,
-    },
+    'author': isTeamAuthor
+      ? { '@type': 'Organization', 'name': post.authorName, 'url': SITE_URL }
+      : { '@type': 'Person', 'name': post.authorName },
     'publisher': {
       '@type': 'Organization',
+      '@id': `${SITE_URL}/#organization`,
       'name': 'جلوباليز جروب',
       'logo': {
         '@type': 'ImageObject',

@@ -47,3 +47,11 @@ The first successful run of `scripts/gsc_weekly_pull.mjs` (last 28 days vs previ
 - Dead document slugs still stored in DB/blog bodies (fixed only at render time).
 - No document pages yet for bank statement, commercial register, power of attorney, single-status certificate.
 - `npm run build` cannot be verified in the cloud container (Google Fonts and Prisma engine downloads are blocked). Typecheck and lint are compared against the pre-change baseline instead.
+
+## 5. Weekly log
+
+### 2026-10-25
+- GSC pull failed: the owner's local shell could not reach `oauth2.googleapis.com` (egress proxy returned 403). No new numbers this week; the 2026-09-16 snapshot is still the latest.
+- Added the missing `public/globalize-og.jpg` (1200×630) referenced by every page's Open Graph / Twitter metadata.
+- JSON-LD: Organization now carries email, phone, HQ address and image; branch LocalBusiness uses an existing image, international phone, per-branch city and `parentOrganization`; document pages emit Service + Offer (price per page) instead of Product; Article uses absolute image URLs, `inLanguage`, `url`, and an Organization author for team bylines; BreadcrumbList added to certified, interpretation and localization.
+- `public/llms.txt`: added the 7 specialized guides (AR + EN), the interpretation/localization/languages English pages, and the document-legalization sources page.

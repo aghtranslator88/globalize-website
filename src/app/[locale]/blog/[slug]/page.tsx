@@ -89,6 +89,7 @@ export default async function BlogPostDetailPage({
     updatedAt: post.updatedAt || post.publishedAt,
     url: `${SITE_URL}/${locale}/blog/${slug}`,
     authorName: post.author.name,
+    locale,
   });
 
   const { html: bodyHtml, headings } = parseMarkdown(post.body);

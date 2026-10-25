@@ -111,6 +111,9 @@ export default async function DocumentDetailPage({
     name: doc.name,
     priceEGP: doc.priceEGP,
     url: `/${locale}/documents/${slug}`,
+    description: isAr
+      ? `ترجمة معتمدة لـ${doc.name} بختم الاعتماد الرسمي. ${doc.priceEGP} ج.م للصفحة، والتسليم خلال ${doc.deliveryHours} ساعة.`
+      : `Certified translation of ${doc.name} with an official certification seal. ${doc.priceEGP} EGP per page, delivered within ${doc.deliveryHours} hours.`,
   });
 
   return (

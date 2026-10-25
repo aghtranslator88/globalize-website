@@ -1,6 +1,6 @@
 import { setRequestLocale } from "next-intl/server";
 import { getServiceBySlug } from "@/lib/data";
-import { getSEOHeaders, generateServiceJsonLd } from "@/lib/seo";
+import { getSEOHeaders, generateServiceJsonLd, generateBreadcrumbJsonLd } from "@/lib/seo";
 import { getPageContent } from "@/lib/pageContent";
 import { PageContentIntro, PageContentBody, PageContentFaqs, PageContentFaqJsonLd } from "@/components/PageContent";
 import { serializeJsonLd } from "@/lib/jsonLd";
@@ -43,6 +43,7 @@ export default async function LocalizationPage({
     { name: service.name, url: "/localization" },
   ];
 
+  const breadcrumbJsonLd = generateBreadcrumbJsonLd(breadcrumbs, locale);
   const serviceJsonLd = generateServiceJsonLd({
     name: content.h1,
     description: content.metaDescription,
@@ -54,6 +55,10 @@ export default async function LocalizationPage({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: serializeJsonLd(serviceJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(breadcrumbJsonLd) }}
       />
       <PageContentFaqJsonLd unit={content} />
       <Navbar />

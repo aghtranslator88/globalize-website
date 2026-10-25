@@ -1,6 +1,6 @@
 import { setRequestLocale } from "next-intl/server";
 import { getServiceBySlug, getDocuments } from "@/lib/data";
-import { getSEOHeaders, generateServiceJsonLd } from "@/lib/seo";
+import { getSEOHeaders, generateServiceJsonLd, generateBreadcrumbJsonLd } from "@/lib/seo";
 import { getPageContent } from "@/lib/pageContent";
 import { GUIDE_BLOG_POSTS } from "@/lib/guide-posts";
 import { PageContentIntro, PageContentBody, PageContentFaqs, PageContentFaqJsonLd } from "@/components/PageContent";
@@ -49,6 +49,7 @@ export default async function CertifiedPage({
     { name: isAr ? "الترجمة المعتمدة" : "Certified Translation", url: "/certified" },
   ];
 
+  const breadcrumbJsonLd = generateBreadcrumbJsonLd(breadcrumbs, locale);
   const serviceJsonLd = generateServiceJsonLd({
     name: content.h1,
     description: content.metaDescription,
@@ -60,6 +61,10 @@ export default async function CertifiedPage({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: serializeJsonLd(serviceJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(breadcrumbJsonLd) }}
       />
       <PageContentFaqJsonLd unit={content} />
       <Navbar />
