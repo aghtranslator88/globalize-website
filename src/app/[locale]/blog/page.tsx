@@ -16,10 +16,12 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  const title = locale === "ar" ? "مدونة الترجمة المعتمدة والتوطين اللغوي" : "Translation & Localization Blog";
+  const title = locale === "ar"
+    ? "أدلة الترجمة المعتمدة وأوراق السفارات | مدونة جلوباليز جروب"
+    : "Certified Translation & Embassy Document Guides | Globalize Group Blog";
   const description = locale === "ar"
-    ? "مقالات تثقيفية حول شروط وتكلفة الترجمة المعتمدة للسفارات، ومراحل توطين البرمجيات والمواقع."
-    : "Educational articles about certified translation rules, embassy requirements, and localization workflows.";
+    ? "أدلة عملية عن الترجمة المعتمدة في مصر: أسعار الصفحة، أوراق السفارات والتأشيرات مثل ألمافيفا إيطاليا، ترجمة الفيش الجنائي وشهادات الميلاد والشهادات الجامعية، وتصديق الخارجية."
+    : "Practical guides to certified translation in Egypt: per-page pricing, embassy and visa paperwork such as Almaviva Italy, police records, birth and university certificates, and MOFA legalization.";
   return getSEOHeaders(title, description, "/blog", true, locale);
 }
 

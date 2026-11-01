@@ -66,6 +66,13 @@ function getEmbassyGuide(slug: string, countryCode: string | undefined, isAr: bo
       url: "/blog/italy-visa-egypt-almaviva"
     };
   }
+  if ((cc === "TR" || slug.includes("turk")) && !/riyadh|jeddah/.test(slug)) {
+    return {
+      title: isAr ? "دليل الترجمة المعتمدة للسفارة التركية بالقاهرة: شروط التأشيرة وتصديق النوتر" : "Turkish Embassy Cairo Certified Translation Guide: Visa & Noter Attestation",
+      desc: isAr ? "متطلبات ترجمة المستندات إلى التركية، تصديق الخارجية المصرية والنوتر، وأوراق التأشيرة ولم الشمل." : "Turkish translation requirements, Egyptian MFA attestation, Noter verification, and visa and family-reunion paperwork.",
+      url: "/blog/certified-translation-turkish-embassy-cairo"
+    };
+  }
   if (["DE", "FR", "ES", "GB", "NL", "AT", "GR", "CH", "SE", "NO"].includes(cc) || slug.includes("schengen") || slug.includes("german") || slug.includes("french") || slug.includes("spanish") || slug.includes("british")) {
     return {
       title: isAr ? "معايير وشروط الترجمة المعتمدة للسفارة الأمريكية ودول الشنغن" : "Certified Translation Standards for US & Schengen Embassies",

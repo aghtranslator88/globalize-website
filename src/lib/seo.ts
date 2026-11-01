@@ -120,6 +120,20 @@ export function generateOrganizationJsonLd() {
   };
 }
 
+// WebSite entity for the home page: names the site in both languages and ties it to the Organization.
+export function generateWebSiteJsonLd(locale: string) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    '@id': `${SITE_URL}/#website`,
+    'name': locale === 'ar' ? 'جلوباليز جروب' : 'Globalize Group',
+    'alternateName': locale === 'ar' ? 'Globalize Group' : 'جلوباليز جروب',
+    'url': `${SITE_URL}/${locale}`,
+    'inLanguage': locale === 'ar' ? 'ar' : 'en',
+    'publisher': { '@id': `${SITE_URL}/#organization` },
+  };
+}
+
 // Resolve a path or URL to an absolute, canonical-host URL.
 // When a locale is given, locale-less paths ("/documents") are prefixed ("/ar/documents")
 // so structured data points at the real, indexable URL instead of a redirecting one.
@@ -165,12 +179,12 @@ export function generateServiceJsonLd(service: { name: string; description: stri
     'url': serviceUrl,
     'serviceType': service.name,
     'areaServed': { '@type': 'Country', 'name': 'Egypt' },
+    // Same @type as the Organization node with this @id, so the graph does not declare
+    // one entity as two different types.
     'provider': {
-      '@type': 'LocalBusiness',
+      '@type': 'Organization',
       '@id': `${SITE_URL}/#organization`,
       'name': 'جلوباليز جروب لأعمال الترجمة المعتمدة',
-      'image': `${SITE_URL}/logo.png`,
-      'telephone': '+20 106 299 0808',
       'url': SITE_URL,
     },
   };

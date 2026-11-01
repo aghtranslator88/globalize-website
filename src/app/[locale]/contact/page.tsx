@@ -20,10 +20,12 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  const title = locale === "ar" ? "اتصل بنا واطلب عرض سعر مجاني" : "Contact Us & Request a Free Quote";
+  const title = locale === "ar"
+    ? "اتصل بجلوباليز جروب | عرض سعر ترجمة معتمدة عبر واتساب"
+    : "Contact Globalize Group | Certified Translation Quote via WhatsApp";
   const description = locale === "ar"
-    ? "تواصل مع جلوباليز جروب للترجمة المعتمدة. عناوين مكاتبنا وأرقام الهواتف ونموذج طلب التسعير السريع."
-    : "Get in touch with Globalize Group. Office addresses, phone numbers, and fast online quote request form.";
+    ? "تواصل مع جلوباليز جروب للترجمة المعتمدة عبر الهاتف أو واتساب 01062990808، أو زر أحد فروعنا الأربعة في الجيزة والقاهرة، أو أرسل نموذج طلب عرض السعر."
+    : "Contact Globalize Group for certified translation by phone or WhatsApp (+20 106 299 0808), visit one of our four branches in Giza and Cairo, or send the quote request form.";
   return getSEOHeaders(title, description, "/contact", true, locale);
 }
 

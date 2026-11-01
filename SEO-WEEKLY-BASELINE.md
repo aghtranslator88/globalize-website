@@ -55,3 +55,11 @@ The first successful run of `scripts/gsc_weekly_pull.mjs` (last 28 days vs previ
 - Added the missing `public/globalize-og.jpg` (1200×630) referenced by every page's Open Graph / Twitter metadata.
 - JSON-LD: Organization now carries email, phone, HQ address and image; branch LocalBusiness uses an existing image, international phone, per-branch city and `parentOrganization`; document pages emit Service + Offer (price per page) instead of Product; Article uses absolute image URLs, `inLanguage`, `url`, and an Organization author for team bylines; BreadcrumbList added to certified, interpretation and localization.
 - `public/llms.txt`: added the 7 specialized guides (AR + EN), the interpretation/localization/languages English pages, and the document-legalization sources page.
+
+### 2026-11-01
+- GSC pull failed again: the owner's local shell gets HTTP 403 from its egress proxy for `oauth2.googleapis.com`, and the cloud container cannot reach `www.globalizetl.com`. No new numbers; the 2026-09-16 snapshot is still the latest.
+- Document pages: search-intent titles per document (e.g. "ترجمة بيان الدرجات بالإنجليزي", "Criminal Record (Police Clearance) Translation", "سعر ترجمة شهادة الميلاد"), price and turnaround still from the record; English answer-box label is now "Price & Turnaround".
+- Home: WebSite JSON-LD (`#website`, publisher → `#organization`). Service JSON-LD provider now typed `Organization` (matches the `#organization` node). Language detail pages emit Service JSON-LD.
+- Blog index and contact: clearer, branded AR/EN titles and descriptions.
+- Turkish embassy pages (Egypt) link to the Turkish Embassy Cairo guide instead of the generic price guide.
+- `public/llms.txt`: English document pages, contact and reviews pages, last-updated date.

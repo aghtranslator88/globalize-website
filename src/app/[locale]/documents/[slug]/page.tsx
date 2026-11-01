@@ -24,6 +24,19 @@ const DOCUMENT_CONTENT_KEYS: Record<string, PageContentKey> = {
   "police-record": "police-record",
 };
 
+// Search-intent title phrases per document (match how people search, e.g. "بيان درجات بالانجليزي",
+// "criminal record translation"). Price and turnaround still come from the document record.
+const DOCUMENT_TITLE_PHRASES: Record<string, { ar: string; en: string }> = {
+  "birth-certificate": { ar: "سعر ترجمة شهادة الميلاد المعتمدة", en: "Certified Birth Certificate Translation" },
+  "marriage-contract": { ar: "ترجمة عقد الزواج معتمدة", en: "Certified Marriage Certificate Translation" },
+  "family-record": { ar: "ترجمة القيد العائلي معتمدة", en: "Certified Family Record Translation" },
+  "movement-certificate": { ar: "ترجمة شهادة التحركات معتمدة", en: "Certified Travel Movement Certificate Translation" },
+  "death-certificate": { ar: "ترجمة شهادة الوفاة معتمدة", en: "Certified Death Certificate Translation" },
+  "police-record": { ar: "ترجمة الفيش الجنائي (صحيفة الحالة الجنائية) بالإنجليزي", en: "Criminal Record (Police Clearance) Translation" },
+  "graduation-certificate": { ar: "ترجمة شهادة التخرج معتمدة", en: "Certified Graduation Certificate Translation" },
+  "academic-transcript": { ar: "ترجمة بيان الدرجات بالإنجليزي معتمدة", en: "Certified Academic Transcript Translation" },
+};
+
 export async function generateMetadata({
   params,
 }: {
@@ -36,9 +49,14 @@ export async function generateMetadata({
   const isAr = locale === "ar";
   const enName = /certified/i.test(doc.name) ? doc.name : `Certified ${doc.name}`;
   // Localized, intent-matching title/description (price + turnaround come from the document record).
-  const title = isAr
-    ? `ترجمة ${doc.name} معتمدة | ${doc.priceEGP} ج.م للصفحة - تسليم ${doc.deliveryHours} ساعة | جلوباليز جروب`
-    : `${enName} Translation | From ${doc.priceEGP} EGP/Page, ${doc.deliveryHours}h | Globalize Group`;
+  const phrase = DOCUMENT_TITLE_PHRASES[slug];
+  const title = phrase
+    ? isAr
+      ? `${phrase.ar} | ${doc.priceEGP} ج.م للصفحة - ${doc.deliveryHours} ساعة | جلوباليز`
+      : `${phrase.en} | ${doc.priceEGP} EGP/Page, ${doc.deliveryHours}h | Globalize Group`
+    : isAr
+      ? `ترجمة ${doc.name} معتمدة | ${doc.priceEGP} ج.م للصفحة - تسليم ${doc.deliveryHours} ساعة | جلوباليز جروب`
+      : `${enName} Translation | From ${doc.priceEGP} EGP/Page, ${doc.deliveryHours}h | Globalize Group`;
   const description = isAr
     ? `ترجمة معتمدة لـ${doc.name} بختم رسمي للسفارات والجهات الحكومية. السعر يبدأ من ${doc.priceEGP} ج.م للصفحة والتسليم خلال ${doc.deliveryHours} ساعة. اطلب عرض سعر فوري عبر واتساب من جلوباليز جروب.`
     : `${enName} translation with an official certification seal for embassies and government bodies. From ${doc.priceEGP} EGP per page, delivered within ${doc.deliveryHours} hours. Get an instant WhatsApp quote from Globalize Group.`;
@@ -195,7 +213,7 @@ export default async function DocumentDetailPage({
             {/* Answer box with price sentence */}
             <div className="answer-box p-6 sm:p-8">
               <h3 className="font-bold text-xs text-primary-blue uppercase tracking-wide mb-2">
-                {isAr ? "سعر وموعد تسليم الترجمة" : "Pricing & Turnaround Answer Box"}
+                {isAr ? "سعر وموعد تسليم الترجمة" : "Price & Turnaround"}
               </h3>
               <p className="text-sm font-semibold text-dark-navy leading-relaxed font-arabic">
                 {doc.answerBox}

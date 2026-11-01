@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import { setRequestLocale } from "next-intl/server";
 import { getLanguageBySlug, getServices } from "@/lib/data";
-import { getSEOHeaders, generateBreadcrumbJsonLd } from "@/lib/seo";
+import { getSEOHeaders, generateBreadcrumbJsonLd, generateServiceJsonLd } from "@/lib/seo";
 import { serializeJsonLd } from "@/lib/jsonLd";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -63,12 +63,24 @@ export default async function LanguageDetailPage({
   ];
 
   const breadcrumbJsonLd = generateBreadcrumbJsonLd(breadcrumbs, locale);
+  const langLabel = lang.name.replace(/\s*Language$/i, "");
+  const serviceJsonLd = generateServiceJsonLd({
+    name: isAr ? `ترجمة معتمدة من وإلى ${lang.name}` : `Certified ${langLabel} Translation`,
+    description: isAr
+      ? `ترجمة معتمدة من وإلى ${lang.name} بختم رسمي مقبول لدى السفارات والجهات الحكومية.`
+      : `Certified ${langLabel} translation with an official seal accepted by embassies and government bodies.`,
+    url: `/${locale}/languages/${slug}`,
+  });
 
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: serializeJsonLd(breadcrumbJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(serviceJsonLd) }}
       />
       <Navbar />
 

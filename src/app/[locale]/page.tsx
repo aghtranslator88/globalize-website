@@ -1,7 +1,7 @@
 import { Link } from "@/i18n/routing";
 import { getMessages, setRequestLocale } from "next-intl/server";
 import { getServices, getDocuments, getReviews, getFAQs, getSiteSettings } from "@/lib/data";
-import { getSEOHeaders, generateOrganizationJsonLd } from "@/lib/seo";
+import { getSEOHeaders, generateOrganizationJsonLd, generateWebSiteJsonLd } from "@/lib/seo";
 import { serializeJsonLd } from "@/lib/jsonLd";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -47,12 +47,17 @@ export default async function HomePage({
   
   // JSON-LD Injection
   const orgJsonLd = generateOrganizationJsonLd();
+  const websiteJsonLd = generateWebSiteJsonLd(locale);
 
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: serializeJsonLd(orgJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(websiteJsonLd) }}
       />
       <Navbar />
 
