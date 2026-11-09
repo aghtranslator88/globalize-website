@@ -255,7 +255,7 @@ You can track your dossier status online through Almaviva's tracking portal usin
 
 Preparing your visa dossier with precision eliminates delays and administrative rejections. **Globalize Group** offers end-to-end [certified translation services](/en/certified) for all [official documents required by embassies and consulates](/en/documents).
 
-Contact our specialized team today via our [contact page](/en/contact) or visit our [Cairo and Alexandria branches](/en/branches) for prompt, accurate, and consulate-accepted certified translations.
+Contact our specialized team today via our [contact page](/en/contact) or visit our [Cairo and Giza branches](/en/branches) for prompt, accurate, and consulate-accepted certified translations.
 
 ---
 

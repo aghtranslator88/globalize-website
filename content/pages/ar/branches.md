@@ -5,8 +5,8 @@ language: العربية
 priority: P2
 route: /ar/branches
 route_status: Live route observed 2026-09-29
-seo_title: "فروع ومكاتب جلوباليز | بيانات التواصل"
-meta_description: "تعرّف على مواقع مكاتب جلوباليز وبيانات التواصل، وتحقّق من العنوان الدقيق وحالة الفرع قبل الزيارة."
+seo_title: "فروع جلوباليز للترجمة المعتمدة: الجيزة والدقي والهرم ومصر الجديدة"
+meta_description: "عناوين فروع جلوباليز الأربعة: المقر الرئيسي بالجيزة، والدقي، والهرم، وصلاح سالم بمصر الجديدة، مع روابط الخريطة. العمل من السبت إلى الخميس 9 صباحًا حتى 9 مساءً."
 body_word_count_approx: 515
 publication_status: Draft for CMS entry and rendered QA
 ---

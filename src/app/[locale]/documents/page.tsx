@@ -1,6 +1,6 @@
 import { setRequestLocale } from "next-intl/server";
 import { getDocuments } from "@/lib/data";
-import { getSEOHeaders, generateBreadcrumbJsonLd } from "@/lib/seo";
+import { getSEOHeaders, generateBreadcrumbJsonLd, generateItemListJsonLd } from "@/lib/seo";
 import { getPageContent } from "@/lib/pageContent";
 import { PageContentIntro, PageContentBody, PageContentFaqs, PageContentFaqJsonLd } from "@/components/PageContent";
 import { serializeJsonLd } from "@/lib/jsonLd";
@@ -42,6 +42,13 @@ export default async function DocumentsPage({
   ];
 
   const breadcrumbJsonLd = generateBreadcrumbJsonLd(breadcrumbs, locale);
+  // Only list document pages that are indexable in this locale.
+  const itemListJsonLd = generateItemListJsonLd(
+    documents
+      .filter((doc) => doc.indexable && (isAr || doc.hasEnglish))
+      .map((doc) => ({ name: doc.name, url: `/documents/${doc.slug}` })),
+    locale
+  );
 
   return (
     <>
@@ -49,6 +56,12 @@ export default async function DocumentsPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: serializeJsonLd(breadcrumbJsonLd) }}
       />
+      {itemListJsonLd.numberOfItems > 0 && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: serializeJsonLd(itemListJsonLd) }}
+        />
+      )}
       <PageContentFaqJsonLd unit={content} />
       <Navbar />
 

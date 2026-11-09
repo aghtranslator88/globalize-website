@@ -5,8 +5,8 @@ language: English
 priority: P2
 route: /en/branches
 route_status: Live route observed 2026-09-29
-seo_title: "Globalize Offices and Branches in Egypt | Contact Details"
-meta_description: "Find Globalize’s listed office locations and contact details. Confirm the exact branch address and current opening status before visiting."
+seo_title: "Globalize Branches in Cairo & Giza: Giza HQ, Dokki, Haram, Heliopolis"
+meta_description: "Addresses and map links for Globalize’s four offices: Giza head office, Dokki, Haram, and Salah Salem (Heliopolis). Open Saturday–Thursday, 9:00 AM–9:00 PM."
 body_word_count_approx: 534
 publication_status: Draft for CMS entry and rendered QA
 ---

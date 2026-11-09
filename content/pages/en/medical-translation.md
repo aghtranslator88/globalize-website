@@ -5,8 +5,8 @@ language: English
 priority: P2
 route: /en/services/medical-translation
 route_status: Existing bilingual route
-seo_title: "Medical Translation for Reports and Healthcare Records"
-meta_description: "Healthcare documents contain specialized terms, abbreviations, and numerical data. A translator should not guess at an unclear value or silently “correct”"
+seo_title: "Medical Translation Services for Reports & Lab Results | Globalize"
+meta_description: "Translation of medical reports, lab results, imaging reports, and healthcare records, preserving names, dates, values, and units exactly as in the source. Recipient checked first."
 body_word_count_approx: 1120
 publication_status: Draft for CMS entry and rendered QA
 ---

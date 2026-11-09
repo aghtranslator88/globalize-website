@@ -214,7 +214,7 @@ post.body = `# تأشيرة إيطاليا من مصر عبر ألمافيفا 2
 
 * **اعتماد قنصلي كامل:** أختامنا وتوقيعاتنا المعتمدة مقبولة وموثوقة لدى القسم القنصلي بالسفارة الإيطالية ومراكز ألمافيفا ووزارة الخارجية المصرية.
 * **دقة لغوية وقانونية صارمة:** مترجمون محلفون متخصصون في صياغة المصطلحات القانونية والمصرفية الإيطالية.
-* **فروع متعددة لخدمتك:** تفضل بزيارة [فروعنا في الجيزة والقاهرة والإسكندرية](/ar/branches) أو اطلب خدمتك أونلاين بالكامل مع خدمة التوصيل.
+* **فروع متعددة لخدمتك:** تفضل بزيارة [فروعنا الأربعة في الجيزة والقاهرة](/ar/branches) أو اطلب خدمتك أونلاين بالكامل مع خدمة التوصيل.
 * **استكشف خدماتنا الأخرى:** نقدم أيضاً [خدمات الترجمة المعتمدة لجميع السفارات](/ar/certified) و[ترجمة الوثائق والمستندات الرسمية](/ar/documents).
 
 تواصل معنا اليوم عبر [صفحة اتصل بنا](/ar/contact) أو أرسل مستنداتك مباشرة عبر واتساب للبدء فوراً في إعداد ملفك المعتمد.`;
@@ -383,7 +383,7 @@ At **Globalize Group**, we ensure your visa documents meet the highest consular 
 
 * **Consular Acceptance Assurance:** Our certified seals and translator declarations are recognized and accepted by the Consular Section of the Italian Embassy, Almaviva centers, and Egyptian Ministry of Foreign Affairs offices.
 * **Specialized Italian Legal Linguists:** Sworn and certified translators with deep expertise in Italian legal, financial, and civil terminology.
-* **Convenient Branch Network:** Visit our [Cairo, Giza, and Alexandria branches](/en/branches) or complete your entire order online with fast courier delivery.
+* **Convenient Branch Network:** Visit our [four branches in Cairo and Giza](/en/branches) or complete your entire order online with fast courier delivery.
 * **Explore Our Translation Solutions:** Explore our full range of [certified translation services for all embassies](/en/certified) and [official document translation services](/en/documents).
 
 Contact us today through our [contact page](/en/contact) or message us on WhatsApp to begin translating your Italian visa dossier with confidence.`;

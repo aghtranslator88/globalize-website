@@ -5,8 +5,8 @@ language: English
 priority: P2
 route: /en/interpretation
 route_status: Live route observed 2026-09-29
-seo_title: "Interpretation Services: Prepare an Enquiry | Globalize"
-meta_description: "Request an assessment for a spoken-language interpretation assignment. Share the languages, date, setting, subject, and any requirements you already know."
+seo_title: "Interpretation Services for Conferences and Meetings | Globalize"
+meta_description: "Request interpretation for a conference, meeting, or other spoken-language assignment. Share the languages, date, setting or platform, and subject so the request can be assessed."
 body_word_count_approx: 1107
 publication_status: Draft for CMS entry and rendered QA
 ---

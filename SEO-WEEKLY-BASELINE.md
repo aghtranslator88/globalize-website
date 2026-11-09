@@ -63,3 +63,11 @@ The first successful run of `scripts/gsc_weekly_pull.mjs` (last 28 days vs previ
 - Blog index and contact: clearer, branded AR/EN titles and descriptions.
 - Turkish embassy pages (Egypt) link to the Turkish Embassy Cairo guide instead of the generic price guide.
 - `public/llms.txt`: English document pages, contact and reviews pages, last-updated date.
+
+### 2026-11-09
+- GSC pull not possible: the remote shell on the owner's computer failed to start this week. The newest local GSC file is still the 2026-09-16 extract. No new numbers.
+- Titles/meta descriptions (AR + EN) rewritten for CTR: legal translation and medical translation (previous descriptions were cut-off body excerpts, titles had no brand), branches (now name the four offices and hours), documents index (lists the document types and the 200/300 EGP per page, 24h facts), certified (adds per-page price), English interpretation title aligned with the Arabic one.
+- Home: FAQPage JSON-LD that mirrors the visible homepage FAQ accordion.
+- Documents index: ItemList JSON-LD of the indexable document pages.
+- Italy/Almaviva guide (static fallback + sync scripts): removed the claim of an Alexandria branch (Globalize has four branches in Cairo and Giza). The live DB copy still needs the same fix.
+- `public/llms.txt`: short FAQ answers (what certified translation is, pricing basis, translation vs legalization, legal/medical scope, branches) and last-updated date.

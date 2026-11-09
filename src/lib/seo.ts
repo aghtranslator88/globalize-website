@@ -168,6 +168,21 @@ export function generateBreadcrumbJsonLd(items: { name: string; url: string }[],
   };
 }
 
+// ItemList of the detail pages linked from a directory page (e.g. /documents).
+export function generateItemListJsonLd(items: { name: string; url: string }[], locale?: string) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    'numberOfItems': items.length,
+    'itemListElement': items.map((item, index) => ({
+      '@type': 'ListItem',
+      'position': index + 1,
+      'name': item.name,
+      'url': toAbsoluteSiteUrl(item.url, locale),
+    })),
+  };
+}
+
 export function generateServiceJsonLd(service: { name: string; description: string; url: string }) {
   const serviceUrl = toAbsoluteSiteUrl(service.url);
   return {

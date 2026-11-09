@@ -1,7 +1,7 @@
 import { Link } from "@/i18n/routing";
 import { getMessages, setRequestLocale } from "next-intl/server";
 import { getServices, getDocuments, getReviews, getFAQs, getSiteSettings } from "@/lib/data";
-import { getSEOHeaders, generateOrganizationJsonLd, generateWebSiteJsonLd } from "@/lib/seo";
+import { getSEOHeaders, generateOrganizationJsonLd, generateWebSiteJsonLd, generateFAQJsonLd } from "@/lib/seo";
 import { serializeJsonLd } from "@/lib/jsonLd";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -59,6 +59,13 @@ export default async function HomePage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: serializeJsonLd(websiteJsonLd) }}
       />
+      {/* FAQPage mirrors the FAQ accordion rendered below (same DB entries). */}
+      {faqs.length > 0 && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: serializeJsonLd(generateFAQJsonLd(faqs)) }}
+        />
+      )}
       <Navbar />
 
       <main className="relative min-h-screen">

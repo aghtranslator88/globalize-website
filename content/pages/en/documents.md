@@ -5,8 +5,8 @@ language: English
 priority: P1
 route: /en/documents
 route_status: Existing bilingual route
-seo_title: "Official Document Translation Guides | Globalize"
-meta_description: "Choose the right translation guide for a birth certificate, movement certificate, or police record, and prepare the details needed for your request."
+seo_title: "Official Document Translation Prices & Guides | Globalize"
+meta_description: "Certified translation of birth, marriage, death and graduation certificates, police records, and transcripts: 200 EGP/page Arabic↔English, 300 EGP other languages, 24h."
 body_word_count_approx: 963
 publication_status: Draft for CMS entry and rendered QA
 ---

@@ -5,8 +5,8 @@ language: العربية
 priority: P2
 route: /ar/services/medical-translation
 route_status: Existing bilingual route
-seo_title: "خدمات الترجمة الطبية للتقارير والملفات الصحية"
-meta_description: "يحتاج الملف الصحي إلى عناية في المصطلحات والأرقام والاختصارات، لكن وضوح المعنى لا يبرر تخمين جزء غير مقروء أو تعديل نتيجة. إذا كان الأصل غير واضح أو كان"
+seo_title: "خدمات الترجمة الطبية للتقارير والتحاليل الطبية | جلوباليز"
+meta_description: "ترجمة التقارير الطبية ونتائج التحاليل والأشعة والسجلات الصحية مع الحفاظ على الأسماء والتواريخ والقيم ووحدات القياس كما في الأصل، ومراجعة الجهة المستلمة قبل العمل."
 body_word_count_approx: 1111
 publication_status: Draft for CMS entry and rendered QA
 ---

@@ -5,8 +5,8 @@ language: English
 priority: P2
 route: /en/services/legal-translation
 route_status: Existing bilingual route
-seo_title: "Legal Document Translation Services"
-meta_description: "A misplaced negation, inconsistent defined term, or incorrect cross-reference can make a translated document difficult to use. Legal files therefore need"
+seo_title: "Legal Translation Services for Contracts & Court Documents | Globalize"
+meta_description: "Legal translation of contracts, powers of attorney, court records, and company documents, preserving clauses, names, figures, and terms. File and recipient reviewed before quoting."
 body_word_count_approx: 1142
 publication_status: Draft for CMS entry and rendered QA
 ---

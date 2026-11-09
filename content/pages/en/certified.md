@@ -6,7 +6,7 @@ priority: P1
 route: /en/certified
 route_status: Existing bilingual route
 seo_title: "Certified Translation Services in Egypt for Official Documents | Globalize"
-meta_description: "Request certified translation for official, legal, academic, and business documents, with careful review and recipient-specific certification checks."
+meta_description: "Certified translation of official, legal, and academic documents with a Globalize stamp and authorized signature: 200 EGP/page Arabic↔English, 300 EGP for other languages."
 body_word_count_approx: 1186
 publication_status: Draft for CMS entry and rendered QA
 ---

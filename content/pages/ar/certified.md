@@ -6,7 +6,7 @@ priority: P1
 route: /ar/certified
 route_status: Existing bilingual route
 seo_title: "خدمات الترجمة المعتمدة للمستندات الرسمية | جلوباليز"
-meta_description: "اطلب ترجمة معتمدة للمستندات الرسمية والقانونية والأكاديمية، مع مراجعة دقيقة وتحديد متطلبات الختم والتوقيع وفق الجهة المستلمة والغرض المطلوب."
+meta_description: "ترجمة معتمدة للمستندات الرسمية والقانونية والأكاديمية بختم جلوباليز وتوقيع معتمد: 200 ج.م للصفحة (عربي ↔ إنجليزي) و300 ج.م للغات الأخرى، مع مراجعة متطلبات الجهة المستلمة."
 body_word_count_approx: 1239
 publication_status: Draft for CMS entry and rendered QA
 ---

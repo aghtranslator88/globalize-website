@@ -5,8 +5,8 @@ language: العربية
 priority: P2
 route: /ar/services/legal-translation
 route_status: Existing bilingual route
-seo_title: "خدمات الترجمة القانونية للمستندات والعقود"
-meta_description: "قد يؤدي اختلاف كلمة أو إحالة داخلية أو رقم بند إلى تغيير طريقة فهم المستند. لذلك لا يكفي تمرير النص عبر ترجمة عامة أو اختيار مقابل لغوي دون مراجعة السياق."
+seo_title: "خدمات الترجمة القانونية المعتمدة للعقود والتوكيلات | جلوباليز"
+meta_description: "ترجمة قانونية للعقود والتوكيلات ومستندات القضايا والشركات مع الحفاظ على البنود والأسماء والأرقام والمصطلحات، ومراجعة الملف والجهة المستلمة قبل عرض السعر."
 body_word_count_approx: 1137
 publication_status: Draft for CMS entry and rendered QA
 ---

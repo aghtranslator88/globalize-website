@@ -5,8 +5,8 @@ language: العربية
 priority: P1
 route: /ar/documents
 route_status: Existing bilingual route
-seo_title: "دليل وأسعار ترجمة المستندات الرسمية | جلوباليز"
-meta_description: "اختر دليل ترجمة المستند المناسب لشهادة الميلاد أو شهادة التحركات أو صحيفة الحالة الجنائية، وتعرّف على البيانات المطلوبة لبدء طلبك."
+seo_title: "أسعار ترجمة المستندات الرسمية المعتمدة | جلوباليز"
+meta_description: "أسعار ترجمة شهادة الميلاد وعقد الزواج والقيد العائلي والفيش الجنائي وشهادة التخرج وبيان الدرجات: 200 ج.م للصفحة (عربي ↔ إنجليزي)، 300 ج.م للغات الأخرى، وتسليم خلال 24 ساعة."
 body_word_count_approx: 842
 publication_status: Draft for CMS entry and rendered QA
 ---
