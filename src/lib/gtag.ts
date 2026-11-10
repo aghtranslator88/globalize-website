@@ -14,6 +14,18 @@ declare global {
   }
 }
 
+/**
+ * Timestamps of the last tracked click per channel. Used by the delegated
+ * document-level listener (ClickConversionTracker) to skip clicks that a
+ * component handler already tracked, so conversions are never double-counted.
+ */
+const lastTracked: { whatsapp: number; phone: number } = { whatsapp: 0, phone: 0 };
+const DEDUPE_WINDOW_MS = 1000;
+
+export function wasRecentlyTracked(channel: 'whatsapp' | 'phone'): boolean {
+  return Date.now() - lastTracked[channel] < DEDUPE_WINDOW_MS;
+}
+
 export interface WhatsAppTrackingParams {
   cta_location: string;
   service?: string;
@@ -36,6 +48,7 @@ export interface PhoneTrackingParams {
  */
 export function trackWhatsAppClick(params: WhatsAppTrackingParams) {
   if (typeof window === 'undefined') return;
+  lastTracked.whatsapp = Date.now();
 
   const payload = {
     cta_location: params.cta_location,
@@ -80,6 +93,7 @@ export function trackWhatsAppClick(params: WhatsAppTrackingParams) {
  */
 export function trackPhoneClick(params: PhoneTrackingParams) {
   if (typeof window === 'undefined') return;
+  lastTracked.phone = Date.now();
 
   const payload = {
     cta_location: params.cta_location,

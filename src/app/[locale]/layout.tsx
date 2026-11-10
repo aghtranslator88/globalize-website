@@ -5,6 +5,7 @@ import { routing } from '@/i18n/routing';
 import { Cairo, Inter } from 'next/font/google';
 import Script from 'next/script';
 import AuthProvider from '@/components/SessionProvider';
+import ClickConversionTracker from '@/components/ClickConversionTracker';
 import { GOOGLE_ADS_ID, GA_MEASUREMENT_ID, GA_SECONDARY_ID } from '@/lib/gtag';
 import { getSiteUrl } from '@/lib/siteUrl';
 import '../globals.css';
@@ -80,6 +81,7 @@ export default async function LocaleLayout({
             gtag('config', '${GOOGLE_ADS_ID}');
           `}
         </Script>
+        <ClickConversionTracker />
         <NextIntlClientProvider messages={messages}>
 
           <AuthProvider>
