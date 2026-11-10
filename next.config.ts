@@ -154,12 +154,12 @@ const nextConfig: NextConfig = {
   async headers() {
     const csp = [
       "default-src 'self'",
-      "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://googleads.g.doubleclick.net https://pagead2.googlesyndication.com https://tpc.googlesyndication.com https://adservice.google.com https://*.google.com",
+      "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://googleads.g.doubleclick.net https://pagead2.googlesyndication.com https://tpc.googlesyndication.com https://adservice.google.com https://*.google.com https://www.googleadservices.com",
       "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
       "font-src 'self' data: https://fonts.gstatic.com",
       "img-src 'self' data: blob: https: https://www.google-analytics.com https://www.googletagmanager.com https://googleads.g.doubleclick.net https://pagead2.googlesyndication.com https://tpc.googlesyndication.com",
-      "connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com https://googleads.g.doubleclick.net https://pagead2.googlesyndication.com https://wa.me https://api.whatsapp.com https://*.sentry.io https://*.upstash.io",
-      "frame-src 'self' https://googleads.g.doubleclick.net https://pagead2.googlesyndication.com https://tpc.googlesyndication.com https://www.google.com https://maps.google.com https://*.google.com https://www.openstreetmap.org https://*.openstreetmap.org https://wa.me",
+      "connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com https://googleads.g.doubleclick.net https://pagead2.googlesyndication.com https://wa.me https://api.whatsapp.com https://*.sentry.io https://*.upstash.io https://www.googleadservices.com https://www.google.com https://google.com https://www.google.com.eg https://*.doubleclick.net https://*.google-analytics.com https://*.analytics.google.com",
+      "frame-src 'self' https://googleads.g.doubleclick.net https://pagead2.googlesyndication.com https://tpc.googlesyndication.com https://www.google.com https://maps.google.com https://*.google.com https://www.openstreetmap.org https://*.openstreetmap.org https://wa.me https://td.doubleclick.net https://www.googletagmanager.com",
       "object-src 'none'",
       "base-uri 'self'",
       "form-action 'self' https://wa.me",
