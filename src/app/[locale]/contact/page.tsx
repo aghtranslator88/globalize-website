@@ -101,7 +101,7 @@ export default async function ContactPage({
                   : "Send your document photos directly via WhatsApp for an instant quote and turnaround timeline."}
               </p>
               <TrackedWhatsAppLink
-                href={`https://wa.me/${settings.whatsapp?.replace("+", "")}?text=${encodeURIComponent(
+                href={`https://wa.me/${(settings.whatsapp?.replace(/[^0-9]/g, "") || "201062990808")}?text=${encodeURIComponent(
                   isAr ? "أريد الاستفسار عن ترجمة معتمدة" : "I want to inquire about certified translation"
                 )}`}
                 ctaLocation="contact_page_card"
