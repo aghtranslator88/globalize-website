@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import { setRequestLocale } from "next-intl/server";
 import { getGovEntityBySlug, getFAQs } from "@/lib/data";
-import { getSEOHeaders, generateFAQJsonLd, generateBreadcrumbJsonLd } from "@/lib/seo";
+import { getSEOHeaders, generateFAQJsonLd, generateBreadcrumbJsonLd, generateServiceJsonLd } from "@/lib/seo";
 import { serializeJsonLd } from "@/lib/jsonLd";
 import { isGenuineEnglish } from "@/lib/translationDetection";
 import Navbar from "@/components/Navbar";
@@ -57,6 +57,16 @@ export default async function GovEntityDetailPage({
   ];
 
   const breadcrumbJsonLd = generateBreadcrumbJsonLd(breadcrumbs, locale);
+  // Service node for certified translation submitted to this authority (indexable pages only).
+  const serviceJsonLd = gov.indexable
+    ? generateServiceJsonLd({
+        name: isAr ? `ترجمة معتمدة للتقديم إلى ${gov.name}` : `Certified Translation for ${gov.name}`,
+        description: isAr
+          ? `ترجمة معتمدة بختم جلوباليز وتوقيع معتمد للمستندات المقدمة إلى ${gov.name}. إجراءات التصديق نفسها تحددها الجهة المختصة.`
+          : `Certified translation with the Globalize seal and an authorized signature for documents submitted to ${gov.name}. Legalization itself is handled by the competent authority.`,
+        url: `/${locale}/government/${slug}`,
+      })
+    : null;
 
   return (
     <>
@@ -64,6 +74,12 @@ export default async function GovEntityDetailPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: serializeJsonLd(breadcrumbJsonLd) }}
       />
+      {serviceJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: serializeJsonLd(serviceJsonLd) }}
+        />
+      )}
       {faqs.length > 0 && (
         <script
           type="application/ld+json"

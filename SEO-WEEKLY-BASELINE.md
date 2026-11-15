@@ -71,3 +71,10 @@ The first successful run of `scripts/gsc_weekly_pull.mjs` (last 28 days vs previ
 - Documents index: ItemList JSON-LD of the indexable document pages.
 - Italy/Almaviva guide (static fallback + sync scripts): removed the claim of an Alexandria branch (Globalize has four branches in Cairo and Giza). The live DB copy still needs the same fix.
 - `public/llms.txt`: short FAQ answers (what certified translation is, pricing basis, translation vs legalization, legal/medical scope, branches) and last-updated date.
+
+### 2026-11-15
+- GSC pull not possible: the remote shell on the owner's computer failed to start again ("Workspace unavailable"). The newest local GSC file is still the 2026-09-16 extract. No new numbers.
+- Documents index (AR + EN): answer-first summary now states the per-page price (200/300 EGP) and 24h turnaround and names all eight document pages; the "choose your document" table and the FAQ list all eight pages (previously only three).
+- Removed the contradiction between page titles/answer boxes (200 EGP per page, 24h) and body text that said the page "does not publish a price or turnaround": documents index, birth certificate, movement certificate and police record (AR + EN) now state the published rate and that the final quote follows file review.
+- JSON-LD: Service node on indexable embassy and government detail pages; ItemList of up to 30 latest indexable guides on the blog index (EN lists only posts with a genuine English version); ContactPage on /contact embedding the Organization node.
+- `public/llms.txt`: FAQ line on which documents have dedicated pages, Turkish Embassy Cairo guide, last-updated date.

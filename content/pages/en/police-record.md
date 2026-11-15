@@ -76,7 +76,7 @@ Those elements may include the Globalize company stamp, an authorized signature,
 
 Computer-assisted or AI-supported tools may be used when appropriate, but human review remains part of the confirmed workflow. Globalize handles documents confidentially, and an NDA can be discussed for projects that require one.
 
-Price and timing cannot be determined from the document label alone. Assessment may depend on the language pair, source legibility, text volume, formatting, specialization, requested deadline, and any confirmed additional step. A request-specific quotation and schedule follow the file review.
+Police record translation is priced at 200 EGP per page (Arabic ↔ English) and 300 EGP per page for other languages, with standard delivery within 24 hours. The final quotation and schedule follow the file review, because the language pair, source legibility, text volume, formatting, specialization, requested deadline, and any confirmed additional step can affect the assessment.
 
 ## Common mistakes to avoid
 

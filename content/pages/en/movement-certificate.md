@@ -73,7 +73,7 @@ Globalize begins by reviewing the document, languages, recipient, purpose, and a
 
 Globalize handles documents confidentially, and an NDA can be discussed for projects that require one. Computer-assisted or AI-supported tools may be used when appropriate, with human review remaining part of the confirmed workflow.
 
-Price and timing depend on the file, language pair, source legibility, volume, formatting, requested deadline, and any confirmed additional step. This page does not publish one price or turnaround for all certificates.
+Movement certificate translation is priced at 200 EGP per page (Arabic ↔ English) and 300 EGP per page for other languages, with standard delivery within 24 hours; multi-page certificates are charged per page. The final quotation and schedule are confirmed after reviewing the language pair, source legibility, volume, formatting, requested deadline, and any confirmed additional step.
 
 ## Common mistakes before sending the document
 

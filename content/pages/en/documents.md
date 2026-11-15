@@ -13,7 +13,7 @@ publication_status: Draft for CMS entry and rendered QA
 
 # Official Document Translation Guides
 
-> **Answer Box:** Use this directory to reach the guide that matches your document: a birth certificate, movement certificate, or police record. Each guide explains what to prepare before requesting translation. If your document is not listed, send a legible copy with its name, issuing country, and intended recipient so the correct scope can be assessed.
+> **Answer Box:** Globalize provides certified translation of official documents at 200 EGP per page (Arabic ↔ English) and 300 EGP per page for other languages, with standard delivery within 24 hours; the total is calculated by page count. Use this directory to reach the guide for your document: birth certificate, marriage contract, family record, movement certificate, death certificate, police record (criminal record), graduation certificate, or academic transcript. If your document is not listed, send a legible copy with its name, issuing country, and intended recipient so the correct scope can be assessed.
 
 Official records differ in structure, data, and purpose. They should not be treated as interchangeable forms. This directory helps you select the relevant document page before sending a file and reduces confusion between similarly named records or between translation and a separate procedure requested by a recipient.
 
@@ -24,6 +24,11 @@ Official records differ in structure, data, and purpose. They should not be trea
 | Birth certificate | The request concerns a civil birth record and you can identify its issuing country and intended use | [Birth Certificate Translation Guide](https://www.globalizetl.com/en/documents/birth-certificate) |
 | Movement certificate | The request concerns an official entry-and-exit or travel-movement record issued by the competent authority | [Movement Certificate Translation Guide](https://www.globalizetl.com/en/documents/movement-certificate) |
 | Police record | The request concerns a police, criminal-status, or criminal-record document for an identified purpose | [Police Record Translation Guide](https://www.globalizetl.com/en/documents/police-record) |
+| Marriage contract | You need an official marriage contract translated for travel or visa procedures | [Marriage Contract Translation](https://www.globalizetl.com/en/documents/marriage-contract) |
+| Family record | The document lists several family members, for example for immigration or family reunion | [Family Record Translation](https://www.globalizetl.com/en/documents/family-record) |
+| Death certificate | You need a Civil Registry death certificate translated for inheritance or other procedures abroad | [Death Certificate Translation](https://www.globalizetl.com/en/documents/death-certificate) |
+| Graduation certificate | You need a university graduation certificate translated for study or work abroad | [Graduation Certificate Translation](https://www.globalizetl.com/en/documents/graduation-certificate) |
+| Academic transcript | You need a transcript or academic record translated into English or another language | [Academic Transcript Translation](https://www.globalizetl.com/en/documents/academic-transcript) |
 
 This table reflects the confirmed child pages in the current directory. It is not an exhaustive list of every file that Globalize can assess. A dedicated page does not imply one universal submission rule, and the absence of a page does not by itself place a document outside the service scope.
 
@@ -53,7 +58,7 @@ An enquiry can begin with a clear electronic copy. Whether an original, a partic
 
 Send Globalize a readable copy together with the basic information above. The file can then be classified as an official-document request or routed to a specialist service such as legal, medical, business, or technical translation. Do not choose the closest-sounding page when the underlying record is different; correct routing depends on the document’s content and intended use.
 
-This directory does not publish a universal price or turnaround. Assessment may depend on language pair, volume, source quality, specialization, formatting, requested deadline, and any separately confirmed steps. A quotation is prepared after the actual request has been reviewed.
+The published rate for official document translation is 200 EGP per page (Arabic ↔ English) and 300 EGP per page for other languages, with standard delivery within 24 hours; the total is calculated by page count. The final quotation and schedule are confirmed after the actual file is reviewed, because the language pair, source quality, specialization, formatting, requested deadline, and any separately confirmed step can affect the assessment.
 
 ## Common mistakes before sending a document
 
@@ -77,7 +82,7 @@ Send the file, language pair, recipient, purpose, and available instructions. Gl
 
 ### Which documents are currently listed in this directory?
 
-The directory contains dedicated guides for birth certificates, movement certificates, and police records. Each guide covers its named document, while the certified translation page explains the broader service.
+The directory contains dedicated pages for birth certificates, marriage contracts, family records, movement certificates, death certificates, police records, graduation certificates, and academic transcripts. Each guide covers its named document, while the certified translation page explains the broader service.
 
 ### What should I do if my document is not listed?
 

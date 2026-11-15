@@ -1,6 +1,6 @@
 import { setRequestLocale } from "next-intl/server";
 import { getBranches, getSiteSettings } from "@/lib/data";
-import { getSEOHeaders, generateBreadcrumbJsonLd } from "@/lib/seo";
+import { getSEOHeaders, generateBreadcrumbJsonLd, generateContactPageJsonLd } from "@/lib/seo";
 import { serializeJsonLd } from "@/lib/jsonLd";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -53,6 +53,10 @@ export default async function ContactPage({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: serializeJsonLd(breadcrumbJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(generateContactPageJsonLd(locale)) }}
       />
       <Navbar />
 

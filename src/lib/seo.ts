@@ -134,6 +134,26 @@ export function generateWebSiteJsonLd(locale: string) {
   };
 }
 
+// ContactPage for /contact: its main entity is the Organization node, which carries the phone,
+// email and head-office address, so engines can resolve "how to contact Globalize".
+export function generateContactPageJsonLd(locale: string) {
+  const url = `${SITE_URL}/${locale}/contact`;
+  // Embed the full Organization node (minus its @context) so the page is self-contained.
+  const { '@context': _ctx, ...organization } = generateOrganizationJsonLd();
+  void _ctx;
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'ContactPage',
+    '@id': `${url}#webpage`,
+    'url': url,
+    'name': locale === 'ar' ? 'اتصل بجلوباليز جروب' : 'Contact Globalize Group',
+    'inLanguage': locale === 'ar' ? 'ar' : 'en',
+    'isPartOf': { '@id': `${SITE_URL}/#website` },
+    'about': { '@id': `${SITE_URL}/#organization` },
+    'mainEntity': organization,
+  };
+}
+
 // Resolve a path or URL to an absolute, canonical-host URL.
 // When a locale is given, locale-less paths ("/documents") are prefixed ("/ar/documents")
 // so structured data points at the real, indexable URL instead of a redirecting one.

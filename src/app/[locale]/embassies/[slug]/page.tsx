@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import { setRequestLocale } from "next-intl/server";
 import { getEmbassyBySlug, getFAQs } from "@/lib/data";
-import { getSEOHeaders, generateFAQJsonLd, generateBreadcrumbJsonLd } from "@/lib/seo";
+import { getSEOHeaders, generateFAQJsonLd, generateBreadcrumbJsonLd, generateServiceJsonLd } from "@/lib/seo";
 import { serializeJsonLd } from "@/lib/jsonLd";
 import { isGenuineEnglish } from "@/lib/translationDetection";
 import Navbar from "@/components/Navbar";
@@ -120,6 +120,17 @@ export default async function EmbassyDetailPage({
   ];
 
   const breadcrumbJsonLd = generateBreadcrumbJsonLd(breadcrumbs, locale);
+  // Service node for the certified translation offered for this embassy (indexable pages only).
+  const embassyLabel = embassy.name.split("|")[0].trim();
+  const serviceJsonLd = embassy.indexable
+    ? generateServiceJsonLd({
+        name: isAr ? `ترجمة معتمدة لمستندات ${embassyLabel}` : `Certified Translation for ${embassyLabel}`,
+        description: isAr
+          ? `ترجمة معتمدة بختم جلوباليز وتوقيع معتمد للمستندات المقدمة إلى ${embassyLabel}.`
+          : `Certified translation with the Globalize seal and an authorized signature for documents submitted to ${embassyLabel}.`,
+        url: `/${locale}/embassies/${slug}`,
+      })
+    : null;
 
   return (
     <>
@@ -127,6 +138,12 @@ export default async function EmbassyDetailPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: serializeJsonLd(breadcrumbJsonLd) }}
       />
+      {serviceJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: serializeJsonLd(serviceJsonLd) }}
+        />
+      )}
       {faqs.length > 0 && (
         <script
           type="application/ld+json"

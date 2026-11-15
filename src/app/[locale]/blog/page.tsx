@@ -1,6 +1,6 @@
 import { setRequestLocale } from "next-intl/server";
 import { getBlogPosts } from "@/lib/data";
-import { getSEOHeaders, generateBreadcrumbJsonLd } from "@/lib/seo";
+import { getSEOHeaders, generateBreadcrumbJsonLd, generateItemListJsonLd } from "@/lib/seo";
 import { serializeJsonLd } from "@/lib/jsonLd";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -42,6 +42,15 @@ export default async function BlogPage({
   ];
 
   const breadcrumbJsonLd = generateBreadcrumbJsonLd(breadcrumbs, locale);
+  // ItemList of the most recent guides that are indexable in this locale
+  // (English list skips posts without a genuine English version).
+  const itemListJsonLd = generateItemListJsonLd(
+    posts
+      .filter((p) => isAr || p.hasEnglish)
+      .slice(0, 30)
+      .map((p) => ({ name: p.title, url: `/blog/${p.slug}` })),
+    locale
+  );
 
   // Serialize posts for safe React 19 / client-component injection
   const serializedPosts = posts.map((p) => ({
@@ -65,6 +74,12 @@ export default async function BlogPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: serializeJsonLd(breadcrumbJsonLd) }}
       />
+      {itemListJsonLd.numberOfItems > 0 && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: serializeJsonLd(itemListJsonLd) }}
+        />
+      )}
       <Navbar />
 
       <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">

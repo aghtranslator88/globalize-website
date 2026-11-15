@@ -78,7 +78,7 @@ Globalize reviews the copy, languages, purpose, and recipient instructions first
 
 Globalize handles documents confidentially, and an NDA can be discussed for projects that require one. Computer-assisted or AI-supported tools may be used when appropriate, with human review remaining part of the confirmed workflow.
 
-Price and timing are not determined by the document label alone. Assessment may depend on language, source legibility, text volume, formatting, requested deadline, and any confirmed additional step. This page therefore does not state a universal price or turnaround.
+Birth certificate translation is priced at 200 EGP per page (Arabic ↔ English) and 300 EGP per page for other languages, with standard delivery within 24 hours; the total is calculated by page count. The final quotation and schedule are confirmed after reviewing the language pair, source legibility, text volume, formatting, requested deadline, and any confirmed additional step.
 
 ## Common mistakes to avoid
 

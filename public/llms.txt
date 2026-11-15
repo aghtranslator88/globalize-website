@@ -15,6 +15,7 @@
 - **كيف يُحسب سعر ترجمة المستند؟** بعدد الصفحات: 200 ج.م للصفحة (عربي ↔ إنجليزي) و300 ج.م للصفحة للغات الأخرى. — Priced per page: 200 EGP (Arabic ↔ English), 300 EGP (other languages).
 - **هل تقوم جلوباليز بتصديق المستندات من الخارجية أو السفارات؟** لا؛ التصديق إجراء تحدده الجهة المختصة، ودور جلوباليز هو الترجمة المعتمدة فقط. — No. Legalization is handled by the competent authority; Globalize provides the certified translation.
 - **هل الترجمة القانونية أو الطبية استشارة؟** لا؛ الترجمة القانونية ليست استشارة قانونية، والترجمة الطبية لا تقدم تشخيصًا ولا تفسر النتائج. — Legal translation is not legal advice; medical translation does not diagnose or interpret results.
+- **ما المستندات التي لها صفحات مستقلة؟** شهادة الميلاد، عقد الزواج، القيد العائلي، شهادة التحركات، شهادة الوفاة، الفيش الجنائي، شهادة التخرج، وبيان الدرجات؛ وأي مستند آخر يُقيَّم بعد إرسال نسخة واضحة. — Dedicated pages: birth certificate, marriage contract, family record, movement certificate, death certificate, police record, graduation certificate, academic transcript; other documents are assessed from a clear copy.
 - **أين فروع جلوباليز؟** أربعة فروع: المقر الرئيسي بالجيزة، والدقي، والهرم، وصلاح سالم بمصر الجديدة. — Four offices: Giza head office, Dokki, Haram, and Salah Salem (Heliopolis), Cairo.
 
 ## معلومات التواصل (Contact)
@@ -67,6 +68,7 @@
 - [ترجمة كشف الحساب البنكي للسفارات والتأشيرات](https://www.globalizetl.com/ar/blog/bank-statement-certified-translation-visa)
 - [ترجمة السجل التجاري والبطاقة الضريبية](https://www.globalizetl.com/ar/blog/commercial-register-tax-card-translation)
 - [ترجمة مستندات منحة DAAD وبوابة Uni-Assist](https://www.globalizetl.com/ar/blog/daad-germany-uni-assist-certified-translation)
+- [الترجمة المعتمدة للسفارة التركية بالقاهرة](https://www.globalizetl.com/ar/blog/certified-translation-turkish-embassy-cairo)
 
 ## أدلة الخدمات المتخصصة (Specialized Service Guides)
 - [خدمات ترجمة المحتوى الأكاديمي والعلمي](https://www.globalizetl.com/ar/blog/academic-scientific-translation) — [Academic and Scientific Translation](https://www.globalizetl.com/en/blog/academic-scientific-translation)
@@ -107,4 +109,4 @@
 4. إمكانية التسليم المستعجل في نفس اليوم.
 
 ---
-آخر تحديث (Last updated): 2026-11-09
+آخر تحديث (Last updated): 2026-11-15
